@@ -1,0 +1,44 @@
+[Tue, 26 Mar 19 18:30:13 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:30:13 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:38:57 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:38:57 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:39:00 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:39:00 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:49:07 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:49:07 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:49:07 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:49:07 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:49:18 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:49:18 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Tue, 26 Mar 19 18:51:07 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Tue, 26 Mar 19 18:51:07 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Wed, 27 Mar 19 10:57:41 +0900][ERROR] View '/vagrant_data/html/bentotest/convert/apps/manager/views/partials/modal/products-list' was not found in the views directory
+[Wed, 27 Mar 19 10:57:41 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\View->_engineRender(Array, 'partials/modal/...', false, false)
+#1 [internal function]: Phalcon\Mvc\View->partial('partials/modal/...', NULL)
+#2 /vagrant_data/html/bentotest/convert/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_invoices_new.volt.php(127): Phalcon\Mvc\View\Engine->partial('partials/modal/...')
+#3 [internal function]: Phalcon\Mvc\View\Engine\Volt->render('/vagrant_data/h...', Array, true)
+#4 [internal function]: Phalcon\Mvc\View->_engineRender(Array, 'invoices/new', true, true, NULL)
+#5 [internal function]: Phalcon\Mvc\View->render('invoices', 'new', Array)
+#6 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#7 {main}

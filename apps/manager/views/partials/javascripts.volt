@@ -1,0 +1,16 @@
+{{ javascript_include('js/jquery-2.2.4.min.js') }}
+{{ javascript_include('js/jquery-migrate-1.4.1.min.js') }}
+{{ javascript_include('js/jquery-ui-1.12.1.min.js') }}
+{{ javascript_include('js/jquery.ui.touch-punch.min.js') }}
+{{ javascript_include('js/jquery.slimscroll.min.js') }}
+{{ javascript_include('js/cookie.js') }}
+{{ javascript_include('js/moment.min.js') }}
+{{ javascript_include('js/moment/ja.js') }}
+{{ javascript_include('plugins/jquery-treeview/jquery.treeview.js') }}
+{{ javascript_include('plugins/iCheck/icheck.min.js') }}
+{{ javascript_include('js/bootstrap.min.js') }}
+{{ javascript_include('js/bootstrap-select.min.js') }}
+{{ javascript_include('js/bootstrap-datetimepicker.min.js') }}
+{{ javascript_include('js/application.js') }}
+{{ javascript_include('plugins/datatable/datatables.min.js') }}
+{{ javascript_include('plugins/jqx/jqx-all.js') }}

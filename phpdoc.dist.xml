@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>SMC Web Application</title>
+  <parser>
+    <target>output</target>
+    <markers>
+      <item>TODO</item>
+      <item>FIXME</item>
+    </markers>
+    <extensions>
+      <extension>php</extension>
+    </extensions>
+  </parser>
+  <transformer>
+    <target>output</target>
+  </transformer>
+  <logging>
+    <level>warn</level>
+    <paths>
+      <default>{APP_ROOT}/output/log/{DATE}.log</default>
+      <errors>{APP_ROOT}/output/log/{DATE}.errors.log</errors>
+    </paths>
+  </logging>
+  <transformations>
+    <template name="abstract"/>
+  </transformations>
+  <files>
+    <file>securecam/public/*.php</file>
+    <directory>securecam/apps</directory>
+    <directory>securecam/cli</directory>
+    <directory>securecam/config</directory>
+    <directory>securecam/library</directory>
+    <ignore>securecam/lang/*</ignore>
+    <ignore>securecam/libexec</ignore>
+    <ignore>securecam/library/Phalcon/*</ignore>
+    <ignore>securecam/var/*</ignore>
+    <ignore>securecam/vendors/*</ignore>
+    <ignore>*.volt</ignore>
+  </files>
+</phpdoc>

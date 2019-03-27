@@ -1,0 +1,12 @@
+{{ stylesheet_link('css/bootstrap.min.css') }}
+{{ stylesheet_link('css/bootstrap-datetimepicker.min.css') }}
+{{ stylesheet_link('css/bootstrap-select.min.css') }}
+{{ stylesheet_link('css/font-awesome.min.css') }}
+{{ stylesheet_link('css/AdminLTE.min.css') }}
+{{ stylesheet_link('plugins/iCheck/minimal/blue.css') }}
+{{ stylesheet_link('plugins/jquery-treeview/jquery.treeview.css') }}
+{{ stylesheet_link('css/include-after.css') }}
+{{ stylesheet_link('plugins/datatable/datatables.min.css') }}
+{{ stylesheet_link('plugins/jqx/styles/jqx.base.css') }}
+{{ stylesheet_link('css/jquery-ui.css') }}
+{{ stylesheet_link('css/custom.css') }}

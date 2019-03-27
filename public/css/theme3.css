@@ -1,0 +1,66 @@
+/*
+ * Flower
+ * Pink
+ */
+.camview-aside{
+  background: #002a56;
+  border-bottom: 1px solid #000;
+}
+
+.camview-root .btn.btn-white{
+  color: #6B3205;
+}
+
+#vjc-dur{
+  color: #f2f2f2;
+}
+
+.btn-white{
+  background-color: #FF92C0;
+  border-color: #DC5890;
+}
+
+.btn-white:hover{
+  border-color: #FF92C0;
+}
+
+.btn-white:focus, .btn-white.focus{
+  border-color: #DC5890;
+}
+
+.btn-white:active, .btn-white.active, .open > .dropdown-toggle.btn-white{
+  border-color: #DC5890;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.selected{
+  background: #FF92C0;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.selected a:focus, .bootstrap-select.btn-group .dropdown-menu li.selected a:hover{
+  background: #FF92C0;
+}
+
+.btn-white:active:hover, .btn-white.active:hover, .open > .dropdown-toggle.btn-white:hover, .btn-white:active:focus, .btn-white.active:focus, .open > .dropdown-toggle.btn-white:focus, .btn-white:active.focus, .btn-white.active.focus, .open > .dropdown-toggle.btn-white.focus {
+  color: #535353;
+  background-color: #FF92C0;
+  border-color: #DC5890;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline-color: #DC5890;
+}
+
+.camview-footer .seeker.ui-corner-all .ui-slider-handle {
+  -webkit-filter: hue-rotate(110deg);
+  filter: hue-rotate(110deg);
+}
+
+.content-wrapper, .right-side{
+  background-color: #002a56;
+}
+
+.camview-root.liveview .seal, .camview-root.splitview .seal{
+}

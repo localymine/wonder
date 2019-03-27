@@ -1,0 +1,9 @@
+<?= $this->tag->stylesheetLink('css/bootstrap.min.css') ?>
+<?= $this->tag->stylesheetLink('css/bootstrap-datetimepicker.min.css') ?>
+<?= $this->tag->stylesheetLink('css/bootstrap-select.min.css') ?>
+<?= $this->tag->stylesheetLink('css/font-awesome.min.css') ?>
+<?= $this->tag->stylesheetLink('css/AdminLTE.min.css') ?>
+<?= $this->tag->stylesheetLink('plugins/iCheck/minimal/blue.css') ?>
+<?= $this->tag->stylesheetLink('plugins/iCheck/minimal/red.css') ?>
+<?= $this->tag->stylesheetLink('plugins/jquery-treeview/jquery.treeview.css') ?>
+<?= $this->tag->stylesheetLink('css/include-after.css') ?>

@@ -1,0 +1,66 @@
+/*
+ * High Contrast
+ * Black + White Sharp Edge
+ */
+.camview-aside{
+  background: #CCCDCF;
+  border-bottom: 1px solid #000;
+}
+
+.camview-root .btn.btn-white{
+  color: #001a35;
+}
+
+#vjc-dur{
+  color: #001a35;
+}
+
+.btn-white{
+  background-color: #A0A0A0;
+  border-color: #B2B2B2;
+}
+
+.btn-white:hover{
+  border-color: #A0A0A0;
+}
+
+.btn-white:focus, .btn-white.focus{
+  border-color: #B2B2B2;
+}
+
+.btn-white:active, .btn-white.active, .open > .dropdown-toggle.btn-white{
+  border-color: #B2B2B2;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.selected{
+  background: #A0A0A0;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li.selected a:focus, .bootstrap-select.btn-group .dropdown-menu li.selected a:hover{
+  background: #A0A0A0;
+}
+
+.btn-white:active:hover, .btn-white.active:hover, .open > .dropdown-toggle.btn-white:hover, .btn-white:active:focus, .btn-white.active:focus, .open > .dropdown-toggle.btn-white:focus, .btn-white:active.focus, .btn-white.active.focus, .open > .dropdown-toggle.btn-white.focus {
+  color: #535353;
+  background-color: #A0A0A0;
+  border-color: #B2B2B2;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline-color: #B2B2B2;
+}
+
+.camview-footer .seeker.ui-corner-all .ui-slider-handle {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.content-wrapper, .right-side{
+  background-color: #CCCDCF;
+}
+
+.camview-root.liveview .seal, .camview-root.splitview .seal{
+}

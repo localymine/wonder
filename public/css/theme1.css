@@ -1,0 +1,30 @@
+/*
+ * Dark
+ * Gray
+ */
+.camview-aside{
+  background: #474747;
+  border-bottom: 1px solid #000;
+}
+
+.btn-white:active:hover, .btn-white.active:hover, .open > .dropdown-toggle.btn-white:hover, .btn-white:active:focus, .btn-white.active:focus, .open > .dropdown-toggle.btn-white:focus, .btn-white:active.focus, .btn-white.active.focus, .open > .dropdown-toggle.btn-white.focus {
+  color: #555;
+  background-color: #fcfcfc;
+  border-color: #535353;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline-color: #474747;
+}
+
+.camview-footer .seeker.ui-corner-all .ui-slider-handle {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.content-wrapper, .right-side{
+  background-color: #474747;
+}

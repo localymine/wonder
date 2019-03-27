@@ -1,0 +1,93 @@
+ul.program_mesh{
+  list-style: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+ul.program_mesh > li{
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.mesh1 .endpoint, .mesh1 .camera{
+  width: 384px;
+}
+.mesh4 .endpoint, .mesh4 .camera {
+  width: 191px;
+}
+.ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+li .program{
+  float: left;
+  width: auto;
+  display: inline-block;
+}
+
+li .program .info{
+  padding: 5px;
+}
+
+li .mesh{
+  width: 384px;
+  height:216px;
+  border: 1px #A0A0A0 solid;
+  display: table;
+}
+
+li .mesh .mesh1{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+li .mesh .mesh1.no-cam{
+  background: #E0E0E0;
+}
+
+li .mesh .mesh4 ul.cameras{
+  list-style: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+li .mesh .mesh4 ul.cameras li{
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 191px;
+  height: 107px;
+  float: left;
+}
+
+li .mesh .mesh4 ul.cameras li:nth-child(1) {
+  border-right: 1px #A0A0A0 solid;
+  border-bottom: 1px #A0A0A0 solid;
+}
+
+li .mesh .mesh4 ul.cameras li:nth-child(2) {
+  border-bottom: 1px #A0A0A0 solid;
+}
+
+li .mesh .mesh4 ul.cameras li:nth-child(3) {
+  border-right: 1px #A0A0A0 solid;
+}
+
+li .mesh .mesh4 ul.cameras li.no-cam{
+  background: #E0E0E0;
+}
+
+li .mesh .mesh4 ul.cameras li .item{
+  width: 191px;
+  height: 107px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
