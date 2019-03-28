@@ -5,7 +5,9 @@
 namespace General\Core\Util;
 
 use General\Core\Manager\Models\Invoice;
+use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\TransportInvoice;
+use General\Core\Manager\Models\Warehouse;
 use Phalcon\Db\Column;
 use Phalcon\Di as DependencyInjector;
 use Phalcon\Mvc\User\Component;
@@ -437,6 +439,64 @@ class FilterInjector extends Component
       $invoice,
       $invoice->getReadConnection()->query($sql)
     );
+  }
+
+
+  public static function getProductsByKeyword(DependencyInjector $di, $keyword, $warehouse='') {
+    /* if $_SESSION['auth'] not found, returns false.
+     * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    /* create fully qualified class name. */
+    $Model = 'General\Core\Manager\Models\Product';
+    /* create Model instance. */
+    /** @var \General\Core\Manager\Models\ModelInterface $instance */
+    $instance = new $Model;
+    /** @var \Phalcon\Mvc\Model\Metadata\Memory $metadata */
+    $metadata = $di->getShared('modelsMetadata');
+    $dataType = $metadata->getDataTypes($instance);
+
+    /* initialize query condition. */
+    $criteria = new Criteria();
+    $criteria->setModelName($Model);
+
+    $criteria->leftJoin(ProductQuantity::class, '['.$Model.'].id=[PQ].product_id ', 'PQ');
+    $criteria->leftJoin(Warehouse::class, '[WH].id=[PQ].warehouse_id ', 'WH');
+
+    if ($warehouse != '') {
+      $criteria->andWhere('[PQ].warehouse_id=:warehouse_id:', [
+        'warehouse_id'  => $warehouse
+      ]);
+    }
+
+    $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
+    $criteria->andWhere('['.$Model.'].disabled=:disabled:', ['disabled' => 0]);
+
+    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword:';
+    $c = '%'.trim($keyword).'%';
+    $criteria->andWhere($t,
+      ['keyword' => $c]
+    );
+
+    $criteria->columns(
+      [
+        '['.$Model.'].id',
+        '['.$Model.'].name',
+        'price',
+        'image',
+        '['.$Model.'].quantity as qty',
+        '[PQ].quantity',
+        '[PQ].warehouse_id',
+        '[WH].name as warehouse',
+      ]
+    );
+
+    return $criteria->execute();
   }
 
 }

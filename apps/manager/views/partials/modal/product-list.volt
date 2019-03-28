@@ -28,7 +28,7 @@
                   <th><i class="fa fa-cogs"></i></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="product-list">
                 <tr id="55">
                   <td>1</td>
                   <td class="" style="width:32px;">
@@ -38,14 +38,16 @@
                   </td>
                   <td>UV SPA++++</td>
                   <td class="text-right">
-                    <input type="text" class="form-control text-right no-border" value="200,000" />
+                    <input type="text" name="pd[][price]" class="form-control text-right no-border" value="200,000" />
                   </td>
                   <td class="text-right">
-                    <input type="number" class="form-control text-right no-border quantity" min="1" max="15" value="10" />
+                    <input type="number" name="pd[][quantity]" class="form-control text-right no-border quantity" min="1" max="15" value="10" />
                   </td>
                   <td class="text-center">SG</td>
                   <td class="text-center">
-                    <a class="text-red addProduct" href="#"><i class="fa fa-plus-circle"></i></a>
+                    <a class="text-red addCart" href="#"><i class="fa fa-plus-circle"></i></a>
+                    <input type="hidden" name="pd[][warehouse]" value="1" />
+                    <input type="hidden" name="pd[][id]" value="55" />
                   </td>
                 </tr>
               </tbody>

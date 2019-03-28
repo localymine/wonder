@@ -68,7 +68,7 @@
           <label for="total_price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Total Price'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <div class="input-group">
-              <?php echo $this->tag->textField(array('total_price', 'class' => 'form-control', 'disabled' => true)); ?>
+              <?php echo $this->tag->textField(array('total_price', 'class' => 'form-control text-right', 'disabled' => true)); ?>
               <span class="input-group-addon">&#8363;</span>
             </div>
           </div>
@@ -106,6 +106,26 @@
           <label class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Order Lists'); ?></label>
           <div class="col-xs-12 col-sm-9">
             <a class="text-black" href="#" data-target="#products-dialog" data-toggle="modal"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add products'); ?></a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-12">
+            <table class="table table-responsive">
+              <thead>
+              <tr>
+                <th><?php echo $this->l10n->__('ID'); ?></th>
+                <th></th>
+                <th><?php echo $this->l10n->_('Name'); ?></th>
+                <th><?php echo $this->l10n->_('(&#8363;)'); ?></th>
+                <th><?php echo $this->l10n->_('Qty.'); ?></th>
+                <th><?php echo $this->l10n->_('W.'); ?></th>
+                <th><i class="fa fa-cogs"></i></th>
+              </tr>
+              </thead>
+              <tbody id="cart-list">
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -181,21 +201,83 @@
       });
 
       $('#keyword').on('keyup', function() {
-        $.ajax({
-          url: '/manager/invoices/getProduct',
-          type:'POST',
-          data:post_data,
-          dataType:'json',
-          async:true,
-          cache:false
-        }).done(function (data) {
+        var keyword = $(this).val();
+        var post_data = {
+          'keyword' : keyword
+        };
+        if (keyword.length > 2) {
+          $.ajax({
+            url: '/manager/invoices/getProduct',
+            type:'POST',
+            data:post_data,
+            dataType:'json',
+            async:true,
+            cache:false
+          }).done(function (data) {
+            if (data['success'] === 1) {
+              $('#product-list').empty();
+              var rs = eval(data['data']);
+              for (var i=0; i<rs.length; i++) {
+                var template = '<tr id="p' + rs[i]['id'] + '">' +
+                    '<td>' + rs[i]['id'] + '</td>' +
+                    '<td class="" style="width:32px;">' +
+                    '<a href="#" class="pop">' +
+                    '<img class="img-responsive" src="/uploads/user/' + (rs[i]['id']).toString().padStart(7,0) + '/product/' + rs[i]['id'] + '/' + rs[i]['image'] + '" />' +
+                    '</a>' +
+                    '</td>' +
+                    '<td>'+rs[i]['name']+'</td>' +
+                    '<td class="text-right">' +
+                    '<input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price" value="'+rs[i]['price']+'" />' +
+                    '</td>' +
+                    '<td class="text-right">' +
+                    '<input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity" min="1" max="'+rs[i]['quantity']+'" value="1" />' +
+                    '</td>' +
+                    '<td class="text-center">'+rs[i]['warehouse']+'</td>' +
+                    '<td class="text-center">' +
+                    '<a class="addCart" href="#" data-id="'+rs[i]['id']+'" data-name="'+rs[i]['name']+'" data-whid="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>' +
+                    '</td>' +
+                    '</tr>';
+                $('#product-list').append(template);
+              }
+              $('.quantity').on('keyup', function(e) {
+                var v = $(this).val();
+                var min = $(this).attr('min');
+                var max = $(this).attr('max');
+                if(v !== ''){
+                  if(parseInt(v) < parseInt(min)){
+                    $(this).val(min);
+                  }
+                  if(parseInt(v) > parseInt(max)){
+                    $(this).val(max);
+                  }
+                }
+              });
+              $('.addCart').on('click', function() {
+                var tr = $(this).parent().parent().clone();
+                $('#cart-list').append(tr);
+                $('a.addCart i',tr).removeClass('fa-plus-circle text-blue').addClass('fa-minus-circle text-red');
+                $('a.addCart',tr).removeClass('addCart').addClass('subCart');
+                $('#total_price').val(counter());
+                //
+                $('.subCart').on('click', function() {
+                  var tr = $(this).parent().parent().remove();
+                  $('#total_price').val(counter());
+                });
+              });
+            }
+          });
+        }
+      });
 
+      function counter() {
+        var total_price = 0;
+        $('#cart-list tr').each(function() {
+          var price = $('.price', this).val();
+          var qty   = $('.quantity', this).val();
+          total_price += price * qty;
         });
-      });
-
-      $('.addProduct').on('click', function() {
-
-      });
+        return total_price;
+      }
 
     });
   </script>

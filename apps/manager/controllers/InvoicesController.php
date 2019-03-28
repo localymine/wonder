@@ -5,12 +5,12 @@ namespace General\Core\Manager\Controllers;
 use General\Core\Manager\Models\Client;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\OtherCost;
+use General\Core\Util\FilterInjector;
 
 /**
  * Class IndexController
  * @package General\Core\Converter\Controllers
  *
- * @property General\Core\Manager\Models\OtherCost $othercost
  */
 class InvoicesController extends ControllerBase
 {
@@ -193,7 +193,6 @@ class InvoicesController extends ControllerBase
           'params' => [$post['invoice_id']]
         ]);
         return;
-      } else {
       }
       /* if successfully saved, put message in session and redirect. */
       $this->flash->success($this->l10n->_('Invoice was edited successfully.'));
@@ -278,6 +277,31 @@ class InvoicesController extends ControllerBase
     /* set parameters to display page. */
     $this->view->setVar('invoice', $invoice);
     $this->view->setVar('products', $invoice_detail);
+  }
+
+
+  /**
+   * @return \Phalcon\Http\Response|\Phalcon\Http\ResponseInterface
+   */
+  public function getProductAction()
+  {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $data = $this->request->getPost();
+
+        $products = FilterInjector::getProductsByKeyword($this->di, $data['keyword']);
+        if ($products->count() > 0) {
+          $response['data'] = $products->toArray();
+          $response['success'] = 1;
+        }
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
   }
 
 
