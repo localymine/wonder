@@ -409,7 +409,7 @@ class FilterInjector extends Component
      * session情報がない場合は偽 */
     $identity = $di->get('auth')->getIdentity();
     if (!$identity) {
-      return;
+      return false;
     }
 
     $user_id = $identity['id'];
@@ -499,4 +499,27 @@ class FilterInjector extends Component
     return $criteria->execute();
   }
 
+
+  public static function sumProducts(DependencyInjector $di, $product_ids='') {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $sql  = " SELECT product_id, SUM(quantity) as quantity ";
+    $sql .= " FROM products_quantities ";
+    $sql .= " WHERE user_id = $user_id AND product_id IN ($product_ids) ";
+    $sql .= " GROUP BY product_id ";
+
+    $product_quantity = new ProductQuantity();
+    return new Resultset(
+      null,
+      $product_quantity,
+      $product_quantity->getReadConnection()->query($sql)
+    );
+  }
 }

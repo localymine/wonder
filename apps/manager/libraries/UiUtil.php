@@ -35,6 +35,11 @@ class UiUtil extends BootstrapPaginator
       'label' => '<i class="fa fa-product-hunt"></i><span>Products</span>',
       'controller' => ['products'],
     ],
+    'inventory' => [
+      'link'  => 'manager/inventory/index',
+      'label' => '<i class="fa fa-archive"></i><span>Inventory</span>',
+      'controller' => ['inventory'],
+    ],
     'invoices' => [
       'link'  => 'manager/invoices/index',
       'label' => '<i class="fa fa-sticky-note"></i><span>Invoices</span>',

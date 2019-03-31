@@ -4,8 +4,12 @@ namespace General\Core\Manager\Controllers;
 
 use General\Core\Manager\Models\Client;
 use General\Core\Manager\Models\Invoice;
+use General\Core\Manager\Models\InvoiceDetail;
 use General\Core\Manager\Models\OtherCost;
+use General\Core\Manager\Models\Product;
+use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Util\FilterInjector;
+
 
 /**
  * Class IndexController
@@ -62,6 +66,8 @@ class InvoicesController extends ControllerBase
 
     if ($this->security->checkToken('csrf')) {
       $post = $this->request->getPost();
+      $identity = $this->auth->getIdentity();
+      //
       $invoice = new Invoice();
       $invoice->assign($post);
       $client_id = $post['client_id'];
@@ -76,8 +82,54 @@ class InvoicesController extends ControllerBase
           $invoice->client_id = $client->id;
         }
       }
+      //
+      $product_ids = [];
+      $in_detail   = [];
+      $pd = $post['pd'];
+      foreach ($pd as $item) {
+        $cond = [
+          'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+          'bind' => [
+            'user_id'     => $identity['id'],
+            'product_id'  => $item['product'],
+            'warehouse_id'=> $item['warehouse']
+          ]
+        ];
+        $proQty = ProductQuantity::findFirst($cond);
+        $curQty = $proQty->quantity;
+        $proQty->quantity = $curQty - $item['quantity'];
+        $proQty->update();
+        //
+        $invoie_detail = new InvoiceDetail();
+        $invoie_detail->client_id    = $client_id;
+        $invoie_detail->product_id   = $item['product'];
+        $invoie_detail->warehouse_id = $item['warehouse'];
+        $invoie_detail->price    = $item['price'];
+        $invoie_detail->quantity = $item['quantity'];
+        array_push($in_detail, $invoie_detail);
+        //
+        array_push($product_ids, $item['product']);
+      }
+      //
       if (!$this->request->hasPost('disabled')) {
         $invoice->disabled = 0;
+      }
+      //
+      $invoice->invoicedetail = $in_detail;
+
+      $product_ids = implode(',', array_unique($product_ids));
+      $sumProducts = FilterInjector::sumProducts($this->di, $product_ids);
+      foreach($sumProducts as $sp) {
+        $cond = [
+          'conditions' => 'id=:product_id: AND user_id=:user_id:',
+          'bind' => [
+            'product_id' => $sp->product_id,
+            'user_id'    => $identity['id'],
+          ]
+        ];
+        $product  = Product::findFirst($cond);
+        $product->quantity = $sp->quantity ;
+        $product->update();
       }
 
       /* test whether the current user can edit this Client. */
@@ -116,6 +168,7 @@ class InvoicesController extends ControllerBase
     }
   }
 
+
   public function editAction($id)
   {
     /* return 404 status if invalid argument was passed. */
@@ -137,8 +190,12 @@ class InvoicesController extends ControllerBase
     ];
     $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
 
+    $invoice_detail = $invoice->getRelated('invoicedetail');
+
     $this->view->setVar('invoice', $invoice);
+    $this->view->setVar('invoice_detail', $invoice_detail);
   }
+
 
   public function saveAction()
   {
@@ -201,6 +258,7 @@ class InvoicesController extends ControllerBase
     }
   }
 
+
   private function savePath($id)
   {
     $savedir  = 'user'.DS.sprintf("%07d", $this->view->getVar('identity')['id']).DS.
@@ -208,6 +266,7 @@ class InvoicesController extends ControllerBase
     $savepath = SKR_UPLOAD_DIR.DS.$savedir;
     return $savepath;
   }
+
 
   public function imageAction($id) {
     $this->view->disable();
@@ -239,6 +298,7 @@ class InvoicesController extends ControllerBase
     $this->response->setContent($data);
     $this->response->send();
   }
+
 
   public function showAction($id)
   {
@@ -318,6 +378,7 @@ class InvoicesController extends ControllerBase
         array_push($dClients, ['id'=>$cl->id, 'name'=>$cl->name]);
       }
     }
+    $this->view->setVar('eclients', $clients);
     $this->view->setVar('clients', json_encode($dClients));
     $this->view->setVar('status', $this->enum->invoiceStatus());
 

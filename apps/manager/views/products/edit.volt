@@ -48,6 +48,16 @@
         </div>
 
         <div class="form-group">
+          <label for="wholesale_price" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Wholesale Price') }}</label>
+          <div class="col-xs-12 col-sm-4">
+            <div class="input-group">
+              {{ text_field('wholesale_price','class':'form-control','value':product.wholesale_price) }}
+              <span class="input-group-addon">&#8363;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="unit" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Unit') }}</label>
           <div class="col-xs-12 col-sm-2">
             {{ text_field('unit','class':'form-control','value':product.unit) }}

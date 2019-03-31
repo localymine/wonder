@@ -15,7 +15,8 @@
 <![endif]-->
 {{ get_title() }}
 </head>
-<body class="hold-transition skin-blue sidebar-mini{% if bodycollapsed is defined %} sidebar-collapse{% endif %}">
+{#<body class="hold-transition skin-blue sidebar-mini{% if bodycollapsed is defined %} sidebar-collapse{% endif %}">#}
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 

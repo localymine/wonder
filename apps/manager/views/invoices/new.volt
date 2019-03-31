@@ -32,19 +32,7 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Client') }}</label>
           <div class="col-xs-12 col-sm-3">
-            {#{{ select('client',clients,'using':['id','name'],'name':'client_id','class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}#}
-
             <div id="client_id" name="client_id"></div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="total_price" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Total Price') }}</label>
-          <div class="col-xs-12 col-sm-3">
-            <div class="input-group">
-              {{ text_field('total_price','class':'form-control text-right','disabled':true) }}
-              <span class="input-group-addon">&#8363;</span>
-            </div>
           </div>
         </div>
 
@@ -65,20 +53,12 @@
         </div>
 
         <div class="form-group">
-          <label class="col-xs-12 col-sm-3 control-label">{{ l10n._('Disabled') }}</label>
-          <div class="col-xs-12 col-sm-8">
-            <div class="checkbox-inline">
-              <label for="disabled">
-                {{ check_field('disabled','name':'disabled','value':1) }} {{ l10n._('Disabled') }}
-
-              </label>
+          <label for="total_price" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Total Price') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+              {{ text_field('total_price','class':'form-control text-right','readonly':true) }}
+              <span class="input-group-addon">&#8363;</span>
             </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-xs-12 col-sm-3 control-label">{{ l10n._('Order Lists') }}</label>
-          <div class="col-xs-12 col-sm-9">
             <a class="text-black" href="#" data-target="#products-dialog" data-toggle="modal"><i class="fa fa-plus-circle"></i> {{ l10n._('Add products') }}</a>
           </div>
         </div>
@@ -124,6 +104,7 @@
 {% endblock %}
 
 {% block pagescript %}
+  {{ javascript_include('js/invoice.js') }}
   <script>
     $(function(){
       $('input[type=checkbox]').iCheck({
@@ -146,105 +127,11 @@
         if (args) {
           if(args.item !== null) {
             var item = args.item;
-            $('input[name=client_id]').val($(item.html).data('id'));
+            var id = $(item.html).data('id');
+            $('input[name=client_id]').val(id);
           }
         }
       });
-
-      $('.quantity').on('keyup', function(e) {
-        var v = $(this).val();
-        var min = $(this).attr('min');
-        var max = $(this).attr('max');
-        if(v !== ''){
-          if(parseInt(v) < parseInt(min)){
-            $(this).val(min);
-          }
-          if(parseInt(v) > parseInt(max)){
-            $(this).val(max);
-          }
-        }
-      });
-
-      $('#keyword').on('keyup', function() {
-        var keyword = $(this).val();
-        var post_data = {
-          'keyword' : keyword
-        };
-        if (keyword.length > 2) {
-          $.ajax({
-            url: '/manager/invoices/getProduct',
-            type:'POST',
-            data:post_data,
-            dataType:'json',
-            async:true,
-            cache:false
-          }).done(function (data) {
-            if (data['success'] === 1) {
-              $('#product-list').empty();
-              var rs = eval(data['data']);
-              for (var i=0; i<rs.length; i++) {
-                var template = '<tr id="p' + rs[i]['id'] + '">' +
-                    '<td>' + rs[i]['id'] + '</td>' +
-                    '<td class="" style="width:32px;">' +
-                    '<a href="#" class="pop">' +
-                    '<img class="img-responsive" src="/uploads/user/' + (rs[i]['id']).toString().padStart(7,0) + '/product/' + rs[i]['id'] + '/' + rs[i]['image'] + '" />' +
-                    '</a>' +
-                    '</td>' +
-                    '<td>'+rs[i]['name']+'</td>' +
-                    '<td class="text-right">' +
-                    '<input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price" value="'+rs[i]['price']+'" />' +
-                    '</td>' +
-                    '<td class="text-right">' +
-                    '<input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity" min="1" max="'+rs[i]['quantity']+'" value="1" />' +
-                    '</td>' +
-                    '<td class="text-center">'+rs[i]['warehouse']+'</td>' +
-                    '<td class="text-center">' +
-                    '<a class="addCart" href="#" data-id="'+rs[i]['id']+'" data-name="'+rs[i]['name']+'" data-whid="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>' +
-                    '</td>' +
-                    '</tr>';
-                $('#product-list').append(template);
-              }
-              $('.quantity').on('keyup', function(e) {
-                var v = $(this).val();
-                var min = $(this).attr('min');
-                var max = $(this).attr('max');
-                if(v !== ''){
-                  if(parseInt(v) < parseInt(min)){
-                    $(this).val(min);
-                  }
-                  if(parseInt(v) > parseInt(max)){
-                    $(this).val(max);
-                  }
-                }
-              });
-              $('.addCart').on('click', function() {
-                var tr = $(this).parent().parent().clone();
-                $('#cart-list').append(tr);
-                $('a.addCart i',tr).removeClass('fa-plus-circle text-blue').addClass('fa-minus-circle text-red');
-                $('a.addCart',tr).removeClass('addCart').addClass('subCart');
-                // update name
-                $('#total_price').val(counter());
-                //
-                $('.subCart').on('click', function() {
-                  var tr = $(this).parent().parent().remove();
-                  // update name
-                  $('#total_price').val(counter());
-                });
-              });
-            }
-          });
-        }
-      });
-
-      function counter() {
-        var total_price = 0;
-        $('#cart-list tr').each(function() {
-          var price = $('.price', this).val();
-          var qty   = $('.quantity', this).val();
-          total_price += price * qty;
-        });
-        return total_price;
-      }
 
     });
   </script>

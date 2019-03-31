@@ -9,6 +9,7 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="actions actions-3">
           </colgroup>
           <thead>
@@ -17,6 +18,7 @@
           <th></th>
           <th>{{ l10n.__('Name', 'product') }}</th>
           <th>{{ l10n.__('Price (&#8363;)', 'product') }}</th>
+          <th>{{ l10n.__('WS Price (&#8363;)', 'product') }}</th>
           <th>{{ l10n.__('Quantity', 'product') }}</th>
           <th>{{ l10n.__('Category', 'product') }}</th>
           <th>{{ l10n.__('Brand', 'product') }}</th>
@@ -31,12 +33,13 @@
           <td>{{ product.id|e }}</td>
           {#<td class="" style="width:32px;">{{ image('manager/products/image/'~product.id,'class':'img-responsive') }}</td>#}
           <td class="" style="width:32px;">
-            <a href="#" class="pop">
-              <img class="img-responsive" src="/uploads/user/<?php echo str_pad($identity['id'],7,'0',STR_PAD_LEFT); ?>/product/{{ product.id }}/{{ product.image }}" />
+            <a href="javascript:void(0)" class="pop">
+              <img class="img-responsive" src="/uploads/user/{{ utility.str_pad(product.user_id) }}/product/{{ utility.str_pad(product.id) }}/{{ product.image }}" />
             </a>
           </td>
           <td class="width-m">{{ product.name|e }}</td>
           <td class="text-right price">{{ product.price|number_format }}</td>
+          <td class="text-right price">{{ product.wholesale_price|number_format }}</td>
           <td class="text-right quantity">{{ product.quantity }}</td>
           <td class="text-center">{{ product.category.name|e }}</td>
           <td class="text-center">{{ product.brand.name|e }}</td>

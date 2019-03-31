@@ -51,6 +51,12 @@ class InvoiceDetail extends ModelBase implements ModelInterface
    */
   public $product_id;
   /**
+   * id of warehouse_id.
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $warehouse_id;
+  /**
    * client price
    * @var string
    * @Column(type="float", nullable=false)
@@ -93,6 +99,7 @@ class InvoiceDetail extends ModelBase implements ModelInterface
       'client_id'   => 'client_id',
       'invoice_id'  => 'invoice_id',
       'product_id'  => 'product_id',
+      'warehouse_id'  => 'warehouse_id',
       'price'       => 'price',
       'quantity'    => 'quantity',
       'remarks'     => 'remarks',
@@ -142,6 +149,9 @@ class InvoiceDetail extends ModelBase implements ModelInterface
     ]);
     $this->belongsTo('product_id', Product::class, 'id', [
       'alias' => 'product'
+    ]);
+    $this->belongsTo('warehouse_id', Warehouse::class, 'id', [
+      'alias' => 'warehouse'
     ]);
     /* configure model behaviours. */
     $this->addBehavior(

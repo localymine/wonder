@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -68,6 +69,16 @@
           <div class="col-xs-12 col-sm-4">
             <div class="input-group">
               <?php echo $this->tag->textField(array('price', 'class' => 'form-control', 'value' => $product->price)); ?>
+              <span class="input-group-addon">&#8363;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="wholesale_price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Wholesale Price'); ?></label>
+          <div class="col-xs-12 col-sm-4">
+            <div class="input-group">
+              <?php echo $this->tag->textField(array('wholesale_price', 'class' => 'form-control', 'value' => $product->wholesale_price)); ?>
               <span class="input-group-addon">&#8363;</span>
             </div>
           </div>

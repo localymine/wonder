@@ -8,16 +8,14 @@
           <col>
           <col>
           <col>
-          <col>
           <col class="strstatus">
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th><?php echo $this->l10n->__('ID', 'invoice'); ?></th>
-          <th><?php echo $this->l10n->__('Name', 'invoice'); ?></th>
-          <th><?php echo $this->l10n->__('Total Price(¥)', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Client', 'invoice'); ?></th>
+          <th><?php echo $this->l10n->__('Total Price(¥)', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Status', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Disabled', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Date', 'invoice'); ?></th>
@@ -30,9 +28,8 @@
 
           <tr>
           <td><?php echo $this->escaper->escapeHtml($invoice->id); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($invoice->name); ?></td>
-          <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
+          <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
           <td><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></td>
 <?php if ($invoice->disabled == 1) { ?>
           <td align="center"><i class="fa fa-ban text-danger" aria-hidden="true"></i></td>

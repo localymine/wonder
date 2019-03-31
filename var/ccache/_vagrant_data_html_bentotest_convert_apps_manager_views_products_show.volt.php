@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -69,6 +70,10 @@
                 <td class="text-right"><?php echo number_format($product->price); ?> (&#8363;)</td>
               </tr>
               <tr>
+                <th><?php echo $this->l10n->_('Wholesale Price'); ?></th>
+                <td class="text-right"><?php echo number_format($product->wholesale_price); ?> (&#8363;)</td>
+              </tr>
+              <tr>
                 <th><?php echo $this->l10n->_('Quantity'); ?></th>
                 <td class="text-right"><?php echo $product->quantity; ?></td>
               </tr>
@@ -109,7 +114,7 @@
               </tr>
               <tr>
                 <th><?php echo $this->l10n->_('Remarks'); ?></th>
-                <td><?php echo $this->escaper->escapeHtml($product->remarks); ?></td>
+                <td><?php echo nl2br($product->remarks); ?></td>
               </tr>
               <tr>
                 <th><?php echo $this->l10n->_('Disabled'); ?></th>

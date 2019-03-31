@@ -2,6 +2,7 @@
 
 namespace General\Core\Manager;
 
+use General\Core\Util\Utility;
 use Phalcon\DiInterface;
 use Phalcon\Loader;
 use Phalcon\Mvc\ModuleDefinitionInterface;
@@ -146,6 +147,10 @@ class Module implements ModuleDefinitionInterface
       $security = new Security();
       $security->setWorkFactor(12);
       return $security;
+    });
+
+    $di->set('utility', function() {
+      return new Utility();
     });
 
   }

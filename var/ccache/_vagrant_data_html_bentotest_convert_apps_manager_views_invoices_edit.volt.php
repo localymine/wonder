@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -57,44 +58,17 @@
       <div class="box-body">
 
         <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
-          <div class="col-xs-12 col-sm-3">
-            <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $invoice->client_id)); ?>
-
+          <label for="id" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('ID'); ?></label>
+          <div class="col-xs-12 col-sm-2">
+            <?php echo $this->tag->textField(array('id', 'class' => 'form-control text-right', 'readonly' => true, 'value' => $invoice->id)); ?>
           </div>
         </div>
 
         <div class="form-group required">
-          <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Invoice Name'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('name', 'class' => 'form-control', 'value' => $invoice->name)); ?>
-
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('client', $eclients, 'using' => array('id', 'name'), 'name' => 'client_id', 'class' => 'form-control selectpicker show-tick', 'disabled' => true, 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $invoice->client_id)); ?>
           </div>
-        </div>
-
-        <div class="form-group">
-          <label for="price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Price'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('price', 'class' => 'form-control', 'value' => $invoice->price)); ?>
-            <span class="currency">¥</span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="image" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Upload Bill'); ?></label>
-          <div class="col-xs-6 col-sm-3">
-            <?php echo $this->tag->fileField(array('image', 'class' => 'form-control')); ?>
-          </div>
-          <?php if ($image == '') { ?>
-            <div class="col-xs-6 col-sm-6">
-              <?php echo $this->tag->image(array('manager/invoices/image/' . $invoice->id, 'class' => 'img-thumbnail', 'style' => 'max-width:200px')); ?>
-
-              <button type="button" class="btn btn-danger btn-delete btn-xs" data-type="1">
-                <i class="fa fa-close"></i> <?php echo $this->l10n->_('Delete'); ?>
-
-              </button>
-            </div>
-          <?php } ?>
         </div>
 
         <div class="form-group required">
@@ -131,6 +105,64 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="total_price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Total Price'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+              <?php echo $this->tag->textField(array('total_price', 'class' => 'form-control text-right', 'readonly' => true, $invoice->price)); ?>
+              <span class="input-group-addon">&#8363;</span>
+            </div>
+            <a class="text-black" href="#" data-target="#products-dialog" data-toggle="modal"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add products'); ?></a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-12">
+            <table class="table table-responsive">
+              <thead>
+              <tr>
+                <th><?php echo $this->l10n->__('ID'); ?></th>
+                <th></th>
+                <th><?php echo $this->l10n->_('Name'); ?></th>
+                <th><?php echo $this->l10n->_('(&#8363;)'); ?></th>
+                <th><?php echo $this->l10n->_('Qty.'); ?></th>
+                <th><?php echo $this->l10n->_('W.'); ?></th>
+                <th><i class="fa fa-cogs"></i></th>
+              </tr>
+              </thead>
+              <tbody id="cart-list">
+              <?php foreach ($invoice_detail as $detail) { ?>
+                <tr id="p' + rs[i]['id'] + '">
+                  <td><?php echo $detail->id; ?></td>
+                  <td class="" style="width:32px;">
+                    <a href="javascript:voide(0)" class="pop">
+                      
+                    </a>
+                  </td>
+                  <td><?php echo $detail->product->name; ?></td>
+                  <td class="text-right">
+                    <input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price"
+                           value="<?php echo $detail->price; ?>"/>
+                  </td>
+                  <td class="text-right">
+                    <input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity"
+                           min="1" max="<?php echo $this->utility->getQuantity($invoice->user_id, $detail->product_id, $detail->warehouse->id); ?>" value="<?php echo $detail->quantity; ?>"/>
+                  </td>
+                  <td class="text-center"><?php echo $detail->warehouse->name; ?></td>
+                  <td class="text-center">
+                    <a class="addCart" href="javascript:void(0)" data-id="'+rs[i]['id']+'" data-name="'+rs[i]['name']+'"
+                       data-whid="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>
+                    <input type="hidden" class="warehouse" name="pd['+i+'][warehouse]"
+                           value="<?php echo $detail->warehouse->id; ?>"/>
+                    <input type="hidden" class="product" name="pd['+i+'][product]" value="<?php echo $detail->product_id; ?>"/>
+                  </td>
+                </tr>
+              <?php } ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="box-footer">
@@ -145,6 +177,9 @@
       <?php echo $this->tag->endForm(); ?>
 
     </div>
+
+    <?php echo $this->partial('partials/modal/product-list'); ?>
+
   </section>
 
 </div>
@@ -158,6 +193,7 @@
 
 <?php echo $this->partial('partials/javascripts'); ?>
 
+  <?php echo $this->tag->javascriptInclude('js/invoice.js'); ?>
   <script>
     $(function(){
       $('input[type=checkbox]').iCheck({

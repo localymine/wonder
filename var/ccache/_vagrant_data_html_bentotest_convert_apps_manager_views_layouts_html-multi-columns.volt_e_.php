@@ -1,4 +1,4 @@
-a:7:{i:0;s:971:"<?php echo $this->tag->getDoctype(); ?>
+a:7:{i:0;s:926:"<?php echo $this->tag->getDoctype(); ?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -15,7 +15,8 @@ a:7:{i:0;s:971:"<?php echo $this->tag->getDoctype(); ?>
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 

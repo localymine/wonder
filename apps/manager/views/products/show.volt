@@ -43,6 +43,10 @@
                 <td class="text-right">{{ product.price|number_format }} (&#8363;)</td>
               </tr>
               <tr>
+                <th>{{ l10n._('Wholesale Price') }}</th>
+                <td class="text-right">{{ product.wholesale_price|number_format }} (&#8363;)</td>
+              </tr>
+              <tr>
                 <th>{{ l10n._('Quantity') }}</th>
                 <td class="text-right">{{ product.quantity }}</td>
               </tr>
@@ -83,7 +87,7 @@
               </tr>
               <tr>
                 <th>{{ l10n._('Remarks') }}</th>
-                <td>{{ product.remarks|e }}</td>
+                <td>{{ product.remarks|nl2br }}</td>
               </tr>
               <tr>
                 <th>{{ l10n._('Disabled') }}</th>

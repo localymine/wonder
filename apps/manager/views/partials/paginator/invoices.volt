@@ -8,16 +8,14 @@
           <col>
           <col>
           <col>
-          <col>
           <col class="strstatus">
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th>{{ l10n.__('ID', 'invoice') }}</th>
-          <th>{{ l10n.__('Name', 'invoice') }}</th>
-          <th>{{ l10n.__('Total Price(¥)', 'invoice') }}</th>
           <th>{{ l10n.__('Client', 'invoice') }}</th>
+          <th>{{ l10n.__('Total Price(¥)', 'invoice') }}</th>
           <th>{{ l10n.__('Status', 'invoice') }}</th>
           <th>{{ l10n.__('Disabled', 'invoice') }}</th>
           <th>{{ l10n.__('Date', 'invoice') }}</th>
@@ -30,9 +28,8 @@
 
           <tr>
           <td>{{ invoice.id|e }}</td>
-          <td>{{ invoice.name|e }}</td>
-          <td class="text-right">{{ invoice.total_price|number_format }}</td>
           <td>{{ invoice.client.name|e }}</td>
+          <td class="text-right">{{ invoice.total_price|number_format }}</td>
           <td>{{ status[invoice.status]|e }}</td>
 {% if invoice.disabled == 1 %}
           <td align="center"><i class="fa fa-ban text-danger" aria-hidden="true"></i></td>

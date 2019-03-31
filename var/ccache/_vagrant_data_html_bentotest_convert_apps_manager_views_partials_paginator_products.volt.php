@@ -9,6 +9,7 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="actions actions-3">
           </colgroup>
           <thead>
@@ -17,6 +18,7 @@
           <th></th>
           <th><?php echo $this->l10n->__('Name', 'product'); ?></th>
           <th><?php echo $this->l10n->__('Price (&#8363;)', 'product'); ?></th>
+          <th><?php echo $this->l10n->__('WS Price (&#8363;)', 'product'); ?></th>
           <th><?php echo $this->l10n->__('Quantity', 'product'); ?></th>
           <th><?php echo $this->l10n->__('Category', 'product'); ?></th>
           <th><?php echo $this->l10n->__('Brand', 'product'); ?></th>
@@ -31,12 +33,13 @@
           <td><?php echo $this->escaper->escapeHtml($product->id); ?></td>
           
           <td class="" style="width:32px;">
-            <a href="#" class="pop">
-              <img class="img-responsive" src="/uploads/user/<?php echo str_pad($identity['id'],7,'0',STR_PAD_LEFT); ?>/product/<?php echo $product->id; ?>/<?php echo $product->image; ?>" />
+            <a href="javascript:void(0)" class="pop">
+              <img class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($product->user_id); ?>/product/<?php echo $this->utility->str_pad($product->id); ?>/<?php echo $product->image; ?>" />
             </a>
           </td>
           <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?></td>
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
+          <td class="text-right price"><?php echo number_format($product->wholesale_price); ?></td>
           <td class="text-right quantity"><?php echo $product->quantity; ?></td>
           <td class="text-center"><?php echo $this->escaper->escapeHtml($product->category->name); ?></td>
           <td class="text-center"><?php echo $this->escaper->escapeHtml($product->brand->name); ?></td>
