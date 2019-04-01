@@ -104,32 +104,34 @@
               </tr>
               </thead>
               <tbody id="cart-list">
+              {% set i = 1 %}
               {% for detail in invoice_detail %}
-                <tr id="p' + rs[i]['id'] + '">
-                  <td>{{ detail.id }}</td>
+                <tr>
+                  <td class="no">{{ i }}</td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
-                      {#<img class="img-responsive" src="/uploads/user/' + (detail.id).toString().padStart(7,0) + '/product/' + detail.id + '/' + rs[i]['image'] + '" />#}
+                      <img class="img-responsive" src="/uploads/user/{{ utility.str_pad(invoice.user_id) }}/product/{{ utility.str_pad(detail.product_id) }}/{{ detail.product.image }}" />
                     </a>
                   </td>
                   <td>{{ detail.product.name }}</td>
                   <td class="text-right">
-                    <input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price"
+                    <input type="text" name="pd[{{ i }}][price]" class="form-control text-right no-border price"
                            value="{{ detail.price }}"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="pd{{ i }}[quantity]" class="form-control text-right no-border quantity"
                            min="1" max="{{ utility.getQuantity(invoice.user_id, detail.product_id, detail.warehouse.id) }}" value="{{ detail.quantity }}"/>
                   </td>
                   <td class="text-center">{{ detail.warehouse.name }}</td>
                   <td class="text-center">
-                    <a class="addCart" href="javascript:void(0)" data-id="'+rs[i]['id']+'" data-name="'+rs[i]['name']+'"
-                       data-whid="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>
-                    <input type="hidden" class="warehouse" name="pd['+i+'][warehouse]"
+                    <a class="addCart" href="javascript:void(0)" data-id="rs[{{ i }}[id]" data-name="rs[{{ i }}][name]"
+                       data-whid="rs[{{ i }}][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
+                    <input type="hidden" class="warehouse" name="pd[{{ i }}][warehouse]"
                            value="{{ detail.warehouse.id }}"/>
-                    <input type="hidden" class="product" name="pd['+i+'][product]" value="{{ detail.product_id }}"/>
+                    <input type="hidden" class="product" name="pd[{{ i }}][product]" value="{{ detail.product_id }}"/>
                   </td>
                 </tr>
+                {% set i = i + 1 %}
               {% endfor %}
               </tbody>
             </table>
@@ -152,6 +154,7 @@
     </div>
 
     {{ partial('partials/modal/product-list') }}
+    {{ partial('partials/modal/image-enlarge') }}
 
   </section>
 {% endblock %}

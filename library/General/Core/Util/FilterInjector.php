@@ -485,6 +485,7 @@ class FilterInjector extends Component
 
     $criteria->columns(
       [
+        '['.$Model.'].user_id',
         '['.$Model.'].id',
         '['.$Model.'].name',
         'price',

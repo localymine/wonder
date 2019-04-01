@@ -131,32 +131,34 @@
               </tr>
               </thead>
               <tbody id="cart-list">
+              <?php $i = 1; ?>
               <?php foreach ($invoice_detail as $detail) { ?>
-                <tr id="p' + rs[i]['id'] + '">
-                  <td><?php echo $detail->id; ?></td>
+                <tr>
+                  <td class="no"><?php echo $i; ?></td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
-                      
+                      <img class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($invoice->user_id); ?>/product/<?php echo $this->utility->str_pad($detail->product_id); ?>/<?php echo $detail->product->image; ?>" />
                     </a>
                   </td>
                   <td><?php echo $detail->product->name; ?></td>
                   <td class="text-right">
-                    <input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price"
+                    <input type="text" name="pd[<?php echo $i; ?>][price]" class="form-control text-right no-border price"
                            value="<?php echo $detail->price; ?>"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="pd<?php echo $i; ?>[quantity]" class="form-control text-right no-border quantity"
                            min="1" max="<?php echo $this->utility->getQuantity($invoice->user_id, $detail->product_id, $detail->warehouse->id); ?>" value="<?php echo $detail->quantity; ?>"/>
                   </td>
                   <td class="text-center"><?php echo $detail->warehouse->name; ?></td>
                   <td class="text-center">
-                    <a class="addCart" href="javascript:void(0)" data-id="'+rs[i]['id']+'" data-name="'+rs[i]['name']+'"
-                       data-whid="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>
-                    <input type="hidden" class="warehouse" name="pd['+i+'][warehouse]"
+                    <a class="addCart" href="javascript:void(0)" data-id="rs[<?php echo $i; ?>[id]" data-name="rs[<?php echo $i; ?>][name]"
+                       data-whid="rs[<?php echo $i; ?>][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
+                    <input type="hidden" class="warehouse" name="pd[<?php echo $i; ?>][warehouse]"
                            value="<?php echo $detail->warehouse->id; ?>"/>
-                    <input type="hidden" class="product" name="pd['+i+'][product]" value="<?php echo $detail->product_id; ?>"/>
+                    <input type="hidden" class="product" name="pd[<?php echo $i; ?>][product]" value="<?php echo $detail->product_id; ?>"/>
                   </td>
                 </tr>
+                <?php $i = $i + 1; ?>
               <?php } ?>
               </tbody>
             </table>
@@ -179,6 +181,7 @@
     </div>
 
     <?php echo $this->partial('partials/modal/product-list'); ?>
+    <?php echo $this->partial('partials/modal/image-enlarge'); ?>
 
   </section>
 

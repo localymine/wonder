@@ -31,11 +31,13 @@ $(function () {
           $('#product-list').empty();
           var rs = eval(data['data']);
           for (var i=0; i<rs.length; i++) {
-            var template = '<tr id="p' + rs[i]['id'] + '">' +
-              '<td>' + rs[i]['id'] + '</td>' +
+            var p1 = (rs[i]['user_id']).toString().padStart(7,0);
+            var p2 = (rs[i]['id']).toString().padStart(7,0);
+            var template = '<tr>' +
+              '<td class="no">' + (i + 1) + '</td>' +
               '<td class="" style="width:32px;">' +
-              '<a href="javascript:voide(0)" class="pop">' +
-              //                    '<img class="img-responsive" src="/uploads/user/' + (rs[i]['id']).toString().padStart(7,0) + '/product/' + rs[i]['id'] + '/' + rs[i]['image'] + '" />' +
+              '<a href="javascript:void(0)" class="pop">' +
+              '<img class="img-responsive" src="/uploads/user/' + p1 + '/product/' + p2 + '/' + rs[i]['image'] + '" />' +
               '</a>' +
               '</td>' +
               '<td>'+rs[i]['name']+'</td>' +
@@ -104,6 +106,7 @@ $(function () {
 
   function updateIds() {
     $('#cart-list tr').each(function(index) {
+      $('.no', this).html(index + 1);
       $('.product', this).attr('name','pd['+index+'][product]');
       $('.warehouse', this).attr('name','pd['+index+'][warehouse]');
       $('.price', this).attr('name','pd['+index+'][price]');
@@ -112,7 +115,7 @@ $(function () {
   }
 
 
-  $('.pop').on('click', function() {
+  $('.pop').live('click', function() {
     $('.imagepreview').attr('src', $(this).find('img').attr('src'));
     $('#imagemodal').modal('show');
   });
