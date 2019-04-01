@@ -109,7 +109,7 @@
           <label for="total_price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Total Price'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <div class="input-group">
-              <?php echo $this->tag->textField(array('total_price', 'class' => 'form-control text-right', 'readonly' => true, $invoice->price)); ?>
+              <?php echo $this->tag->textField(array('total_price', 'class' => 'form-control text-right', 'readonly' => true, 'value' => $invoice->total_price)); ?>
               <span class="input-group-addon">&#8363;</span>
             </div>
             <a class="text-black" href="#" data-target="#products-dialog" data-toggle="modal"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add products'); ?></a>
@@ -142,20 +142,21 @@
                   </td>
                   <td><?php echo $detail->product->name; ?></td>
                   <td class="text-right">
-                    <input type="text" name="pd[<?php echo $i; ?>][price]" class="form-control text-right no-border price"
+                    <input type="text" name="epd[<?php echo $i; ?>][price]" class="form-control text-right no-border price"
                            value="<?php echo $detail->price; ?>"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="pd<?php echo $i; ?>[quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="epd<?php echo $i; ?>[quantity]" class="form-control text-right no-border quantity"
                            min="1" max="<?php echo $this->utility->getQuantity($invoice->user_id, $detail->product_id, $detail->warehouse->id); ?>" value="<?php echo $detail->quantity; ?>"/>
                   </td>
                   <td class="text-center"><?php echo $detail->warehouse->name; ?></td>
                   <td class="text-center">
-                    <a class="addCart" href="javascript:void(0)" data-id="rs[<?php echo $i; ?>[id]" data-name="rs[<?php echo $i; ?>][name]"
+                    <a class="subCart" href="javascript:void(0)" data-id="rs[<?php echo $i; ?>[id]" data-name="rs[<?php echo $i; ?>][name]"
                        data-whid="rs[<?php echo $i; ?>][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
-                    <input type="hidden" class="warehouse" name="pd[<?php echo $i; ?>][warehouse]"
+                    <input type="hidden" name="epd[<?php echo $i; ?>][id]" value="<?php echo $detail->id; ?>"/>
+                    <input type="hidden" class="warehouse" name="epd[<?php echo $i; ?>][warehouse]"
                            value="<?php echo $detail->warehouse->id; ?>"/>
-                    <input type="hidden" class="product" name="pd[<?php echo $i; ?>][product]" value="<?php echo $detail->product_id; ?>"/>
+                    <input type="hidden" class="product" name="epd[<?php echo $i; ?>][product]" value="<?php echo $detail->product_id; ?>"/>
                   </td>
                 </tr>
                 <?php $i = $i + 1; ?>

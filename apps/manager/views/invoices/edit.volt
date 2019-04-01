@@ -82,7 +82,7 @@
           <label for="total_price" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Total Price') }}</label>
           <div class="col-xs-12 col-sm-3">
             <div class="input-group">
-              {{ text_field('total_price','class':'form-control text-right','readonly':true, invoice.price) }}
+              {{ text_field('total_price','class':'form-control text-right','readonly':true, 'value':invoice.total_price) }}
               <span class="input-group-addon">&#8363;</span>
             </div>
             <a class="text-black" href="#" data-target="#products-dialog" data-toggle="modal"><i class="fa fa-plus-circle"></i> {{ l10n._('Add products') }}</a>
@@ -115,20 +115,21 @@
                   </td>
                   <td>{{ detail.product.name }}</td>
                   <td class="text-right">
-                    <input type="text" name="pd[{{ i }}][price]" class="form-control text-right no-border price"
+                    <input type="text" name="epd[{{ i }}][price]" class="form-control text-right no-border price"
                            value="{{ detail.price }}"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="pd{{ i }}[quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="epd{{ i }}[quantity]" class="form-control text-right no-border quantity"
                            min="1" max="{{ utility.getQuantity(invoice.user_id, detail.product_id, detail.warehouse.id) }}" value="{{ detail.quantity }}"/>
                   </td>
                   <td class="text-center">{{ detail.warehouse.name }}</td>
                   <td class="text-center">
-                    <a class="addCart" href="javascript:void(0)" data-id="rs[{{ i }}[id]" data-name="rs[{{ i }}][name]"
+                    <a class="subCart" href="javascript:void(0)" data-id="rs[{{ i }}[id]" data-name="rs[{{ i }}][name]"
                        data-whid="rs[{{ i }}][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
-                    <input type="hidden" class="warehouse" name="pd[{{ i }}][warehouse]"
+                    <input type="hidden" name="epd[{{ i }}][id]" value="{{ detail.id }}"/>
+                    <input type="hidden" class="warehouse" name="epd[{{ i }}][warehouse]"
                            value="{{ detail.warehouse.id }}"/>
-                    <input type="hidden" class="product" name="pd[{{ i }}][product]" value="{{ detail.product_id }}"/>
+                    <input type="hidden" class="product" name="epd[{{ i }}][product]" value="{{ detail.product_id }}"/>
                   </td>
                 </tr>
                 {% set i = i + 1 %}

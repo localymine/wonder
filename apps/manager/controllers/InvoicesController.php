@@ -220,6 +220,12 @@ class InvoicesController extends ControllerBase
       if (!$this->request->hasPost('disabled')) {
         $invoice->disabled = 0;
       }
+      //
+      $epds = $post['epd'];    // edit existing products
+      echo '<pre>';
+      print_r($epds);
+      exit;
+
 
       /* test whether the current user can edit this Client. */
       if (!$this->qi->is_editable('Invoice', $invoice)) {

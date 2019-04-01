@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cedb7685-348b-43c8-beaa-b3893af76067" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/manager/views/partials/modal/image-enlarge.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/invoices/edit.volt" afterPath="$PROJECT_DIR$/apps/manager/views/invoices/edit.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/products/index.volt" afterPath="$PROJECT_DIR$/apps/manager/views/products/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" afterPath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/invoice.js" afterPath="$PROJECT_DIR$/public/js/invoice.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_invoices_edit.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_invoices_edit.volt.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/log/exeption.log" afterPath="$PROJECT_DIR$/var/log/exeption.log" />
     </list>
@@ -21,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="invoice.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="invoice.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/invoice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="117" column="16" lean-forward="false" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="16" />
+            <state relative-caret-position="137">
+              <caret line="98" column="40" lean-forward="true" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
               <folding>
                 <marker date="1554100551631" expanded="true" signature="1104:1115" ph="..." />
               </folding>
@@ -33,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.volt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.volt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/manager/views/invoices/edit.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="156" column="49" lean-forward="false" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="49" />
+            <state relative-caret-position="443">
+              <caret line="128" column="84" lean-forward="false" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -83,21 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/manager/views/partials/paginator/inventory.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="InvoicesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="353" column="47" lean-forward="false" selection-start-line="353" selection-start-column="47" selection-end-line="353" selection-end-column="47" />
+            <state relative-caret-position="381">
+              <caret line="224" column="19" lean-forward="false" selection-start-line="224" selection-start-column="19" selection-end-line="224" selection-end-column="19" />
               <folding>
                 <element signature="e#52#91#0#PHP" expanded="true" />
               </folding>
@@ -258,7 +244,6 @@
         <option value="$PROJECT_DIR$/apps/manager/views/partials/paginator/inventory.volt" />
         <option value="$PROJECT_DIR$/apps/manager/models/Utility.php" />
         <option value="$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php" />
-        <option value="$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php" />
         <option value="$PROJECT_DIR$/apps/manager/Module.php" />
         <option value="$PROJECT_DIR$/apps/manager/models/InvoiceDetail.php" />
         <option value="$PROJECT_DIR$/library/General/Core/Util/Utility.php" />
@@ -268,8 +253,9 @@
         <option value="$PROJECT_DIR$/var/log/exeption.log" />
         <option value="$PROJECT_DIR$/apps/manager/views/partials/modal/image-enlarge.volt" />
         <option value="$PROJECT_DIR$/apps/manager/views/products/index.volt" />
-        <option value="$PROJECT_DIR$/apps/manager/views/invoices/edit.volt" />
         <option value="$PROJECT_DIR$/public/js/invoice.js" />
+        <option value="$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php" />
+        <option value="$PROJECT_DIR$/apps/manager/views/invoices/edit.volt" />
       </list>
     </option>
   </component>
@@ -678,12 +664,12 @@
       <workItem from="1553739156522" duration="21223000" />
       <workItem from="1553822273755" duration="18770000" />
       <workItem from="1553875854511" duration="29390000" />
-      <workItem from="1554081307052" duration="9020000" />
+      <workItem from="1554081307052" duration="12108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="558204000" />
+    <option name="totallyTimeSpent" value="561292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -749,6 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -939,13 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/models/Invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="143" column="31" lean-forward="false" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1016,7 +996,7 @@
         <state relative-caret-position="544">
           <caret line="41" column="60" lean-forward="false" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
           <folding>
-            <element signature="e#75#123#0#PHP" expanded="true" />
+            <element signature="e#75#123#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1060,16 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="353" column="47" lean-forward="false" selection-start-line="353" selection-start-column="47" selection-end-line="353" selection-end-column="47" />
-          <folding>
-            <element signature="e#52#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/views/invoices/new.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1094,21 +1064,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/invoices/edit.volt">
+    <entry file="file://$PROJECT_DIR$/public/js/invoice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="156" column="49" lean-forward="false" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="49" />
+        <state relative-caret-position="137">
+          <caret line="98" column="40" lean-forward="true" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+          <folding>
+            <marker date="1554100551631" expanded="true" signature="1104:1115" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/models/Invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="145" column="30" lean-forward="false" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/invoice.js">
+    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/InvoicesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="117" column="16" lean-forward="false" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="16" />
+        <state relative-caret-position="381">
+          <caret line="224" column="19" lean-forward="false" selection-start-line="224" selection-start-column="19" selection-end-line="224" selection-end-column="19" />
           <folding>
-            <marker date="1554100551631" expanded="true" signature="1104:1115" ph="..." />
+            <element signature="e#52#91#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/views/invoices/edit.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="128" column="84" lean-forward="false" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
