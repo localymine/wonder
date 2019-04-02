@@ -104,10 +104,10 @@
               </tr>
               </thead>
               <tbody id="cart-list">
-              {% set i = 1 %}
+              {% set i = 0 %}
               {% for detail in invoice_detail %}
                 <tr>
-                  <td class="no">{{ i }}</td>
+                  <td class="no">{{ i + 1 }}</td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
                       <img class="img-responsive" src="/uploads/user/{{ utility.str_pad(invoice.user_id) }}/product/{{ utility.str_pad(detail.product_id) }}/{{ detail.product.image }}" />
@@ -119,7 +119,7 @@
                            value="{{ detail.price }}"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="epd{{ i }}[quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="epd[{{ i }}][quantity]" class="form-control text-right no-border quantity"
                            min="1" max="{{ utility.getQuantity(invoice.user_id, detail.product_id, detail.warehouse.id) }}" value="{{ detail.quantity }}"/>
                   </td>
                   <td class="text-center">{{ detail.warehouse.name }}</td>

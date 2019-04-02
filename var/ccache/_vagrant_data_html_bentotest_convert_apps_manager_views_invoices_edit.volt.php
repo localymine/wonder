@@ -131,10 +131,10 @@
               </tr>
               </thead>
               <tbody id="cart-list">
-              <?php $i = 1; ?>
+              <?php $i = 0; ?>
               <?php foreach ($invoice_detail as $detail) { ?>
                 <tr>
-                  <td class="no"><?php echo $i; ?></td>
+                  <td class="no"><?php echo $i + 1; ?></td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
                       <img class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($invoice->user_id); ?>/product/<?php echo $this->utility->str_pad($detail->product_id); ?>/<?php echo $detail->product->image; ?>" />
@@ -146,7 +146,7 @@
                            value="<?php echo $detail->price; ?>"/>
                   </td>
                   <td class="text-right">
-                    <input type="number" name="epd<?php echo $i; ?>[quantity]" class="form-control text-right no-border quantity"
+                    <input type="number" name="epd[<?php echo $i; ?>][quantity]" class="form-control text-right no-border quantity"
                            min="1" max="<?php echo $this->utility->getQuantity($invoice->user_id, $detail->product_id, $detail->warehouse->id); ?>" value="<?php echo $detail->quantity; ?>"/>
                   </td>
                   <td class="text-center"><?php echo $detail->warehouse->name; ?></td>

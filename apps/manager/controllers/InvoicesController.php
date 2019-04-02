@@ -7,6 +7,7 @@ use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\InvoiceDetail;
 use General\Core\Manager\Models\OtherCost;
 use General\Core\Manager\Models\Product;
+use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Util\FilterInjector;
 
@@ -118,19 +119,7 @@ class InvoicesController extends ControllerBase
       $invoice->invoicedetail = $in_detail;
 
       $product_ids = implode(',', array_unique($product_ids));
-      $sumProducts = FilterInjector::sumProducts($this->di, $product_ids);
-      foreach($sumProducts as $sp) {
-        $cond = [
-          'conditions' => 'id=:product_id: AND user_id=:user_id:',
-          'bind' => [
-            'product_id' => $sp->product_id,
-            'user_id'    => $identity['id'],
-          ]
-        ];
-        $product  = Product::findFirst($cond);
-        $product->quantity = $sp->quantity ;
-        $product->update();
-      }
+      $this->sumProducts($this->di, $identity['id'], $product_ids);
 
       /* test whether the current user can edit this Client. */
       if (!$this->qi->is_editable('Invoice', $invoice)) {
@@ -210,6 +199,7 @@ class InvoicesController extends ControllerBase
     }
 
     if ($this->security->checkToken('csrf')) {
+      $identity = $this->auth->getIdentity();
       $post = $this->request->getPost();
       $cond = [
         'conditions' => 'id=:id:',
@@ -222,6 +212,45 @@ class InvoicesController extends ControllerBase
       }
       //
       $epds = $post['epd'];    // edit existing products
+      if ($epds != null) {
+        foreach ($epds as $item) {
+          $invoie_detail = InvoiceDetail::findFirst($item['id']);
+          $cond = [
+            'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+            'bind' => [
+              'user_id'      => $identity['id'],
+              'product_id'   => $item['product'],
+              'warehouse_id' => $item['warehouse']
+            ]
+          ];
+          $proQty = ProductQuantity::findFirst($cond);
+          print_r($item['quantity']);
+          print_r($invoie_detail->quantity);
+          if ($item['quantity'] > $invoie_detail->quantity && $proQty->product_id === $invoie_detail->product_id && $proQty->warehouse_id === $invoie_detail->warehouse_id) {
+            print_r($proQty->quantity);
+            $diff = $proQty->quantity - ($item['quantity'] - $invoie_detail->quantity); // pull out from stock
+            $proQty->quantity = $diff;
+            $proQty->update();
+            //
+            $invoie_detail->quantity = $item['quantity'];
+            $invoie_detail->update();
+            //
+            $this->sumProducts($this->di, $identity['id'], $proQty->product_id);
+          } else {
+            if ($item['quantity'] < $invoie_detail->quantity && $proQty->product_id === $invoie_detail->product_id && $proQty->warehouse_id === $invoie_detail->warehouse_id) {
+              $diff = $proQty->quantity - ($invoie_detail->quantity - $item['quantity']);
+              $proQty->quantity = $diff;
+              $proQty->update();
+              //
+              $invoie_detail->quantity = $item['quantity'];
+              $invoie_detail->update();
+              //
+              $this->sumProducts($this->di, $identity['id'], $proQty->product_id);
+            }
+          }
+
+        }
+      }
       echo '<pre>';
       print_r($epds);
       exit;
@@ -261,6 +290,23 @@ class InvoicesController extends ControllerBase
       $this->flash->success($this->l10n->_('Invoice was edited successfully.'));
       $this->response->redirect('manager/invoices/show/' . $invoice->id);
       return;
+    }
+  }
+
+
+  private function sumProducts($di, $user_id, $product_ids) {
+    $sumProducts = FilterInjector::sumProducts($di, $product_ids);
+    foreach($sumProducts as $sp) {
+      $cond = [
+        'conditions' => 'id=:product_id: AND user_id=:user_id:',
+        'bind' => [
+          'product_id' => $sp->product_id,
+          'user_id'    => $user_id,
+        ]
+      ];
+      $product  = Product::findFirst($cond);
+      $product->quantity = $sp->quantity ;
+      $product->update();
     }
   }
 

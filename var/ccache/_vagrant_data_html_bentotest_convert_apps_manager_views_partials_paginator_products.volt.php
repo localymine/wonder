@@ -37,7 +37,7 @@
               <img class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($product->user_id); ?>/product/<?php echo $this->utility->str_pad($product->id); ?>/<?php echo $product->image; ?>" />
             </a>
           </td>
-          <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?></td>
+          <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?><span style="display: none;"><?php echo $product->remarks; ?></span></td>
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
           <td class="text-right price"><?php echo number_format($product->wholesale_price); ?></td>
           <td class="text-right quantity"><?php echo $product->quantity; ?></td>

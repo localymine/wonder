@@ -108,7 +108,7 @@
                 <td>
                   
                   <a href="#" class="pop">
-                    <img style="height: 150px;" class="img-responsive" src="/uploads/user/<?php echo str_pad($identity['id'],7,'0',STR_PAD_LEFT); ?>/product/<?php echo $product->id; ?>/<?php echo $product->image; ?>" />
+                    <img style="height: 150px;" class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($product->user_id); ?>/product/<?php echo $this->utility->str_pad($product->id); ?>/<?php echo $product->image; ?>" />
                   </a>
                 </td>
               </tr>

@@ -37,7 +37,7 @@
               <img class="img-responsive" src="/uploads/user/{{ utility.str_pad(product.user_id) }}/product/{{ utility.str_pad(product.id) }}/{{ product.image }}" />
             </a>
           </td>
-          <td class="width-m">{{ product.name|e }}</td>
+          <td class="width-m">{{ product.name|e }}<span style="display: none;">{{ product.remarks }}</span></td>
           <td class="text-right price">{{ product.price|number_format }}</td>
           <td class="text-right price">{{ product.wholesale_price|number_format }}</td>
           <td class="text-right quantity">{{ product.quantity }}</td>
