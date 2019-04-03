@@ -7,7 +7,6 @@
           <col>
           <col>
           <col>
-          <col>
           <col class="strstatus">
           <col class="actions actions-3">
           </colgroup>
@@ -17,7 +16,6 @@
           <th><?php echo $this->l10n->__('Client', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Total Price(¥)', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Status', 'invoice'); ?></th>
-          <th><?php echo $this->l10n->__('Disabled', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Date', 'invoice'); ?></th>
           <th><i class="fa fa-cogs"></i></th>
           </tr>
@@ -31,13 +29,14 @@
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
           <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
           <td><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></td>
-<?php if ($invoice->disabled == 1) { ?>
-          <td align="center"><i class="fa fa-ban text-danger" aria-hidden="true"></i></td>
-<?php } else { ?>
-          <td></td>
-<?php } ?>
           <td class="text-right"><?php echo $invoice->created; ?></td>
-          <td><?php echo $this->tag->linkTo(array('manager/invoices/show/' . $invoice->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
+          <td>
+
+            <button class="btn btn-xs btn-yahoo btn-print" data-id="<?php echo $invoice->id; ?>" data-target="#bill-dialog" data-toggle="modal"><i class="fa fa-image"></i></button>
+
+              
+
+              <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $invoice->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
 
               <?php echo $this->tag->linkTo(array('manager/invoices/edit/' . $invoice->id, '<i class="fa fa-pencil"></i>', 'class' => 'btn btn-xs btn-success', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Edit'))); ?>
 

@@ -5,9 +5,7 @@ namespace General\Core\Manager\Controllers;
 use General\Core\Manager\Models\Client;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\InvoiceDetail;
-use General\Core\Manager\Models\OtherCost;
 use General\Core\Manager\Models\Product;
-use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Util\FilterInjector;
 
@@ -475,6 +473,48 @@ class InvoicesController extends ControllerBase
         if ($products->count() > 0) {
           $response['data'] = $products->toArray();
           $response['success'] = 1;
+        }
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
+  }
+
+
+  public function printAction() {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $data = $this->request->getPost();
+
+        $invoice = Invoice::findFirst($data['id']);
+        if ($invoice) {
+          $invoice_detail = $invoice->getRelated('invoicedetail');
+          if ($invoice_detail->count() > 0) {
+            $response['id'] = $invoice->id;
+            $response['client'] = $invoice->client->name;
+            $response['total']  = $invoice->total_price;
+            $detail = [];
+            $qty = 0;
+            $sum = 0;
+            foreach($invoice_detail as $item) {
+              array_push($detail, [
+                'product'  => $item->product->name,
+                'price'    => $item->price,
+                'quantity' => $item->quantity,
+                'total'    => ($item->price * $item->quantity),
+              ]);
+              $qty += $item->quantity;
+              $sum += $item->price * $item->quantity;
+            }
+            $response['detail'] = $detail;
+            $response['qty'] = $qty;
+            $response['sum'] = $sum;
+            $response['success'] = 1;
+          }
         }
       }
     }

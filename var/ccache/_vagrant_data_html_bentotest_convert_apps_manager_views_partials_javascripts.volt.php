@@ -14,3 +14,4 @@
 <?php echo $this->tag->javascriptInclude('js/application.js'); ?>
 <?php echo $this->tag->javascriptInclude('plugins/datatable/datatables.min.js'); ?>
 <?php echo $this->tag->javascriptInclude('plugins/jqx/jqx-all.js'); ?>
+<?php echo $this->tag->javascriptInclude('js/html2canvas.js'); ?>

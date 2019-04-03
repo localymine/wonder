@@ -53,6 +53,7 @@
       <div class="box-body" data-csrftoken="<?php echo $this->security->getToken(); ?>">
 
         <?php echo $this->partial('partials/paginator/invoices'); ?>
+        <?php echo $this->partial('partials/modal/bill'); ?>
 
       </div>
     </div>
@@ -71,6 +72,65 @@
 <?php echo $this->partial('partials/javascripts'); ?>
 
   <?php echo $this->partial('partials/paginatorscript'); ?>
+  <script>
+    $(function(){
+      $('.btn-print').on('click', function() {
+        var post_data = {
+          'id' : $(this).data('id')
+        };
+        $.ajax({
+          url: '/manager/invoices/print',
+          type:'POST',
+          data:post_data,
+          dataType:'json',
+          async:true,
+          cache:false
+        }).done(function (data) {
+          if (data['success'] === 1) {
+            $('.tb-detail tbody').empty();
+            $('.tb-detail tfoot .qty').html('');
+            $('.tb-detail tfoot .sum').html('');
+            $('.bill-num').html(data['id']);
+            $('.client-name').html(data['client']);
+            var detail = data['detail'];
+            for (var i=0; i<detail.length; i++) {
+              var tr = '<tr>' +
+                '<td>'+detail[i]['product']+'</td>' +
+                '<td class="text-right">'+detail[i]['price']+'</td>' +
+                '<td class="text-right">'+detail[i]['quantity']+'</td>' +
+                '<td class="text-right">'+(detail[i]['total']).format()+'</td>' +
+                '</tr>';
+              $('.tb-detail tbody').append(tr);
+            }
+            $('.tb-detail tfoot .qty').html(data['qty']);
+            $('.tb-detail tfoot .sum').html((data['sum'].format()));
+            //
+            html2canvas(element, {
+              onrendered: function (canvas) {
+                $("#previewImage").empty().append(canvas);
+                getCanvas = canvas;
+              }
+            });
+          }
+        });
+      });
+      //
+    });
+
+    var element = document.getElementById('bill-holder');
+    var getCanvas;
+    $('#btn-download').on('click', function() {
+      var r = Math.random().toString(36).substring(7);
+      var imgageData = getCanvas.toDataURL('image/png');
+      var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+      $('#btn-download').attr('download', r+'.png').attr('href', newData);
+    });
+
+    Number.prototype.format = function(n, x) {
+      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+      return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+    };
+  </script>
 
 </body>
 </html>
