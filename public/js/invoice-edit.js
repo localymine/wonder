@@ -13,6 +13,26 @@ $(function () {
     }
   });
 
+  $('.subCart').on('click', function() {
+    var tr = $(this).parent().parent();
+    var inputHidden = '<div class="delDetail">' +
+      '<input type="hidden" class="id" name="dpd[][id]" value="'+$(this).data('id')+'" />' +
+      '<input type="hidden" class="product" name="dpd[][product]" value="'+$(this).data('product')+'" />' +
+      '<input type="hidden" class="warehouse" name="dpd[][warehouse]" value="'+$(this).data('warehouse')+'" />' +
+      '</div>';
+    $('#delHidden').append(inputHidden);
+    tr.remove();
+    //
+    $('.delDetail').each(function(index) {
+      $('.id', this).attr('name','dpd['+index+'][id]');
+      $('.product', this).attr('name','dpd['+index+'][product]');
+      $('.warehouse', this).attr('name','dpd['+index+'][warehouse]');
+    });
+    //
+    $('#total_price').val(counter());
+    updateIds();
+  });
+
   $('#keyword').on('keyup', function() {
     var keyword = $(this).val();
     var post_data = {
@@ -42,16 +62,16 @@ $(function () {
               '</td>' +
               '<td>'+rs[i]['name']+'</td>' +
               '<td class="text-right">' +
-              '<input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price" value="'+rs[i]['price']+'" />' +
+              '<input type="text" name="apd['+i+'][price]" class="form-control text-right no-border price" value="'+rs[i]['price']+'" />' +
               '</td>' +
               '<td class="text-right">' +
-              '<input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity" min="1" max="'+rs[i]['quantity']+'" value="1" />' +
+              '<input type="number" name="apd['+i+'][quantity]" class="form-control text-right no-border quantity" min="1" max="'+rs[i]['quantity']+'" value="1" />' +
               '</td>' +
               '<td class="text-center">'+rs[i]['warehouse']+'</td>' +
               '<td class="text-center">' +
               '<a class="addCart" href="javascript:void(0)" data-id="" data-product="'+rs[i]['id']+'" data-warehouse="'+rs[i]['warehouse_id']+'"><i class="fa text-blue fa-plus-circle"></i></a>' +
-              '<input type="hidden" class="warehouse" name="pd['+i+'][warehouse]" value="'+rs[i]['warehouse_id']+'" />' +
-              '<input type="hidden" class="product" name="pd['+i+'][product]" value="'+rs[i]['id']+'" />' +
+              '<input type="hidden" class="warehouse" name="apd['+i+'][warehouse]" value="'+rs[i]['warehouse_id']+'" />' +
+              '<input type="hidden" class="product" name="apd['+i+'][product]" value="'+rs[i]['id']+'" />' +
               '</td>' +
               '</tr>';
             $('#product-list').append(template);
@@ -78,9 +98,12 @@ $(function () {
             updateIds();
             //
             $('.subCart').on('click', function() {
-              var tr = $(this).parent().parent().remove();
+              var tr = $(this).parent().parent();
+              tr.remove();
+              //
               $('#total_price').val(counter());
               updateIds();
+
             });
             $('.quantity').on('change', function () {
               $('#total_price').val(counter());
@@ -107,10 +130,6 @@ $(function () {
   function updateIds() {
     $('#cart-list tr').each(function(index) {
       $('.no', this).html(index + 1);
-      $('.product', this).attr('name','pd['+index+'][product]');
-      $('.warehouse', this).attr('name','pd['+index+'][warehouse]');
-      $('.price', this).attr('name','pd['+index+'][price]');
-      $('.quantity', this).attr('name','pd['+index+'][quantity]');
     });
   }
 

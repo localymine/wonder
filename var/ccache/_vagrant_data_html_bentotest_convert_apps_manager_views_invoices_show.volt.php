@@ -71,7 +71,12 @@
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Total Price'); ?></th>
-              <td class="text-right"><?php echo number_format($invoice->total_price); ?> (&#8363;)</td>
+              <td class="text-right">
+                <div class="input-group">
+                  <?php echo number_format($invoice->total_price); ?>
+                  <span class="input-group-addon">&#8363;</span>
+                </div>
+              </td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Status'); ?></th>
@@ -106,27 +111,35 @@
 
         <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-12">
-            <h5 class="text-bold"><?php echo $this->l10n->_('List Products'); ?></h5>
-            
+            <h5 class="text-bold"><?php echo $this->l10n->_('Order list'); ?></h5>
+            <h4 class="text-right">
+              <div class="input-group">
+                <?php echo number_format($invoice->total_price); ?>
+                <span class="input-group-addon">&#8363;</span>
+              </div>
+            </h4>
+            <?php if (isset($invoice_details)) { ?>
             <table class="table table-bordered">
-              <colgroup>
-                <col class="col-5">
-                <col class="col-2">
-                <col class="col-1">
-                <col class="col-4">
-              </colgroup>
               <tbody>
-              
+              <?php $i = 1; ?>
+              <?php foreach ($invoice_details as $detail) { ?>
               <tr>
-                <th class="font-light"><?php echo $this->escaper->escapeHtml($product->name); ?></th>
-                <td class="text-right">(¥)<?php echo number_format($product->price); ?></td>
-                <td class="text-right"><?php echo $product->amount; ?></td>
-                <td><i><?php echo $this->escaper->escapeHtml($product->remarks); ?></i></td>
+                <td><?php echo $i; ?></td>
+                <td><?php echo $this->escaper->escapeHtml($detail->product->name); ?></td>
+                <td class="text-right"><?php echo number_format($detail->price); ?></td>
+                <td class="text-right"><span style="float:left;font-size:10px;">x</span> <?php echo $detail->quantity; ?></td>
+                <td class="text-right">
+                  <div class="input-group">
+                    <?php echo number_format(($detail->price * $detail->quantity)); ?>
+                    <span class="input-group-addon">&#8363;</span>
+                  </div>
+                </td>
               </tr>
-              
+                <?php $i = $i + 1; ?>
+              <?php } ?>
               </tbody>
             </table>
-            
+            <?php } ?>
           </div>
         </div>
 

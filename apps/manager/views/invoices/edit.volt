@@ -40,7 +40,8 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Client') }}</label>
           <div class="col-xs-12 col-sm-3">
-            {{ select('client',eclients,'using':['id','name'],'name':'client_id','class':'form-control selectpicker show-tick','disabled':true,'data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':invoice.client_id) }}
+            {{ text_field('client_name','class':'form-control text-center','readonly':true, 'value':invoice.client.name) }}
+            {{ hidden_field('client_id','value':invoice.client_id) }}
           </div>
         </div>
 
@@ -124,8 +125,8 @@
                   </td>
                   <td class="text-center">{{ detail.warehouse.name }}</td>
                   <td class="text-center">
-                    <a class="subCart" href="javascript:void(0)" data-id="rs[{{ i }}[id]" data-name="rs[{{ i }}][name]"
-                       data-whid="rs[{{ i }}][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
+                    <a class="subCart" href="javascript:void(0)" data-id="{{ detail.id }}" data-product="{{ detail.product_id }}"
+                       data-warehouse="{{ detail.warehouse.id }}"><i class="fa text-red fa-minus-circle"></i></a>
                     <input type="hidden" name="epd[{{ i }}][id]" value="{{ detail.id }}"/>
                     <input type="hidden" class="warehouse" name="epd[{{ i }}][warehouse]"
                            value="{{ detail.warehouse.id }}"/>
@@ -136,6 +137,7 @@
               {% endfor %}
               </tbody>
             </table>
+            <div id="delHidden"></div>
           </div>
         </div>
 
@@ -161,7 +163,7 @@
 {% endblock %}
 
 {% block pagescript %}
-  {{ javascript_include('js/invoice.js') }}
+  {{ javascript_include('js/invoice-edit.js') }}
   <script>
     $(function(){
       $('input[type=checkbox]').iCheck({

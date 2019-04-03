@@ -67,7 +67,8 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
           <div class="col-xs-12 col-sm-3">
-            <?php echo $this->tag->select(array('client', $eclients, 'using' => array('id', 'name'), 'name' => 'client_id', 'class' => 'form-control selectpicker show-tick', 'disabled' => true, 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $invoice->client_id)); ?>
+            <?php echo $this->tag->textField(array('client_name', 'class' => 'form-control text-center', 'readonly' => true, 'value' => $invoice->client->name)); ?>
+            <?php echo $this->tag->hiddenField(array('client_id', 'value' => $invoice->client_id)); ?>
           </div>
         </div>
 
@@ -151,8 +152,8 @@
                   </td>
                   <td class="text-center"><?php echo $detail->warehouse->name; ?></td>
                   <td class="text-center">
-                    <a class="subCart" href="javascript:void(0)" data-id="rs[<?php echo $i; ?>[id]" data-name="rs[<?php echo $i; ?>][name]"
-                       data-whid="rs[<?php echo $i; ?>][warehouse_id]"><i class="fa text-red fa-minus-circle"></i></a>
+                    <a class="subCart" href="javascript:void(0)" data-id="<?php echo $detail->id; ?>" data-product="<?php echo $detail->product_id; ?>"
+                       data-warehouse="<?php echo $detail->warehouse->id; ?>"><i class="fa text-red fa-minus-circle"></i></a>
                     <input type="hidden" name="epd[<?php echo $i; ?>][id]" value="<?php echo $detail->id; ?>"/>
                     <input type="hidden" class="warehouse" name="epd[<?php echo $i; ?>][warehouse]"
                            value="<?php echo $detail->warehouse->id; ?>"/>
@@ -163,6 +164,7 @@
               <?php } ?>
               </tbody>
             </table>
+            <div id="delHidden"></div>
           </div>
         </div>
 
@@ -197,7 +199,7 @@
 
 <?php echo $this->partial('partials/javascripts'); ?>
 
-  <?php echo $this->tag->javascriptInclude('js/invoice.js'); ?>
+  <?php echo $this->tag->javascriptInclude('js/invoice-edit.js'); ?>
   <script>
     $(function(){
       $('input[type=checkbox]').iCheck({

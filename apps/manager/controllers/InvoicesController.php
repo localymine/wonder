@@ -88,18 +88,7 @@ class InvoicesController extends ControllerBase
       $in_detail   = [];
       $pd = $post['pd'];
       foreach ($pd as $item) {
-        $cond = [
-          'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
-          'bind' => [
-            'user_id'     => $identity['id'],
-            'product_id'  => $item['product'],
-            'warehouse_id'=> $item['warehouse']
-          ]
-        ];
-        $proQty = ProductQuantity::findFirst($cond);
-        $curQty = $proQty->quantity;
-        $proQty->quantity = $curQty - $item['quantity'];
-        $proQty->update();
+        $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
         //
         $invoie_detail = new InvoiceDetail();
         $invoie_detail->client_id    = $client_id;
@@ -211,10 +200,11 @@ class InvoicesController extends ControllerBase
         $invoice->disabled = 0;
       }
       //
-      $epds = $post['epd'];    // edit existing products
+      $epds = $post['epd'];    // edit existing invoice_detail
       if ($epds != null) {
         foreach ($epds as $item) {
-          $invoie_detail = InvoiceDetail::findFirst($item['id']);
+          $invoice_detail = InvoiceDetail::findFirst($item['id']);
+          //
           $cond = [
             'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
             'bind' => [
@@ -224,26 +214,23 @@ class InvoicesController extends ControllerBase
             ]
           ];
           $proQty = ProductQuantity::findFirst($cond);
-          print_r($item['quantity']);
-          print_r($invoie_detail->quantity);
-          if ($item['quantity'] > $invoie_detail->quantity && $proQty->product_id === $invoie_detail->product_id && $proQty->warehouse_id === $invoie_detail->warehouse_id) {
-            print_r($proQty->quantity);
-            $diff = $proQty->quantity - ($item['quantity'] - $invoie_detail->quantity); // pull out from stock
-            $proQty->quantity = $diff;
+          if ($item['quantity'] > $invoice_detail->quantity && $proQty->product_id === $invoice_detail->product_id && $proQty->warehouse_id === $invoice_detail->warehouse_id) {
+            $diff = $item['quantity'] - $invoice_detail->quantity; // qty will be pulled out from stock
+            $proQty->quantity = $proQty->quantity - $diff;
             $proQty->update();
             //
-            $invoie_detail->quantity = $item['quantity'];
-            $invoie_detail->update();
+            $invoice_detail->quantity = $item['quantity'];
+            $invoice_detail->update();
             //
             $this->sumProducts($this->di, $identity['id'], $proQty->product_id);
           } else {
-            if ($item['quantity'] < $invoie_detail->quantity && $proQty->product_id === $invoie_detail->product_id && $proQty->warehouse_id === $invoie_detail->warehouse_id) {
-              $diff = $proQty->quantity - ($invoie_detail->quantity - $item['quantity']);
-              $proQty->quantity = $diff;
+            if ($item['quantity'] < $invoice_detail->quantity && $proQty->product_id === $invoice_detail->product_id && $proQty->warehouse_id === $invoice_detail->warehouse_id) {
+              $diff = $invoice_detail->quantity - $item['quantity']; // put back in stock
+              $proQty->quantity = $proQty->quantity +  $diff;
               $proQty->update();
               //
-              $invoie_detail->quantity = $item['quantity'];
-              $invoie_detail->update();
+              $invoice_detail->quantity = $item['quantity'];
+              $invoice_detail->update();
               //
               $this->sumProducts($this->di, $identity['id'], $proQty->product_id);
             }
@@ -251,10 +238,59 @@ class InvoicesController extends ControllerBase
 
         }
       }
-      echo '<pre>';
-      print_r($epds);
-      exit;
-
+      $apds = $post['apd'];   // add new invoice_detail
+      if ($apds != null) {
+        foreach ($apds as $item) {
+          $cond = [
+            'conditions' => 'client_id=:client_id: AND invoice_id=:invoice_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+            'bind' => [
+              'client_id'    => $post['client_id'],
+              'invoice_id'   => $invoice->id,
+              'product_id'   => $item['product'],
+              'warehouse_id' => $item['warehouse'],
+            ]
+          ];
+          $invoice_detail = InvoiceDetail::findFirst($cond);
+          if ($invoice_detail) {
+            $invoice_detail->quantity = $invoice_detail->quantity + $item['quantity'];
+            $invoice_detail->update();
+            $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
+            $this->sumProducts($this->di, $identity['id'], $invoice_detail->product_id);
+          } else {
+            $new_invoice_detail = new InvoiceDetail();
+            $new_invoice_detail->client_id = $post['client_id'];
+            $new_invoice_detail->invoice_id = $invoice->id;
+            $new_invoice_detail->product_id = $item['product'];
+            $new_invoice_detail->warehouse_id = $item['warehouse'];
+            $new_invoice_detail->price = $item['price'];
+            $new_invoice_detail->quantity = $item['quantity'];
+            $new_invoice_detail->create();
+            $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
+            $this->sumProducts($this->di, $identity['id'], $new_invoice_detail->product_id);
+          }
+        }
+      }
+      $dpds = $post['dpd'];   // delete invoice_detail
+      if ($dpds != null) {
+        foreach ($dpds as $item) {
+          $cond = [
+            'conditions' => 'id=:id: AND client_id=:client_id: AND invoice_id=:invoice_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+            'bind' => [
+              'id'           => $item['id'],
+              'client_id'    => $post['client_id'],
+              'invoice_id'   => $invoice->id,
+              'product_id'   => $item['product'],
+              'warehouse_id' => $item['warehouse'],
+            ]
+          ];
+          $invoice_detail = InvoiceDetail::findFirst($cond);
+          if ($invoice_detail) {
+            $this->addStock($identity['id'], $item['product'], $item['warehouse'], $invoice_detail->quantity);
+            $invoice_detail->delete();
+            $this->sumProducts($this->di, $identity['id'], $invoice_detail->product_id);
+          }
+        }
+      }
 
       /* test whether the current user can edit this Client. */
       if (!$this->qi->is_editable('Invoice', $invoice)) {
@@ -291,6 +327,38 @@ class InvoicesController extends ControllerBase
       $this->response->redirect('manager/invoices/show/' . $invoice->id);
       return;
     }
+  }
+
+
+  private function addStock($user_id, $product_id, $warehouse_id, $quantity) {
+    $cond = [
+      'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+      'bind' => [
+        'user_id'     => $user_id,
+        'product_id'  => $product_id,
+        'warehouse_id'=> $warehouse_id,
+      ]
+    ];
+    $proQty = ProductQuantity::findFirst($cond);
+    $curQty = $proQty->quantity;
+    $proQty->quantity = $curQty + $quantity;
+    $proQty->update();
+  }
+
+
+  private function subStock($user_id, $product_id, $warehouse_id, $quantity) {
+    $cond = [
+      'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+      'bind' => [
+        'user_id'     => $user_id,
+        'product_id'  => $product_id,
+        'warehouse_id'=> $warehouse_id,
+      ]
+    ];
+    $proQty = ProductQuantity::findFirst($cond);
+    $curQty = $proQty->quantity;
+    $proQty->quantity = $curQty - $quantity;
+    $proQty->update();
   }
 
 
@@ -373,7 +441,7 @@ class InvoicesController extends ControllerBase
     ];
     $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
 
-    $invoice_detail = $invoice->getRelated('invoicedetail');
+    $invoice_details = $invoice->getRelated('invoicedetail');
 
     /* put error in session and will be forwarded, if result is empty. */
     if (!$invoice) {
@@ -388,7 +456,7 @@ class InvoicesController extends ControllerBase
 
     /* set parameters to display page. */
     $this->view->setVar('invoice', $invoice);
-    $this->view->setVar('products', $invoice_detail);
+    $this->view->setVar('invoice_details', $invoice_details);
   }
 
 

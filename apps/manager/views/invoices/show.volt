@@ -44,7 +44,12 @@
             </tr>
             <tr>
               <th>{{ l10n._('Total Price') }}</th>
-              <td class="text-right">{{ invoice.total_price|number_format }} (&#8363;)</td>
+              <td class="text-right">
+                <div class="input-group">
+                  {{ invoice.total_price|number_format }}
+                  <span class="input-group-addon">&#8363;</span>
+                </div>
+              </td>
             </tr>
             <tr>
               <th>{{ l10n._('Status') }}</th>
@@ -79,27 +84,35 @@
 
         <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-12">
-            <h5 class="text-bold">{{ l10n._('List Products') }}</h5>
-            {#{% if products is defined %}#}
+            <h5 class="text-bold">{{ l10n._('Order list') }}</h5>
+            <h4 class="text-right">
+              <div class="input-group">
+                {{ invoice.total_price|number_format }}
+                <span class="input-group-addon">&#8363;</span>
+              </div>
+            </h4>
+            {% if invoice_details is defined %}
             <table class="table table-bordered">
-              <colgroup>
-                <col class="col-5">
-                <col class="col-2">
-                <col class="col-1">
-                <col class="col-4">
-              </colgroup>
               <tbody>
-              {#{% for product in products %}#}
+              {% set i = 1 %}
+              {% for detail in invoice_details %}
               <tr>
-                <th class="font-light">{{ product.name|e }}</th>
-                <td class="text-right">(¥){{ product.price|number_format }}</td>
-                <td class="text-right">{{ product.amount }}</td>
-                <td><i>{{ product.remarks|e }}</i></td>
+                <td>{{ i }}</td>
+                <td>{{ detail.product.name|e }}</td>
+                <td class="text-right">{{ detail.price|number_format }}</td>
+                <td class="text-right"><span style="float:left;font-size:10px;">x</span> {{ detail.quantity }}</td>
+                <td class="text-right">
+                  <div class="input-group">
+                    {{ (detail.price * detail.quantity)|number_format }}
+                    <span class="input-group-addon">&#8363;</span>
+                  </div>
+                </td>
               </tr>
-              {#{% endfor %}#}
+                {% set i = i + 1 %}
+              {% endfor %}
               </tbody>
             </table>
-            {#{% endif %}#}
+            {% endif %}
           </div>
         </div>
 
