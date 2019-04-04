@@ -454,3 +454,15 @@ table thead tr th {
     width: 1000px;
   }
 }
+.graph {
+  position: relative;
+  width: 25px;
+  height: 54px;
+  border: 1px solid blue;
+  background-color: lightgrey;
+}
+.bar {
+  position: absolute;
+  border: 1px solid blue;
+  background-color: yellow;
+}

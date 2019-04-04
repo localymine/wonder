@@ -33,17 +33,16 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1><?php echo $this->l10n->__('Manage Products', 'product'); ?></h1>
+    <h1><?php echo $this->l10n->_('Inventory'); ?></h1>
     <ol class="breadcrumb">
       <li><?php echo $this->tag->linkTo(array('manager/main/index', $this->l10n->_('<i class="fa fa-dashboard"></i> DashBoard'))); ?></li>
-      <li><?php echo $this->tag->linkTo(array('manager/inventory/index', $this->l10n->__('Manage Inentory', 'product'))); ?></li>
+      <li><?php echo $this->tag->linkTo(array('manager/inventory/index', $this->l10n->_('Manage Inentory'))); ?></li>
       <li class="active"><?php echo $this->escaper->escapeHtml($page_heading); ?></li>
     </ol>
   </section>
 
   <section class="content">
-    <?php echo $this->escaper->escapeHtml($this->flash->output()); ?>
-
+    
     <div class="box overflow">
       <div class="box-header with-border">
         <h3 class="box-title pull-left"><?php echo $this->escaper->escapeHtml($page_heading); ?></h3>
@@ -90,6 +89,11 @@
 //        "iDisplayLength": 50,
         "bPaginate": false,
         "bInfo" : false
+      });
+
+      $('.pop').live('click', function() {
+        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        $('#imagemodal').modal('show');
       });
     });
   </script>
