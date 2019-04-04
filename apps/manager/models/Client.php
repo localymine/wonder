@@ -90,6 +90,12 @@ class Client extends ModelBase implements ModelInterface
    */
   public $remarks;
   /**
+   * client type.
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $type;
+  /**
    * flag indicating whether disabled or not.
    * @var integer
    * @Column(type="integer", nullable=false)
@@ -126,6 +132,7 @@ class Client extends ModelBase implements ModelInterface
       'email'       => 'email',
       'phone'       => 'phone',
       'remarks'     => 'remarks',
+      'type'        => 'type',
       'disabled'    => 'disabled',
       'created'     => 'created',
       'updated'     => 'updated',

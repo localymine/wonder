@@ -32,6 +32,12 @@ $(function () {
     $('#total_price').val(counter());
     updateIds();
   });
+  $('.quantity').on('change', function () {
+    $('#total_price').val(counter());
+  });
+  $('.price,.quantity').on('keyup', function () {
+    $('#total_price').val(counter());
+  });
 
   $('#keyword').on('keyup', function() {
     var keyword = $(this).val();

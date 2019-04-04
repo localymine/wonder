@@ -202,6 +202,7 @@ class InvoicesController extends ControllerBase
       if ($epds != null) {
         foreach ($epds as $item) {
           $invoice_detail = InvoiceDetail::findFirst($item['id']);
+          $invoice_detail->price = $item['price'];
           //
           $cond = [
             'conditions' => 'user_id=:user_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
@@ -231,6 +232,8 @@ class InvoicesController extends ControllerBase
               $invoice_detail->update();
               //
               $this->sumProducts($this->di, $identity['id'], $proQty->product_id);
+            } else {
+              $invoice_detail->update();
             }
           }
 
@@ -469,6 +472,14 @@ class InvoicesController extends ControllerBase
       if ($this->request->isPost()) {
         $data = $this->request->getPost();
 
+
+        if (is_numeric($data['client_id'])) {
+          $client = Client::findFirst($data['client_id']);
+          $response['ctype'] = $client->type;
+        } else {
+          $response['ctype'] = 0;
+        }
+
         $products = FilterInjector::getProductsByKeyword($this->di, $data['keyword']);
         if ($products->count() > 0) {
           $response['data'] = $products->toArray();
@@ -513,6 +524,7 @@ class InvoicesController extends ControllerBase
             $response['detail'] = $detail;
             $response['qty'] = $qty;
             $response['sum'] = $sum;
+            $response['date'] = date('Y/m/d H:i');
             $response['success'] = 1;
           }
         }
@@ -535,7 +547,7 @@ class InvoicesController extends ControllerBase
     $dClients = [];
     if ($clients) {
       foreach ($clients as $cl) {
-        array_push($dClients, ['id'=>$cl->id, 'name'=>$cl->name]);
+        array_push($dClients, ['id'=>$cl->id, 'name'=>$cl->name, 'type'=>$cl->type]);
       }
     }
     $this->view->setVar('eclients', $clients);

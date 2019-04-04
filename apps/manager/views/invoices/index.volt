@@ -56,11 +56,12 @@
             $('.tb-detail tfoot .sum').html('');
             $('.bill-num').html(data['id']);
             $('.client-name').html(data['client']);
+            $('.buy-date').html(data['date']);
             var detail = data['detail'];
             for (var i=0; i<detail.length; i++) {
               var tr = '<tr>' +
                 '<td>'+detail[i]['product']+'</td>' +
-                '<td class="text-right">'+detail[i]['price']+'</td>' +
+                '<td class="text-right">'+(detail[i]['price']).format()+'</td>' +
                 '<td class="text-right">'+detail[i]['quantity']+'</td>' +
                 '<td class="text-right">'+(detail[i]['total']).format()+'</td>' +
                 '</tr>';

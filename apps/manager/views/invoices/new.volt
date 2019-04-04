@@ -118,17 +118,20 @@
       var source = [];
       var clients = eval('{{ clients }}');
       for (var i=0; i<clients.length; i++) {
-        var html = '<div tabIndex=0 data-id="'+ clients[i].id +'"><div>'+ clients[i].name +'</div></div>';
+        var classes = clients[i].type == 1 ? 'text-bold fa fa-star' : '';
+        var html = '<div tabIndex=0 data-id="'+ clients[i].id +'"><div class="'+classes+'">'+ clients[i].name +'</div></div>';
         source[i] = {html: html, title: clients[i].name};
       }
       // Create a jqxComboBox
+      var timer;
       $("#client_id").jqxComboBox({source: source, height: 34}).on('change', function(e){
         var args = e.args;
         if (args) {
           if(args.item !== null) {
             var item = args.item;
             var id = $(item.html).data('id');
-            $('input[name=client_id]').val(id);
+            clearTimeout(timer);
+            timer = setTimeout(function(){$('input[name=client_id]').val(id);}, 500)
           }
         }
       });

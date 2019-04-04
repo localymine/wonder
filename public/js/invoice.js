@@ -15,8 +15,10 @@ $(function () {
 
   $('#keyword').on('keyup', function() {
     var keyword = $(this).val();
+    var client_id = $('input[name=client_id]').val();
     var post_data = {
-      'keyword' : keyword
+      'keyword' : keyword,
+      'client_id' : client_id
     };
     if (keyword.length > 2) {
       $.ajax({
@@ -33,6 +35,12 @@ $(function () {
           for (var i=0; i<rs.length; i++) {
             var p1 = (rs[i]['user_id']).toString().padStart(7,0);
             var p2 = (rs[i]['id']).toString().padStart(7,0);
+            var price = 0;
+            if (data['ctype'] == 1) {
+              price = rs[i]['wholesale_price'];
+            } else {
+              price = rs[i]['price'];
+            }
             var template = '<tr>' +
               '<td class="no">' + (i + 1) + '</td>' +
               '<td class="" style="width:32px;">' +
@@ -42,7 +50,7 @@ $(function () {
               '</td>' +
               '<td>'+rs[i]['name']+'</td>' +
               '<td class="text-right">' +
-              '<input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price" value="'+rs[i]['price']+'" />' +
+              '<input type="text" name="pd['+i+'][price]" class="form-control text-right no-border price" value="'+price+'" />' +
               '</td>' +
               '<td class="text-right">' +
               '<input type="number" name="pd['+i+'][quantity]" class="form-control text-right no-border quantity" min="1" max="'+rs[i]['quantity']+'" value="1" />' +

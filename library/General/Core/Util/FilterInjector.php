@@ -489,6 +489,7 @@ class FilterInjector extends Component
         '['.$Model.'].id',
         '['.$Model.'].name',
         'price',
+        'wholesale_price',
         'image',
         '['.$Model.'].quantity as qty',
         '[PQ].quantity',

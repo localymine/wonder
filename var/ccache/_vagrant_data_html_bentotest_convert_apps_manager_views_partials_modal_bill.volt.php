@@ -5,18 +5,27 @@
         <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title"><?php echo $this->l10n->_('Bill of'); ?> <span class="client-name text-bold text-success"></span></h4>
       </div>
-      <div id="bill-holder" class="modal-body">
+      <div id="bill-holder" class="modal-body" style="background: #fff6f6;">
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <span style="color: deeppink">🌸</span>Sakura Shop<span style="color: deeppink">🌸</span>
+              <div class="text-center">
+                <span style="color: deeppink">🌸</span><span style="font-weight: bold;font-size:16px;">Sakura Shop</span><span style="color: deeppink">🌸</span>
+              </div>
+              <div class="text-center">
+                <h4>Hóa Đơn</h4>
+              </div>
             </div>
             <div class="form-group">
-              <label class="inline">Bill No.</label>
+              <label class="inline">No.</label>
               <div class="inline bill-num"></div>
             </div>
             <div class="form-group">
-              <label class="inline">Customer</label>
+              <label class="inline">Ngày</label>
+              <div class="inline buy-date"></div>
+            </div>
+            <div class="form-group">
+              <label class="inline">Khác hàng</label>
               <div class="inline client-name"></div>
             </div>
           </div>
@@ -34,7 +43,7 @@
               </tbody>
               <tfoot>
               <tr>
-                <td colspan="2" class="text-right text-bold">Total</td>
+                <td colspan="2" class="text-right text-bold">Tổng cộng</td>
                 <td class="text-right qty"></td>
                 <td class="text-right sum"></td>
               </tr>
