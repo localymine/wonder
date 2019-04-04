@@ -27,22 +27,29 @@ class Enums extends Component
   public function invoiceStatus()
   {
     return [
-      0 => 'New',
-      1 => 'Waiting', /* hang dang o noi tap trung */
-      2 => 'Received', /* noi tap trung hang da nhan duoc hang */
-      3 => 'Delivering',  /* da chuyen hang ra khoi nuoc */
-      4 => 'Delivered',  /* hang da van chuyen den quoc gia nhan hang va cho chuyen den khach hang */
-      5 => 'DeliveringClient',  /* dang chuyen hang den tay khach hang */
-      6 => 'Finished',  /* hang da toi tay khach hang */
+      0 => 'Unpaid',
+      1 => 'Paid',
     ];
   }
 
   public function transportStatus()
   {
     return [
-      0 => 'New',
-      1 => 'Finished',  /* hang da toi tay khach hang */
-      2 => 'Waiting for Payback',  /* cho tra tien */
+      0 => 'New', /* dong thung dat tai nha */
+      1 => 'Transport Service', /* phia transport service dang giu hang */
+      2 => 'Gathering Place', /* kien hang dang o noi tap trung */
+      3 => 'On Air',  /* hang dang tren may bay */
+      4 => 'Landing',  /* hang da ha canh tai diem den */
+      5 => 'Delivering',  /* hang dang van chuyen ve nha */
+      6 => 'Finished',  /* hang da toi tay khach hang */
+    ];
+  }
+
+  public function clientType()
+  {
+    return [
+      0 => 'Retail',
+      1 => 'Wholesale',
     ];
   }
 

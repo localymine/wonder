@@ -235,10 +235,10 @@ class ClientsController extends ControllerBase
 
   public function beforeExecuteRoute($dispatcher)
   {
-
     $countries = Country::find();
-
     $this->view->setVar('countries', $countries);
+
+    $this->view->setVar('type', $this->enum->clientType());
 
     parent::beforeExecuteRoute($dispatcher);
     return true;

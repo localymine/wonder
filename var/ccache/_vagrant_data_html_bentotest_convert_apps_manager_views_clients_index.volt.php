@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 

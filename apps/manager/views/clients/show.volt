@@ -39,6 +39,10 @@
             <td>{{ client.name|e }}</td>
             </tr>
             <tr>
+              <th>{{ l10n._('Type') }}</th>
+              <td>{{ type[client.type]|e }}</td>
+            </tr>
+            <tr>
               <th>{{ l10n._('Email') }}</th>
               <td>{{ client.email|e }}</td>
             </tr>

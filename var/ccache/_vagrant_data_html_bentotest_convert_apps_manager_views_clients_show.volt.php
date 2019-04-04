@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -63,6 +64,10 @@
             <tr>
             <th><?php echo $this->l10n->_('Client Name'); ?></th>
             <td><?php echo $this->escaper->escapeHtml($client->name); ?></td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Type'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($type[$client->type]); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Email'); ?></th>

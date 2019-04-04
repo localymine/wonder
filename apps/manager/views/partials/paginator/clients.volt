@@ -22,7 +22,7 @@
           <th>{{ l10n.__('Address', 'client') }}</th>
           <th>{{ l10n.__('Email', 'client') }}</th>
           <th>{{ l10n.__('Phone', 'client') }}</th>
-          <th>{{ l10n.__('Status', 'client') }}</th>
+          <th>{{ l10n.__('Type', 'client') }}</th>
           <th><i class="fa fa-cogs"></i></th>
           </tr>
           </thead>
@@ -39,11 +39,9 @@
           <td>{{ client.address|e }}</td>
           <td>{{ client.email|e }}</td>
           <td>{{ client.phone|e }}</td>
-{% if client.disabled == 1 %}
-          <td align="center"><i class="fa fa-ban text-danger" aria-hidden="true"></i></td>
-{% else %}
-          <td></td>
-{% endif %}
+          <td align="center">
+            {{ type[client.type] }}
+          </td>
           <td>{{ link_to('manager/clients/show/'~client.id,'<i class="fa fa-eye"></i>','class':'btn btn-xs btn-info','data-toggle':'tooltip','data-placement':'top','title':l10n._('Show')) }}
 
               {{ link_to('manager/clients/edit/'~client.id,'<i class="fa fa-pencil"></i>','class':'btn btn-xs btn-success','data-toggle':'tooltip','data-placement':'top','title':l10n._('Edit')) }}

@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -66,6 +67,14 @@
           <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Name'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('name', 'class' => 'form-control', 'value' => $client->name)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="type" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Type'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('type', $type, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $client->type)); ?>
 
           </div>
         </div>

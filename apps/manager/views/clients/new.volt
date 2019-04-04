@@ -44,6 +44,14 @@
           </div>
         </div>
 
+        <div class="form-group required">
+          <label for="type" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Type') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            {{ select('type',type,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
+
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="firstname" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Firstname') }}</label>
           <div class="col-xs-12 col-sm-8">
