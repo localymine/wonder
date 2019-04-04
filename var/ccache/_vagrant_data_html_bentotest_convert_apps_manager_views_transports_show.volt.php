@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -74,14 +75,6 @@
               </td>
             </tr>
             <tr>
-              <th><?php echo $this->l10n->_('Rate'); ?></th>
-              <td><?php echo $this->escaper->escapeHtml($transport->rate); ?></td>
-            </tr>
-            <tr>
-              <th><?php echo $this->l10n->_('Profit'); ?></th>
-              <td><?php echo $this->escaper->escapeHtml($transport->profit); ?></td>
-            </tr>
-            <tr>
               <th><?php echo $this->l10n->_('Status'); ?></th>
               <td><?php echo $this->escaper->escapeHtml($status[$transport->status]); ?></td>
             </tr>
@@ -97,15 +90,11 @@
             <tbody>
             <tr>
               <th><?php echo $this->l10n->_('Total'); ?></th>
-              <td class="text-right">(¥)<?php echo number_format($transport->total); ?></td>
+              <td class="text-right"><?php echo number_format($transport->total); ?> (&#8363;)</td>
             </tr>
             <tr>
-              <th><?php echo $this->l10n->_('Total(P)'); ?></th>
-              <td class="text-right">(¥)<?php echo number_format($transport->increment); ?></td>
-            </tr>
-            <tr>
-              <th><?php echo $this->l10n->_('Total(R)'); ?></th>
-              <td class="text-right">(vnd)<?php echo number_format($transport->total_rate); ?></td>
+              <th><?php echo $this->l10n->_('Total Other Costs'); ?></th>
+              <td class="text-right">(¥) <?php echo number_format($transport->total_others); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Remarks'); ?></th>
@@ -125,7 +114,7 @@
         </div>
         <h4><?php echo $this->l10n->_('Invoices'); ?></h4>
         <div class="row row-gutter-20">
-          <?php foreach ($transportinvoice as $transinvoice) { ?>
+          <?php foreach ($transportInvoice as $transinvoice) { ?>
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
@@ -136,17 +125,30 @@
               <tr>
                 <th class="font-light">
                   <i class="fa fa-glass"></i>
-                  <?php echo $transinvoice->invoice->name; ?>
+                  <?php echo $transinvoice->invoice->id; ?> - <?php echo $transinvoice->invoice->client->name; ?>
                   <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $transinvoice->invoice->id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
                 </th>
-                <td class="text-right">(¥)<?php echo number_format($transinvoice->invoice->price); ?></td>
+                <td class="text-right"><?php echo number_format($transinvoice->invoice->total_price); ?> (&#8363;)</td>
               </tr>
-              <?php foreach ($transinvoice->invoice->othercost as $othercost) { ?>
+              </tbody>
+            </table>
+          </div>
+          <?php } ?>
+        </div>
+        <h4><?php echo $this->l10n->_('Other Costs'); ?></h4>
+        <div class="row row-gutter-20">
+          <?php foreach ($transportOtherCost as $transothercost) { ?>
+          <div class="col-xs-12 col-sm-6">
+            <table class="table table-bordered">
+              <colgroup>
+                <col class="col-5">
+                <col class="col-7">
+              </colgroup>
+              <tbody>
               <tr>
-                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $othercost->name; ?></th>
-                <td class="text-right">(¥)<?php echo number_format($othercost->price); ?></td>
+                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $transothercost->name; ?></th>
+                <td class="text-right">(¥) <?php echo number_format($transothercost->price); ?></td>
               </tr>
-              <?php } ?>
               </tbody>
             </table>
           </div>
@@ -163,7 +165,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> <?php echo $this->l10n->_('Other Options'); ?></button>
             <ul class="dropdown-menu">
-              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export PDF'))); ?></li>
+              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export CSV'))); ?></li>
             </ul>
           </div>
 

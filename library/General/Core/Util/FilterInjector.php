@@ -415,7 +415,7 @@ class FilterInjector extends Component
     $user_id = $identity['id'];
 
 //    $sql  = " SELECT *, 'id1' as OrderKey ";
-    $sql  = " SELECT iv.id, user_id, client_id, name, price, status, disabled ";
+    $sql  = " SELECT iv.id, user_id, client_id, total_price, status, disabled ";
     $sql .= " FROM invoices as iv ";
     $sql .= " LEFT JOIN transport_invoices as ti ON ti.invoice_id = iv.id ";
     $sql .= " WHERE ";
@@ -425,7 +425,7 @@ class FilterInjector extends Component
     $sql .= "    ti.invoice_id IS NULL ";
     $sql .= " UNION ALL ";
 //    $sql .= " SELECT *, 'id2' as OrderKey ";
-    $sql .= " SELECT iv.id, user_id, client_id, name, price, status, disabled ";
+    $sql .= " SELECT iv.id, user_id, client_id, total_price, status, disabled ";
     $sql .= " FROM invoices as iv ";
     $sql .= " LEFT JOIN transport_invoices as ti ON ti.invoice_id = iv.id ";
     $sql .= " WHERE ";

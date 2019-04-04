@@ -15,7 +15,8 @@
 <![endif]-->
 <?php echo $this->tag->getTitle(); ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini<?php if (isset($bodycollapsed)) { ?> sidebar-collapse<?php } ?>">
+
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 
 <div class="wrapper">
 
@@ -60,22 +61,6 @@
           <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transport Name'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('name', 'class' => 'form-control', 'value' => $transport->name)); ?>
-
-          </div>
-        </div>
-
-        <div class="form-group required">
-          <label for="rate" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Exchange Rate'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('rate', 'class' => 'form-control', 'value' => $transport->rate)); ?>
-
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="profit" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Profit'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('profit', 'class' => 'form-control', 'value' => $transport->profit)); ?>
 
           </div>
         </div>
@@ -213,21 +198,12 @@
   <?php echo $this->tag->javascriptInclude('js/other.js'); ?>
   <script>
     $(function(){
-      $('input[type=checkbox]').iCheck({
-        checkboxClass:'icheckbox_minimal-blue'
-      }).on('ifChecked', function(evt) {
-        $(this).val(1).attr('checked', 'checked');
-      }).on('ifUnchecked', function(evt) {
-        $(this).val(0).removeAttr('checked');
-      });
-
       $.invoiceForm({
         addButton: "a.addcond",
         listCondition: "ul.lstcond",
         deleteButton: "a.deletecond",
         count: <?php echo $count; ?>
       });
-
     });
   </script>
   <?php echo $this->tag->javascriptInclude('js/transport.js'); ?>

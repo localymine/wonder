@@ -65,22 +65,6 @@
         </div>
 
         <div class="form-group required">
-          <label for="rate" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Exchange Rate'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('rate', 'class' => 'form-control')); ?>
-
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="profit" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Profit'); ?></label>
-          <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('profit', 'class' => 'form-control')); ?>
-
-          </div>
-        </div>
-
-        <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Status'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->select(array('status', $status, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '')); ?>

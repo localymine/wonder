@@ -9,7 +9,7 @@ $(function () {
   $('#client[data-mode=new]').on('change', function () {
     var cid = $(this).val();
     resetList();
-    if (cid != '') {
+    if (cid !== '') {
       $.ajax({
         type: 'GET',
         url: '/manager/transports/get',
@@ -20,6 +20,7 @@ $(function () {
         dataType: 'json',
         cache: false
       }).done(function (data) {
+        console.log(data)
         if (parseInt(data.success) === 1) {
           for (var i = 0; i < data.invoice.length; i++) {
             var addel = $(data.invoice[i]).hide();
@@ -135,7 +136,6 @@ $(function () {
           invoice['name']  = $(chkbox).data('invoice-name');
           invoice['mode']  = $(chkbox).data('mode'); /* new or edit */
           invoice['price'] = $(this).data('invoice-price');
-          console.log(invoice)
           $('table.lstChose > tbody').append(row(invoice));
           choseInvoices.push(invoice['iv_id']);
           //

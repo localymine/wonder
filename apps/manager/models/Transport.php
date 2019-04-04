@@ -33,6 +33,12 @@ class Transport extends ModelBase implements ModelInterface
    */
   public $id;
   /**
+   * name
+   * @var string
+   * @Column(type="string", nullable=false)
+   */
+  public $name;
+  /**
    * id of user.
    * @var integer
    * @Column(type="integer", nullable=false)
@@ -45,41 +51,17 @@ class Transport extends ModelBase implements ModelInterface
    */
   public $client_id;
   /**
-   * client name
-   * @var string
-   * @Column(type="string", nullable=false)
-   */
-  public $name;
-  /**
-   * profit.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $profit;
-  /**
    * total.
    * @var string
    * @Column(type="integer")
    */
   public $total;
   /**
-   * increment.
+   * total others cost.
    * @var string
    * @Column(type="integer")
    */
-  public $increment;
-  /**
-   * rate.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $rate;
-  /**
-   * total of invoice with exchange rate.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $total_rate;
+  public $total_others;
   /**
    * remarks.
    * @var string
@@ -120,14 +102,11 @@ class Transport extends ModelBase implements ModelInterface
   {
     return [
       'id'          => 'id',
+      'name'        => 'name',
       'user_id'     => 'user_id',
       'client_id'   => 'client_id',
-      'name'        => 'name',
-      'profit'      => 'profit',
       'total'       => 'total',
-      'increment'   => 'increment',
-      'rate'        => 'rate',
-      'total_rate'  => 'total_rate',
+      'total_others'=> 'total_others',
       'remarks'     => 'remarks',
       'status'      => 'status',
       'disabled'    => 'disabled',
@@ -222,11 +201,6 @@ class Transport extends ModelBase implements ModelInterface
         'model' => $this,
       ]),
     ]);
-    $validator->rules('rate', [
-      new PresenceOf([
-        'model' => $this,
-      ]),
-    ]);
     $validator->rules('user_id', [
       new PresenceOf([
         'model' => $this,
@@ -257,12 +231,6 @@ class Transport extends ModelBase implements ModelInterface
      *                PhpUnnecessaryFullyQualifiedNameInspection */
     $this->validate(new \Phalcon\Mvc\Model\Validator\PresenceOf([
       'field'    => 'name',
-      'required' => true,
-    ]));
-    /** @noinspection PhpParamsInspection PhpDeprecationInspection
-     *                PhpUnnecessaryFullyQualifiedNameInspection */
-    $this->validate(new \Phalcon\Mvc\Model\Validator\PresenceOf([
-      'field'    => 'rate',
       'required' => true,
     ]));
     /** @noinspection PhpParamsInspection PhpDeprecationInspection

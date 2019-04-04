@@ -15,7 +15,7 @@
   </section>
 
   <section class="content">
-    
+
     <div class="box overflow">
       <div class="box-header with-border">
         <h3 class="box-title pull-left">{{ page_heading|e }}</h3>

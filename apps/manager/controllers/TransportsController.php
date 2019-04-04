@@ -85,6 +85,7 @@ class TransportsController extends ControllerBase
         return;
       }
 
+      $total_others = 0;
       $count = 1;
       if ($this->request->hasPost('others')) {
         $others = $post['others'];
@@ -97,54 +98,35 @@ class TransportsController extends ControllerBase
             $oc->price = $item['price'];
             $oc->remarks = $item['remarks'];
             array_push($othercost, $oc);
+            $total_others += $item['price'];
           }
         }
         $transport->othercost = $othercost;
       }
+      $transport->total_others = $total_others;
 
       $this->view->setVar('posts', $post);
       $this->view->setVar('count', $count);
 
-//      $total = 0;
-//      $increment = 0;
-//      $tranportInvoice = [];
-//      if ($this->request->hasPost('invoice')) {
-//        $invoices = $post['invoice'];   // from invoice[]
-//        foreach ($invoices as $iv_id) {
-//          $transInvoice = new TransportInvoice();
-//          $transInvoice->invoice_id = $iv_id;
-//          //
-//          $cond = [
-//            'conditions' => 'id=:id: AND disabled=0',
-//            'bind' => ['id' => $iv_id],
-//          ];
-//          $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
-//          $othercost = $invoice->getRelated('othercost');
-//          $total_oc = 0;
-//          if ($othercost->count() > 0) {
-//            foreach($othercost as $oc) {
-//              /* @var OtherCost $oc */
-//              $total_oc += $oc->price;
-//            }
-//          }
-//          // -- total
-//          $total += ($invoice->price + $total_oc);
-//          array_push($tranportInvoice, $transInvoice);
-//        }
-//      }
-//      $transport->transportinvoice = $tranportInvoice;
-//
-//      $transport->total = $total;
-//      // -- increment
-//      if ($post['profit'] > 0) {
-//        $increment = $total * (100 + $post['profit']) / 100;
-//        $transport->increment = ceil($increment);
-//      } else {
-//        $increment = $total;
-//        $transport->increment = $total;
-//      }
-//      // -- total_rate
-//      $transport->total_rate = $increment * $post['rate'];
+      $total = 0;
+      $transportInvoice = [];
+      if ($this->request->hasPost('invoice')) {
+        $invoices = $post['invoice'];   // from invoice[]
+        foreach ($invoices as $iv_id) {
+          $transInvoice = new TransportInvoice();
+          $transInvoice->invoice_id = $iv_id;
+          //
+          $cond = [
+            'conditions' => 'id=:id: AND disabled=0',
+            'bind' => ['id' => $iv_id],
+          ];
+          $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
+          $total += $invoice->total_price;
+          array_push($transportInvoice, $transInvoice);
+        }
+      }
+      $transport->transportinvoice = $transportInvoice;
+      $transport->total = $total;
 
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
@@ -293,10 +275,14 @@ class TransportsController extends ControllerBase
         //
         $others = $post['others'];
         $count = count($others) - 1;
+
+        $total_others = 0;
         $othercost = [];
         foreach($others as $item) {
           if ($item['id'] != '') {
             $oc = OtherCost::findFirst($post['id']);
+            $total_others += $item['price'];
+            $oc->price = $total_others;
             $oc->update($item);
           } else {
             if (!empty($item['name'])) {
@@ -305,64 +291,43 @@ class TransportsController extends ControllerBase
               $oc->price = $item['price'];
               $oc->remarks = $item['remarks'];
               array_push($othercost, $oc);
+              $total_others += $item['price'];
             }
           }
         }
         $transport->othercost = $othercost;
       }
+      $transport->total_others = $total_others;
 
       $this->view->setVar('posts', $post);
       $this->view->setVar('count', $count);
 
-//      $cond = [
-//        'conditions' => 'transport_id=:transport_id:',
-//        'bind' => ['transport_id' => $transport_id],
-//      ];
-//      $oldTransInvoice = TransportInvoice::find($cond);
-//
-//      $total = 0;
-//      $increment = 0;
-//      $tranportInvoice = [];
-//      if ($this->request->hasPost('invoice')) {
-//        $invoices = $post['invoice'];   // from invoice[]
-//        foreach ($invoices as $iv_id) {
-//          $transInvoice = new TransportInvoice();
-//          $transInvoice->transport_id = $transport_id;
-//          $transInvoice->invoice_id = $iv_id;
-//          //
-//          $cond = [
-//            'conditions' => 'id=:id: AND disabled=0',
-//            'bind' => ['id' => $iv_id],
-//          ];
-//          $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
-//          $othercost = $invoice->getRelated('othercost');
-//          if ($othercost->count() > 0) {
-//            $total_oc = 0;
-//            foreach($othercost as $oc) {
-//              /* @var OtherCost $oc */
-//              $total_oc += $oc->price;
-//            }
-//            // -- total
-//            $total += ($invoice->price + $total_oc);
-//          } else {
-//            $total += $invoice->price;
-//          }
-//          array_push($tranportInvoice, $transInvoice);
-//        }
-//      }
-//      $transport->transportinvoice = $tranportInvoice;
-//
-//      $transport->total = $total;
-//      // -- increment
-//      if ($post['profit'] > 0) {
-//        $increment = $total * (100 + $post['profit']) / 100;
-//        $transport->increment = ceil($increment);
-//      } else {
-//        $increment = $total;
-//        $transport->increment = $total;
-//      }
-//      // -- total_rate
-//      $transport->total_rate = $increment * $post['rate'];
+      $cond = [
+        'conditions' => 'transport_id=:transport_id:',
+        'bind' => ['transport_id' => $transport_id],
+      ];
+      $oldTransInvoice = TransportInvoice::find($cond);
+
+      $total = 0;
+      $transportInvoice = [];
+      if ($this->request->hasPost('invoice')) {
+        $invoices = $post['invoice'];   // from invoice[]
+        foreach ($invoices as $iv_id) {
+          $transInvoice = new TransportInvoice();
+          $transInvoice->transport_id = $transport_id;
+          $transInvoice->invoice_id = $iv_id;
+          //
+          $cond = [
+            'conditions' => 'id=:id: AND disabled=0',
+            'bind' => ['id' => $iv_id],
+          ];
+          $invoice = Invoice::findFirst($this->qi->inject('Invoice', $cond));
+          $total += $invoice->total_price;
+          array_push($transportInvoice, $transInvoice);
+        }
+      }
+      $transport->transportinvoice = $transportInvoice;
+      $transport->total = $total;
 
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
@@ -403,7 +368,7 @@ class TransportsController extends ControllerBase
           $rm_others->delete();
         }
         //
-//        $oldTransInvoice->delete();
+        $oldTransInvoice->delete();
       }
 
       /* if successfully saved, put message in session and redirect. */
@@ -466,7 +431,8 @@ class TransportsController extends ControllerBase
       'bind' => ['id' => $id],
     ];
     $transport = Transport::findFirst($this->qi->inject('Transport', $cond));
-    $transportinvoice = $transport->getRelated('transportinvoice');
+    $transportInvoice = $transport->getRelated('transportinvoice');
+    $transportOtherCost = $transport->getRelated('othercost');
 
     /* put error in session and will be forwarded, if result is empty. */
     if (!$transport) {
@@ -480,7 +446,8 @@ class TransportsController extends ControllerBase
     }
     /* set parameters to display page. */
     $this->view->setVar('transport', $transport);
-    $this->view->setVar('transportinvoice', $transportinvoice);
+    $this->view->setVar('transportInvoice', $transportInvoice);
+    $this->view->setVar('transportOtherCost', $transportOtherCost);
   }
 
 

@@ -48,14 +48,6 @@
               </td>
             </tr>
             <tr>
-              <th>{{ l10n._('Rate') }}</th>
-              <td>{{ transport.rate|e }}</td>
-            </tr>
-            <tr>
-              <th>{{ l10n._('Profit') }}</th>
-              <td>{{ transport.profit|e }}</td>
-            </tr>
-            <tr>
               <th>{{ l10n._('Status') }}</th>
               <td>{{ status[transport.status]|e }}</td>
             </tr>
@@ -71,15 +63,11 @@
             <tbody>
             <tr>
               <th>{{ l10n._('Total') }}</th>
-              <td class="text-right">(¥){{ transport.total|number_format }}</td>
+              <td class="text-right">{{ transport.total|number_format }} (&#8363;)</td>
             </tr>
             <tr>
-              <th>{{ l10n._('Total(P)') }}</th>
-              <td class="text-right">(¥){{ transport.increment|number_format }}</td>
-            </tr>
-            <tr>
-              <th>{{ l10n._('Total(R)') }}</th>
-              <td class="text-right">(vnd){{ transport.total_rate|number_format }}</td>
+              <th>{{ l10n._('Total Other Costs') }}</th>
+              <td class="text-right">(¥) {{ transport.total_others|number_format }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Remarks') }}</th>
@@ -99,7 +87,7 @@
         </div>
         <h4>{{ l10n._('Invoices') }}</h4>
         <div class="row row-gutter-20">
-          {% for transinvoice in transportinvoice %}
+          {% for transinvoice in transportInvoice %}
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
@@ -110,17 +98,30 @@
               <tr>
                 <th class="font-light">
                   <i class="fa fa-glass"></i>
-                  {{ transinvoice.invoice.name }}
+                  {{ transinvoice.invoice.id }} - {{ transinvoice.invoice.client.name }}
                   {{ link_to('manager/invoices/show/'~transinvoice.invoice.id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
                 </th>
-                <td class="text-right">(¥){{ transinvoice.invoice.price|number_format }}</td>
+                <td class="text-right">{{ transinvoice.invoice.total_price|number_format }} (&#8363;)</td>
               </tr>
-              {% for othercost in transinvoice.invoice.othercost %}
+              </tbody>
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+        <h4>{{ l10n._('Other Costs') }}</h4>
+        <div class="row row-gutter-20">
+          {% for transothercost in transportOtherCost %}
+          <div class="col-xs-12 col-sm-6">
+            <table class="table table-bordered">
+              <colgroup>
+                <col class="col-5">
+                <col class="col-7">
+              </colgroup>
+              <tbody>
               <tr>
-                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ othercost.name }}</th>
-                <td class="text-right">(¥){{ othercost.price|number_format }}</td>
+                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ transothercost.name }}</th>
+                <td class="text-right">(¥) {{ transothercost.price|number_format }}</td>
               </tr>
-              {% endfor %}
               </tbody>
             </table>
           </div>
@@ -137,7 +138,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> {{ l10n._('Other Options') }}</button>
             <ul class="dropdown-menu">
-              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export PDF')) }}</li>
+              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export CSV')) }}</li>
             </ul>
           </div>
 

@@ -39,22 +39,6 @@
         </div>
 
         <div class="form-group required">
-          <label for="rate" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Exchange Rate') }}</label>
-          <div class="col-xs-12 col-sm-8">
-            {{ text_field('rate','class':'form-control','value':transport.rate) }}
-
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="profit" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Profit') }}</label>
-          <div class="col-xs-12 col-sm-8">
-            {{ text_field('profit','class':'form-control','value':transport.profit) }}
-
-          </div>
-        </div>
-
-        <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Status') }}</label>
           <div class="col-xs-12 col-sm-3">
             {{ select('status',status,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':transport.status) }}
