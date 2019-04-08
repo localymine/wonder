@@ -4,8 +4,8 @@
           <colgroup>
           <col>
           <col>
-          <col>
-          <col>
+          {#<col>#}
+          {#<col>#}
           <col>
           <col>
           <col>
@@ -16,8 +16,8 @@
           <tr>
           <th>{{ l10n.__('ID', 'client') }}</th>
           <th>{{ l10n.__('Name', 'client') }}</th>
-          <th>{{ l10n.__('First Name', 'client') }}</th>
-          <th>{{ l10n.__('Last Name', 'client') }}</th>
+          {#<th>{{ l10n.__('First Name', 'client') }}</th>#}
+          {#<th>{{ l10n.__('Last Name', 'client') }}</th>#}
           <th>{{ l10n.__('Country', 'client') }}</th>
           <th>{{ l10n.__('Address', 'client') }}</th>
           <th>{{ l10n.__('Email', 'client') }}</th>
@@ -33,8 +33,8 @@
           <tr>
           <td>{{ client.id|e }}</td>
           <td>{{ client.name|e }}</td>
-          <td>{{ client.firstname|e }}</td>
-          <td>{{ client.lastname|e }}</td>
+          {#<td>{{ client.firstname|e }}</td>#}
+          {#<td>{{ client.lastname|e }}</td>#}
           <td>{{ client.country.name|e }}</td>
           <td>{{ client.address|e }}</td>
           <td>{{ client.email|e }}</td>

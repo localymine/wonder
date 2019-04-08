@@ -25,7 +25,7 @@
               <div class="inline buy-date"></div>
             </div>
             <div class="form-group">
-              <label class="inline">Khác hàng</label>
+              <label class="inline">Khách hàng</label>
               <div class="inline client-name"></div>
             </div>
           </div>

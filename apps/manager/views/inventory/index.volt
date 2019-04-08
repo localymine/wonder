@@ -29,17 +29,9 @@
     </div>
 
     {{ partial('partials/modal/chart-product') }}
-
-    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <img src="" class="imagepreview center-block text-center" style="max-height:550px;" >
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ partial('partials/modal/product-stock') }}
+    {{ partial('partials/modal/product-sub-stock') }}
+    {{ partial('partials/modal/image-enlarge') }}
 
   </section>
 {% endblock %}
@@ -47,6 +39,7 @@
 {% block pagescript %}
   {{ partial('partials/paginatorscript') }}
   {{ javascript_include('js/Chart.min.js') }}
+  {{ javascript_include('js/product.js') }}
   <script>
     $(function(){
       $('#table-products').DataTable({
@@ -55,10 +48,8 @@
         "bInfo" : false
       });
 
-      $('.pop').live('click', function() {
-        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-        $('#imagemodal').modal('show');
-      });
+      $( "#fromDate" ).datepicker({dateFormat:'yy-mm-dd'});
+      $( "#toDate" ).datepicker({dateFormat:'yy-mm-dd'});
     });
   </script>
 {% endblock %}

@@ -4,8 +4,8 @@
           <colgroup>
           <col>
           <col>
-          <col>
-          <col>
+          
+          
           <col>
           <col>
           <col>
@@ -16,8 +16,8 @@
           <tr>
           <th><?php echo $this->l10n->__('ID', 'client'); ?></th>
           <th><?php echo $this->l10n->__('Name', 'client'); ?></th>
-          <th><?php echo $this->l10n->__('First Name', 'client'); ?></th>
-          <th><?php echo $this->l10n->__('Last Name', 'client'); ?></th>
+          
+          
           <th><?php echo $this->l10n->__('Country', 'client'); ?></th>
           <th><?php echo $this->l10n->__('Address', 'client'); ?></th>
           <th><?php echo $this->l10n->__('Email', 'client'); ?></th>
@@ -33,8 +33,8 @@
           <tr>
           <td><?php echo $this->escaper->escapeHtml($client->id); ?></td>
           <td><?php echo $this->escaper->escapeHtml($client->name); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($client->firstname); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($client->lastname); ?></td>
+          
+          
           <td><?php echo $this->escaper->escapeHtml($client->country->name); ?></td>
           <td><?php echo $this->escaper->escapeHtml($client->address); ?></td>
           <td><?php echo $this->escaper->escapeHtml($client->email); ?></td>

@@ -45,6 +45,16 @@ class InventoryController  extends ControllerBase
 
   public function beforeExecuteRoute($dispatcher)
   {
+    $identity = $this->auth->getIdentity();
+    $warehouses = Warehouse::find([
+      'conditions' => 'user_id=:user_id:',
+      [
+        'binds' => [
+          'user_id' => $identity['id']
+        ]
+      ]
+    ]);
+    $this->view->setVar('warehouses', $warehouses);
 
     parent::beforeExecuteRoute($dispatcher);
     return true;

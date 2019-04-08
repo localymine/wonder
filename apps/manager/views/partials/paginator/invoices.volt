@@ -2,19 +2,18 @@
 
           <table class="table table-bordered table-condenced table-hover clients-list">
           <colgroup>
+          <col style="width:2%;">
           <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col class="strstatus">
+          <col style="width:20%;">
+          <col style="width:10%;">
+          <col style="width:15%;">
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th>{{ l10n.__('ID', 'invoice') }}</th>
           <th>{{ l10n.__('Client', 'invoice') }}</th>
-          <th>{{ l10n.__('Total Price(¥)', 'invoice') }}</th>
+          <th>{{ l10n.__('Total (&#8363;)', 'invoice') }}</th>
           <th>{{ l10n.__('Status', 'invoice') }}</th>
           <th>{{ l10n.__('Date', 'invoice') }}</th>
           <th><i class="fa fa-cogs"></i></th>
@@ -28,7 +27,7 @@
           <td>{{ invoice.id|e }}</td>
           <td>{{ invoice.client.name|e }}</td>
           <td class="text-right">{{ invoice.total_price|number_format }}</td>
-          <td>{{ status[invoice.status]|e }}</td>
+          <td class="text-center">{{ status[invoice.status]|e }}</td>
           <td class="text-right">{{ invoice.created }}</td>
           <td>
 

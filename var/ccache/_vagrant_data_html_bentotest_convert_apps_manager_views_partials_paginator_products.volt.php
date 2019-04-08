@@ -29,8 +29,8 @@
 <?php if (isset($page->items)) { ?>
 <?php foreach ($page->items as $product) { ?>
 
-          <tr id="p<?php echo $product->id; ?>" title="<?php echo $product->remarks; ?>">
-          <td><?php echo $this->escaper->escapeHtml($product->id); ?></td>
+          <tr id="p<?php echo $product->id; ?>">
+          <td title="<?php echo $product->remarks; ?>"><?php echo $this->escaper->escapeHtml($product->id); ?></td>
           
           <td class="" style="width:32px;">
             <a href="javascript:void(0)" class="pop">
@@ -41,8 +41,16 @@
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
           <td class="text-right price"><?php echo number_format($product->wholesale_price); ?></td>
           <td class="text-right quantity"><?php echo $product->quantity; ?></td>
-          <td class="text-center"><?php echo $this->escaper->escapeHtml($product->category->name); ?></td>
-          <td class="text-center"><?php echo $this->escaper->escapeHtml($product->brand->name); ?></td>
+          <td class="text-center">
+            <?php if ($product->category_id != 0) { ?>
+            <?php echo $this->escaper->escapeHtml($product->category->name); ?>
+            <?php } ?>
+          </td>
+          <td class="text-center">
+            <?php if ($product->brand_id != 0) { ?>
+            <?php echo $this->escaper->escapeHtml($product->brand->name); ?>
+            <?php } ?>
+          </td>
           <td>
             <button class="btn btn-xs btn-foursquare btn-chart" title="<?php echo $this->l10n->_('Price in Stock'); ?>" data-id="<?php echo $product->id; ?>" data-product="<?php echo $product->name; ?>" data-target="#chart-product-dialog" data-toggle="modal" data-placement="top"><i class="fa fa-line-chart"></i></button>
             <?php echo $this->tag->linkTo(array('manager/products/show/' . $product->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>

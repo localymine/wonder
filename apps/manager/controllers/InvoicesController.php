@@ -89,7 +89,7 @@ class InvoicesController extends ControllerBase
         $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
         //
         $invoie_detail = new InvoiceDetail();
-        $invoie_detail->client_id    = $client_id;
+        $invoie_detail->client_id    = $invoice->client_id;
         $invoie_detail->product_id   = $item['product'];
         $invoie_detail->warehouse_id = $item['warehouse'];
         $invoie_detail->price    = $item['price'];

@@ -2,19 +2,18 @@
 
           <table class="table table-bordered table-condenced table-hover clients-list">
           <colgroup>
+          <col style="width:2%;">
           <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col class="strstatus">
+          <col style="width:20%;">
+          <col style="width:10%;">
+          <col style="width:15%;">
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th><?php echo $this->l10n->__('ID', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Client', 'invoice'); ?></th>
-          <th><?php echo $this->l10n->__('Total Price(¥)', 'invoice'); ?></th>
+          <th><?php echo $this->l10n->__('Total (&#8363;)', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Status', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Date', 'invoice'); ?></th>
           <th><i class="fa fa-cogs"></i></th>
@@ -28,7 +27,7 @@
           <td><?php echo $this->escaper->escapeHtml($invoice->id); ?></td>
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
           <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></td>
+          <td class="text-center"><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></td>
           <td class="text-right"><?php echo $invoice->created; ?></td>
           <td>
 
