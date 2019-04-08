@@ -50,6 +50,9 @@ class TransportsController extends ControllerBase
     /* set title of this page. */
     $this->setPageHeading($this->l10n->_('Create New Transport'));
 
+    $invoices = $this->getInvoiceList();
+    $this->view->setVar('list_invoices', $invoices);
+
     $this->view->setVar('count', 1);
   }
 
@@ -131,23 +134,20 @@ class TransportsController extends ControllerBase
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
       if (!$transport->create()) {
-        if ($post['client_id'] != '') {
-          $cid = $post['client_id'];
-          $this->tag->setDefault('client', $cid);
-          $selected_invoice_ids = $post['choseInvoices'];
-          $selected_invoices = Invoice::find([
-            'id IN ({selected_ids:array})',
-            'bind' => [
-                'selected_ids' => array_values(explode(',', $selected_invoice_ids))
-            ]
-          ]);
-          $list_invoices = $this->getInvoiceList($cid);
-          //
-          $this->view->setVar('selected_invoice_ids', $selected_invoice_ids);
-          $this->view->setVar('selected_invoices', $selected_invoices);
-          //
-          $this->view->setVar('list_invoices', $list_invoices);
-        }
+
+        $selected_invoice_ids = $post['choseInvoices'];
+        $selected_invoices = Invoice::find([
+          'id IN ({selected_ids:array})',
+          'bind' => [
+              'selected_ids' => array_values(explode(',', $selected_invoice_ids))
+          ]
+        ]);
+        $list_invoices = $this->getInvoiceList();
+        //
+        $this->view->setVar('selected_invoice_ids', $selected_invoice_ids);
+        $this->view->setVar('selected_invoices', $selected_invoices);
+        //
+        $this->view->setVar('list_invoices', $list_invoices);
 
         $msgstack = '';
         foreach ($transport->getMessages() as $msg) {
@@ -209,8 +209,7 @@ class TransportsController extends ControllerBase
         ]);
       }
     }
-
-    $list_invoices = $this->getInvoiceList2($transport->client_id, $transport->id);
+    $list_invoices = $this->getInvoiceList2($transport->id);
 
     $this->view->setVar('transport', $transport);
     $this->view->setVar('selected_invoice_ids', implode(',', $selected_invoice_ids));
@@ -221,15 +220,17 @@ class TransportsController extends ControllerBase
     $data_oc = [];
     $othercost = $transport->getRelated('othercost');
     $i = 0;
-    foreach($othercost as $oc) {
-      $data_oc['others'][$i]['id'] = $oc->id;
-      $data_oc['others'][$i]['name'] = $oc->name;
-      $data_oc['others'][$i]['price'] = $oc->price;
-      $data_oc['others'][$i]['remarks'] = $oc->remarks;
-      $i++;
+    if ($othercost->count() > 0) {
+      foreach($othercost as $oc) {
+        $data_oc['others'][$i]['id'] = $oc->id;
+        $data_oc['others'][$i]['name'] = $oc->name;
+        $data_oc['others'][$i]['price'] = $oc->price;
+        $data_oc['others'][$i]['remarks'] = $oc->remarks;
+        $i++;
+      }
     }
 
-    $this->view->setVar('posts', $data_oc);
+//    $this->view->setVar('posts', $data_oc);
     $this->view->setVar('count', 1);
   }
 
@@ -451,75 +452,75 @@ class TransportsController extends ControllerBase
   }
 
 
-  public function getAction()
-  {
-    $results = [
-      'success' => 0
-    ];
+//  public function getAction()
+//  {
+//    $results = [
+//      'success' => 0
+//    ];
+//
+//    $identity = $this->auth->getUser();
+//    if (!$identity) {
+//      return $this->response->redirect('manager/main/forbidden');
+//    }
+//
+//    if ($this->request->hasQuery('client_id')) {
+//      $client_id = $this->request->getQuery('client_id');
+//      $mode      = $this->request->getQuery('mode');
+//
+//      $invoices = $this->getInvoiceList();
+//      if ($invoices->count() > 0) {
+//        $tags = [];
+//        foreach ($invoices as $invoice) {
+//          $tags[] = $this->view->getRender('partials', 'li-invoices', [
+//            'invoice' => $invoice,
+//            'mode'    => $mode,
+//          ]);
+//        }
+//        $results['success']  = 1;
+//        $results['invoice']  = $tags;
+//      }
+//    }
+//
+//    $this->view->disable();
+//    $this->response->setContent(json_encode($results));
+//    return $this->response;
+//  }
 
-    $identity = $this->auth->getUser();
-    if (!$identity) {
-      return $this->response->redirect('manager/main/forbidden');
-    }
 
-    if ($this->request->hasQuery('client_id')) {
-      $client_id = $this->request->getQuery('client_id');
-      $mode      = $this->request->getQuery('mode');
-
-      $invoices = $this->getInvoiceList($client_id);
-      if ($invoices->count() > 0) {
-        $tags = [];
-        foreach ($invoices as $invoice) {
-          $tags[] = $this->view->getRender('partials', 'li-invoices', [
-            'invoice' => $invoice,
-            'mode'    => $mode,
-          ]);
-        }
-        $results['success']  = 1;
-        $results['invoice']  = $tags;
-      }
-    }
-
-    $this->view->disable();
-    $this->response->setContent(json_encode($results));
-    return $this->response;
-  }
-
-
-  public function get2Action()
-  {
-    $results = [
-      'success' => 0
-    ];
-
-    $identity = $this->auth->getUser();
-    if (!$identity) {
-      return $this->response->redirect('manager/main/forbidden');
-    }
-
-    if ($this->request->hasQuery('client_id')) {
-      $client_id = $this->request->getQuery('client_id');
-      $transport_id = $this->request->getQuery('transport_id');
-      $mode      = $this->request->getQuery('mode');
-
-      $invoices = $this->getInvoiceList2($client_id, $transport_id);
-      if ($invoices->count() > 0) {
-        $tags = [];
-        foreach ($invoices as $invoice) {
-          $tags[] = $this->view->getRender('partials', 'li-invoices', [
-            'invoice' => $invoice,
-            'mode'    => $mode,
-          ]);
-        }
-        $results['success']  = 1;
-        $results['invoice']  = $tags;
-      }
-    }
-
-    $this->view->disable();
-    $this->response->setContent(json_encode($results));
-    return $this->response;
-  }
+//  public function get2Action()
+//  {
+//    $results = [
+//      'success' => 0
+//    ];
+//
+//    $identity = $this->auth->getUser();
+//    if (!$identity) {
+//      return $this->response->redirect('manager/main/forbidden');
+//    }
+//
+//    if ($this->request->hasQuery('client_id')) {
+//      $client_id = $this->request->getQuery('client_id');
+//      $transport_id = $this->request->getQuery('transport_id');
+//      $mode      = $this->request->getQuery('mode');
+//
+//      $invoices = $this->getInvoiceList2($client_id, $transport_id);
+//      if ($invoices->count() > 0) {
+//        $tags = [];
+//        foreach ($invoices as $invoice) {
+//          $tags[] = $this->view->getRender('partials', 'li-invoices', [
+//            'invoice' => $invoice,
+//            'mode'    => $mode,
+//          ]);
+//        }
+//        $results['success']  = 1;
+//        $results['invoice']  = $tags;
+//      }
+//    }
+//
+//    $this->view->disable();
+//    $this->response->setContent(json_encode($results));
+//    return $this->response;
+//  }
 
 
   public function beforeExecuteRoute($dispatcher)

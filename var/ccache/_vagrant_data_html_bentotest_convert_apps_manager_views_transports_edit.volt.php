@@ -58,9 +58,18 @@
       <div class="box-body">
 
         <div class="form-group required">
-          <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transport Name'); ?></label>
+          <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transport Issue'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('name', 'class' => 'form-control', 'value' => $transport->name)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->textField(array('client_name', 'class' => 'form-control', 'disabled' => 'true', 'value' => $transport->client->name)); ?>
+            <?php echo $this->tag->hiddenField(array('client', 'value' => $transport->client->id)); ?>
 
           </div>
         </div>
@@ -99,14 +108,6 @@
           </div>
         </div>
 
-        <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
-          <div class="col-xs-12 col-sm-3">
-            <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'data-mode' => 'edit', 'data-transport_id' => $transport->id, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $transport->client->id)); ?>
-
-          </div>
-        </div>
-
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"></label>
           <div class="col-xs-12 col-sm-8">
@@ -117,7 +118,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col"><?php echo $this->l10n->_('Invoice name', 'invoice'); ?></th>
-                <th class="text-center" scope="col"><?php echo $this->l10n->_('Price(¥)', 'invoice'); ?></th>
+                <th class="text-center" scope="col"><?php echo $this->l10n->_('Price(&#8363;)', 'invoice'); ?></th>
                 <th scope="col"></th>
               </tr>
               </thead>
@@ -172,9 +173,9 @@
           <h4 id="invoiceModalLabel" class="modal-title"><?php echo $this->l10n->_('Add Invices'); ?></h4>
         </div>
         <div class="modal-body">
-          <ul class="ulcond lstInvoices">
+          <table class="ulcond lstInvoices table table-responsive">
             <?php echo $this->partial('partials/li-invoices-load'); ?>
-          </ul>
+          </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary save-modal">Save changes</button>

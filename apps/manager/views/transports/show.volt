@@ -42,7 +42,19 @@
               </td>
             </tr>
             <tr>
-              <th>{{ l10n._('Transport Name') }}</th>
+              <th>{{ l10n._('Phone') }}</th>
+              <td>
+                {{ transport.client.phone|e }}
+              </td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Address') }}</th>
+              <td>
+                {{ transport.client.address|e }}
+              </td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Transport Issue') }}</th>
               <td>
                 {{ transport.name|e }}
               </td>
@@ -62,12 +74,16 @@
             </colgroup>
             <tbody>
             <tr>
-              <th>{{ l10n._('Total') }}</th>
+              <th>{{ l10n._('Total Invoices') }}</th>
               <td class="text-right">{{ transport.total|number_format }} (&#8363;)</td>
             </tr>
             <tr>
-              <th>{{ l10n._('Total Other Costs') }}</th>
-              <td class="text-right">(¥) {{ transport.total_others|number_format }}</td>
+              <th>{{ l10n._('Total OtherCosts') }}</th>
+              <td class="text-right">{{ transport.total_others|number_format }} (&#8363;)</td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Total') }}</th>
+              <td class="text-right">{{ (transport.total + transport.total_others)|number_format }} (&#8363;)</td>
             </tr>
             <tr>
               <th>{{ l10n._('Remarks') }}</th>
@@ -85,30 +101,33 @@
             </table>
           </div>
         </div>
+
         <h4>{{ l10n._('Invoices') }}</h4>
         <div class="row row-gutter-20">
-          {% for transinvoice in transportInvoice %}
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
-                <col class="col-5">
-                <col class="col-7">
+                <col class="col-1">
+                <col class="col-8">
+                <col class="col-3">
               </colgroup>
               <tbody>
+              {% for transinvoice in transportInvoice %}
               <tr>
-                <th class="font-light">
-                  <i class="fa fa-glass"></i>
-                  {{ transinvoice.invoice.id }} - {{ transinvoice.invoice.client.name }}
+                <td>{{ transinvoice.invoice.id }}</td>
+                <td>
+                  <i class="fa fa-glass"></i>{{ transinvoice.invoice.client.name }}
                   {{ link_to('manager/invoices/show/'~transinvoice.invoice.id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
-                </th>
+                </td>
                 <td class="text-right">{{ transinvoice.invoice.total_price|number_format }} (&#8363;)</td>
               </tr>
+              {% endfor %}
               </tbody>
             </table>
           </div>
-          {% endfor %}
         </div>
-        <h4>{{ l10n._('Other Costs') }}</h4>
+
+        <h4>{{ l10n._('OtherCosts') }}</h4>
         <div class="row row-gutter-20">
           {% for transothercost in transportOtherCost %}
           <div class="col-xs-12 col-sm-6">

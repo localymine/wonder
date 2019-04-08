@@ -30,9 +30,17 @@
       <div class="box-body">
 
         <div class="form-group required">
-          <label for="name" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Transport Name') }}</label>
+          <label for="name" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Transport Issue') }}</label>
           <div class="col-xs-12 col-sm-8">
             {{ text_field('name','class':'form-control') }}
+
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            {{ select('client',clients,'using':['id','name'],'name':'client_id','data-mode':'new','class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
 
           </div>
         </div>
@@ -65,14 +73,6 @@
           </div>
         </div>
 
-        <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Client') }}</label>
-          <div class="col-xs-12 col-sm-3">
-            {{ select('client',clients,'using':['id','name'],'name':'client_id','data-mode':'new','class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
-
-          </div>
-        </div>
-
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"></label>
           <div class="col-xs-12 col-sm-8">
@@ -83,12 +83,13 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">{{ l10n._('Invoice name', 'invoice') }}</th>
-                  <th class="text-center" scope="col">{{ l10n._('Price(¥)', 'invoice') }}</th>
+                  <th class="text-center" scope="col">{{ l10n._('Price(&#8363;)', 'invoice') }}</th>
+                  <th>{{ l10n._('Datetime', 'invoice') }}</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                {{ partial('partials/tr-invoices') }}
+                {#{{ partial('partials/tr-invoices') }}#}
               </tbody>
             </table>
           </div>
@@ -134,12 +135,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 id="invoiceModalLabel" class="modal-title">{{ l10n._('Add Invices') }}</h4>
+          <h4 id="invoiceModalLabel" class="modal-title">{{ l10n._('Add Invoices') }}</h4>
         </div>
         <div class="modal-body">
-          <ul class="ulcond lstInvoices">
+          <table class="ulcond lstInvoices table table-responsive">
+            <tbody>
             {{ partial('partials/li-invoices-load') }}
-          </ul>
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary save-modal">Save changes</button>
@@ -180,7 +183,7 @@
         modal: "#invoicechooser",
         showButton: "a.addInvoice",
         saveButton: "button.save-modal",
-        listItems: "ul.lstInvoices li"
+        listItems: "table.lstInvoices tbody tr"
       });
 
     });

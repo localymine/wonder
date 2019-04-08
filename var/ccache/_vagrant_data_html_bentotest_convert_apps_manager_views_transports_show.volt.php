@@ -69,7 +69,19 @@
               </td>
             </tr>
             <tr>
-              <th><?php echo $this->l10n->_('Transport Name'); ?></th>
+              <th><?php echo $this->l10n->_('Phone'); ?></th>
+              <td>
+                <?php echo $this->escaper->escapeHtml($transport->client->phone); ?>
+              </td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Address'); ?></th>
+              <td>
+                <?php echo $this->escaper->escapeHtml($transport->client->address); ?>
+              </td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Transport Issue'); ?></th>
               <td>
                 <?php echo $this->escaper->escapeHtml($transport->name); ?>
               </td>
@@ -89,12 +101,16 @@
             </colgroup>
             <tbody>
             <tr>
-              <th><?php echo $this->l10n->_('Total'); ?></th>
+              <th><?php echo $this->l10n->_('Total Invoices'); ?></th>
               <td class="text-right"><?php echo number_format($transport->total); ?> (&#8363;)</td>
             </tr>
             <tr>
-              <th><?php echo $this->l10n->_('Total Other Costs'); ?></th>
-              <td class="text-right">(¥) <?php echo number_format($transport->total_others); ?></td>
+              <th><?php echo $this->l10n->_('Total OtherCosts'); ?></th>
+              <td class="text-right"><?php echo number_format($transport->total_others); ?> (&#8363;)</td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Total'); ?></th>
+              <td class="text-right"><?php echo number_format(($transport->total + $transport->total_others)); ?> (&#8363;)</td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Remarks'); ?></th>
@@ -112,30 +128,33 @@
             </table>
           </div>
         </div>
+
         <h4><?php echo $this->l10n->_('Invoices'); ?></h4>
         <div class="row row-gutter-20">
-          <?php foreach ($transportInvoice as $transinvoice) { ?>
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
-                <col class="col-5">
-                <col class="col-7">
+                <col class="col-1">
+                <col class="col-8">
+                <col class="col-3">
               </colgroup>
               <tbody>
+              <?php foreach ($transportInvoice as $transinvoice) { ?>
               <tr>
-                <th class="font-light">
-                  <i class="fa fa-glass"></i>
-                  <?php echo $transinvoice->invoice->id; ?> - <?php echo $transinvoice->invoice->client->name; ?>
+                <td><?php echo $transinvoice->invoice->id; ?></td>
+                <td>
+                  <i class="fa fa-glass"></i><?php echo $transinvoice->invoice->client->name; ?>
                   <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $transinvoice->invoice->id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
-                </th>
+                </td>
                 <td class="text-right"><?php echo number_format($transinvoice->invoice->total_price); ?> (&#8363;)</td>
               </tr>
+              <?php } ?>
               </tbody>
             </table>
           </div>
-          <?php } ?>
         </div>
-        <h4><?php echo $this->l10n->_('Other Costs'); ?></h4>
+
+        <h4><?php echo $this->l10n->_('OtherCosts'); ?></h4>
         <div class="row row-gutter-20">
           <?php foreach ($transportOtherCost as $transothercost) { ?>
           <div class="col-xs-12 col-sm-6">

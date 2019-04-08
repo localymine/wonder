@@ -371,13 +371,13 @@ class FilterInjector extends Component
     $controller->{'tag'}->setDefaults($posts);
   }
 
-  public static function getInvoiceNotInTransportInvoice(DependencyInjector $di, $client_id)
+  public static function getInvoiceNotInTransportInvoice(DependencyInjector $di, $member_id='')
   {
     /* if $_SESSION['auth'] not found, returns false.
      * session情報がない場合は偽 */
     $identity = $di->get('auth')->getIdentity();
     if (!$identity) {
-      return;
+      return false;
     }
 
     /* create fully qualified class name. */
@@ -398,13 +398,13 @@ class FilterInjector extends Component
 
     $criteria->andWhere('['.$Model.'].disabled=:disabled:', ['disabled' => 0]);
     $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $identity['id']]);
-    $criteria->andWhere('['.$Model.'].client_id=:client_id:', ['client_id' => $client_id]);
+//    $criteria->andWhere('['.$Model.'].member_id=:member_id:', ['client_id' => $member_id]);
     $criteria->andWhere('[TransportInvoice].invoice_id IS NULL');
 
     return $criteria;
   }
 
-  public function getInvoiceNotInTransportInvoiceAndSelectedInvoice(DependencyInjector $di, $client_id, $transport_id){
+  public function getInvoiceNotInTransportInvoiceAndSelectedInvoice(DependencyInjector $di, $transport_id, $member_id=''){
     /* if $_SESSION['auth'] not found, returns false.
      * session情報がない場合は偽 */
     $identity = $di->get('auth')->getIdentity();
@@ -421,7 +421,7 @@ class FilterInjector extends Component
     $sql .= " WHERE ";
     $sql .= "    iv.disabled = 0 AND ";
     $sql .= "    iv.user_id = $user_id AND ";
-    $sql .= "    iv.client_id = $client_id AND ";
+//    $sql .= "    iv.member_id = $member_id AND ";
     $sql .= "    ti.invoice_id IS NULL ";
     $sql .= " UNION ALL ";
 //    $sql .= " SELECT *, 'id2' as OrderKey ";
@@ -429,7 +429,7 @@ class FilterInjector extends Component
     $sql .= " FROM invoices as iv ";
     $sql .= " LEFT JOIN transport_invoices as ti ON ti.invoice_id = iv.id ";
     $sql .= " WHERE ";
-    $sql .= "    iv.client_id = $client_id AND ";
+//    $sql .= "    iv.member_id = $member_id AND ";
     $sql .= "    ti.transport_id = $transport_id ";
 //    $sql .= " ORDER BY OrderKey ";
 

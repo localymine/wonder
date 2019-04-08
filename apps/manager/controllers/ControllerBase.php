@@ -185,9 +185,9 @@ class ControllerBase extends Controller
     }
   }
 
-  protected function getInvoiceList($client_id)
+  protected function getInvoiceList($member_id='')
   {
-    $creteria = FilterInjector::getInvoiceNotInTransportInvoice($this->di, $client_id);
+    $creteria = FilterInjector::getInvoiceNotInTransportInvoice($this->di);
     if ($creteria) {
       /** @var Resultset $model_data */
       return $creteria->execute();
@@ -196,8 +196,8 @@ class ControllerBase extends Controller
     }
   }
 
-  protected function getInvoiceList2($client_id, $transport_id) {
-    $result = FilterInjector::getInvoiceNotInTransportInvoiceAndSelectedInvoice($this->di, $client_id, $transport_id);
+  protected function getInvoiceList2($transport_id, $member_id='') {
+    $result = FilterInjector::getInvoiceNotInTransportInvoiceAndSelectedInvoice($this->di, $transport_id);
     if ($result) {
       return $result;
     } else {

@@ -65,6 +65,14 @@
         </div>
 
         <div class="form-group required">
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'data-mode' => 'new', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '')); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Status'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->select(array('status', $status, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '')); ?>
@@ -92,14 +100,6 @@
           </div>
         </div>
 
-        <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
-          <div class="col-xs-12 col-sm-3">
-            <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'data-mode' => 'new', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '')); ?>
-
-          </div>
-        </div>
-
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"></label>
           <div class="col-xs-12 col-sm-8">
@@ -111,11 +111,12 @@
                   <th scope="col">#</th>
                   <th scope="col"><?php echo $this->l10n->_('Invoice name', 'invoice'); ?></th>
                   <th class="text-center" scope="col"><?php echo $this->l10n->_('Price(¥)', 'invoice'); ?></th>
+                  <th><?php echo $this->l10n->_('Datetime', 'invoice'); ?></th>
                   <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <?php echo $this->partial('partials/tr-invoices'); ?>
+                
               </tbody>
             </table>
           </div>
@@ -161,12 +162,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 id="invoiceModalLabel" class="modal-title"><?php echo $this->l10n->_('Add Invices'); ?></h4>
+          <h4 id="invoiceModalLabel" class="modal-title"><?php echo $this->l10n->_('Add Invoices'); ?></h4>
         </div>
         <div class="modal-body">
-          <ul class="ulcond lstInvoices">
+          <table class="ulcond lstInvoices table table-responsive">
+            <tbody>
             <?php echo $this->partial('partials/li-invoices-load'); ?>
-          </ul>
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary save-modal">Save changes</button>
@@ -216,7 +219,7 @@
         modal: "#invoicechooser",
         showButton: "a.addInvoice",
         saveButton: "button.save-modal",
-        listItems: "ul.lstInvoices li"
+        listItems: "table.lstInvoices tbody tr"
       });
 
     });
