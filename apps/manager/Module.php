@@ -37,7 +37,12 @@ class Module implements ModuleDefinitionInterface
     // モジュール固有ライブラリ
     $loader->registerDirs(array(
       __DIR__.'/libraries/',
+      __DIR__.'/libraries/PHPExcel/',
     ));
+    $loader->registerClasses([
+      'PHPExcel' => __DIR__.'/libraries/PHPExcel.php',
+      'PHPExcel_Writer_Excel2007' => __DIR__.'/libraries/PHPExcel/Writer/Excel2007.php',
+    ]);
     $loader->register();
   }
 
