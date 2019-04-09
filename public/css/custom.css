@@ -428,7 +428,7 @@ input[name*=invoice], .modal-body ul li .icheckbox_minimal-blue {
 .tb-align-currency{
   text-align: right;
   display: block;
-  padding-right: 50%;
+  padding-right: 20%;
 }
 .modal-body ul li:hover{
   background: rgba(135, 206, 235, 0.3);

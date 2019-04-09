@@ -212,10 +212,8 @@ class TransportsController extends ControllerBase
     $list_invoices = $this->getInvoiceList2($transport->id);
 
     $this->view->setVar('transport', $transport);
-    $this->view->setVar('selected_invoice_ids', implode(',', $selected_invoice_ids));
     $this->view->setVar('selected_invoices', $selected_invoices);
     $this->view->setVar('list_invoices', $list_invoices);
-    $this->view->setVar('mode', 'edit');
 
     $data_oc = [];
     $othercost = $transport->getRelated('othercost');
@@ -230,7 +228,7 @@ class TransportsController extends ControllerBase
       }
     }
 
-//    $this->view->setVar('posts', $data_oc);
+    $this->view->setVar('posts', $data_oc);
     $this->view->setVar('count', 1);
   }
 
@@ -271,13 +269,10 @@ class TransportsController extends ControllerBase
         return;
       }
 
-      $count = 1;
+      $total_others = 0;
       if ($this->request->hasPost('others')) {
         //
         $others = $post['others'];
-        $count = count($others) - 1;
-
-        $total_others = 0;
         $othercost = [];
         foreach($others as $item) {
           if ($item['id'] != '') {
@@ -301,7 +296,6 @@ class TransportsController extends ControllerBase
       $transport->total_others = $total_others;
 
       $this->view->setVar('posts', $post);
-      $this->view->setVar('count', $count);
 
       $cond = [
         'conditions' => 'transport_id=:transport_id:',
@@ -364,11 +358,6 @@ class TransportsController extends ControllerBase
         ]);
         return;
       } else {
-        if ($post['rmOtherIds'] != '') {
-          $rm_others = OtherCost::find('id IN ('. $post['rmOtherIds'] .')');
-          $rm_others->delete();
-        }
-        //
         $oldTransInvoice->delete();
       }
 
@@ -450,77 +439,6 @@ class TransportsController extends ControllerBase
     $this->view->setVar('transportInvoice', $transportInvoice);
     $this->view->setVar('transportOtherCost', $transportOtherCost);
   }
-
-
-//  public function getAction()
-//  {
-//    $results = [
-//      'success' => 0
-//    ];
-//
-//    $identity = $this->auth->getUser();
-//    if (!$identity) {
-//      return $this->response->redirect('manager/main/forbidden');
-//    }
-//
-//    if ($this->request->hasQuery('client_id')) {
-//      $client_id = $this->request->getQuery('client_id');
-//      $mode      = $this->request->getQuery('mode');
-//
-//      $invoices = $this->getInvoiceList();
-//      if ($invoices->count() > 0) {
-//        $tags = [];
-//        foreach ($invoices as $invoice) {
-//          $tags[] = $this->view->getRender('partials', 'li-invoices', [
-//            'invoice' => $invoice,
-//            'mode'    => $mode,
-//          ]);
-//        }
-//        $results['success']  = 1;
-//        $results['invoice']  = $tags;
-//      }
-//    }
-//
-//    $this->view->disable();
-//    $this->response->setContent(json_encode($results));
-//    return $this->response;
-//  }
-
-
-//  public function get2Action()
-//  {
-//    $results = [
-//      'success' => 0
-//    ];
-//
-//    $identity = $this->auth->getUser();
-//    if (!$identity) {
-//      return $this->response->redirect('manager/main/forbidden');
-//    }
-//
-//    if ($this->request->hasQuery('client_id')) {
-//      $client_id = $this->request->getQuery('client_id');
-//      $transport_id = $this->request->getQuery('transport_id');
-//      $mode      = $this->request->getQuery('mode');
-//
-//      $invoices = $this->getInvoiceList2($client_id, $transport_id);
-//      if ($invoices->count() > 0) {
-//        $tags = [];
-//        foreach ($invoices as $invoice) {
-//          $tags[] = $this->view->getRender('partials', 'li-invoices', [
-//            'invoice' => $invoice,
-//            'mode'    => $mode,
-//          ]);
-//        }
-//        $results['success']  = 1;
-//        $results['invoice']  = $tags;
-//      }
-//    }
-//
-//    $this->view->disable();
-//    $this->response->setContent(json_encode($results));
-//    return $this->response;
-//  }
 
 
   public function beforeExecuteRoute($dispatcher)

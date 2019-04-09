@@ -130,27 +130,8 @@
     </div>
   </section>
 
-  <div class="modal" id="invoicechooser" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="invoiceModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 id="invoiceModalLabel" class="modal-title">{{ l10n._('Add Invoices') }}</h4>
-        </div>
-        <div class="modal-body">
-          <table class="ulcond lstInvoices table table-responsive">
-            <tbody>
-            {{ partial('partials/li-invoices-load') }}
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary save-modal">Save changes</button>
-          <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{ partial('partials/modal/transport-invoices-list') }}
+
 {% endblock %}
 
 {% block pagescript %}
@@ -178,14 +159,6 @@
       $('.modal-body ul li').on('click', function(evt) {
         $('input[type=checkbox]', this).iCheck('toggle');
       });
-
-      $.transportForm({
-        modal: "#invoicechooser",
-        showButton: "a.addInvoice",
-        saveButton: "button.save-modal",
-        listItems: "table.lstInvoices tbody tr"
-      });
-
     });
   </script>
 {% endblock %}

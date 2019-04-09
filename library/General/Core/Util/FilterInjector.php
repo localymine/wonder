@@ -414,24 +414,17 @@ class FilterInjector extends Component
 
     $user_id = $identity['id'];
 
-//    $sql  = " SELECT *, 'id1' as OrderKey ";
-    $sql  = " SELECT iv.id, user_id, client_id, total_price, status, disabled ";
-    $sql .= " FROM invoices as iv ";
-    $sql .= " LEFT JOIN transport_invoices as ti ON ti.invoice_id = iv.id ";
+    $sql  = " SELECT IV.id, IV.user_id, IV.client_id, CL.name, total_price, status, IV.created ";
+    $sql .= " FROM `invoices` AS IV ";
+    $sql .= " LEFT JOIN clients AS CL ON IV.client_id = CL.id ";
     $sql .= " WHERE ";
-    $sql .= "    iv.disabled = 0 AND ";
-    $sql .= "    iv.user_id = $user_id AND ";
-//    $sql .= "    iv.member_id = $member_id AND ";
-    $sql .= "    ti.invoice_id IS NULL ";
-    $sql .= " UNION ALL ";
-//    $sql .= " SELECT *, 'id2' as OrderKey ";
-    $sql .= " SELECT iv.id, user_id, client_id, total_price, status, disabled ";
-    $sql .= " FROM invoices as iv ";
-    $sql .= " LEFT JOIN transport_invoices as ti ON ti.invoice_id = iv.id ";
-    $sql .= " WHERE ";
-//    $sql .= "    iv.member_id = $member_id AND ";
-    $sql .= "    ti.transport_id = $transport_id ";
-//    $sql .= " ORDER BY OrderKey ";
+    $sql .= "    IV.disabled = 0 AND ";
+    $sql .= "    IV.user_id = $user_id AND ";
+    $sql .= "    IV.id NOT IN ( ";
+    $sql .= "       SELECT invoice_id ";
+    $sql .= "       FROM transport_invoices ";
+    $sql .= "       WHERE transport_id = $transport_id )";
+//    $sql .= " ORDER BY IV.id DESC";
 
     $invoice = new Invoice();
     return new Resultset(

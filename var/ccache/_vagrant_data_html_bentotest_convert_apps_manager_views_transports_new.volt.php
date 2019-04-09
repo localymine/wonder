@@ -57,7 +57,7 @@
       <div class="box-body">
 
         <div class="form-group required">
-          <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transport Name'); ?></label>
+          <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transport Issue'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('name', 'class' => 'form-control')); ?>
 
@@ -110,7 +110,7 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col"><?php echo $this->l10n->_('Invoice name', 'invoice'); ?></th>
-                  <th class="text-center" scope="col"><?php echo $this->l10n->_('Price(¥)', 'invoice'); ?></th>
+                  <th class="text-center" scope="col"><?php echo $this->l10n->_('Price(&#8363;)', 'invoice'); ?></th>
                   <th><?php echo $this->l10n->_('Datetime', 'invoice'); ?></th>
                   <th scope="col"></th>
                 </tr>
@@ -157,27 +157,8 @@
     </div>
   </section>
 
-  <div class="modal" id="invoicechooser" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="invoiceModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 id="invoiceModalLabel" class="modal-title"><?php echo $this->l10n->_('Add Invoices'); ?></h4>
-        </div>
-        <div class="modal-body">
-          <table class="ulcond lstInvoices table table-responsive">
-            <tbody>
-            <?php echo $this->partial('partials/li-invoices-load'); ?>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary save-modal">Save changes</button>
-          <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php echo $this->partial('partials/modal/transport-invoices-list'); ?>
+
 
 </div>
 
@@ -214,14 +195,6 @@
       $('.modal-body ul li').on('click', function(evt) {
         $('input[type=checkbox]', this).iCheck('toggle');
       });
-
-      $.transportForm({
-        modal: "#invoicechooser",
-        showButton: "a.addInvoice",
-        saveButton: "button.save-modal",
-        listItems: "table.lstInvoices tbody tr"
-      });
-
     });
   </script>
 

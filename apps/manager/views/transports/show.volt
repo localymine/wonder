@@ -129,7 +129,6 @@
 
         <h4>{{ l10n._('OtherCosts') }}</h4>
         <div class="row row-gutter-20">
-          {% for transothercost in transportOtherCost %}
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
@@ -137,14 +136,15 @@
                 <col class="col-7">
               </colgroup>
               <tbody>
+              {% for transothercost in transportOtherCost %}
               <tr>
                 <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ transothercost.name }}</th>
-                <td class="text-right">(¥) {{ transothercost.price|number_format }}</td>
+                <td class="text-right">{{ transothercost.price|number_format }} (&#8363;)</td>
               </tr>
+              {% endfor %}
               </tbody>
             </table>
           </div>
-          {% endfor %}
         </div>
       </div>
       <div class="box-footer">

@@ -156,7 +156,6 @@
 
         <h4><?php echo $this->l10n->_('OtherCosts'); ?></h4>
         <div class="row row-gutter-20">
-          <?php foreach ($transportOtherCost as $transothercost) { ?>
           <div class="col-xs-12 col-sm-6">
             <table class="table table-bordered">
               <colgroup>
@@ -164,14 +163,15 @@
                 <col class="col-7">
               </colgroup>
               <tbody>
+              <?php foreach ($transportOtherCost as $transothercost) { ?>
               <tr>
                 <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $transothercost->name; ?></th>
-                <td class="text-right">(¥) <?php echo number_format($transothercost->price); ?></td>
+                <td class="text-right"><?php echo number_format($transothercost->price); ?> (&#8363;)</td>
               </tr>
+              <?php } ?>
               </tbody>
             </table>
           </div>
-          <?php } ?>
         </div>
       </div>
       <div class="box-footer">
