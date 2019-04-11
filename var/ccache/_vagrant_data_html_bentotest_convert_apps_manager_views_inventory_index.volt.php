@@ -47,6 +47,9 @@
       <div class="box-header with-border">
         <h3 class="box-title pull-left"><?php echo $this->escaper->escapeHtml($page_heading); ?></h3>
 
+        <button class="btn btn-default btn-sm" style="float: right;" data-target="#inventory-export-dialog" data-toggle="modal">
+          <i class="fa fa-file-excel-o"></i> <span>Export</span>
+        </button>
       </div>
       <div class="box-body" data-csrftoken="<?php echo $this->security->getToken(); ?>">
 
@@ -59,6 +62,7 @@
     <?php echo $this->partial('partials/modal/product-stock'); ?>
     <?php echo $this->partial('partials/modal/product-sub-stock'); ?>
     <?php echo $this->partial('partials/modal/image-enlarge'); ?>
+    <?php echo $this->partial('partials/modal/inventory-export'); ?>
 
   </section>
 

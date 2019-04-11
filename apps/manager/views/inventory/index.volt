@@ -20,6 +20,9 @@
       <div class="box-header with-border">
         <h3 class="box-title pull-left">{{ page_heading|e }}</h3>
 
+        <button class="btn btn-default btn-sm" style="float: right;" data-target="#inventory-export-dialog" data-toggle="modal">
+          <i class="fa fa-file-excel-o"></i> <span>Export</span>
+        </button>
       </div>
       <div class="box-body" data-csrftoken="{{ security.getToken() }}">
 
@@ -32,6 +35,7 @@
     {{ partial('partials/modal/product-stock') }}
     {{ partial('partials/modal/product-sub-stock') }}
     {{ partial('partials/modal/image-enlarge') }}
+    {{ partial('partials/modal/inventory-export') }}
 
   </section>
 {% endblock %}
