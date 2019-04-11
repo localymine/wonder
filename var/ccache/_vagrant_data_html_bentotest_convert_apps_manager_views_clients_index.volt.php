@@ -71,6 +71,15 @@
 <?php echo $this->partial('partials/javascripts'); ?>
 
   <?php echo $this->partial('partials/paginatorscript'); ?>
+  <script>
+  $(function() {
+    $('#table-clients').DataTable({
+//        "iDisplayLength": 50,
+      "bPaginate": false,
+      "bInfo": false
+    });
+  });
+  </script>
 
 </body>
 </html>

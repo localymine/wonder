@@ -196,8 +196,8 @@ class ControllerBase extends Controller
     }
   }
 
-  protected function getInvoiceList2($transport_id, $member_id='') {
-    $result = FilterInjector::getInvoiceNotInTransportInvoiceAndSelectedInvoice($this->di, $transport_id);
+  protected function getInvoiceList2($member_id='') {
+    $result = FilterInjector::getInvoiceNotInTransportInvoiceAndSelectedInvoice($this->di);
     if ($result) {
       return $result;
     } else {

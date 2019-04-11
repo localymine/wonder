@@ -2,7 +2,7 @@
   <?php foreach ($list_invoices as $invoice) { ?>
     <tr id="iv-<?php echo $invoice->id; ?>">
       <td><?php echo $invoice->id; ?></td>
-      <td><?php echo $invoice->name; ?>
+      <td><?php echo $invoice->client->name; ?>
         <?php echo $this->tag->hiddenField(array('name' => 'invoice[]', 'value' => $invoice->id)); ?>
       </td>
       <td><span class="tb-align-currency"><?php echo number_format($invoice->total_price); ?></span></td>

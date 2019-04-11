@@ -35,4 +35,13 @@
 
 {% block pagescript %}
   {{ partial('partials/paginatorscript') }}
+  <script>
+  $(function() {
+    $('#table-clients').DataTable({
+//        "iDisplayLength": 50,
+      "bPaginate": false,
+      "bInfo": false
+    });
+  });
+  </script>
 {% endblock %}

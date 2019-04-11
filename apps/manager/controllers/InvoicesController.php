@@ -28,7 +28,7 @@ class InvoicesController extends ControllerBase
     $limit = 100;
     /* initialize data to be passed to paginator. */
     $posts = isset($_REQUEST) ? $_REQUEST : [];
-    $posts['order'] = 1;
+    $posts['order'] = 'created';
     $posts['direction'] = 'DESC';
 
     if ($this->request->hasQuery('limit')) {
@@ -525,6 +525,7 @@ class InvoicesController extends ControllerBase
             $response['qty'] = $qty;
             $response['sum'] = $sum;
             $response['date'] = date('Y/m/d H:i');
+            $response['remarks'] = $invoice->remarks;
             $response['success'] = 1;
           }
         }
@@ -542,6 +543,7 @@ class InvoicesController extends ControllerBase
     $cond = [
       'conditions' => 'disabled=:disabled:',
       'bind' => ['disabled' => 0],
+      'order' => 'name'
     ];
     $clients = Client::find($this->qi->inject('Client', $cond));
     $dClients = [];

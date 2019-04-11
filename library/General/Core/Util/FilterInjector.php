@@ -4,6 +4,8 @@
  */
 namespace General\Core\Util;
 
+use General\Core\Manager\Models\Brand;
+use General\Core\Manager\Models\Category;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\TransportInvoice;
@@ -404,7 +406,7 @@ class FilterInjector extends Component
     return $criteria;
   }
 
-  public function getInvoiceNotInTransportInvoiceAndSelectedInvoice(DependencyInjector $di, $transport_id, $member_id=''){
+  public function getInvoiceNotInTransportInvoiceAndSelectedInvoice(DependencyInjector $di, $member_id='') {
     /* if $_SESSION['auth'] not found, returns false.
      * session情報がない場合は偽 */
     $identity = $di->get('auth')->getIdentity();
@@ -422,8 +424,7 @@ class FilterInjector extends Component
     $sql .= "    IV.user_id = $user_id AND ";
     $sql .= "    IV.id NOT IN ( ";
     $sql .= "       SELECT invoice_id ";
-    $sql .= "       FROM transport_invoices ";
-    $sql .= "       WHERE transport_id = $transport_id )";
+    $sql .= "       FROM transport_invoices )";
 //    $sql .= " ORDER BY IV.id DESC";
 
     $invoice = new Invoice();
@@ -460,6 +461,8 @@ class FilterInjector extends Component
 
     $criteria->leftJoin(ProductQuantity::class, '['.$Model.'].id=[PQ].product_id ', 'PQ');
     $criteria->leftJoin(Warehouse::class, '[WH].id=[PQ].warehouse_id ', 'WH');
+    $criteria->leftJoin(Category::class, '['.$Model.'].category_id=[CTG].id ', 'CTG');
+    $criteria->leftJoin(Brand::class, '['.$Model.'].brand_id=[BD].id ', 'BD');
 
     if ($warehouse != '') {
       $criteria->andWhere('[PQ].warehouse_id=:warehouse_id:', [
@@ -469,8 +472,9 @@ class FilterInjector extends Component
 
     $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
     $criteria->andWhere('['.$Model.'].disabled=:disabled:', ['disabled' => 0]);
+    $criteria->andWhere('[PQ].quantity>:quantity:', ['quantity' => 0]);
 
-    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword:';
+    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword: OR [CTG].name LIKE :keyword: OR [BD].name LIKE :keyword:';
     $c = '%'.trim($keyword).'%';
     $criteria->andWhere($t,
       ['keyword' => $c]

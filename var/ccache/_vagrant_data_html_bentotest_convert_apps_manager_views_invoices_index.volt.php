@@ -74,6 +74,12 @@
   <?php echo $this->partial('partials/paginatorscript'); ?>
   <script>
     $(function(){
+      $('#table-invoices').DataTable({
+//        "iDisplayLength": 50,
+        "ordering": false,
+        "bPaginate": false,
+        "bInfo" : false
+      });
       $('.btn-print').on('click', function() {
         var post_data = {
           'id' : $(this).data('id')
@@ -104,7 +110,8 @@
               $('.tb-detail tbody').append(tr);
             }
             $('.tb-detail tfoot .qty').html(data['qty']);
-            $('.tb-detail tfoot .sum').html((data['sum'].format()));
+            $('.tb-detail tfoot .sum').html(data['sum'].format());
+            $('.tb-detail tfoot .remarks').html(data['remarks']);
             //
             html2canvas(element, {
               onrendered: function (canvas) {

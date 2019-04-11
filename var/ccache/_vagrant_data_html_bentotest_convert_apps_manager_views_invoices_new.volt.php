@@ -58,7 +58,7 @@
 
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Client'); ?></label>
-          <div class="col-xs-12 col-sm-3">
+          <div class="col-xs-12 col-sm-4">
             <div id="client_id" name="client_id"></div>
           </div>
         </div>
@@ -160,7 +160,7 @@
       }
       // Create a jqxComboBox
       var timer;
-      $("#client_id").jqxComboBox({source: source, height: 34}).on('change', function(e){
+      $("#client_id").jqxComboBox({source: source, width:298, height: 34}).on('change', function(e){
         var args = e.args;
         if (args) {
           if(args.item !== null) {

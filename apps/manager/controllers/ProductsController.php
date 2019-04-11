@@ -24,7 +24,7 @@ class ProductsController  extends ControllerBase
     /* page number to be initially displayed. */
     $page = 1;
     /* maximum number of data to be displaied on single page. */
-    $limit = 100;
+    $limit = 1000;
     /* initialize data to be passed to paginator. */
     $posts = isset($_REQUEST) ? $_REQUEST : [];
 

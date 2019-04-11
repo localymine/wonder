@@ -1,6 +1,6 @@
 {{ nav.getPaginator(page,'manager/clients/index','ontop') }}
 
-          <table class="table table-bordered table-condenced table-hover clients-list">
+          <table id="table-clients" class="table table-bordered table-condenced table-hover clients-list">
           <colgroup>
           <col>
           <col>

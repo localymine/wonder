@@ -50,6 +50,7 @@ class Enums extends Component
     return [
       0 => 'Retail',
       1 => 'Wholesale',
+      2 => 'Transporter',
     ];
   }
 
@@ -58,7 +59,10 @@ class Enums extends Component
    */
   public function getCategories()
   {
-    return Category::find();
+    $cond = [
+      'order' => 'name'
+    ];
+    return Category::find($cond);
   }
 
   /**
@@ -66,7 +70,10 @@ class Enums extends Component
    */
   public function getBrands()
   {
-    return Brand::find();
+    $cond = [
+      'order' => 'name'
+    ];
+    return Brand::find($cond);
   }
 
 }

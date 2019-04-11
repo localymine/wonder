@@ -47,6 +47,11 @@
                 <td class="text-right qty"></td>
                 <td class="text-right sum"></td>
               </tr>
+              <tr>
+                <td>
+                  <div class="remarks" style="font-style: italic;font-size:10px;"></div>
+                </td>
+              </tr>
               </tfoot>
             </table>
           </div>

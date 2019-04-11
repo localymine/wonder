@@ -209,7 +209,7 @@ class TransportsController extends ControllerBase
         ]);
       }
     }
-    $list_invoices = $this->getInvoiceList2($transport->id);
+    $list_invoices = $this->getInvoiceList2();
 
     $this->view->setVar('transport', $transport);
     $this->view->setVar('selected_invoices', $selected_invoices);
@@ -543,8 +543,9 @@ class TransportsController extends ControllerBase
   {
 
     $cond = [
-      'conditions' => 'disabled=:disabled:',
-      'bind' => ['disabled' => 0],
+      'conditions' => 'disabled=:disabled: AND type=:type:',
+      'bind' => ['disabled' => 0, 'type' => 2],
+      'order' => 'name',
     ];
     $clients = Client::find($this->qi->inject('Client', $cond));
     $this->view->setVar('clients', $clients);

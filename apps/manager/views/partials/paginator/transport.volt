@@ -18,7 +18,7 @@
           <th>{{ l10n.__('Receiver', 'transport') }}</th>
           <th>{{ l10n.__('Total Invoices (&#8363;)', 'transport') }}</th>
           <th>{{ l10n.__('Total Others (&#8363;)', 'transport') }}</th>
-          <th>{{ l10n.__('Total', 'transport') }}</th>
+          <th>{{ l10n.__('Total (&#8363;)', 'transport') }}</th>
           <th>{{ l10n.__('Status', 'transport') }}</th>
           <th><i class="fa fa-cogs"></i></th>
           </tr>
