@@ -61,6 +61,7 @@
     <?php echo $this->partial('partials/modal/chart-product'); ?>
     <?php echo $this->partial('partials/modal/product-stock'); ?>
     <?php echo $this->partial('partials/modal/product-sub-stock'); ?>
+    <?php echo $this->partial('partials/modal/product-move-stock'); ?>
     <?php echo $this->partial('partials/modal/image-enlarge'); ?>
     <?php echo $this->partial('partials/modal/inventory-export'); ?>
 

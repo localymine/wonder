@@ -1,0 +1,10 @@
+[Fri, 12 Apr 19 00:57:01 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Fri, 12 Apr 19 00:57:01 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}
+[Fri, 12 Apr 19 00:57:29 +0900][ERROR] General\Core\Converter\Controllers\UploadsController handler class cannot be loaded
+[Fri, 12 Apr 19 00:57:29 +0900][ERROR] #0 [internal function]: Phalcon\Mvc\Dispatcher->_throwDispatchException('General\\Core\\Co...', 2)
+#1 [internal function]: Phalcon\Dispatcher->dispatch()
+#2 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#3 {main}

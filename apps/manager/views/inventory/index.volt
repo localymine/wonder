@@ -34,6 +34,7 @@
     {{ partial('partials/modal/chart-product') }}
     {{ partial('partials/modal/product-stock') }}
     {{ partial('partials/modal/product-sub-stock') }}
+    {{ partial('partials/modal/product-move-stock') }}
     {{ partial('partials/modal/image-enlarge') }}
     {{ partial('partials/modal/inventory-export') }}
 

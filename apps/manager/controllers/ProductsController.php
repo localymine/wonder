@@ -450,6 +450,86 @@ class ProductsController  extends ControllerBase
   }
 
 
+  public function moveStockAction () {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $identity = $this->auth->getIdentity();
+        $data      = $this->request->getPost();
+        //
+        $condFrom = [
+          'conditions' => 'product_id=:product_id: AND warehouse_id=:warehouse_id:',
+          'bind' => [
+            'product_id' => $data['id'],
+            'warehouse_id' => (int) $data['from_warehouse_id']
+          ]
+        ];
+        /* @var ProductQuantity $productquantityFrom */
+        $productquantityFrom = ProductQuantity::findFirst($condFrom);
+        if (!$productquantityFrom) {
+          $proqty = new ProductQuantity();
+          $proqty->user_id = $identity['id'];
+          $proqty->product_id = $data['id'];
+          $proqty->warehouse_id = $data['from_warehouse_id'];
+          $proqty->quantity = 0;
+          $proqty->create();
+        }
+        //
+        /* @var ProductQuantity $productquantityTo */
+        $condTo = [
+          'conditions' => 'product_id=:product_id: AND warehouse_id=:warehouse_id:',
+          'bind' => [
+            'product_id' => $data['id'],
+            'warehouse_id' => (int) $data['to_warehouse_id']
+          ]
+        ];
+        $productquantityTo = ProductQuantity::findFirst($condTo);
+        if (!$productquantityTo) {
+          $proqty = new ProductQuantity();
+          $proqty->user_id = $identity['id'];
+          $proqty->product_id = $data['id'];
+          $proqty->warehouse_id = $data['to_warehouse_id'];
+          $proqty->quantity = 0;
+          $proqty->create();
+        }
+        // move from A to B
+        $moveQty = $data['quantity'];
+        $productquantityFrom = ProductQuantity::findFirst($condFrom);
+        $productquantityFrom->quantity = $productquantityFrom->quantity - $moveQty;
+        $productquantityFrom->update();
+        $productquantityTo   = ProductQuantity::findFirst($condTo);
+        $productquantityTo->quantity   = $productquantityTo->quantity + $moveQty;
+        $productquantityTo->update();
+        //
+        $cond = [
+          'column' => 'quantity',
+          'conditions' => 'user_id=:user_id: AND product_id=:product_id:',
+          'bind' => [
+            'user_id' => $identity['id'],
+            'product_id' => $data['id'],
+          ],
+        ];
+        $upQuantity = ProductQuantity::sum($cond);  // update product quantity
+        //
+        $cond = [
+          'conditions' => 'id=:id:',
+          'bind' => ['id' => $data['id']],
+        ];
+        /* @var Product $product  */
+        $product = Product::findFirst($this->qi->inject('Product', $cond));
+        $product->quantity = $upQuantity;
+        $product->update();
+        //
+        $response['quantity'] = $upQuantity;
+        $response['success'] = 1;
+      }
+    }
+    $this->response->setContent(json_encode($response));
+    return $this->response;
+  }
+
+
   public function chartAction() {
     $response = ['success' => 0];
     $this->view->disable();
@@ -529,6 +609,7 @@ class ProductsController  extends ControllerBase
     return;
   }
 
+
   private function savePath($id)
   {
     $savedir  = 'user'.DS.sprintf("%07d", $this->view->getVar('identity')['id']).DS.
@@ -536,6 +617,7 @@ class ProductsController  extends ControllerBase
     $savepath = SKR_UPLOAD_DIR.DS.$savedir;
     return $savepath;
   }
+
 
   public function beforeExecuteRoute($dispatcher)
   {

@@ -90,6 +90,42 @@ $(function () {
     });
   });
 
+  $('.btn-move').on('click', function() {
+    $('.product-name').html($(this).data('product'));
+    $('#submitMovestock').data('id', $(this).data('id'));
+    $('#subForm')[0].reset();
+  });
+
+  $('#submitMovestock').on('click', function() {
+    var id    = $(this).data('id');
+    var fr_id = $('#warehouse_from').val();
+    var to_id = $('#warehouse_to').val();
+    if (fr_id !== '' && to_id !== '') {
+      if (fr_id !== to_id) {
+        var post_data = {
+          id: id,
+          from_warehouse_id: fr_id,
+          to_warehouse_id  : to_id,
+          quantity : $('#moveQuantity').val()
+        };
+        $.ajax({
+          url: '/manager/products/moveStock',
+          type:'POST',
+          data:post_data,
+          dataType:'json',
+          async:true,
+          cache:false
+        }).done(function(data) {
+          if(data['success'] === 1) {
+            $('#p'+id+' .quantity').html(data['quantity']);
+            $('#move-stock-dialog').modal('toggle');
+            $('#p'+id).effect('highlight', {}, 1000);
+          }
+        });
+      }
+    }
+  });
+
   $('.btn-chart').on('click', function() {
     $('.product-name').html($(this).data('product'));
     var id = $(this).data('id');
