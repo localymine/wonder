@@ -43,7 +43,6 @@
 
 {% block pagescript %}
   {{ partial('partials/paginatorscript') }}
-  {{ javascript_include('js/Chart.min.js') }}
   {{ javascript_include('js/product.js') }}
   <script>
     $(function(){

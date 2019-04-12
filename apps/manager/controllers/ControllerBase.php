@@ -205,4 +205,34 @@ class ControllerBase extends Controller
     }
   }
 
+  protected function getProductsVsParLevel()
+  {
+    $result = FilterInjector::checkParLevel($this->di);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
+  protected function getTheMostOrder()
+  {
+    $result = FilterInjector::theMostOrder($this->di);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
+  protected function getUserMostInterested()
+  {
+    $result = FilterInjector::userMostInterested($this->di);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
 }

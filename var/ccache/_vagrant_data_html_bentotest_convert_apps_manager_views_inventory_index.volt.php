@@ -79,7 +79,6 @@
 <?php echo $this->partial('partials/javascripts'); ?>
 
   <?php echo $this->partial('partials/paginatorscript'); ?>
-  <?php echo $this->tag->javascriptInclude('js/Chart.min.js'); ?>
   <?php echo $this->tag->javascriptInclude('js/product.js'); ?>
   <script>
     $(function(){

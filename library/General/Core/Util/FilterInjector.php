@@ -6,7 +6,10 @@ namespace General\Core\Util;
 
 use General\Core\Manager\Models\Brand;
 use General\Core\Manager\Models\Category;
+use General\Core\Manager\Models\Common;
 use General\Core\Manager\Models\Invoice;
+use General\Core\Manager\Models\InvoiceDetail;
+use General\Core\Manager\Models\Product;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\TransportInvoice;
 use General\Core\Manager\Models\Warehouse;
@@ -519,6 +522,100 @@ class FilterInjector extends Component
       null,
       $product_quantity,
       $product_quantity->getReadConnection()->query($sql)
+    );
+  }
+
+
+  public static function checkParLevel(DependencyInjector $di) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $parLevel = Common::query()
+      ->where('[' . Common::class . '].cid=:cid:', ['cid' => Common::G_PAR_LEVEL])
+      ->columns(['value', 'name'])
+      ->execute();
+    $cond = [
+      'conditions' => 'user_id=:user_id: AND quantity<=:quantity: ',
+      'bind' => [
+        'user_id'   => $user_id,
+        'quantity'  => $parLevel[0]['value'],
+      ],
+      'order' => 'quantity',
+    ];
+    $product = Product::find($cond);
+    return $product;
+  }
+
+  public static function theMostOrder(DependencyInjector $di) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 2, 1, date('Y'));
+    $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
+
+    $firstDay = date('Y-m-d', $firstDayUTS);
+    $lastDay  = date('Y-m-d', $lastDayUTS);
+
+    $sql  = " SELECT  product_id, prd.name, SUM(ivd.quantity) as quantity ";
+    $sql .= " FROM `invoices_details` AS ivd ";
+    $sql .= "    LEFT JOIN `products` AS prd ON ivd.product_id = prd.id ";
+    $sql .= " WHERE prd.user_id = $user_id ";
+    $sql .= "    AND (ivd.created BETWEEN '$firstDay' AND '$lastDay') ";
+    $sql .= " GROUP BY product_id ";
+    $sql .= " ORDER BY quantity DESC ";
+    $sql .= " LIMIT 20 ";
+
+    $invoices_details = new InvoiceDetail();
+    return new Resultset(
+      null,
+      $invoices_details,
+      $invoices_details->getReadConnection()->query($sql)
+    );
+  }
+
+
+  public static function userMostInterested(DependencyInjector $di) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 2, 1, date('Y'));
+    $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
+
+    $firstDay = date('Y-m-d', $firstDayUTS);
+    $lastDay  = date('Y-m-d', $lastDayUTS);
+
+    $sql  = " SELECT  ct.name, count(ivd.product_id) as quantity ";
+    $sql .= " FROM `invoices_details` AS ivd ";
+    $sql .= "    LEFT JOIN `products` AS prd ON ivd.product_id = prd.id ";
+    $sql .= "    LEFT JOIN categories AS ct ON ct.id = prd.category_id ";
+    $sql .= " WHERE prd.user_id = $user_id ";
+    $sql .= "    AND (ivd.created BETWEEN '$firstDay' AND '$lastDay') ";
+    $sql .= " GROUP By ct.id ";
+    $sql .= " ORDER BY quantity DESC ";
+
+    $invoices_details = new InvoiceDetail();
+    return new Resultset(
+      null,
+      $invoices_details,
+      $invoices_details->getReadConnection()->query($sql)
     );
   }
 }

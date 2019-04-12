@@ -36,32 +36,35 @@ class MainController extends ControllerBase
     /* set User to View variables. */
     $this->view->setVar('user', $user);
 
+    /* get the most order */
+    $mostOrders = $this->getTheMostOrder();
+    foreach ($mostOrders as $item) {
+      $mOrder_dt[] = $item->quantity;
+      $mOrder_lb[] = $item->name;
+    }
+    $this->view->setVar('mOrder_dt', implode(',', $mOrder_dt));
+    $this->view->setVar('mOrder_lb', '"'.implode('","', $mOrder_lb).'"');
+
+    /* get the most user care about */
+    $mostCares = $this->getUserMostInterested();
+    foreach ($mostCares as $item) {
+      $mInterested_dt[] = $item->quantity;
+      $mInterested_lb[] = $item->name;
+    }
+    $this->view->setVar('mInterested_dt', implode(',', $mInterested_dt));
+    $this->view->setVar('mInterested_lb', '"'.implode('","', $mInterested_lb).'"');
+
     /* your inventory stock dips below the predetermined levels */
-    $lowInventory = $this->checkParLevel($user->id);
+    $lowInventory = $this->getProductsVsParLevel();
     $this->view->setVar('products', $lowInventory);
   }
 
-  public function checkParLevel($user_id) {
-    $parLevel = Common::query()
-      ->where('[' . Common::class . '].cid=:cid:', ['cid' => Common::G_PAR_LEVEL])
-      ->columns(['value', 'name'])
-      ->execute();
-    $cond = [
-      'conditions' => 'user_id=:user_id: AND quantity<=:quantity: ',
-      'bind' => [
-        'user_id'   => $user_id,
-        'quantity'  => $parLevel[0]['value'],
-      ],
-      'order' => 'quantity',
-    ];
-    $product = Product::find($cond);
-    return $product;
-  }
 
   public function forbiddenAction()
   {
     $this->setPageHeading('Forbidden');
   }
+
 
   public function beforeExecuteRoute($dispatcher)
   {

@@ -14,4 +14,6 @@
 {{ javascript_include('js/application.js') }}
 {{ javascript_include('plugins/datatable/datatables.min.js') }}
 {{ javascript_include('plugins/jqx/jqx-all.js') }}
+{{ javascript_include('js/Chart.min.js') }}
+{{ javascript_include('js/palette.js') }}
 {{ javascript_include('js/html2canvas.js') }}
