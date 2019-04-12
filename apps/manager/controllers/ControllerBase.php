@@ -235,4 +235,14 @@ class ControllerBase extends Controller
     }
   }
 
+  protected function getUserMostBrandName()
+  {
+    $result = FilterInjector::userMostBrandName($this->di);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
 }

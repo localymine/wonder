@@ -54,6 +54,15 @@ class MainController extends ControllerBase
     $this->view->setVar('mInterested_dt', implode(',', $mInterested_dt));
     $this->view->setVar('mInterested_lb', '"'.implode('","', $mInterested_lb).'"');
 
+    /* get the most brand name */
+    $mostCares = $this->getUserMostBrandName();
+    foreach ($mostCares as $item) {
+      $mBrand_dt[] = $item->quantity;
+      $mBrand_lb[] = $item->name;
+    }
+    $this->view->setVar('mBrand_dt', implode(',', $mBrand_dt));
+    $this->view->setVar('mBrand_lb', '"'.implode('","', $mBrand_lb).'"');
+
     /* your inventory stock dips below the predetermined levels */
     $lowInventory = $this->getProductsVsParLevel();
     $this->view->setVar('products', $lowInventory);

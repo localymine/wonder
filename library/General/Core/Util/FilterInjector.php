@@ -562,7 +562,7 @@ class FilterInjector extends Component
 
     $user_id = $identity['id'];
 
-    $firstDayUTS = mktime (0, 0, 0, date('m') - 2, 1, date('Y'));
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 3, 1, date('Y'));
     $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
 
     $firstDay = date('Y-m-d', $firstDayUTS);
@@ -596,19 +596,53 @@ class FilterInjector extends Component
 
     $user_id = $identity['id'];
 
-    $firstDayUTS = mktime (0, 0, 0, date('m') - 2, 1, date('Y'));
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 3, 1, date('Y'));
     $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
 
     $firstDay = date('Y-m-d', $firstDayUTS);
     $lastDay  = date('Y-m-d', $lastDayUTS);
 
-    $sql  = " SELECT  ct.name, count(ivd.product_id) as quantity ";
+    $sql  = " SELECT  ct.name, count(ct.id) as quantity ";
     $sql .= " FROM `invoices_details` AS ivd ";
     $sql .= "    LEFT JOIN `products` AS prd ON ivd.product_id = prd.id ";
     $sql .= "    LEFT JOIN categories AS ct ON ct.id = prd.category_id ";
     $sql .= " WHERE prd.user_id = $user_id ";
     $sql .= "    AND (ivd.created BETWEEN '$firstDay' AND '$lastDay') ";
     $sql .= " GROUP By ct.id ";
+    $sql .= " ORDER BY quantity DESC ";
+
+    $invoices_details = new InvoiceDetail();
+    return new Resultset(
+      null,
+      $invoices_details,
+      $invoices_details->getReadConnection()->query($sql)
+    );
+  }
+
+
+  public static function userMostBrandName(DependencyInjector $di) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 3, 1, date('Y'));
+    $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
+
+    $firstDay = date('Y-m-d', $firstDayUTS);
+    $lastDay  = date('Y-m-d', $lastDayUTS);
+
+    $sql  = " SELECT  bd.name, count(bd.id) as quantity ";
+    $sql .= " FROM `invoices_details` AS ivd ";
+    $sql .= "    LEFT JOIN `products` AS prd ON ivd.product_id = prd.id ";
+    $sql .= "    LEFT JOIN brands AS bd ON bd.id = prd.brand_id ";
+    $sql .= " WHERE prd.user_id = $user_id ";
+    $sql .= "    AND (ivd.created BETWEEN '$firstDay' AND '$lastDay') ";
+    $sql .= " GROUP By bd.id ";
     $sql .= " ORDER BY quantity DESC ";
 
     $invoices_details = new InvoiceDetail();

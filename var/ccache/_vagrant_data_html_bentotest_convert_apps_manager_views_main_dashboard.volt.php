@@ -104,6 +104,21 @@
 
     </div>
 
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title pull-left"><?php echo $this->l10n->_('Most Brandname'); ?></h3>
+          </div>
+          <div class="box-body">
+            <canvas id="the-most-brandname" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
 </div>
@@ -154,6 +169,24 @@
       var chartTheMostInterested = new Chart(ctxTheMostInterested, {
         type: 'doughnut',
         data: dataTheMostInterested
+      });
+      //
+      var mBrand_dt = [<?php echo $mBrand_dt; ?>];
+      var dataTheMostBrand = {
+        labels: [
+          <?php echo $mBrand_lb; ?>
+        ],
+        datasets : [{
+          data: mBrand_dt,
+          backgroundColor: palette('mpn65', mBrand_dt.length).map(function(hex) {
+            return '#' + hex;
+          })
+        }]
+      };
+      var ctxTheMostBrand = document.getElementById('the-most-brandname').getContext('2d');
+      var chartTheMostBrand = new Chart(ctxTheMostBrand, {
+        type: 'doughnut',
+        data: dataTheMostBrand
       });
     });
   </script>
