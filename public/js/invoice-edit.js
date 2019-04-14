@@ -81,6 +81,11 @@ $(function () {
               '</td>' +
               '</tr>';
             $('#product-list').append(template);
+            //
+            $('.pop').on('click', function() {
+              $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+              $('#imagemodal').modal('show');
+            });
           }
           $('.quantity').on('keyup', function(e) {
             var v = $(this).val();

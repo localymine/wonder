@@ -30,7 +30,7 @@
           <td>
             <a href="javascript:void(0)" class="pop">
               
-              <img class="img-responsive" style="width:32px" src="/uploads/user/<?php echo $this->utility->str_pad($product->user_id); ?>/product/<?php echo $this->utility->str_pad($product->id); ?>/<?php echo $product->image; ?>" />
+              <?php echo $this->utility->image($product->user_id, $product->id, $product->image, array('width:32px')); ?>
             </a>
           </td>
           <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?><span style="display: none;"><?php echo $product->remarks; ?></span></td>

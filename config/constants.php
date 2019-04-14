@@ -103,10 +103,17 @@ define('SKR_DOWNLOAD_DIR', SKR_ROOT.DS.'var/downloads');
 define('SKR_UPLOAD_DIR', SKR_ROOT.DS.'var/uploads');
 
 /**
+ * Application Upload target directory
+ */
+define('SKR_UPLOAD_RAW_IMG', SKR_ROOT.DS.'public/uploads');
+define('SKR_UPLOAD_IMG', 'uploads');
+
+/**
  * Application default images
  */
 define('SKR_DEFAULT_LOGIN_IMG',  SKR_DOWNLOAD_DIR.DS.'login.png');
 define('SKR_DEFAULT_VIEWER_IMG', SKR_DOWNLOAD_DIR.DS.'blank.jpg');
+define('SKR_DEFAULT_NO_IMG', SKR_UPLOAD_IMG.DS.'no-image.png');
 
 /**
  * Contents cache directory

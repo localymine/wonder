@@ -126,6 +126,7 @@
     </div>
 
     <?php echo $this->partial('partials/modal/product-list'); ?>
+    <?php echo $this->partial('partials/modal/image-enlarge'); ?>
 
   </section>
 

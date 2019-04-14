@@ -81,7 +81,7 @@
               {#{{ image('manager/products/image/' ~ product.id, 'class':'img-thumbnail', 'style':'max-width:200px') }}#}
 
               <a href="#" class="pop">
-                <img style="height: 150px;" class="img-responsive" src="/uploads/user/{{ utility.str_pad(product.user_id) }}/product/{{ utility.str_pad(product.id) }}/{{ product.image }}" />
+                {{ utility.image(product.user_id, product.id, product.image, ['height:150px']) }}
               </a>
 
               <button type="button" class="btn btn-danger btn-delete btn-xs" data-type="1">

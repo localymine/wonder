@@ -30,7 +30,7 @@
           <td>
             <a href="javascript:void(0)" class="pop">
               {#{{ image('manager/products/image/'~product.id,'class':'img-responsive') }}#}
-              <img class="img-responsive" style="width:32px" src="/uploads/user/{{ utility.str_pad(product.user_id) }}/product/{{ utility.str_pad(product.id) }}/{{ product.image }}" />
+              {{ utility.image(product.user_id, product.id, product.image, ['width:32px']) }}
             </a>
           </td>
           <td class="width-m">{{ product.name|e }}<span style="display: none;">{{ product.remarks }}</span></td>

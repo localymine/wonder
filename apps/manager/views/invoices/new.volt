@@ -99,6 +99,7 @@
     </div>
 
     {{ partial('partials/modal/product-list') }}
+    {{ partial('partials/modal/image-enlarge') }}
 
   </section>
 {% endblock %}
