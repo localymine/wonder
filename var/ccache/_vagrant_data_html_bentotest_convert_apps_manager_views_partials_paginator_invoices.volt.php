@@ -1,19 +1,21 @@
 <?php echo $this->nav->getPaginator($page, 'manager/invoices/index', 'ontop'); ?>
 
-          <table id="table-invoices" class="table table-bordered table-condenced table-hover">
+          <table id="table-invoices" class="table table-bordered table-invoices table-hover">
           <colgroup>
           <col style="width:2%;">
           <col>
-          <col style="width:20%;">
+          <col style="width:15%;">
+          <col style="width:10%;">
           <col style="width:10%;">
           <col style="width:15%;">
-          <col class="actions actions-3">
+          <col style="width:11%;">
           </colgroup>
           <thead>
           <tr>
           <th><?php echo $this->l10n->__('ID', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Client', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Total (&#8363;)', 'invoice'); ?></th>
+          <th><?php echo $this->l10n->__('Delivery', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Status', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Date', 'invoice'); ?></th>
           <th><i class="fa fa-cogs"></i></th>
@@ -27,7 +29,20 @@
           <td><?php echo $this->escaper->escapeHtml($invoice->id); ?></td>
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
           <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
-          <td class="text-center"><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></td>
+          <td class="text-center deliver <?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?>">
+            <?php if ($invoice->deliver == 0 || $invoice->deliver == 1) { ?>
+              <button class="btn btn-sm btn-reddit btn-delivery" data-id="<?php echo $invoice->id; ?>"><?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?></button>
+            <?php } else { ?>
+              <?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?>
+            <?php } ?>
+          </td>
+          <td class="text-center status <?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?>">
+            <?php if ($invoice->status == 0) { ?>
+              <button class="btn btn-sm btn-danger btn-status" data-id="<?php echo $invoice->id; ?>">Paid</button>
+            <?php } else { ?>
+              <?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?>
+            <?php } ?>
+          </td>
           <td class="text-right"><?php echo $invoice->created; ?></td>
           <td>
 

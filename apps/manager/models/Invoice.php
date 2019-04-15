@@ -63,6 +63,12 @@ class Invoice extends ModelBase implements ModelInterface
    */
   public $status;
   /**
+   * deliver.
+   * @var string
+   * @Column(type="integer")
+   */
+  public $deliver;
+  /**
    * flag indicating whether disabled or not.
    * @var integer
    * @Column(type="integer", nullable=false)
@@ -95,6 +101,7 @@ class Invoice extends ModelBase implements ModelInterface
       'remarks'     => 'remarks',
       'total_price' => 'total_price',
       'status'      => 'status',
+      'deliver'     => 'deliver',
       'disabled'    => 'disabled',
       'created'     => 'created',
       'updated'     => 'updated',

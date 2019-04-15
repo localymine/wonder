@@ -1,19 +1,21 @@
 {{ nav.getPaginator(page,'manager/invoices/index','ontop') }}
 
-          <table id="table-invoices" class="table table-bordered table-condenced table-hover">
+          <table id="table-invoices" class="table table-bordered table-invoices table-hover">
           <colgroup>
           <col style="width:2%;">
           <col>
-          <col style="width:20%;">
+          <col style="width:15%;">
+          <col style="width:10%;">
           <col style="width:10%;">
           <col style="width:15%;">
-          <col class="actions actions-3">
+          <col style="width:11%;">
           </colgroup>
           <thead>
           <tr>
           <th>{{ l10n.__('ID', 'invoice') }}</th>
           <th>{{ l10n.__('Client', 'invoice') }}</th>
           <th>{{ l10n.__('Total (&#8363;)', 'invoice') }}</th>
+          <th>{{ l10n.__('Delivery', 'invoice') }}</th>
           <th>{{ l10n.__('Status', 'invoice') }}</th>
           <th>{{ l10n.__('Date', 'invoice') }}</th>
           <th><i class="fa fa-cogs"></i></th>
@@ -27,7 +29,20 @@
           <td>{{ invoice.id|e }}</td>
           <td>{{ invoice.client.name|e }}</td>
           <td class="text-right">{{ invoice.total_price|number_format }}</td>
-          <td class="text-center">{{ status[invoice.status]|e }}</td>
+          <td class="text-center deliver {{ deliver[invoice.deliver]|e }}">
+            {% if invoice.deliver == 0 or invoice.deliver == 1 %}
+              <button class="btn btn-sm btn-reddit btn-delivery" data-id="{{ invoice.id }}">{{ deliver[invoice.deliver]|e }}</button>
+            {% else %}
+              {{ deliver[invoice.deliver]|e }}
+            {% endif %}
+          </td>
+          <td class="text-center status {{ status[invoice.status]|e }}">
+            {% if invoice.status == 0 %}
+              <button class="btn btn-sm btn-danger btn-status" data-id="{{ invoice.id }}">Paid</button>
+            {% else %}
+              {{ status[invoice.status]|e }}
+            {% endif %}
+          </td>
           <td class="text-right">{{ invoice.created }}</td>
           <td>
 

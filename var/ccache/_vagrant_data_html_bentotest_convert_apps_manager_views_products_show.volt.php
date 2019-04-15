@@ -108,7 +108,7 @@
                 <td>
                   
                   <a href="#" class="pop">
-                    <img style="height: 150px;" class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($product->user_id); ?>/product/<?php echo $this->utility->str_pad($product->id); ?>/<?php echo $product->image; ?>" />
+                    <?php echo $this->utility->image($product->user_id, $product->id, $product->image, array('height:150px')); ?>
                   </a>
                 </td>
               </tr>

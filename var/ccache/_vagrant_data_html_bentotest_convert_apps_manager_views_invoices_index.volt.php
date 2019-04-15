@@ -123,6 +123,45 @@
         });
       });
       //
+      $('.btn-delivery').on('click', function() {
+        var me = $(this).parent();
+        var post_data = {
+          'id' : $(this).data('id')
+        };
+        $.ajax({
+          url: '/manager/invoices/delivery',
+          type:'POST',
+          data:post_data,
+          dataType:'json',
+          async:true,
+          cache:false
+        }).done(function(data) {
+          if (data['success'] === 1) {
+            me.html('Finished');
+            me.removeClass('Shop Delivering').addClass('Finished');
+          }
+        });
+      });
+      //
+      $('.btn-status').on('click', function() {
+        var me = $(this).parent();
+        var post_data = {
+          'id' : $(this).data('id')
+        };
+        $.ajax({
+          url: '/manager/invoices/status',
+          type:'POST',
+          data:post_data,
+          dataType:'json',
+          async:true,
+          cache:false
+        }).done(function(data) {
+          if (data['success'] === 1) {
+            me.html('Paid');
+            me.removeClass('Shop Delivering').addClass('Finished');
+          }
+        });
+      });
     });
 
     var element = document.getElementById('bill-holder');

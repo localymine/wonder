@@ -32,6 +32,14 @@ class Enums extends Component
     ];
   }
 
+  public function invoiceDeliver(){
+    return [
+      0 => 'Shop',
+      1 => 'Delivering',
+      2 => 'Finished',
+    ];
+  }
+
   public function transportStatus()
   {
     return [

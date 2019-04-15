@@ -538,6 +538,54 @@ class InvoicesController extends ControllerBase
   }
 
 
+  public function deliveryAction() {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $data = $this->request->getPost();
+
+        $invoice = Invoice::findFirst($data['id']);
+        if ($invoice) {
+          $invoice->deliver = 2;
+          $invoice->update();
+
+          $response['success'] = 1;
+        }
+
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
+  }
+
+
+  public function statusAction() {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $data = $this->request->getPost();
+
+        $invoice = Invoice::findFirst($data['id']);
+        if ($invoice) {
+          $invoice->status = 1;
+          $invoice->update();
+
+          $response['success'] = 1;
+        }
+
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
+  }
+
+
   public function beforeExecuteRoute($dispatcher)
   {
     $cond = [
@@ -555,6 +603,7 @@ class InvoicesController extends ControllerBase
     $this->view->setVar('eclients', $clients);
     $this->view->setVar('clients', json_encode($dClients));
     $this->view->setVar('status', $this->enum->invoiceStatus());
+    $this->view->setVar('deliver', $this->enum->invoiceDeliver());
 
     parent::beforeExecuteRoute($dispatcher);
     return true;
