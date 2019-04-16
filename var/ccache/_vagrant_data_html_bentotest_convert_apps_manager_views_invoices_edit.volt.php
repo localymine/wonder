@@ -73,6 +73,14 @@
         </div>
 
         <div class="form-group required">
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Delivery'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('deliver', $deliver, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $invoice->deliver)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Status'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->select(array('status', $status, 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $invoice->status)); ?>

@@ -39,10 +39,6 @@
               <td>{{ invoice.client.name|e }}</td>
             </tr>
             <tr>
-            <th>{{ l10n._('Invoice Name') }}</th>
-            <td>{{ invoice.name|e }}</td>
-            </tr>
-            <tr>
               <th>{{ l10n._('Total Price') }}</th>
               <td class="text-right">
                 <div class="input-group">
@@ -50,6 +46,10 @@
                   <span class="input-group-addon">&#8363;</span>
                 </div>
               </td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Delivery') }}</th>
+              <td>{{ deliver[invoice.deliver]|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Status') }}</th>

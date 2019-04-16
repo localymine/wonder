@@ -46,7 +46,7 @@
           </td>
           <td class="text-left quantity">
             {% for pq in product.productquantity %}
-              <div>{{ pq.warehouse.name }} : <span style="float:right;">{{ pq.quantity }}</span></div>
+              <div>{{ pq.warehouse.name }} : <span style="float:right;" class="wh-{{ pq.warehouse.id }}">{{ pq.quantity }}</span></div>
             {% endfor %}
           </td>
           <td>

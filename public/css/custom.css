@@ -100,16 +100,18 @@ text-align:left;
   margin-top: 5rem!important;
 }
 .mb-auto{
-  margin-top: auto!important;
+  margin-bottom: auto!important;
 }
 .mb-3{
-  margin-top: 1rem!important;
+  margin-bottom: 1rem!important;
 }
 .mb-5{
-  margin-top: 3rem!important;
+  margin-bottom: 3rem!important;
 }
 .mb-max{
-  margin-top: 5rem!important;
+  margin-bottom: 5rem!important;
+  padding-bottom: 1rem!important;
+  clear: both;
 }
 .spage{
   display: inline-block;

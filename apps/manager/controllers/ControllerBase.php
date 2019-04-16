@@ -245,4 +245,14 @@ class ControllerBase extends Controller
     }
   }
 
+  protected function getQuantityAtWarehouse($product_id)
+  {
+    $result = FilterInjector::getQuantityAtWarehouse($this->di, $product_id);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
 }

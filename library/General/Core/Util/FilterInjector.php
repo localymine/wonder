@@ -502,6 +502,26 @@ class FilterInjector extends Component
   }
 
 
+  public static function getQuantityAtWarehouse(DependencyInjector $di, $product_id) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    return ProductQuantity::find([
+      'conditions' => 'user_id=:user_id: AND product_id=:product_id:',
+      'bind' => [
+        'user_id'    => $user_id,
+        'product_id' => $product_id,
+      ]
+    ]);
+  }
+
+
   public static function sumProducts(DependencyInjector $di, $product_ids='') {
     /* if $_SESSION['auth'] not found, returns false.
          * session情報がない場合は偽 */
@@ -541,10 +561,11 @@ class FilterInjector extends Component
       ->columns(['value', 'name'])
       ->execute();
     $cond = [
-      'conditions' => 'user_id=:user_id: AND quantity<=:quantity: ',
+      'conditions' => 'user_id=:user_id: AND quantity<=:quantity: AND disabled=:disabled:',
       'bind' => [
         'user_id'   => $user_id,
         'quantity'  => $parLevel[0]['value'],
+        'disabled'  => 0,
       ],
       'order' => 'quantity',
     ];

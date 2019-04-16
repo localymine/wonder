@@ -21,11 +21,30 @@ class UiUtil extends BootstrapPaginator
    * セットアップメニュー用配列
    * @var array
    */
+
+  private $settings = [
+    'brands' => [
+      'link'  => 'manager/brands/index',
+      'label' => '<i class="fa fa-trademark"></i><span>Brands</span>',
+      'controller' => ['brands'],
+    ],
+    'categories' => [
+      'link'  => 'manager/categories/index',
+      'label' => '<i class="fa fa-tree"></i><span>Categories</span>',
+      'controller' => ['categories'],
+    ],
+  ];
+
   private $clients = [
     'clients' => [
       'link'  => 'manager/clients/index',
       'label' => '<i class="fa fa-address-book"></i><span>Clients</span>',
       'controller' => ['clients'],
+    ],
+    'members' => [
+      'link'  => 'manager/members/index',
+      'label' => '<i class="fa fa-user"></i><span>Members</span>',
+      'controller' => ['members'],
     ],
   ];
 
@@ -82,8 +101,30 @@ class UiUtil extends BootstrapPaginator
       $out .= '<li>'.$li.'</li>'."\n";
     }
 
+    // Settings
+    $label = $l10n->_('<i class="fa fa-cog"></i><span>Settings</span>').
+      '<i class="fa fa-angle-right pull-right"></i>';
+    $li = Tag::linkTo('manager/brands/index', $label);
+    if (in_array($controllerName, $clientsCtrls)) {
+      $out .= '<li class="treeview active">'.$li."\n";
+    } else {
+      $out .= '<li class="treeview">'.$li."\n";
+    }
+    $out .= '<ul class="treeview-menu">'."\n";
+
+    // Settings submenu
+    foreach ($this->settings as $menu) {
+      $li = Tag::linkTo($menu['link'], $l10n->_($menu['label']));
+      if (in_array($controllerName, $menu['controller'])) {
+        $out .= '<li class="active">'.$li.'</li>'."\n";
+      } else {
+        $out .= '<li>'.$li.'</li>'."\n";
+      }
+    }
+    $out .= '</ul></li>'."\n";
+
     // Clients
-    $label = $l10n->_('<i class="fa fa-users"></i><span>Clients</span>').
+    $label = $l10n->_('<i class="fa fa-users"></i><span>Users</span>').
       '<i class="fa fa-angle-right pull-right"></i>';
     $li = Tag::linkTo('manager/clients/index', $label);
     if (in_array($controllerName, $clientsCtrls)) {

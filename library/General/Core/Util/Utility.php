@@ -45,6 +45,10 @@ class Utility extends Component
     echo str_pad($input, $pad_length, $pad_string, $pad_type);
   }
 
+  public static function substr($string, $start, $length=null) {
+    return substr($string, $start, $length);
+  }
+
   public static function image($user_id, $product_id, $image, $options=null) {
     $imgPath = 'user'.DS.sprintf("%07d", $user_id).DS. 'product'.DS.sprintf("%07d", $product_id).DS.$image;
     $rawPath = SKR_UPLOAD_RAW_IMG.DS.$imgPath;

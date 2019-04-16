@@ -87,6 +87,10 @@
               </td>
             </tr>
             <tr>
+              <th><?php echo $this->l10n->_('Flight Date'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_date, 0, 10)); ?></td>
+            </tr>
+            <tr>
               <th><?php echo $this->l10n->_('Status'); ?></th>
               <td><?php echo $this->escaper->escapeHtml($status[$transport->status]); ?></td>
             </tr>
@@ -184,7 +188,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> <?php echo $this->l10n->_('Other Options'); ?></button>
             <ul class="dropdown-menu">
-              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export CSV'))); ?></li>
+              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export Excel'))); ?></li>
             </ul>
           </div>
 

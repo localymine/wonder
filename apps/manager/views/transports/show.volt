@@ -60,6 +60,10 @@
               </td>
             </tr>
             <tr>
+              <th>{{ l10n._('Flight Date') }}</th>
+              <td>{{ utility.substr(transport.flight_date,0,10)|e }}</td>
+            </tr>
+            <tr>
               <th>{{ l10n._('Status') }}</th>
               <td>{{ status[transport.status]|e }}</td>
             </tr>
@@ -157,7 +161,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> {{ l10n._('Other Options') }}</button>
             <ul class="dropdown-menu">
-              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export CSV')) }}</li>
+              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export Excel')) }}</li>
             </ul>
           </div>
 

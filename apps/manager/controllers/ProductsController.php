@@ -373,6 +373,12 @@ class ProductsController  extends ControllerBase
           }
           $product->update();
           //
+          $quantity = $this->getQuantityAtWarehouse($data['id']);
+          foreach ($quantity as $q) {
+            $tkey = 'wh-'.$q->warehouse_id;
+            $response[$tkey] = $q->quantity;
+          }
+          //
           $response['saleprice'] = $data['saleprice'];
           $response['quantity'] = $upQuantity;
           $response['success'] = 1;
@@ -439,6 +445,12 @@ class ProductsController  extends ControllerBase
           $product = Product::findFirst($this->qi->inject('Product', $cond));
           $product->quantity = $upQuantity;
           $product->update();
+          //
+          $quantity = $this->getQuantityAtWarehouse($data['id']);
+          foreach ($quantity as $q) {
+            $tkey = 'wh-'.$q->warehouse_id;
+            $response[$tkey] = $q->quantity;
+          }
           //
           $response['quantity'] = $upQuantity;
           $response['success'] = 1;
@@ -520,6 +532,12 @@ class ProductsController  extends ControllerBase
         $product = Product::findFirst($this->qi->inject('Product', $cond));
         $product->quantity = $upQuantity;
         $product->update();
+        //
+        $quantity = $this->getQuantityAtWarehouse($data['id']);
+        foreach ($quantity as $q) {
+          $tkey = 'wh-'.$q->warehouse_id;
+          $response[$tkey] = $q->quantity;
+        }
         //
         $response['quantity'] = $upQuantity;
         $response['success'] = 1;

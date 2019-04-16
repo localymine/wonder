@@ -28,6 +28,7 @@
                 <thead>
                 <tr>
                   <th>ID</th>
+                  <th style="width: 32px;"></th>
                   <th>Product</th>
                   <th>Price</th>
                   <th>Qty</th>
@@ -37,6 +38,11 @@
                 {% for product in products %}
                   <tr>
                     <td>{{ product.id }}</td>
+                    <td>
+                      <a href="javascript:void(0)" class="pop">
+                        {{ utility.image(product.user_id, product.id, product.image) }}
+                      </a>
+                    </td>
                     <td>{{ product.name|e }}</td>
                     <td class="text-right">{{ product.price|number_format }}</td>
                     <td class="text-right">{{ product.quantity }}</td>
@@ -46,6 +52,48 @@
               </table>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="mb-max">
+          <a href="/manager/brands/new" class="btn btn-lg btn-primary col-sm-12 col-xs-12">
+            Brand
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+        <div class="mb-max">
+          <a href="/manager/categories/new" class="btn btn-lg btn-primary col-md-12 col-xs-12">
+            Category
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+        <div class="mb-max">
+          <a href="/manager/clients/new" class="btn btn-lg btn-info col-md-12 col-xs-12">
+            Client
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+        <div class="mb-max">
+          <a href="/manager/members/new" class="btn btn-lg btn-info col-md-12 col-xs-12">
+            Member
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="mb-max">
+          <a href="/manager/invoices/new" class="btn btn-lg btn-danger col-sm-12 col-xs-12">
+            Make Invoice
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+        <div class="mb-max">
+          <a href="/manager/products/new" class="btn btn-lg btn-yahoo col-sm-12 col-xs-12">
+            Product
+            <i class="fa fa-plus"></i>
+          </a>
         </div>
       </div>
 
@@ -91,6 +139,8 @@
       </div>
 
     </div>
+
+    {{ partial('partials/modal/image-enlarge') }}
 
   </section>
 {% endblock %}
@@ -151,6 +201,11 @@
       var chartTheMostBrand = new Chart(ctxTheMostBrand, {
         type: 'doughnut',
         data: dataTheMostBrand
+      });
+      //
+      $('.pop').on('click', function() {
+        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        $('#imagemodal').modal('show');
       });
     });
   </script>

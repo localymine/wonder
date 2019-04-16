@@ -37,9 +37,17 @@
         </div>
 
         <div class="form-group required">
+          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Delivery') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            {{ select('deliver',deliver,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':0) }}
+
+          </div>
+        </div>
+
+        <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Status') }}</label>
           <div class="col-xs-12 col-sm-3">
-            {{ select('status',status,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
+            {{ select('status',status,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':0) }}
 
           </div>
         </div>

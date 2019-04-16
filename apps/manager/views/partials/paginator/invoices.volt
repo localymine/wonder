@@ -31,14 +31,15 @@
           <td class="text-right">{{ invoice.total_price|number_format }}</td>
           <td class="text-center deliver {{ deliver[invoice.deliver]|e }}">
             {% if invoice.deliver == 0 or invoice.deliver == 1 %}
-              <button class="btn btn-sm btn-reddit btn-delivery" data-id="{{ invoice.id }}">{{ deliver[invoice.deliver]|e }}</button>
+              {#<button class="btn btn-sm btn-reddit btn-delivery" data-id="{{ invoice.id }}">{{ deliver[invoice.deliver]|e }}</button>#}
+              <span class="btn-delivery hand" data-id="{{ invoice.id }}">{{ deliver[invoice.deliver]|e }}</span>
             {% else %}
               {{ deliver[invoice.deliver]|e }}
             {% endif %}
           </td>
           <td class="text-center status {{ status[invoice.status]|e }}">
             {% if invoice.status == 0 %}
-              <button class="btn btn-sm btn-danger btn-status" data-id="{{ invoice.id }}">Paid</button>
+              <button class="btn btn-sm btn-danger btn-status" data-id="{{ invoice.id }}">UnPaid</button>
             {% else %}
               {{ status[invoice.status]|e }}
             {% endif %}

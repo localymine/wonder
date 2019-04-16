@@ -37,6 +37,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="flight_date" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Flight Date') }}</label>
+          <div class="col-xs-12 col-sm-8">
+            {{ text_field('flight_date','class':'form-control col-3') }}
+
+          </div>
+        </div>
+
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
           <div class="col-xs-12 col-sm-3">
@@ -48,7 +56,7 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Status') }}</label>
           <div class="col-xs-12 col-sm-3">
-            {{ select('status',status,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
+            {{ select('status',status,'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':0) }}
 
           </div>
         </div>
@@ -158,6 +166,23 @@
       });
       $('.modal-body ul li').on('click', function(evt) {
         $('input[type=checkbox]', this).iCheck('toggle');
+      });
+      //
+      $('[name=flight_date]').datetimepicker({
+        format: 'Y-MM-DD',
+        useCurrent: true,
+        dayViewHeaderFormat: "{{ l10n._('MMM YYYY') }}",
+        tooltips: {
+          today: "{{ l10n._('Select Today') }}",
+          clear: "{{ l10n._('Deselect') }}",
+          close: "{{ l10n._('Close') }}",
+          selectMonth: "{{ l10n._('Select Month') }}",
+          prevMonth: "{{ l10n._('Previous Month') }}",
+          nextMonth: "{{ l10n._('Next Month') }}",
+          selectYear: "{{ l10n._('Select Year') }}",
+          prevYear: "{{ l10n._('Previous Year') }}",
+          nextYear: "{{ l10n._('Next Year') }}"
+        }
       });
     });
   </script>

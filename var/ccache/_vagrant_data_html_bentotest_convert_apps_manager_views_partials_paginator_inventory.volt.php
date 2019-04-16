@@ -46,7 +46,7 @@
           </td>
           <td class="text-left quantity">
             <?php foreach ($product->productquantity as $pq) { ?>
-              <div><?php echo $pq->warehouse->name; ?> : <span style="float:right;"><?php echo $pq->quantity; ?></span></div>
+              <div><?php echo $pq->warehouse->name; ?> : <span style="float:right;" class="wh-<?php echo $pq->warehouse->id; ?>"><?php echo $pq->quantity; ?></span></div>
             <?php } ?>
           </td>
           <td>

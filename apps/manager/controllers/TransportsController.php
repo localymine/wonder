@@ -470,7 +470,7 @@ class TransportsController extends ControllerBase
         ->setCellValue('E1', 'SLg')
         ->setCellValue('F1', 'TTien');
 
-      $fname = 'Other-List-' . time() . '.xlsx';
+      $fname = 'Other-List-' . $transport->name . '-' . time() . '.xlsx';
 
       // temp file name to save before output
       $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');

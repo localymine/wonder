@@ -29,7 +29,6 @@ $(function () {
   $('#submitAddstock').on('click', function() {
     var id    = $(this).data('id');
     var apply = parseInt($('#apply').val());
-    console.log(apply)
     var post_data = {
       id: id,
       market_price  : $('#market_price').val(),
@@ -40,7 +39,6 @@ $(function () {
       remarks       : $('#remarks').val(),
       apply         : apply
     };
-    console.log(post_data)
     $.ajax({
       url: '/manager/products/addStock',
       type:'POST',
@@ -50,9 +48,14 @@ $(function () {
       cache:false
     }).done(function(data) {
       if(data['success'] === 1) {
-        $('#p'+id+' .quantity').html(data['quantity']);
-        if (apply===1) {
-          $('#p'+id+' .price').html(data['saleprice']);
+        if ($('#p'+id+' .quantity span').length) {
+          $('#p'+id+' .quantity span.wh-1').html(data['wh-1']);
+          $('#p'+id+' .quantity span.wh-2').html(data['wh-2']);
+        } else {
+          $('#p'+id+' .quantity').html(data['quantity']);
+          if (apply===1) {
+            $('#p'+id+' .price').html(data['saleprice']);
+          }
         }
         $('#add-stock-dialog').modal('toggle');
         $('#p'+id).effect('highlight', {}, 1000);
@@ -83,7 +86,12 @@ $(function () {
       cache:false
     }).done(function(data) {
       if(data['success'] === 1) {
-        $('#p'+id+' .quantity').html(data['quantity']);
+        if ($('#p'+id+' .quantity span').length) {
+          $('#p'+id+' .quantity span.wh-1').html(data['wh-1']);
+          $('#p'+id+' .quantity span.wh-2').html(data['wh-2']);
+        } else {
+          $('#p'+id+' .quantity').html(data['quantity']);
+        }
         $('#sub-stock-dialog').modal('toggle');
         $('#p'+id).effect('highlight', {}, 1000);
       }
@@ -117,7 +125,12 @@ $(function () {
           cache:false
         }).done(function(data) {
           if(data['success'] === 1) {
-            $('#p'+id+' .quantity').html(data['quantity']);
+            if ($('#p'+id+' .quantity span').length) {
+              $('#p'+id+' .quantity span.wh-1').html(data['wh-1']);
+              $('#p'+id+' .quantity span.wh-2').html(data['wh-2']);
+            } else {
+              $('#p'+id+' .quantity').html(data['quantity']);
+            }
             $('#move-stock-dialog').modal('toggle');
             $('#p'+id).effect('highlight', {}, 1000);
           }

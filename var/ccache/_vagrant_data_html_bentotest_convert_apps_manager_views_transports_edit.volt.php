@@ -65,6 +65,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="flight_date" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Flight Date'); ?></label>
+          <div class="col-xs-12 col-sm-8">
+            <?php echo $this->tag->textField(array('flight_date', 'class' => 'form-control col-3', 'value' => $this->utility->substr($transport->flight_date, 0, 10))); ?>
+
+          </div>
+        </div>
+
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
           <div class="col-xs-12 col-sm-3">
@@ -201,6 +209,23 @@
       });
       $('.modal-body ul li').on('click', function(evt) {
         $('input[type=checkbox]', this).iCheck('toggle');
+      });
+      //
+      $('[name=flight_date]').datetimepicker({
+        format: 'Y-MM-DD',
+        useCurrent: true,
+        dayViewHeaderFormat: "<?php echo $this->l10n->_('MMM YYYY'); ?>",
+        tooltips: {
+          today: "<?php echo $this->l10n->_('Select Today'); ?>",
+          clear: "<?php echo $this->l10n->_('Deselect'); ?>",
+          close: "<?php echo $this->l10n->_('Close'); ?>",
+          selectMonth: "<?php echo $this->l10n->_('Select Month'); ?>",
+          prevMonth: "<?php echo $this->l10n->_('Previous Month'); ?>",
+          nextMonth: "<?php echo $this->l10n->_('Next Month'); ?>",
+          selectYear: "<?php echo $this->l10n->_('Select Year'); ?>",
+          prevYear: "<?php echo $this->l10n->_('Previous Year'); ?>",
+          nextYear: "<?php echo $this->l10n->_('Next Year'); ?>"
+        }
       });
     });
   </script>

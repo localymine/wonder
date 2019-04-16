@@ -66,10 +66,6 @@
               <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
             </tr>
             <tr>
-            <th><?php echo $this->l10n->_('Invoice Name'); ?></th>
-            <td><?php echo $this->escaper->escapeHtml($invoice->name); ?></td>
-            </tr>
-            <tr>
               <th><?php echo $this->l10n->_('Total Price'); ?></th>
               <td class="text-right">
                 <div class="input-group">
@@ -77,6 +73,10 @@
                   <span class="input-group-addon">&#8363;</span>
                 </div>
               </td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Delivery'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Status'); ?></th>

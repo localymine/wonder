@@ -8,6 +8,7 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="strstatus">
           <col class="actions actions-3">
           </colgroup>
@@ -15,6 +16,7 @@
           <tr>
           <th><?php echo $this->l10n->__('ID', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Name', 'transport'); ?></th>
+          <th><?php echo $this->l10n->__('Flight Date', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Receiver', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Total Invoices (&#8363;)', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Total Others (&#8363;)', 'transport'); ?></th>
@@ -28,8 +30,9 @@
 <?php foreach ($page->items as $transport) { ?>
 
           <tr>
-          <td><?php echo $this->escaper->escapeHtml($transport->id); ?></td>
+          <td title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->id); ?></td>
           <td><?php echo $this->escaper->escapeHtml($transport->name); ?></td>
+          <td class="text-center"><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_date, 0, 10)); ?></td>
           <td><?php echo $this->escaper->escapeHtml($transport->client->name); ?></td>
           <td class="text-right"><?php echo number_format($transport->total); ?></td>
           <td class="text-right"><?php echo number_format($transport->total_others); ?></td>
