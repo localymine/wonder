@@ -49,7 +49,7 @@ class Utility extends Component
     return substr($string, $start, $length);
   }
 
-  public static function image($user_id, $product_id, $image, $options=null) {
+  public static function image($user_id, $product_id, $image, $options='') {
     $imgPath = 'user'.DS.sprintf("%07d", $user_id).DS. 'product'.DS.sprintf("%07d", $product_id).DS.$image;
     $rawPath = SKR_UPLOAD_RAW_IMG.DS.$imgPath;
     $pubPath = DS.SKR_UPLOAD_IMG.DS.$imgPath;
@@ -57,7 +57,7 @@ class Utility extends Component
       echo Tag::image([
         'src'   => $pubPath,
         'class' => 'img-responsive',
-        'style' => implode(';', $options),
+        'style' => ($options !='') ? implode(';', $options) : '',
       ]);
     } else {
       echo Tag::image([

@@ -2,20 +2,19 @@
 
 namespace General\Core\Manager\Controllers;
 
-use General\Core\Manager\Models\Brand;
-use General\Core\Manager\Models\Country;
+use General\Core\Manager\Models\Category;
 
 /**
  * Class IndexController
  * @package General\Core\Converter\Controllers
  */
-class BrandsController extends ControllerBase
+class CategoriesController extends ControllerBase
 {
 
   public function indexAction()
   {
     /* set title of this page. */
-    $this->setPageHeading($this->l10n->_('List Brands'));
+    $this->setPageHeading($this->l10n->_('List Categories'));
     /* page number to be initially displayed. */
     $page = 1;
     /* maximum number of data to be displaied on single page. */
@@ -30,7 +29,7 @@ class BrandsController extends ControllerBase
     if ($this->request->hasQuery('page')) {
       $page = $this->request->getQuery('page', 'int');
     }
-    $paginator = $this->getPagination('Brand', $page, $limit, $posts);
+    $paginator = $this->getPagination('Category', $page, $limit, $posts);
     if (!$paginator) {
       $this->response->redirect('manager/main/index');
       return;
@@ -41,7 +40,7 @@ class BrandsController extends ControllerBase
   public function newAction()
   {
     /* set title of this page. */
-    $this->setPageHeading($this->l10n->_('Create New Brand'));
+    $this->setPageHeading($this->l10n->_('Create New Category'));
   }
 
   public function createAction()
@@ -57,18 +56,18 @@ class BrandsController extends ControllerBase
     }
 
     if ($this->security->checkToken('csrf')) {
-      $client = new Brand();
-      $client->assign($this->request->getPost());
+      $category = new Category();
+      $category->assign($this->request->getPost());
       if (!$this->request->hasPost('disabled')) {
-        $client->disabled = 0;
+        $category->disabled = 0;
       }
 
-      /* test whether the current user can edit this Brand. */
-      if (!$this->qi->is_editable('Brand', $client)) {
-        $this->flash->notice($this->l10n->_("You don't have access to this module: ") . 'brands:create');
+      /* test whether the current user can edit this Category. */
+      if (!$this->qi->is_editable('Category', $category)) {
+        $this->flash->notice($this->l10n->_("You don't have access to this module: ") . 'categories:create');
         $this->dispatcher->forward([
           'module' => 'manager',
-          'controller' => 'brands',
+          'controller' => 'categories',
           'action' => 'index',
         ]);
         return;
@@ -76,23 +75,23 @@ class BrandsController extends ControllerBase
 
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
-      if (!$client->create()) {
+      if (!$category->create()) {
         $msgstack = '';
-        foreach ($client->getMessages() as $msg) {
+        foreach ($category->getMessages() as $msg) {
           $msgstack .= $this->l10n->_($msg->getMessage()) . '<br>';
         }
         $this->flash->error($msgstack);
 
         $this->dispatcher->forward([
           'module' => 'manager',
-          'controller' => 'brands',
+          'controller' => 'categories',
           'action' => 'new'
         ]);
         return;
       }
       /* if successfully saved, put message in session and redirect. */
-      $this->flash->success($this->l10n->_('Brand was created successfully.'));
-      $this->response->redirect('manager/brands/show/' . $client->id);
+      $this->flash->success($this->l10n->_('Category was created successfully.'));
+      $this->response->redirect('manager/categories/show/' . $category->id);
       return;
     }
   }
@@ -110,26 +109,26 @@ class BrandsController extends ControllerBase
     }
 
     /* set title of this page. */
-    $this->setPageHeading($this->l10n->_('Detail of Brand'));
+    $this->setPageHeading($this->l10n->_('Detail of Category'));
 
     $cond = [
       'conditions' => 'id=:id:',
       'bind' => ['id' => $id],
     ];
-    $client = Brand::findFirst($this->qi->inject('Brand', $cond));
+    $category = Category::findFirst($this->qi->inject('Category', $cond));
 
     /* put error in session and will be forwarded, if result is empty. */
-    if (!$client) {
-      $this->flash->error($this->l10n->_('Specified Brand cannot found.') . "($id)");
+    if (!$category) {
+      $this->flash->error($this->l10n->_('Specified Category cannot found.') . "($id)");
       $this->dispatcher->forward([
         'module' => 'manager',
-        'controller' => 'brands',
+        'controller' => 'categories',
         'action' => 'index',
       ]);
       return;
     }
     /* set parameters to display page. */
-    $this->view->setVar('brand', $client);
+    $this->view->setVar('category', $category);
   }
 
   public function editAction($id)
@@ -145,26 +144,26 @@ class BrandsController extends ControllerBase
     }
 
     /* set title of this page. */
-    $this->setPageHeading($this->l10n->_('Edit Brand'));
+    $this->setPageHeading($this->l10n->_('Edit Category'));
 
     $cond = [
       'conditions' => 'id=:id:',
       'bind' => ['id' => $id],
     ];
-    $client = Brand::findFirst($this->qi->inject('Brand', $cond));
+    $category = Category::findFirst($this->qi->inject('Category', $cond));
 
     /* put error in session and will be forwarded, if result is empty. */
-    if (!$client) {
-      $this->flash->error($this->l10n->_('Specified Brand cannot found.') . "($id)");
+    if (!$category) {
+      $this->flash->error($this->l10n->_('Specified Category cannot found.') . "($id)");
       $this->dispatcher->forward([
         'module' => 'manager',
-        'controller' => 'brands',
+        'controller' => 'categories',
         'action' => 'index',
       ]);
       return;
     }
     /* set parameters to display page. */
-    $this->view->setVar('brand', $client);
+    $this->view->setVar('category', $category);
   }
 
   public function saveAction()
@@ -185,20 +184,20 @@ class BrandsController extends ControllerBase
       'conditions' => 'id=:id:',
       'bind' => ['id' => $id],
     ];
-    $client = Brand::findFirst($this->qi->inject('Brand', $cond));
+    $category = Category::findFirst($this->qi->inject('Category', $cond));
 
     /* create instance and set parameters. */
-    $client->assign($this->request->getPost());
+    $category->assign($this->request->getPost());
     if (!$this->request->hasPost('disabled')) {
-      $client->disabled = 0;
+      $category->disabled = 0;
     }
 
-    /* test whether the current user can edit this Brand. */
-    if (!$this->qi->is_editable('Brand', $client)) {
-      $this->flash->notice($this->l10n->_("You don't have access to this module: ").'brands:save');
+    /* test whether the current user can edit this Category. */
+    if (!$this->qi->is_editable('Category', $category)) {
+      $this->flash->notice($this->l10n->_("You don't have access to this module: ").'categories:save');
       $this->dispatcher->forward([
         'module'     => 'manager',
-        'controller' => 'brands',
+        'controller' => 'categories',
         'action'     => 'edit',
         'params'     => [$id],
       ]);
@@ -207,16 +206,16 @@ class BrandsController extends ControllerBase
 
     /* if failed to save, put error in session and will be forwarded. */
     /** @var \Phalcon\Mvc\Model\Message $msg */
-    if (!$client->save()) {
+    if (!$category->save()) {
       $msgstack = '';
-      foreach ($client->getMessages() as $msg) {
+      foreach ($category->getMessages() as $msg) {
         $msgstack .= $this->l10n->_($msg->getMessage()).'<br>';
       }
       $this->flash->error($msgstack);
-      $this->view->setVar('brand', $client);
+      $this->view->setVar('category', $category);
       $this->dispatcher->forward([
         'module'     => 'manager',
-        'controller' => 'brands',
+        'controller' => 'categories',
         'action'     => 'edit',
         'params'     => [$id],
       ]);
@@ -224,14 +223,14 @@ class BrandsController extends ControllerBase
     }
 
     /* if successfully saved, put message in session and redirect. */
-    $this->flash->success($this->l10n->_('Brand was updated successfully.'));
-    $this->response->redirect('manager/brands/show/'.$id);
+    $this->flash->success($this->l10n->_('Category was updated successfully.'));
+    $this->response->redirect('manager/categories/show/'.$id);
   }
 
   public function initialize()
   {
     parent::initialize();
-    $this->prependTitle($this->l10n->_('Manage Brands'));
+    $this->prependTitle($this->l10n->_('Manage Categories'));
   }
 
   public function beforeExecuteRoute($dispatcher)

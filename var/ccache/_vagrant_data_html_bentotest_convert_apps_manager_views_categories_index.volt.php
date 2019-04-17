@@ -33,10 +33,10 @@
 <div class="content-wrapper">
 
   <section class="content-header">
-    <h1><?php echo $this->l10n->__('Manage Brands', 'brand'); ?></h1>
+    <h1><?php echo $this->l10n->__('Manage Categories', 'client'); ?></h1>
     <ol class="breadcrumb">
       <li><?php echo $this->tag->linkTo(array('manager/main/index', $this->l10n->_('<i class="fa fa-dashboard"></i> DashBoard'))); ?></li>
-      <li><?php echo $this->tag->linkTo(array('manager/brands/index', $this->l10n->__('Manage Brands', 'brand'))); ?></li>
+      <li><?php echo $this->tag->linkTo(array('manager/categories/index', $this->l10n->__('Manage Categories', 'client'))); ?></li>
       <li class="active"><?php echo $this->escaper->escapeHtml($page_heading); ?></li>
     </ol>
   </section>
@@ -47,12 +47,12 @@
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title pull-left"><?php echo $this->escaper->escapeHtml($page_heading); ?></h3>
-        <?php echo $this->tag->linkTo(array('manager/brands/new/', $this->l10n->_('<i class="fa fa-file"></i><span>New</span>'), 'class' => 'btn btn-primary btn-sm xcenter')); ?>
+        <?php echo $this->tag->linkTo(array('manager/categories/new/', $this->l10n->_('<i class="fa fa-file"></i><span>New</span>'), 'class' => 'btn btn-primary btn-sm xcenter')); ?>
 
       </div>
       <div class="box-body" data-csrftoken="<?php echo $this->security->getToken(); ?>">
 
-        <?php echo $this->partial('partials/paginator/brands'); ?>
+        <?php echo $this->partial('partials/paginator/categories'); ?>
 
       </div>
     </div>
@@ -73,7 +73,7 @@
   <?php echo $this->partial('partials/paginatorscript'); ?>
   <script>
   $(function() {
-    $('#table-brands').DataTable({
+    $('#table-categories').DataTable({
 //        "iDisplayLength": 50,
       "ordering": false,
       "bPaginate": false,

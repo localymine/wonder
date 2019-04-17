@@ -410,6 +410,7 @@ class FilterInjector extends Component
     $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $identity['id']]);
 //    $criteria->andWhere('['.$Model.'].member_id=:member_id:', ['client_id' => $member_id]);
     $criteria->andWhere('[TransportInvoice].invoice_id IS NULL');
+    $criteria->andWhere('['.$Model.'].deliver = 0');
 
     return $criteria;
   }
@@ -433,6 +434,7 @@ class FilterInjector extends Component
     $sql .= "    IV.id NOT IN ( ";
     $sql .= "       SELECT invoice_id ";
     $sql .= "       FROM transport_invoices )";
+    $sql .= " IV.deliver = 0 ";
 //    $sql .= " ORDER BY IV.id DESC";
 
     $invoice = new Invoice();
