@@ -146,6 +146,8 @@ class FilterInjector extends Component
             ['user_id' => $identity['id']]
           );
           break;
+        case 'brand':
+        case 'category':
         case 'product':
           break;
         default:
@@ -176,6 +178,9 @@ class FilterInjector extends Component
       switch ($posts['order']) {
         case 'country_id':
           $orderby = '[Country].id';
+          break;
+        case 'name':
+          $orderby = '['.$Model.'].name';
           break;
         default:
           break;

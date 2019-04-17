@@ -36,7 +36,7 @@ $(function () {
             var p1 = (rs[i]['user_id']).toString().padStart(7,0);
             var p2 = (rs[i]['id']).toString().padStart(7,0);
             var price = 0;
-            if (data['ctype'] == 1) {
+            if (data['ctype'] === 1) {
               price = rs[i]['wholesale_price'];
             } else {
               price = rs[i]['price'];

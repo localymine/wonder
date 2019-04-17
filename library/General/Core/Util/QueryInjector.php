@@ -181,6 +181,8 @@ class QueryInjector extends Component
     } else if (3 == $identity['role_id']) {
       /* bussiness owner can edit almost all data except privileged user. */
       switch(strtolower($model)) {
+        case 'brand':
+        case 'category':
         case 'client':
         case 'product':
           $avail = true;
@@ -206,6 +208,8 @@ class QueryInjector extends Component
     } else if (4 == $identity['role_id']) {
       /* servicers can edit only their own data. */
       switch(strtolower($model)) {
+        case 'brand':
+        case 'category':
         case 'client':
         case 'product':
           $avail = true;

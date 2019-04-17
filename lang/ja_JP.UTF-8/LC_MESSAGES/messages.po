@@ -1,0 +1,3989 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cool-revo Secure Marketing Camera Application Frontend\n"
+"POT-Creation-Date: 2014-08-02 23:55+0900\n"
+"PO-Revision-Date: 2014-08-08 18:02+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese <LL@li.org>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Jan."
+msgstr "1 月"
+
+msgid "Feb."
+msgstr "2 月"
+
+msgid "Mar."
+msgstr "3 月"
+
+msgid "Apr."
+msgstr "4 月"
+
+msgid "May."
+msgstr "5 月"
+
+msgid "Jun."
+msgstr "6 月"
+
+msgid "Jul."
+msgstr "7 月"
+
+msgid "Aug."
+msgstr "8 月"
+
+msgid "Sep."
+msgstr "9 月"
+
+msgid "Oct."
+msgstr "10月"
+
+msgid "Nov."
+msgstr "11月"
+
+msgid "Dec."
+msgstr "12月"
+
+msgid "Year %d"
+msgstr "%d 年"
+
+msgid " person/people"
+msgstr " 人"
+
+msgid "M Y"
+msgstr "Y年m月"
+
+msgid "MMM YYYY"
+msgstr "YYYY年M月"
+
+msgid "Y-m-d"
+msgstr "Y年m月d日"
+
+msgid "Y-m-d H:i:s"
+msgstr "Y年m月d日 H:i:s"
+
+msgid "min."
+msgstr "分"
+
+msgid "%d hour"
+msgstr "%d 時間"
+
+msgid "%d hours"
+msgstr "%d 時間"
+
+msgid " ~ "
+msgstr " 〜 "
+
+msgid "greater or equal %s"
+msgstr "%s以上"
+
+msgid "less or equal %s"
+msgstr "%s以下"
+
+msgid "greater than %s"
+msgstr "%sより大きい"
+
+msgid "less than %s"
+msgstr "%s未満"
+
+msgid "Manage %s"
+msgstr "%sの管理"
+
+msgid "List %s"
+msgstr "%sの一覧"
+
+msgid "Search %s"
+msgstr "%sの検索"
+
+msgid "Create New %s"
+msgstr "%sの新規作成"
+
+msgid "Edit %s"
+msgstr "%sの編集"
+
+msgid "%s was created successfully."
+msgstr "%sを作成しました。"
+
+msgid "%s was updated successfully."
+msgstr "%sを保存しました。"
+
+msgid "%s was deleted successfully."
+msgstr "%sを削除しました。"
+
+msgid "%s specified by id was not found: "
+msgstr "idで指定された%sは見つかりませんでした。"
+
+msgid "The search did not find any %s"
+msgstr "指定の条件に合致する%sは見つかりませんでした。"
+
+msgid "%d page / %d pages"
+msgstr "%d ページ目 / 全 %d ページ"
+
+msgid "records display"
+msgstr "件表示"
+
+msgid "User Name"
+msgstr "ユーザ名"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Email Address"
+msgstr "メールアドレス"
+
+msgid "Role"
+msgstr "権限"
+
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Email"
+msgstr "メール"
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Display Name"
+msgstr "表示名"
+
+msgid "Weight"
+msgstr "ソート順"
+
+msgid "Active"
+msgstr "アクティブ"
+
+msgid "Disabled"
+msgstr "無効"
+
+msgid "Enabled"
+msgstr "有効"
+
+msgctxt "OwnerRole"
+msgid "NO"
+msgstr "×"
+
+msgctxt "OwnerRole"
+msgid "YES"
+msgstr "○"
+
+msgid "St. address"
+msgstr "住所"
+
+msgid "Phone"
+msgstr "電話番号"
+
+msgid "Zip"
+msgstr "郵便番号"
+
+msgid "Company"
+msgstr "企業"
+
+msgid "Shared"
+msgstr "共有"
+
+msgid "Show"
+msgstr "詳細を見る"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Other Options"
+msgstr "オプション"
+
+msgid "Delete Confirmation"
+msgstr "削除の最終確認"
+
+msgid "Presets"
+msgstr "カメラグループ"
+
+msgid "Create New Preset"
+msgstr "新規作成"
+
+msgid "Add Preset"
+msgstr "登録"
+
+msgid "Delete Preset"
+msgstr "削除"
+
+msgid "Set Default"
+msgstr "既定値"
+
+msgid "Preset Name"
+msgstr "カメラグループ名を入力して登録"
+
+msgid "(default)"
+msgstr "[既定値]"
+
+msgid "Nothing selected"
+msgstr "(未選択)"
+
+msgid "Display Filter"
+msgstr "絞り込み条件"
+
+msgid "Filter..."
+msgstr "絞り込み"
+
+msgid "Apply filter"
+msgstr "絞り込みを適用"
+
+msgid "Discards filter"
+msgstr "絞り込みを解除"
+
+msgid "Select"
+msgstr "選択"
+
+msgid "Choose..."
+msgstr "選択..."
+
+msgid "Choose all"
+msgstr "すべて"
+
+msgid "First page"
+msgstr "先頭のページへ"
+
+msgid "Previous page"
+msgstr "前のページへ"
+
+msgid "Next page"
+msgstr "次のページへ"
+
+msgid "Last page"
+msgstr "最後のページへ"
+
+msgid "USEN Cloud View"
+msgstr "USEN クラウドビュー"
+
+msgid "Login as "
+msgstr "ログイン中："
+
+msgid "Remember me"
+msgstr "ログイン情報を保存"
+
+msgid "I forgot my password"
+msgstr "パスワードを忘れた方"
+
+msgid "The session has expired. Please sign in."
+msgstr "セッションの有効期限が切れたか、サイン・インしていません。"
+
+msgid "Your account has been temporarily frozen. Please contact your service provider."
+msgstr "お客様のアカウントは一時的にご利用いただけない状態になっています。詳細はサービス提供先にご確認の程よろしくお願い申し上げます。"
+
+msgid "Status"
+msgstr "状態"
+
+msgctxt "Boolean"
+msgid "Yes"
+msgstr "はい"
+
+msgctxt "Boolean"
+msgid "No"
+msgstr "いいえ"
+
+msgid "Remarks"
+msgstr "備考欄"
+
+msgid "Suspend"
+msgstr "一時停止"
+
+msgid "Bulk Suspend"
+msgstr "一括一時停止"
+
+msgid "Created at"
+msgstr "登録日時"
+
+msgid "Updated at"
+msgstr "更新日時"
+
+msgid "Sort order"
+msgstr "並び順番号"
+
+msgid "Fetch start date"
+msgstr "録画データ取得開始日時"
+
+msgid "Fetch length"
+msgstr "取得する録画データの長さ"
+
+msgid "Fetch data"
+msgstr "データ取得"
+
+msgid "Camera for download"
+msgstr "選択中のカメラ"
+
+msgid "Download start date"
+msgstr "ダウンロードするデータの開始日時"
+
+msgid "Download end date"
+msgstr "ダウンロードするデータの終了日時"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Secure Marketing Camera"
+msgstr "セキュアマーケティングカメラ"
+
+msgid "Toggle navigation"
+msgstr "ナビゲーションの表示切り替え"
+
+msgid "Move to SMC Servicer site"
+msgstr "サービサ専用サイトへ移動"
+
+msgid "Move to SMC Manager site"
+msgstr "事業者専用サイトへ移動"
+
+msgid "Move to Camera Viewer site"
+msgstr "カメラ視聴サイトへ移動"
+
+msgid "Live Viewer"
+msgstr "ライブ映像視聴"
+
+msgid "4-Multi Live Viewer"
+msgstr "4分割ライブ視聴"
+
+msgid "9-Multi Live Viewer"
+msgstr "9分割ライブ視聴"
+
+msgid "VOD Viewer"
+msgstr "録画済み動画"
+
+msgid "Drag & drop thumbnail into this area"
+msgstr "カメラのサムネイルをドラッグ＆ドロップ"
+
+msgid "DashBoard"
+msgstr "ダッシュボード"
+
+msgid "Sign Out"
+msgstr "サイン・アウト"
+
+msgid "Sign In"
+msgstr "サイン・イン"
+
+msgid "Sign in to start your session"
+msgstr "サイン・インしてください"
+
+msgid "Servicer Menu"
+msgstr "サービサ メニュー"
+
+msgid "Domain Owner Menu"
+msgstr "事業者 メニュー"
+
+msgid "Camviewer Menu"
+msgstr "カメラ視聴 メニュー"
+
+msgid "System Menu for Cool-revo"
+msgstr "クーレボ用管理追加メニュー"
+
+msgid "Schedule reboot Agentbox"
+msgstr "エージェントボックスの再起動"
+
+msgid "Do you want to reboot this Agentbox <strong>%s</strong>?<br>This cannot be undone."
+msgstr "エージェントボックス <strong>%s</strong> を再起動しますか？<br>この作業は取り消せません。"
+
+msgid "The Agentbox <strong>%s</strong> is already reboot-scheduled."
+msgstr "エージェントボックス <strong>%s</strong> は既に再起動スケジュール済みです。"
+
+msgid "The Agentbox <strong>%s</strong> is rebooting.<br>Please wait a minutes."
+msgstr "エージェントボックス <strong>%s</strong> は現在再起動中です。<br>しばらくお待ちください。"
+
+msgid "Agentbox will restart soon."
+msgstr "エージェントボックスの再起動をスケジュールしました。"
+
+msgid "Could not add scheduled reboot."
+msgstr "再起動のスケジュールに失敗しました。"
+
+msgid "<i class=\"fa fa-times\"></i> Cancel"
+msgstr "<i class=\"fa fa-times\"></i> キャンセル"
+
+msgid "<i class=\"fa fa-check\"></i> Confirm"
+msgstr "<i class=\"fa fa-check\"></i> 実行"
+
+msgid "<i class=\"fa fa-cogs\"></i><span>Maintenance</span>"
+msgstr "<i class=\"fa fa-cogs\"></i><span>メンテナンス</span>"
+
+msgid "<i class=\"fa fa-database\"></i><span>Manage DB Masters</span>"
+msgstr "<i class=\"fa fa-database\"></i><span>マスタ管理</span>"
+
+msgid "<i class=\"fa fa-exclamation\"></i><span>Maintain notice</span>"
+msgstr "<i class=\"fa fa-exclamation\"></i><span>メンテナンス告知</span>"
+
+msgid "<i class=\"fa fa-files-o\"></i><span>Refer Logs</span>"
+msgstr "<i class=\"fa fa-files-o\"></i><span>ログ照会</span>"
+
+msgid "<i class=\"fa fa-file-text-o\"></i><span>Application logs</span>"
+msgstr "<i class=\"fa fa-file-text-o\"></i>管理サーバ</span>"
+
+msgid "<i class=\"fa fa-file-text-o\"></i>Access logs</span>"
+msgstr "<i class=\"fa fa-file-text-o\"></i>アクセスログ</span>"
+
+msgid "<i class=\"fa fa-file-text-o\"></i>Error logs</span>"
+msgstr "<i class=\"fa fa-file-text-o\"></i>エラーログ</span>"
+
+msgid "<i class=\"fa fa-file-text-o\"></i>Updates logs</span>"
+msgstr "<i class=\"fa fa-file-text-o\"></i>更新ログ</span>"
+
+msgid "<i class=\"fa fa-dashboard\"></i><span>DashBoard</span>"
+msgstr "<i class=\"fa fa-dashboard\"></i><span>ダッシュボード</span>"
+
+msgid "<i class=\"fa fa-user-plus\"></i><span>Manage Members</span>"
+msgstr "<i class=\"fa fa-user-plus\"></i><span>会員管理</span>"
+
+msgid "<i class=\"fa fa-user\"></i><span>Members</span>"
+msgstr "<i class=\"fa fa-user\"></i><span>会員照会</span>"
+
+msgid "<i class=\"fa fa-users\"></i><span>Membergroups</span>"
+msgstr "<i class=\"fa fa-users\"></i><span>グループ一覧</span>"
+
+msgid "<i class=\"fa fa-cubes\"></i><span>Manage Groups</span>"
+msgstr "<i class=\"fa fa-cubes\"></i><span>階層管理</span>"
+
+msgid "<i class=\"fa fa-building-o\"></i><span>Area/Endpoints</span>"
+msgstr "<i class=\"fa fa-building-o\"></i><span>拠点階層登録</span>"
+
+msgid "<i class=\"fa fa-database\"></i><span>Manage Agentboxes</span>"
+msgstr "<i class=\"fa fa-database\"></i><span>エージェント登録</span>"
+
+msgid "<i class=\"fa fa-cube\"></i><span>Manage Wondergates</span>"
+msgstr "<i class=\"fa fa-cube\"></i><span>ワンダーゲート登録</span>"
+
+msgid "<i class=\"fa fa-cloud-upload\"></i><span>REC Accounts</span>"
+msgstr "<i class=\"fa fa-cloud-upload\"></i><span>録画用アカウント</span>"
+
+msgid "<i class=\"fa fa-television\"></i><span>VIEW Accounts</span>"
+msgstr "<i class=\"fa fa-television\"></i><span>視聴用アカウント</span>"
+
+msgid "<i class=\"fa fa-video-camera\"></i><span>Manage Camera</span>"
+msgstr "<i class=\"fa fa-video-camera\"></i><span>カメラ登録</span>"
+
+msgid "<i class=\"fa fa-film\"></i><span>Manage Recorders</span>"
+msgstr "<i class=\"fa fa-film\"></i><span>レコーダ登録</span>"
+
+msgid "<i class=\"fa fa-desktop\"></i><span>Manage Monitors</span>"
+msgstr "<i class=\"fa fa-desktop\"></i><span>ライブモニタ登録</span>"
+
+msgid "<i class=\"fa fa-search\"></i><span>Find Devices</span>"
+msgstr "<i class=\"fa fa-search\"></i><span>拠点設置機器検索</span>"
+
+msgid "<i class=\"fa fa-envelope\"></i><span>Export email addresses</span>"
+msgstr "<i class=\"fa fa-envelope\"></i><span>メールアドレス抽出</span>"
+
+msgid "<i class=\"fa fa-eye\"></i><span>Surveils</span>"
+msgstr "<i class=\"fa fa-eye\"></i><span>監視状態</span>"
+
+msgid "<i class=\"fa fa-bell\"></i><span>Surveils overview</span>"
+msgstr "<i class=\"fa fa-bell\"></i><span>監視状態の概要</span>"
+
+msgid "<i class=\"fa fa-bell-o\"></i><span>Realtime alert monitor</span>"
+msgstr "<i class=\"fa fa-bell-o\"></i><span>リアルタイムモニタ</span>"
+
+msgid "<i class=\"fa fa-plug\"></i><span>Vendor Options</span>"
+msgstr "<i class=\"fa fa-plug\"></i><span>マーケティング連携</span>"
+
+msgid "<i class=\"fa fa-cog\"></i><span>Custom</span>"
+msgstr "<i class=\"fa fa-cog\"></i><span>カスタマイズ</span>"
+
+msgid "<i class=\"fa fa-bullhorn\"></i><span>Manage Campaign</span>"
+msgstr "<i class=\"fa fa-bullhorn\"></i><span>キャンペーン登録</span>"
+
+msgid "<i class=\"fa fa-paint-brush\"></i><span>Appearance</span>"
+msgstr "<i class=\"fa fa-paint-brush\"></i><span>外観の変更</span>"
+
+msgid "<i class=\"fa fa-info-circle\"></i><span>Information</span>"
+msgstr "<i class=\"fa fa-info-circle\"></i><span>インフォメーション</span>"
+
+msgid "<i class=\"fa fa-area-chart\"></i><span>Analysis of Entering / Leaving</span>"
+msgstr "<i class=\"fa fa-area-chart\"></i><span>入退店集計の表示</span>"
+
+msgid "<i class=\"fa fa-dashboard\"></i> DashBoard"
+msgstr "<i class=\"fa fa-dashboard\"></i> ダッシュボード"
+
+msgid "<i class=\"fa fa-user\"></i><span>Manage Users</span>"
+msgstr "<i class=\"fa fa-user\"></i><span>サービサ管理</span>"
+
+msgid "<i class=\"fa fa-video-camera\"></i><span>Manage Camera for Charge</span>"
+msgstr "<i class=\"fa fa-video-camera\"></i><span>カメラ台数管理</span>"
+
+msgid "<i class=\"fa fa-cloud-download\"></i><span>Manage Bandwidth for Charge</span>"
+msgstr "<i class=\"fa fa-cloud-download\"></i><span>下り帯域管理</span>"
+
+msgid "<i class=\"fa fa-sign-out\"></i><span>Sign Out</span>"
+msgstr "<i class=\"fa fa-sign-out\"></i><span>サイン・アウト</span>"
+
+msgid "<i class=\"fa fa-file\"></i> New"
+msgstr "<i class=\"fa fa-file\"></i> 新規登録"
+
+msgid "<i class=\"fa fa-file\"></i><span>New</span>"
+msgstr "<i class=\"fa fa-file\"></i><span>新規登録</span>"
+
+msgid "<i class=\"fa fa-pencil\"></i> Edit"
+msgstr "<i class=\"fa fa-pencil\"></i> 編集"
+
+msgid "<i class=\"fa fa-trash\"></i> Delete"
+msgstr "<i class=\"fa fa-trash\"></i> 削除"
+
+msgid "<i class=\"fa fa-eye\"></i> Show Layer"
+msgstr "<i class=\"fa fa-eye\"></i> 詳細を見る"
+
+msgid "<i class=\"fa fa-file\"></i> New Layer"
+msgstr "<i class=\"fa fa-file\"></i> 子階層を追加"
+
+msgid "<i class=\"fa fa-file\"></i> New Area"
+msgstr "<i class=\"fa fa-file\"></i> 第2階層を追加"
+
+msgid "<i class=\"fa fa-file\"></i> New Endpoint"
+msgstr "<i class=\"fa fa-file\"></i> 第3階層を追加"
+
+msgid "<i class=\"fa fa-pencil\"></i> Edit Layer"
+msgstr "<i class=\"fa fa-pencil\"></i> 編集する"
+
+msgid "<i class=\"fa fa-trash\"></i> Delete Layer"
+msgstr "<i class=\"fa fa-trash\"></i> この階層を削除"
+
+msgid "<i class=\"fa fa-eye\"></i> Show Account"
+msgstr "<i class=\"fa fa-eye\"></i> アカウント詳細"
+
+msgid "<i class=\"fa fa-pencil\"></i> Edit Account"
+msgstr "<i class=\"fa fa-pencil\"></i> アカウントを編集"
+
+msgid "<i class=\"fa fa-file-excel-o\"></i> Export"
+msgstr "<i class=\"fa fa-file-excel-o\"></i> エクスポート"
+
+msgid "<i class=\"fa fa-file-excel-o\"></i><span>Export</span>"
+msgstr "<i class=\"fa fa-file-excel-o\"></i><span>エクスポート</span>"
+
+msgid "<i class=\"fa fa-refresh\"></i><span>Refresh</span>"
+msgstr "<i class=\"fa fa-refresh\"></i><span>更新</span>"
+
+msgid "<i class=\"fa fa-calendar\"></i><span>Video Missing Logs</span>"
+msgstr "<i class=\"fa fa-calendar\"></i><span>録画⽋損リスト</span>"
+
+msgid "<i class=\"fa fa-th\"></i><span>List by day</span>"
+msgstr "<i class=\"fa fa-th\"></i><span>日別検索</span>"
+
+msgid "<i class=\"fa fa-th-large\"></i><span>Export by month</span>"
+msgstr "<i class=\"fa fa-th-large\"></i><span>月別エクスポート</span>"
+
+msgid "<i class=\"fa fa-eye\"></i> Show"
+msgstr "<i class=\"fa fa-eye\"></i> 詳細"
+
+msgid "<i class=\"fa fa-adjust\"></i><span>AI Image Processing</span>"
+msgstr "<i class=\"fa fa-adjust\"></i><span>AI画像処理</span>"
+
+msgid "Creating virtualhost failed. please create nginx config manually."
+msgstr "バーチャルホストの追加が未完了です。手動でNGINXのバーチャルホスト設定を行ってください。"
+
+msgid "Deleting virtualhost failed. please delete nginx config manually."
+msgstr "バーチャルホストの削除が未完了です。手動でNGINXのバーチャルホストを削除してください。"
+
+msgid "Wrong username or password"
+msgstr "ユーザ名・パスワードのいずれかが違います"
+
+msgid "You don't have access to this module: "
+msgstr "モジュールにアクセスする権限がありません: "
+
+msgid "The user does not have write permissions to create the ACL list at %s"
+msgstr "ACLを保存しようとしましたが、現在のphp実行ユーザはディレクトリ %s に書き込み権限を持っていません。"
+
+msgid "Data will be deleted. This operation <strong>CANNOT be undone</strong>. Is it OK?"
+msgstr "下記のデータは削除されます。<strong>この操作は取り消しできません</strong>。よろしいですか？"
+
+msgid "Field %s is required"
+msgstr "%s は必須です。"
+
+msgid "%s should be :min or more characters required"
+msgstr "%s は少なくとも :min 以上の文字が必要です。"
+
+msgid "%s must be maximum :max characters"
+msgstr "%s は :max 文字以内であることが必要です。"
+
+msgid "%s must be within the range of :min to :max"
+msgstr "%s は :min から :max の範囲内であることが必要です。"
+
+msgid "System Administrator"
+msgstr "システム管理者"
+
+msgid "Anonymous"
+msgstr "匿名(権限なし)"
+
+msgid "Domain Owner"
+msgstr "事業者"
+
+msgid "Servicer"
+msgstr "会員ユーザ"
+
+msgid "Service User"
+msgstr "視聴ユーザ"
+
+msgid "Login ID"
+msgstr "ログインID"
+
+msgid "Servicer Profile"
+msgstr "サービサ情報"
+
+msgid "Domain Owner Profile"
+msgstr "事業者情報"
+
+msgid "Domain Owner Name"
+msgstr "事業者名"
+
+msgid "Servicer Name"
+msgstr "サービサ名"
+
+msgid "Service Name"
+msgstr "サービス名"
+
+msgid "Domain Name"
+msgstr "ドメイン名"
+
+msgid "Service Logo Image"
+msgstr "サービスロゴ"
+
+msgid "Login for Servicer"
+msgstr "サービサログインID"
+
+msgid "Password for Servicer"
+msgstr "サービサパスワード"
+
+msgid "Has Domain Owner role"
+msgstr "事業者権限"
+
+msgid "Login for Domain Owner"
+msgstr "事業者ログインID"
+
+msgid "Password for Domain Owner"
+msgstr "事業者パスワード"
+
+msgid "Sales type"
+msgstr "販売区分"
+
+msgid "Direct seller"
+msgstr "直販(会員請求)"
+
+msgid "Agency(direct)"
+msgstr "代理店(会員請求)"
+
+msgid "Agency(indirect)"
+msgstr "取次店(キャン請求)"
+
+msgid "Payment type"
+msgstr "支払区分"
+
+msgid "This user is a member of an existing domain."
+msgstr "既存ドメインの下位ユーザとして登録"
+
+msgctxt "User"
+msgid "name"
+msgstr "サービサ名"
+
+msgctxt "User"
+msgid "salestype"
+msgstr "販売区分"
+
+msgctxt "User"
+msgid "paytype"
+msgstr "支払い区分"
+
+msgctxt "User"
+msgid "login"
+msgstr "サービサログインID"
+
+msgctxt "User"
+msgid "passwd"
+msgstr "サービサパスワード"
+
+msgctxt "User"
+msgid "admlogin"
+msgstr "事業者ログインID"
+
+msgctxt "User"
+msgid "admpasswd"
+msgstr "事業者パスワード"
+
+msgctxt "User"
+msgid "serviceid"
+msgstr "サービス識別子"
+
+msgctxt "User"
+msgid "servicename"
+msgstr "サービス名"
+
+msgctxt "User"
+msgid "domainname"
+msgstr "ドメイン名"
+
+msgctxt "User"
+msgid "email1"
+msgstr "メールアドレス1"
+
+msgctxt "User"
+msgid "email2"
+msgstr "メールアドレス2"
+
+msgctxt "User"
+msgid "mainimage"
+msgstr "視聴サイト メイン画像"
+
+msgctxt "User"
+msgid "loginimage"
+msgstr "視聴サイト サイン・イン画像"
+
+msgctxt "User"
+msgid "thumbimage"
+msgstr "視聴サイト サムネイル画像"
+
+msgctxt "User"
+msgid "favicon"
+msgstr "視聴サイト favicon"
+
+msgctxt "User"
+msgid "theme"
+msgstr "カラーテーマ"
+
+msgctxt "User"
+msgid "disabled"
+msgstr "サービサの一時停止"
+
+msgctxt "User"
+msgid "Existing domains"
+msgstr "登録済みドメイン"
+
+msgctxt "User"
+msgid "Bulk payment"
+msgstr "一括支払"
+
+msgctxt "User"
+msgid "Monthly payment"
+msgstr "毎月支払"
+
+msgctxt "Member"
+msgid "Bulk payment"
+msgstr "年払い"
+
+msgctxt "Member"
+msgid "Monthly payment"
+msgstr "月払い"
+
+msgid "FORCE Edit"
+msgstr "強制変更"
+
+msgid "Group root"
+msgstr "第1階層(全体)"
+
+msgid "Area"
+msgstr "第2階層(エリア)"
+
+msgid "Endpoint"
+msgstr "第3階層(拠点)"
+
+msgid "Related Agent"
+msgstr "エージェント名"
+
+msgid "Associated Cameras"
+msgstr "連携中の監視カメラ一覧"
+
+msgid "Associated Cameras with %s"
+msgstr "この%sに紐付けられたカメラ一覧"
+
+msgid "Related<br>Agent/Wondergate"
+msgstr "エージェント または<br>ワンダーゲート"
+
+msgid "Related Wondergate"
+msgstr "ワンダーゲート名"
+
+msgid "Connection status"
+msgstr "接続状況"
+
+msgid "External Memory"
+msgstr "外部メモリ"
+
+msgid "Firmware Version"
+msgstr "ファームウェア"
+
+msgid "IP Address"
+msgstr "IPアドレス"
+
+msgid "IP Address(static)"
+msgstr "IPアドレス(固定)"
+
+msgid "HW Address"
+msgstr "MACアドレス"
+
+msgid "Netmask"
+msgstr "サブネットマスク"
+
+msgid "Gateway"
+msgstr "ゲートウェイ"
+
+msgid "DNS"
+msgstr "ネームサーバ"
+
+msgid "Account setting"
+msgstr "アカウント設定"
+
+msgid "NTP setting"
+msgstr "NTP設定"
+
+msgid "Traffic control setting"
+msgstr "帯域制御設定"
+
+msgid "External memory setting"
+msgstr "外部メモリ設定"
+
+msgid "SD Card"
+msgstr "SDカード"
+
+msgid "USB Stick"
+msgstr "USBメモリ"
+
+msgid "USB Strage"
+msgstr "USBストレージ"
+
+msgid "Disable"
+msgstr "不使用"
+
+msgid "Threshold"
+msgstr "使用量閾値"
+
+msgid "Auto release"
+msgstr "自動帯域開放"
+
+msgid "Automatically release the band-limitation when it exceeds the threshold"
+msgstr "閾値を越えたら自動的に帯域制限を解除"
+
+msgid "External memory remarks"
+msgstr "外部メモリ備考"
+
+msgid "Time"
+msgstr "時間指定"
+
+msgid "Release Limitation"
+msgstr "手動帯域開放"
+
+msgid "Force No-band-limited"
+msgstr "【優先】常時帯域制限なし"
+
+msgid "Agentbox Name"
+msgstr "エージェントボックス名"
+
+msgid "Agentbox/Wondergate Name"
+msgstr "Agentbox/Wondergate 端末名"
+
+msgid "Agentbox or Wondergate"
+msgstr "エージェントボックス、またはワンダーゲート"
+
+msgid "Agentbox or <br>Wondergate"
+msgstr "エージェント、または<br>ワンダーゲート"
+
+msgid "Agentbox or <br>Wondergate Name"
+msgstr "エージェント、または<br>ワンダーゲート 端末名"
+
+msgid "Agentbox Id"
+msgstr "エージェントボックスID"
+
+msgid "Agentbox/Wondergate Id"
+msgstr "Agentbox/Wondergate ID"
+
+msgid "Agentbox Suspended"
+msgstr "エージェントボックス一時停止"
+
+msgid "Agentbox/Wondergate Suspended"
+msgstr "Agentbox/Wondergate 一時停止"
+
+msgid "Surveil agentbox"
+msgstr "死活監視機能"
+
+msgid "Surveil this Agentbox"
+msgstr "このエージェントボックスを監視対象にする"
+
+msgid "Wondergate Name"
+msgstr "ワンダーゲート名"
+
+msgid "Wondergate Type"
+msgstr "モデル名"
+
+msgid "Wondergate Id"
+msgstr "ワンダーゲートID"
+
+msgid "Wondergate Suspended"
+msgstr "ワンダーゲート一時停止"
+
+msgid "Surveil wondergate"
+msgstr "死活監視機能"
+
+msgid "Surveil this Wondergate"
+msgstr "このワンダーゲートを監視対象にする"
+
+msgid "Temporarily suspend agent process on the server"
+msgstr "サーバ処理の一時停止"
+
+msgid "Specify Member:"
+msgstr "会員を選択"
+
+msgid "Refer NTP server"
+msgstr "NTPサーバを参照"
+
+msgid "Refer This server"
+msgstr "管理サーバの時間を参照"
+
+msgid "NTP server address"
+msgstr "NTPサーバアドレス"
+
+msgid "SSH Helper"
+msgstr "SSHヘルパーの起動"
+
+msgid "Disable always"
+msgstr "常時無効"
+
+msgid "Enable always"
+msgstr "常時有効"
+
+msgid "Watch process and shared memory cache"
+msgstr "プロセス・共有メモリキャッシュを監視"
+
+msgid "Log Level"
+msgstr "ログレベル"
+
+msgid "Datetime"
+msgstr "日付時刻"
+
+msgid "Select Today"
+msgstr "今日へ移動"
+
+msgid "Deselect"
+msgstr "選択解除"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Select Month"
+msgstr "月を直接選択"
+
+msgid "Previous Month"
+msgstr "前月へ移動"
+
+msgid "Next Month"
+msgstr "次月へ移動"
+
+msgid "Select Year"
+msgstr "年を直接選択"
+
+msgid "Previous Year"
+msgstr "前年へ移動"
+
+msgid "Next Year"
+msgstr "次年へ移動"
+
+msgid "Inclement Hour"
+msgstr "1時間進める"
+
+msgid "Declement Hour"
+msgstr "1時間戻す"
+
+msgid "Inclement Minute"
+msgstr "1分進める"
+
+msgid "Declement Minute"
+msgstr "1分戻す"
+
+msgid "Inclement Second"
+msgstr "1秒進める"
+
+msgid "Declement Second"
+msgstr "1秒戻す"
+
+msgid "Select Time"
+msgstr "時間を設定"
+
+msgid "Surveils"
+msgstr "監視状態"
+
+msgid "Realtime Alert Monitor"
+msgstr "リアルタイムアラートモニタ"
+
+msgid "Search Member for Surveils"
+msgstr "監視状態を確認する会員"
+
+msgid "Surveils Summary"
+msgstr "監視状態の概要"
+
+msgid "Surveils Notification Settings"
+msgstr "アラートメールの設定状態"
+
+msgid "Detail of Surveils"
+msgstr "監視項目の詳細"
+
+msgid "Edit Surveils Settings"
+msgstr "監視通知の編集"
+
+msgid "Surveil Conditions"
+msgstr "検出条件を読む"
+
+msgid "Monitor Devices"
+msgstr "監視対象機器"
+
+msgid "Monitor Items"
+msgstr "監視項目"
+
+msgid "Monitor Interval"
+msgstr "間隔"
+
+msgid "Monitor Conditions"
+msgstr "抽出条件"
+
+msgid "Recording Server"
+msgstr "録画用サーバ"
+
+msgid "Uploading from camera has stopped"
+msgstr "監視カメラからのファイルアップロード停止"
+
+msgid "New files are not generated"
+msgstr "新規ファイルが生成されない"
+
+msgid "File uploads from unregistered camera"
+msgstr "未登録カメラからのファイルアップロード"
+
+msgid "New file has generated"
+msgstr "新規ファイルが生成された"
+
+msgid "Averaged bitrate has exceeded the value of the contract"
+msgstr "平均ビットレートが契約値を超過"
+
+msgid "The most recent of the file has exceeded the bitrate"
+msgstr "直近の録画ファイルの平均ビットレートが契約値を超過"
+
+msgid "External memory is not available"
+msgstr "外部メモリが使用不可"
+
+msgid "External memory can not be written"
+msgstr "外部メモリに書込みできない"
+
+msgid "External memory usage exceedes the threshold"
+msgstr "外部メモリの使用量超過"
+
+msgid "External memory usage has exceeded the threshold"
+msgstr "外部メモリの使用量が閾値を超えた"
+
+msgid "Mail transmission frequency"
+msgstr "メール送信頻度"
+
+msgid "Notification Receiver Address"
+msgstr "メール受信アドレス"
+
+msgid "Every 10 minutes (Includes detected/restored)"
+msgstr "10分毎(検出時と復旧時を含む)"
+
+msgid "Just detected/restored only"
+msgstr "検出時と復旧時のみ"
+
+msgid "Surveil settings were updated successfully."
+msgstr "監視通知の設定を更新しました。"
+
+msgid "You must specify at least one or more addresses to receive Notification."
+msgstr "監視通知を受信するメールアドレスを少なくとも1つ指定してください。"
+
+msgid "You must create and specify Member before configure surveils."
+msgstr "監視通知を設定する前に会員を登録・指定してください。"
+
+msgid "There is no Notifications."
+msgstr "検出された異常監視項目はありません。"
+
+msgid "Member"
+msgstr "会員"
+
+msgid "Members"
+msgstr "会員"
+
+msgid "Manage Members"
+msgstr "会員管理"
+
+msgid "List Members"
+msgstr "会員一覧"
+
+msgid "Search Members"
+msgstr "会員の検索"
+
+msgid "Create New Member"
+msgstr "会員の新規登録"
+
+msgid "Edit Member"
+msgstr "会員の編集"
+
+msgid "Delete Member"
+msgstr "会員の削除"
+
+msgid "Detail of Member"
+msgstr "会員詳細"
+
+msgid "Back to Detail of Member"
+msgstr "会員詳細を表示"
+
+msgid "Specified Member cannot found."
+msgstr "指定された会員は見つかりませんでした。"
+
+msgid "Could not find any Member."
+msgstr "条件に一致する会員が見つかりませんでした。"
+
+msgid "Member was created successfully."
+msgstr "会員を登録しました。"
+
+msgid "Member was updated successfully."
+msgstr "会員を更新しました。"
+
+msgid "Member was deleted successfully."
+msgstr "会員を削除しました。"
+
+msgid "Member Name"
+msgstr "会員名"
+
+msgid "Customer #"
+msgstr "顧客コード"
+
+msgid "company:"
+msgstr "法人"
+
+msgid "branch:"
+msgstr "支店"
+
+msgid "Contract #"
+msgstr "契約コード"
+
+msgid "DRM Optional usage"
+msgstr "DRMオプション"
+
+msgid "Subscribed"
+msgstr "サービス開始日"
+
+msgid "Withdraw Month/Year"
+msgstr "退会予定月"
+
+msgid "Unsubscribed"
+msgstr "サービス退会"
+
+msgid "Suspend services"
+msgstr "サービス停止"
+
+msgid "Person Name in charge"
+msgstr "担当者氏名"
+
+msgid "Be suspended at"
+msgstr "停止区分"
+
+msgid "End of Withdraw Month/Year"
+msgstr "退会予定月末"
+
+msgid "Immediately"
+msgstr "即時"
+
+msgid "Withdraw at"
+msgstr "退会予定"
+
+msgid "Service Status"
+msgstr "サービス状況"
+
+msgctxt "DRM"
+msgid "Yes"
+msgstr "あり"
+
+msgctxt "DRM"
+msgid "No"
+msgstr "なし"
+
+msgctxt "Entity"
+msgid "Yes"
+msgstr "あり"
+
+msgctxt "Entity"
+msgid "No"
+msgstr "なし"
+
+msgid "NO group"
+msgstr "グルーピングしない"
+
+msgctxt "Member"
+msgid "membergroup_id"
+msgstr "会員グループ"
+
+msgctxt "Member"
+msgid "name"
+msgstr "会員名"
+
+msgctxt "Member"
+msgid "ccode"
+msgstr "顧客コード 法人"
+
+msgctxt "Member"
+msgid "ocode"
+msgstr "顧客コード 支店"
+
+msgctxt "Member"
+msgid "mcode"
+msgstr "契約コード"
+
+msgctxt "Member"
+msgid "sales"
+msgstr "販売区分"
+
+msgctxt "Member"
+msgid "paymethod"
+msgstr "支払区分"
+
+msgctxt "Member"
+msgid "usedrm"
+msgstr "DRMオプション"
+
+msgctxt "Member"
+msgid "joined"
+msgstr "サービス開始日"
+
+msgctxt "Member"
+msgid "withdraw"
+msgstr "退会予定月"
+
+msgctxt "Member"
+msgid "disabled"
+msgstr "サービス停止"
+
+msgctxt "Member"
+msgid "disableflg"
+msgstr "停止区分"
+
+msgctxt "Member"
+msgid "personname"
+msgstr "担当者氏名"
+
+msgctxt "Member"
+msgid "mail"
+msgstr "メールアドレス"
+
+msgctxt "Member"
+msgid "phone"
+msgstr "電話番号"
+
+msgid "Membergroup"
+msgstr "会員グループ"
+
+msgid "Membergroups"
+msgstr "会員グループ"
+
+msgid "Manage Membergroups"
+msgstr "会員グループ管理"
+
+msgid "List Membergroups"
+msgstr "会員グループ一覧"
+
+msgid "Search Membergroups"
+msgstr "会員グループの検索"
+
+msgid "Create New Membergroup"
+msgstr "会員グループの新規登録"
+
+msgid "Edit Membergroup"
+msgstr "会員グループの編集"
+
+msgid "Delete Membergroup"
+msgstr "会員グループの削除"
+
+msgid "Detail of Membergroup"
+msgstr "会員グループ詳細"
+
+msgid "Specified Membergroup cannot found."
+msgstr "指定された会員グループは見つかりませんでした。"
+
+msgid "Could not find any Membergroup."
+msgstr "条件に一致する会員グループが見つかりませんでした。"
+
+msgid "Membergroup was created successfully."
+msgstr "会員グループを登録しました。"
+
+msgid "Membergroup was updated successfully."
+msgstr "会員グループを更新しました。"
+
+msgid "Membergroup was deleted successfully."
+msgstr "会員グループを削除しました。"
+
+msgid "Membergroup Name"
+msgstr "会員グループ名"
+
+msgid "Num of Members"
+msgstr "会員数"
+
+msgctxt "Membergroup"
+msgid "name"
+msgstr "会員グループ名"
+
+msgctxt "Membergroup"
+msgid "disabled"
+msgstr "一括一時停止"
+
+msgid "Groups"
+msgstr "拠点階層"
+
+msgid "Group"
+msgstr "拠点階層"
+
+msgid "Manage Groups"
+msgstr "拠点階層管理"
+
+msgid "List Groups"
+msgstr "拠点一覧"
+
+msgid "Arrangement of Groups"
+msgstr "各拠点の階層状態"
+
+msgid "Search Groups"
+msgstr "拠点階層の検索"
+
+msgid "Create New Group"
+msgstr "拠点階層の新規登録"
+
+msgid "Edit Group"
+msgstr "拠点階層の編集"
+
+msgid "Delete Group"
+msgstr "拠点階層の削除"
+
+msgid "Detail of Group"
+msgstr "拠点階層の詳細"
+
+msgid "Network detail of Group"
+msgstr "ネットワーク構成"
+
+msgid "Search Member for Groups"
+msgstr "拠点階層を紐付ける会員"
+
+msgid "Member is not Specified."
+msgstr "拠点階層を紐付ける会員が選択されていません。"
+
+msgid "Specified Group cannot found."
+msgstr "指定された拠点階層は見つかりませんでした。"
+
+msgid "Could not find any Group."
+msgstr "条件に一致する拠点階層が見つかりませんでした。"
+
+msgid "You must create and specify Member before create Groups."
+msgstr "拠点階層を登録する会員を指定してください。"
+
+msgid "You must create and specify Member before manage Groups."
+msgstr "拠点階層を操作する前に会員を登録・指定してください。"
+
+msgid "You CANNOT create multiple Root Groups with one Member."
+msgstr "会員に1つ以上の第1階層を作成することはできません。"
+
+msgid "You must create Root Group before creating other Groups."
+msgstr "第2・第3階層を作成する前に第1階層を作成してください。"
+
+msgid "You must create Area before creating Endpoints."
+msgstr "第3階層を作成する前に第1・第2階層を作成してください。"
+
+msgid "An Error was occured in Creating samba account. Please wait and retry."
+msgstr "拠点階層登録中に連携サーバでエラーが発生し、入力中のデータが破棄されました。時間を置いて再度お試しください。"
+
+msgid "Invalid parent group is specified."
+msgstr "無効なグループIDが指定されました。"
+
+msgid "Group was created successfully."
+msgstr "拠点階層を登録しました。"
+
+msgid "Group was updated successfully."
+msgstr "拠点階層を更新しました。"
+
+msgid "Group was deleted successfully."
+msgstr "拠点階層を削除しました。"
+
+msgid "New Root Group"
+msgstr "第1階層の新規登録"
+
+msgid "New Area Group"
+msgstr "第2階層の新規登録"
+
+msgid "New Endpoint Group"
+msgstr "第3階層の新規登録"
+
+msgid "VIEW Account"
+msgstr "視聴アカウント"
+
+msgid "REC Account"
+msgstr "録画アカウント"
+
+msgid "New Area"
+msgstr "第2階層の追加"
+
+msgid "New Endpoint"
+msgstr "第3階層の追加"
+
+msgid "Add Agent"
+msgstr "エージェントボックス追加"
+
+msgid "Add Wonder"
+msgstr "ワンダーゲート追加"
+
+msgid "Add Camera"
+msgstr "監視カメラ追加"
+
+msgid "To add camera, click here, or press [+] button."
+msgstr "カメラを追加するにはここをクリックするか、＋ボタンを押してください"
+
+msgctxt "Group"
+msgid "member_id"
+msgstr "会員の選択"
+
+msgctxt "Group"
+msgid "parent_id"
+msgstr "上位階層"
+
+msgctxt "Group"
+msgid "name"
+msgstr "第2階層(エリア) または 第3階層(拠点) の拠点名"
+
+msgctxt "Group"
+msgid "sort"
+msgstr "並び順番号"
+
+msgctxt "Group"
+msgid "login"
+msgstr "視聴アカウントユーザ名"
+
+msgctxt "Group"
+msgid "passwd"
+msgstr "視聴アカウントパスワード"
+
+msgctxt "Group"
+msgid "cloudlogin"
+msgstr "録画アカウントユーザ名"
+
+msgctxt "Group"
+msgid "cloudpasswd"
+msgstr "録画アカウントパスワード"
+
+msgctxt "Group"
+msgid "cloudaddr"
+msgstr "録画保存先IPアドレス"
+
+msgctxt "Group"
+msgid "clouddir"
+msgstr "共有フォルダ名"
+
+msgctxt "Group"
+msgid "email1"
+msgstr "メールアドレス1"
+
+msgctxt "Group"
+msgid "email2"
+msgstr "メールアドレス2"
+
+msgid "Agentbox"
+msgstr "エージェントボックス"
+
+msgid "Agentboxes"
+msgstr "エージェントボックス"
+
+msgid "Manage Agentboxes"
+msgstr "エージェントボックス管理"
+
+msgid "List Agentboxes"
+msgstr "エージェントボックス一覧"
+
+msgid "Arrangement of Agentboxes"
+msgstr "各拠点とエージェントボックスの配置状態"
+
+msgid "Search Agentboxes"
+msgstr "エージェントボックスの検索"
+
+msgid "Create New Agentbox"
+msgstr "エージェントボックスの新規登録"
+
+msgid "Add New Agentbox"
+msgstr "エージェントボックス追加"
+
+msgid "Edit Agentbox"
+msgstr "エージェントボックスの編集"
+
+msgid "Delete Agentbox"
+msgstr "エージェントボックスの削除"
+
+msgid "Detail of Agentbox"
+msgstr "端末詳細"
+
+msgid "Search Member for Agentboxes"
+msgstr "エージェントボックスを紐付ける会員"
+
+msgid "Specified Agentbox cannot found."
+msgstr "指定されたエージェントボックスは見つかりませんでした。"
+
+msgid "Could not find any Agentbox."
+msgstr "条件に一致するエージェントボックスが見つかりませんでした。"
+
+msgid "You must specify Member and Group before create Agentboxes."
+msgstr "エージェントボックスを登録する会員、グループを指定してください。"
+
+msgid "You must create and specify Group before create Agentboxes."
+msgstr "エージェントボックスを登録するグループを先に登録してください。"
+
+msgid "You must create and specify Member before create Agentboxes."
+msgstr "エージェントボックスを登録する会員を先に登録してください。"
+
+msgid "Threshold must be within the range of 0.4Mpbs to 4.0Mpbs."
+msgstr "帯域制御のしきい値は 0.4Mbps から 4.0Mbps の間で設定してください。"
+
+msgid "Threshold must be within the range of %1$sMpbs to %2$sMpbs."
+msgstr "帯域制御のしきい値は %1$sMbps から %2$sMbps の間で設定してください。"
+
+msgid "%1$s must be within the range of %2$s to %3$s"
+msgstr "%1$s の設定範囲は、%2$s から %3$s です"
+
+msgid "%%s must be within the range of %s to %s"
+msgstr "%%s の設定範囲は、%s から %s の間です"
+
+msgid "%s must be at least %s or larger."
+msgstr "%s は少なくとも %s 以上の値にしてください。"
+
+msgid "Agentbox was created successfully."
+msgstr "エージェントボックスを登録しました。"
+
+msgid "Agentbox was updated successfully."
+msgstr "エージェントボックスを更新しました。"
+
+msgid "Agentbox was deleted successfully."
+msgstr "エージェントボックスを削除しました。"
+
+msgid "Go to Agentbox Administration login"
+msgstr "エージェントボックス管理機能にサイン・イン"
+
+msgid "Wondergate"
+msgstr "ワンダーゲート"
+
+msgid "Wondergates"
+msgstr "ワンダーゲート"
+
+msgid "Manage Wondergates"
+msgstr "ワンダーゲート管理"
+
+msgid "List Wondergates"
+msgstr "ワンダーゲート一覧"
+
+msgid "Arrangement of Wondergates"
+msgstr "各拠点とワンダーゲートの配置状態"
+
+msgid "Search Wondergate"
+msgstr "ワンダーゲートの検索"
+
+msgid "Create New Wondergate"
+msgstr "ワンダーゲートの新規登録"
+
+msgid "Add New Wondergate"
+msgstr "ワンダーゲート追加"
+
+msgid "Edit Wondergate"
+msgstr "ワンダーゲートの編集"
+
+msgid "Delete Wondergate"
+msgstr "ワンダーゲートの削除"
+
+msgid "Detail of Wondergate"
+msgstr "端末詳細"
+
+msgid "Search Member for Wondergates"
+msgstr "ワンダーゲートを紐付ける会員"
+
+msgid "Specified Wondergate cannot found."
+msgstr "指定されたワンダーゲートは見つかりませんでした。"
+
+msgid "Could not find any Wondergate."
+msgstr "条件に一致するワンダーゲートが見つかりませんでした。"
+
+msgid "You must specify Member and Group before create Wondergates."
+msgstr "ワンダーゲートを登録する会員、グループを指定してください。"
+
+msgid "You must create and specify Group before create Wondergates."
+msgstr "ワンダーゲートを登録するグループを先に登録してください。"
+
+msgid "You must create and specify Member before create Wondergates."
+msgstr "ワンダーゲートを登録する会員を先に登録してください。"
+
+msgid "Wondergate was created successfully."
+msgstr "ワンダーゲートを登録しました。"
+
+msgid "Wondergate was updated successfully."
+msgstr "ワンダーゲートを更新しました。"
+
+msgid "Wondergate was deleted successfully."
+msgstr "ワンダーゲートを削除しました。"
+
+msgid "Go to Wondergate Administration login"
+msgstr "ワンダーゲート管理機能にサイン・イン"
+
+msgid "Associating Cameras"
+msgstr "このワンダーゲートに紐付けられた監視カメラ"
+
+msgid "Associating Recorders"
+msgstr "このワンダーゲートに紐付けられたレコーダ"
+
+msgid "VIEW Accounts"
+msgstr "視聴アカウント"
+
+msgid "Manage VIEW Accounts"
+msgstr "視聴アカウント管理"
+
+msgid "Detail of VIEW Account"
+msgstr "視聴アカウントの詳細"
+
+msgid "Edit VIEW Account"
+msgstr "視聴アカウントの編集"
+
+msgid "VIEW Account Login"
+msgstr "視聴アカウントユーザ名"
+
+msgid "VIEW Account Password"
+msgstr "視聴アカウントパスワード"
+
+msgid "REC Accounts"
+msgstr "録画アカウント"
+
+msgid "Manage REC Accounts"
+msgstr "録画アカウント管理"
+
+msgid "Detail of REC Account"
+msgstr "録画アカウントの詳細"
+
+msgid "Edit REC Account"
+msgstr "録画アカウントの編集"
+
+msgid "REC Account Login"
+msgstr "録画アカウントユーザ名"
+
+msgid "REC Account Password"
+msgstr "録画アカウントパスワード"
+
+msgid "REC Server Address"
+msgstr "録画保存先IPアドレス"
+
+msgid "REC Server Directory"
+msgstr "共有フォルダ名"
+
+msgid "You must create and specify Groups before manage VIEW Accounts."
+msgstr "視聴アカウントを管理するには、第1・第2・第3階層に拠点を作成してください。"
+
+msgid "You must create and specify Groups before manage REC Accounts."
+msgstr "録画アカウントを管理するには、第1・第2・第3階層に拠点を作成してください。"
+
+msgctxt "Agentbox"
+msgid "member_id"
+msgstr "会員の選択"
+
+msgctxt "Agentbox"
+msgid "group_id"
+msgstr "第3階層(拠点)・第2階層(エリア)"
+
+msgctxt "Agentbox"
+msgid "user_id"
+msgstr "サービサid"
+
+msgctxt "Agentbox"
+msgid "uniquekey"
+msgstr "エージェントボックス固有キー"
+
+msgctxt "Agentbox"
+msgid "name"
+msgstr "エージェントボックス名"
+
+msgctxt "Agentbox"
+msgid "ipaddr"
+msgstr "IPアドレス(固定)"
+
+msgctxt "Agentbox"
+msgid "netmask"
+msgstr "サブネットマスク"
+
+msgctxt "Agentbox"
+msgid "gateway"
+msgstr "ゲートウェイ"
+
+msgctxt "Agentbox"
+msgid "dns1"
+msgstr "DNS1"
+
+msgctxt "Agentbox"
+msgid "dns2"
+msgstr "DNS2"
+
+msgctxt "Agentbox"
+msgid "hwaddr"
+msgstr "MACアドレス"
+
+msgctxt "Agentbox"
+msgid "firmver"
+msgstr "ファームウェアバージョン"
+
+msgctxt "Agentbox"
+msgid "disabled"
+msgstr "サーバ処理の一時停止"
+
+msgctxt "Agentbox"
+msgid "login"
+msgstr "ログインID"
+
+msgctxt "Agentbox"
+msgid "passwd"
+msgstr "パスワード"
+
+msgctxt "Agentbox"
+msgid "ntpdate"
+msgstr "NTP設定"
+
+msgctxt "Agentbox"
+msgid "ntpfqdn"
+msgstr "NTPサーバアドレス"
+
+msgctxt "Agentbox"
+msgid "forcetc"
+msgstr "手動帯域解放"
+
+msgctxt "Agentbox"
+msgid "autotc"
+msgstr "自動帯域解放"
+
+msgctxt "Agentbox"
+msgid "memtype"
+msgstr "外部メモリ設定"
+
+msgctxt "Agentbox"
+msgid "memlimit"
+msgstr "使用量閾値"
+
+msgctxt "Agentbox"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "Agentbox"
+msgid "Suspended"
+msgstr "一時停止"
+
+msgctxt "Agentbox"
+msgid "Disabled"
+msgstr "無効化"
+
+msgctxt "Agentbox"
+msgid "Connect"
+msgstr "接続中"
+
+msgctxt "Agentbox"
+msgid "Reboot"
+msgstr "再起動"
+
+msgctxt "Agentbox"
+msgid "Polling"
+msgstr "変更中"
+
+msgctxt "Agentbox"
+msgid "Rebooting"
+msgstr "再起動中"
+
+msgctxt "Agentbox"
+msgid "Unavailable"
+msgstr "状態未取得"
+
+msgctxt "Agentbox"
+msgid "Normal"
+msgstr "正常"
+
+msgctxt "Agentbox"
+msgid "Quota over"
+msgstr "超過"
+
+msgctxt "Agentbox"
+msgid "Abnormal"
+msgstr "異常"
+
+msgctxt "Agentbox"
+msgid "Cannot reboot"
+msgstr "再起動できません"
+
+msgctxt "Agentbox"
+msgid "Reboot scheduled"
+msgstr "再起動スケジュール済み"
+
+msgid "AgentboxLog"
+msgstr "エージェントボックスログ"
+
+msgid "AgentboxLogs"
+msgstr "エージェントボックスログ"
+
+msgctxt "TrafficControl"
+msgid "order"
+msgstr "帯域制御の表示順"
+
+msgctxt "TrafficControl"
+msgid "begin"
+msgstr "帯域制御開始時刻"
+
+msgctxt "TrafficControl"
+msgid "end"
+msgstr "帯域制御終了時刻"
+
+msgctxt "TrafficControl"
+msgid "threshold"
+msgstr "帯域制御のしきい値"
+
+msgctxt "Wondergate"
+msgid "member_id"
+msgstr "会員の選択"
+
+msgctxt "Wondergate"
+msgid "group_id"
+msgstr "第3階層(拠点)・第2階層(エリア)"
+
+msgctxt "Wondergate"
+msgid "user_id"
+msgstr "サービサid"
+
+msgctxt "Wondergate"
+msgid "uniquekey"
+msgstr "Wondergate固有キー"
+
+msgctxt "Wondergate"
+msgid "name"
+msgstr "ワンダーゲート名"
+
+msgctxt "Wondergate"
+msgid "dhcp"
+msgstr "IPアドレスの設定方法"
+
+msgctxt "Wondergate"
+msgid "fixed"
+msgstr "固定"
+
+msgctxt "Wondergate"
+msgid "use DHCP"
+msgstr "DHCP"
+
+msgctxt "Wondergate"
+msgid "ipaddr"
+msgstr "IPアドレス"
+
+msgctxt "Wondergate"
+msgid "netmask"
+msgstr "サブネットマスク"
+
+msgctxt "Wondergate"
+msgid "gateway"
+msgstr "ゲートウェイ"
+
+msgctxt "Wondergate"
+msgid "dns1"
+msgstr "DNS1"
+
+msgctxt "Wondergate"
+msgid "dns2"
+msgstr "DNS2"
+
+msgctxt "Wondergate"
+msgid "hwaddr"
+msgstr "MACアドレス"
+
+msgctxt "Wondergate"
+msgid "firmver"
+msgstr "ファームウェアバージョン"
+
+msgctxt "Wondergate"
+msgid "disabled"
+msgstr "サーバ処理の一時停止"
+
+msgctxt "Wondergate"
+msgid "login"
+msgstr "ログインID"
+
+msgctxt "Wondergate"
+msgid "passwd"
+msgstr "パスワード"
+
+msgctxt "Wondergate"
+msgid "ntpdate"
+msgstr "NTP設定"
+
+msgctxt "Wondergate"
+msgid "ntpfqdn"
+msgstr "NTPサーバアドレス"
+
+msgctxt "Wondergate"
+msgid "forcetc"
+msgstr "手動帯域解放"
+
+msgctxt "Wondergate"
+msgid "autotc"
+msgstr "自動帯域解放"
+
+msgctxt "Wondergate"
+msgid "memtype"
+msgstr "外部メモリ設定"
+
+msgctxt "Wondergate"
+msgid "memlimit"
+msgstr "使用量閾値"
+
+msgctxt "Wondergate"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "Wondergate"
+msgid "Suspended"
+msgstr "一時停止"
+
+msgctxt "Wondergate"
+msgid "Disabled"
+msgstr "無効化"
+
+msgctxt "Wondergate"
+msgid "Connect"
+msgstr "接続中"
+
+msgctxt "Wondergate"
+msgid "Reboot"
+msgstr "再起動"
+
+msgctxt "Wondergate"
+msgid "Polling"
+msgstr "変更中"
+
+msgctxt "Wondergate"
+msgid "Rebooting"
+msgstr "再起動中"
+
+msgctxt "Wondergate"
+msgid "Unavailable"
+msgstr "状態未取得"
+
+msgctxt "Wondergate"
+msgid "Normal"
+msgstr "正常"
+
+msgctxt "Wondergate"
+msgid "Quota over"
+msgstr "超過"
+
+msgctxt "Wondergate"
+msgid "Abnormal"
+msgstr "異常"
+
+msgctxt "Wondergate"
+msgid "Cannot reboot"
+msgstr "再起動できません"
+
+msgctxt "Wondergate"
+msgid "Reboot scheduled"
+msgstr "再起動スケジュール済み"
+
+msgctxt "CameraReocrdOption"
+msgid "Recording Options"
+msgstr "ワンダーゲートへの録画設定"
+
+msgctxt "CameraReocrdOption"
+msgid "savingtype"
+msgstr "保存方法"
+
+msgctxt "CameraReocrdOption"
+msgid "periodtype"
+msgstr "録画保存期間の設定"
+
+msgctxt "CameraReocrdOption"
+msgid "weekday"
+msgstr "曜日"
+
+msgctxt "CameraReocrdOption"
+msgid "from"
+msgstr "開始日時"
+
+msgctxt "CameraReocrdOption"
+msgid "to"
+msgstr "終了日時"
+
+msgctxt "CameraReocrdOption"
+msgid "start/end time"
+msgstr "開始/終了"
+
+msgctxt "CameraReocrdOption"
+msgid "time from"
+msgstr "開始"
+
+msgctxt "CameraReocrdOption"
+msgid "time to"
+msgstr "終了"
+
+msgctxt "Camera"
+msgid "savingtype"
+msgstr "保存方法"
+
+msgctxt "Camera"
+msgid "periodtype"
+msgstr "録画保存期間の設定"
+
+msgctxt "Camera"
+msgid "weekday"
+msgstr "曜日"
+
+msgctxt "Camera"
+msgid "from"
+msgstr "録画保存期間の開始日時"
+
+msgctxt "Camera"
+msgid "to"
+msgstr "録画保存期間の終了日時"
+
+msgid "Manage Logs"
+msgstr "ログ管理"
+
+msgid "Uploaded datetime"
+msgstr "アップロード日時"
+
+msgid "Logfile Name"
+msgstr "ログファイル名"
+
+msgid "The uploaded log does not exist."
+msgstr "アップロードされたログはありません。"
+
+msgid "The log file specified is too large."
+msgstr "指定したログファイルは大きすぎるため、表示できません。"
+
+msgid "The log file specified was not found."
+msgstr "指定したログファイルは存在しません。"
+
+msgid "The log file was successfully deleted."
+msgstr "ログファイルを削除しました。"
+
+msgid "Camera"
+msgstr "カメラ"
+
+msgid "Cameras"
+msgstr "カメラ"
+
+msgid "Manage Cameras"
+msgstr "カメラ管理"
+
+msgid "List Cameras"
+msgstr "カメラ一覧"
+
+msgid "Arrangement of Camera"
+msgstr "各拠点とカメラの配置状態"
+
+msgid "Search Camera"
+msgstr "カメラの検索"
+
+msgid "Create New Camera"
+msgstr "カメラの新規登録"
+
+msgid "Add New Camera"
+msgstr "カメラの追加"
+
+msgid "Edit Camera"
+msgstr "カメラの編集"
+
+msgid "Delete Camera"
+msgstr "カメラの削除"
+
+msgid "Detail of Camera"
+msgstr "カメラ詳細"
+
+msgid "Search Member for Camera"
+msgstr "カメラを紐付ける会員"
+
+msgid "Could not find any Camera."
+msgstr "条件に一致するカメラが見つかりませんでした。"
+
+msgid "You must create and specify Member before create Camera."
+msgstr "カメラを登録する会員を先に登録してください。"
+
+msgid "You must create and specify Endpoint before create Camera."
+msgstr "カメラを登録するための拠点を先に登録してください。"
+
+msgid "Agentbox %s cannot associate %d or more cameras."
+msgstr "エージェントボックス「%s」には既に %d 台のカメラが登録されているため、これ以上登録できません。"
+
+msgid "Wondergate %s cannot associate %d or more cameras."
+msgstr "ワンダーゲート「%s」には既に %d 台のカメラが登録されているため、これ以上登録できません。"
+
+msgid "Specified Camera cannot found."
+msgstr "指定されたカメラは見つかりませんでした。"
+
+msgid "Camera was created successfully."
+msgstr "カメラを登録しました。"
+
+msgid "Camera was updated successfully."
+msgstr "カメラを更新しました。"
+
+msgid "Camera was deleted successfully."
+msgstr "カメラを削除しました。"
+
+msgid "To Export, you must specify Member."
+msgstr "エクスポートを実行する会員を選択してください。"
+
+msgid "Go to this IP address"
+msgstr "監視カメラのIPアドレスに移動"
+
+msgid "Basic Course"
+msgstr "基本コース"
+
+msgid "Bit rate"
+msgstr "契約配信ビットレート"
+
+msgid "[kbps]"
+msgstr "[kbps]"
+
+msgid "Preserve"
+msgstr "契約映像保存期間"
+
+msgid "[days]"
+msgstr "日間"
+
+msgid "Unique id"
+msgstr "カメラ固有キー"
+
+msgid "Camera Name"
+msgstr "監視カメラ名"
+
+msgid "Type of Camera"
+msgstr "カメラタイプ"
+
+msgid "Manufacturer"
+msgstr "メーカー名"
+
+msgid "Model Name"
+msgstr "型番"
+
+msgid "Non-billable"
+msgstr "請求対象外"
+
+msgid "Discover Key"
+msgstr "カメラ探索"
+
+msgid "Process status"
+msgstr "保存状況"
+
+msgid "Recording usage"
+msgstr "録画利用可能"
+
+msgid "Live usage"
+msgstr "ライブ利用可能"
+
+msgid "PTZ usage(Pan, Tilt, and Zoom)"
+msgstr "PTZ利用可能"
+
+msgid "Motion Detection"
+msgstr "動体検知機能"
+
+msgid "This camera is Motion-detection enabled"
+msgstr "このカメラは動体検知機能を使用中"
+
+msgid "Surveil camera"
+msgstr "死活監視機能"
+
+msgid "Mail transfer detection"
+msgstr "異常検知メール送信までの時間"
+
+msgid "mins"
+msgstr "分"
+
+msgid "Surveil this Camera"
+msgstr "このカメラを監視対象にする"
+
+msgid "Available"
+msgstr "利用可"
+
+msgid "Liveview setting"
+msgstr "ライブ映像配信の設定"
+
+msgid "Live URL"
+msgstr "ライブ配信URL"
+
+msgid "Live Port"
+msgstr "ライブ配信ポート番号"
+
+msgid "PTZ Tilt up command"
+msgstr "チルト(上) コマンドURL"
+
+msgid "PTZ Tilt down command"
+msgstr "チルト(下) コマンドURL"
+
+msgid "PTZ Pan left command"
+msgstr "パン(左) コマンドURL"
+
+msgid "PTZ Pan right command"
+msgstr "パン(右) コマンドURL"
+
+msgid "PTZ Zoom in command"
+msgstr "ズームイン コマンドURL"
+
+msgid "PTZ Zoom out command"
+msgstr "ズームアウト コマンドURL"
+
+msgid "Campaign or Promotion"
+msgstr "キャンペーン・プロモーション"
+
+msgid "Campaign Option"
+msgstr "キャンペーンオプション"
+
+msgid "Placed date"
+msgstr "カメラ設置日"
+
+msgid "This camera is for promotion"
+msgstr "キャンペーン・プロモーションの対象"
+
+msgid "Disable Surveil"
+msgstr "監視機能を使用しない"
+
+msgid "This camera is set as charged manually."
+msgstr "プロモーション対象のカメラを手動で請求対象に変更しました"
+
+msgctxt "Camera"
+msgid "bitrate"
+msgstr "契約配信ビットレート"
+
+msgctxt "Camera"
+msgid "preserve"
+msgstr "契約映像保存期間"
+
+msgctxt "Camera"
+msgid "group_id"
+msgstr "第3階層(拠点)"
+
+msgctxt "Camera"
+msgid "agentbox_id"
+msgstr "エージェントボックス名"
+
+msgctxt "Camera"
+msgid "uniquekey"
+msgstr "カメラ固有キー"
+
+msgctxt "Camera"
+msgid "name"
+msgstr "監視カメラ名"
+
+msgctxt "Camera"
+msgid "discover"
+msgstr "カメラ探索"
+
+msgctxt "Camera"
+msgid "ipaddr"
+msgstr "IPアドレス"
+
+msgctxt "Camera"
+msgid "netmask"
+msgstr "サブネットマスク"
+
+msgctxt "Camera"
+msgid "gateway"
+msgstr "ゲートウェイ"
+
+msgctxt "Camera"
+msgid "dns1"
+msgstr "DNS1"
+
+msgctxt "Camera"
+msgid "dns2"
+msgstr "DNS2"
+
+msgctxt "Camera"
+msgid "hwaddr"
+msgstr "MACアドレス"
+
+msgctxt "Camera"
+msgid "type"
+msgstr "カメラタイプ"
+
+msgctxt "Camera"
+msgid "manufacturer"
+msgstr "メーカー名"
+
+msgctxt "Camera"
+msgid "model"
+msgstr "型番"
+
+msgctxt "Camera"
+msgid "recording"
+msgstr "録画利用可能"
+
+msgctxt "Camera"
+msgid "live"
+msgstr "ライブ利用可能"
+
+msgctxt "Camera"
+msgid "ptz"
+msgstr "PTZ利用可能"
+
+msgctxt "Camera"
+msgid "disabled"
+msgstr "サーバ処理の一時停止"
+
+msgctxt "Camera"
+msgid "nocharged"
+msgstr "請求対象外"
+
+msgctxt "Camera"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "Camera"
+msgid "Suspended"
+msgstr "一時停止"
+
+msgctxt "Camera"
+msgid "Working"
+msgstr "保存中"
+
+msgctxt "Camera"
+msgid "liveurl"
+msgstr "ライブ配信URL"
+
+msgctxt "Camera"
+msgid "ptzupurl"
+msgstr "チルト(上) コマンドURL"
+
+msgctxt "Camera"
+msgid "ptzdownurl"
+msgstr "チルト(下) コマンドURL"
+
+msgctxt "Camera"
+msgid "ptzlefturl"
+msgstr "パン(左) コマンドURL"
+
+msgctxt "Camera"
+msgid "ptzrighturl"
+msgstr "パン(右) コマンドURL"
+
+msgctxt "Camera"
+msgid "ptzzoominurl"
+msgstr "ズームイン コマンドURL"
+
+msgctxt "Camera"
+msgid "ptzzoomouturl"
+msgstr "ズームアウト コマンドURL"
+
+msgctxt "Camera"
+msgid "surveil"
+msgstr "監視の対象にする"
+
+msgctxt "Camera"
+msgid "port"
+msgstr "ライブ配信ポート番号"
+
+msgctxt "Camera"
+msgid "promotion"
+msgstr "キャンペーン・プロモーション"
+
+msgctxt "Camera"
+msgid "placed"
+msgstr "カメラ設置日"
+
+msgid "User"
+msgstr "サービサ"
+
+msgid "Users"
+msgstr "サービサ"
+
+msgid "Manage Users"
+msgstr "サービサ管理"
+
+msgid "List Users"
+msgstr "サービサ一覧"
+
+msgid "Search Users"
+msgstr "サービサの検索"
+
+msgid "Create New User"
+msgstr "サービサの新規登録"
+
+msgid "Edit User"
+msgstr "サービサの編集"
+
+msgid "Delete User"
+msgstr "サービサの削除"
+
+msgid "Detail of User"
+msgstr "サービサ詳細"
+
+msgid "Status of Service"
+msgstr "状態"
+
+msgid "Specified User cannot found."
+msgstr "指定されたサービサは見つかりませんでした。"
+
+msgid "Could not find any User."
+msgstr "条件に一致するサービサが見つかりませんでした。"
+
+msgid "User was created successfully."
+msgstr "サービサを登録しました。"
+
+msgid "User was updated successfully."
+msgstr "サービサを更新しました。"
+
+msgid "User was deleted successfully."
+msgstr "サービサを削除しました。"
+
+msgid "Manage Camera for Charge"
+msgstr "カメラ台数管理"
+
+msgid "Calcurate number of Cameras"
+msgstr "カメラ台数の取得"
+
+msgid "Month to calculate"
+msgstr "帯域取得月"
+
+msgid "The usage-based fee"
+msgstr "月額従量費"
+
+msgid "DRM fee"
+msgstr "DRM月額費用"
+
+msgid "The number of Cameras"
+msgstr "カメラ台数"
+
+msgid "Total fee of This Month"
+msgstr "月額合計費用"
+
+msgid "Calculate"
+msgstr "台数取得"
+
+msgid "Export as CSV"
+msgstr "CSV出力"
+
+msgid "[units]"
+msgstr "[台]"
+
+msgid "[Mbps]"
+msgstr "[Mbps]"
+
+msgid "[Yen]"
+msgstr "[円]"
+
+msgid "Manage Bandwidth for Charge"
+msgstr "下り帯域管理"
+
+msgid "Calcurate Bandwidth"
+msgstr "下り帯域管理の取得"
+
+msgid "The number of contracted Cameras"
+msgstr "契約カメラ台数"
+
+msgid "Bandwidth Simultaneous use"
+msgstr "同時利用帯域"
+
+msgid "Calc Bandwidth"
+msgstr "帯域取得"
+
+msgid "Information"
+msgstr "インフォメーション"
+
+msgid "Information Link"
+msgstr "インフォメーションのリンク"
+
+msgid "Display information"
+msgstr "「インフォメーション」リンクを表示する"
+
+msgid "URL Info"
+msgstr "リンク先URL"
+
+msgid "Label Info"
+msgstr "リンクのラベル"
+
+msgid "Open the link in a new window"
+msgstr "リンクを開く"
+
+msgid "Info Discription"
+msgstr "補足説明"
+
+msgid "Maintenance or another services"
+msgstr "メンテナンス予定やその他、サービス状態に関するお知らせをご提供します"
+
+msgid "Information was updated successfully."
+msgstr "インフォメーションを更新しました。"
+
+msgid "Recorder"
+msgstr "レコーダ"
+
+msgid "Recorders"
+msgstr "レコーダ"
+
+msgid "Manage Recorders"
+msgstr "レコーダ管理"
+
+msgid "List Recorders"
+msgstr "レコーダ一覧"
+
+msgid "Arrangement of Recorder"
+msgstr "各拠点とレコーダの配置状態"
+
+msgid "Search Recorder"
+msgstr "レコーダの検索"
+
+msgid "Create New Recorder"
+msgstr "レコーダの新規登録"
+
+msgid "Add New Recorder"
+msgstr "レコーダの追加"
+
+msgid "Edit Recorder"
+msgstr "レコーダの編集"
+
+msgid "Delete Recorder"
+msgstr "レコーダの削除"
+
+msgid "Detail of Recorder"
+msgstr "レコーダ詳細"
+
+msgid "Search Member for Recorder"
+msgstr "レコーダを紐付ける会員"
+
+msgid "Could not find any Recorder."
+msgstr "条件に一致するレコーダが見つかりませんでした。"
+
+msgid "You must create and specify Member before create Recorder."
+msgstr "レコーダを登録する会員を先に登録してください。"
+
+msgid "You must create and specify Endpoint before create Recorder."
+msgstr "レコーダを登録するための拠点を先に登録してください。"
+
+msgid "Agentbox %s cannot associate %d or more recorders."
+msgstr "エージェントボックス「%s」には既に %d 台のレコーダが登録されているため、これ以上登録できません。"
+
+msgid "Wondergate %s cannot associate %d or more recorders."
+msgstr "ワンダーゲート「%s」には既に %d 台のレコーダが登録されているため、これ以上登録できません。"
+
+msgid "Specified Recorder cannot found."
+msgstr "指定されたレコーダは見つかりませんでした。"
+
+msgid "Recorder was created successfully."
+msgstr "レコーダを登録しました。"
+
+msgid "Recorder was updated successfully."
+msgstr "レコーダを更新しました。"
+
+msgid "Recorder was deleted successfully."
+msgstr "レコーダを削除しました。"
+
+msgid "Recorder Name"
+msgstr "レコーダ名"
+
+msgid "Life-Or-Death"
+msgstr "死活状態"
+
+msgctxt "Recorder"
+msgid "group_id"
+msgstr "第3階層(拠点)"
+
+msgctxt "Recorder"
+msgid "agentbox_id"
+msgstr "エージェントボックス名"
+
+msgctxt "Recorder"
+msgid "name"
+msgstr "レコーダ名"
+
+msgctxt "Recorder"
+msgid "ipaddr"
+msgstr "IPアドレス"
+
+msgctxt "Recorder"
+msgid "netmask"
+msgstr "サブネットマスク"
+
+msgctxt "Recorder"
+msgid "gateway"
+msgstr "ゲートウェイ"
+
+msgctxt "Recorder"
+msgid "dns1"
+msgstr "DNS1"
+
+msgctxt "Recorder"
+msgid "dns2"
+msgstr "DNS2"
+
+msgctxt "Recorder"
+msgid "hwaddr"
+msgstr "MACアドレス"
+
+msgctxt "Recorder"
+msgid "manufacturer"
+msgstr "メーカー名"
+
+msgctxt "Recorder"
+msgid "model"
+msgstr "型番"
+
+msgctxt "Recorder"
+msgid "disabled"
+msgstr "サーバ処理の一時停止"
+
+msgctxt "Recorder"
+msgid "Undefined"
+msgstr "状態未取得"
+
+msgctxt "Recorder"
+msgid "Working"
+msgstr "動作中"
+
+msgctxt "Recorder"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "Recorder"
+msgid "Suspended"
+msgstr "一時停止"
+
+msgctxt "Recorder"
+msgid "group_id is required"
+msgstr "第3階層(拠点)は入力必須項目です。"
+
+msgctxt "Recorder"
+msgid "name is required"
+msgstr "レコーダ名は入力必須項目です。"
+
+msgctxt "Recorder"
+msgid "hwaddr is required"
+msgstr "MACアドレスは入力必須項目です。"
+
+msgctxt "Monitor"
+msgid "Manage Monitors"
+msgstr "ライブモニタ管理"
+
+msgctxt "Monitor"
+msgid "List Monitors"
+msgstr "ライブモニタ一覧"
+
+msgctxt "Monitor"
+msgid "Monitor"
+msgstr "モニタ名"
+
+msgctxt "Monitor"
+msgid "Monitor Name"
+msgstr "モニタ名"
+
+msgctxt "Monitor"
+msgid "Unique id"
+msgstr "モニタ固有キー"
+
+msgctxt "Monitor"
+msgid "Monitor Suspend"
+msgstr "サーバ処理の一時停止"
+
+msgctxt "Monitor"
+msgid "Prcess status"
+msgstr "保存状況"
+
+msgctxt "Monitor"
+msgid "Undefined"
+msgstr "未接続"
+
+msgctxt "Monitor"
+msgid "Connect"
+msgstr "接続中"
+
+msgctxt "Monitor"
+msgid "Stopped"
+msgstr "停止中"
+
+msgctxt "Monitor"
+msgid "Suspended"
+msgstr "一時停止"
+
+msgctxt "Monitor"
+msgid "Working"
+msgstr "保存中"
+
+msgctxt "Monitor"
+msgid "New"
+msgstr "新規登録"
+
+msgctxt "Monitor"
+msgid "Live Monitor Filter"
+msgstr "ライブモニタの絞り込み"
+
+msgctxt "Monitor"
+msgid "Group root"
+msgstr "第1階層(全体)"
+
+msgctxt "Monitor"
+msgid "Area"
+msgstr "第2階層(エリア)"
+
+msgctxt "Monitor"
+msgid "Endpoint"
+msgstr "第3階層(拠点)"
+
+msgctxt "Monitor"
+msgid "Split Screen"
+msgstr "画面の分割"
+
+msgctxt "Monitor"
+msgid "List Cameras"
+msgstr "表示可能なカメラ"
+
+msgctxt "Monitor"
+msgid "1 Screen"
+msgstr "全画面"
+
+msgctxt "Monitor"
+msgid "4 Screens"
+msgstr "四分割"
+
+msgctxt "Monitor"
+msgid "Display Time"
+msgstr "表示時間"
+
+msgctxt "Monitor"
+msgid "Add Screen"
+msgstr "画面を追加"
+
+msgctxt "Monitor"
+msgid "Secs"
+msgstr "秒"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Use DHCP"
+msgstr "DHCPを使用"
+
+msgid "No DHCP"
+msgstr "使用しない"
+
+msgctxt "Monitor"
+msgid "Setting Live Monitor"
+msgstr "ライブモニタ表示設定"
+
+msgid "Create New Monitor"
+msgstr "ライブモニタの新規登録"
+
+msgid "Search Member for Monitors"
+msgstr "ライブモニタを紐付ける会員"
+
+msgid "You must create and specify Member before create Monitors."
+msgstr "ライブモニタを登録する会員を先に登録してください。"
+
+msgid "Monitor was created successfully."
+msgstr "ライブモニタを登録しました。"
+
+msgid "Detail of Monitor"
+msgstr "ライブモニタ詳細"
+
+msgid "Specified Monitor cannot found."
+msgstr "指定されたライブモニタは見つかりませんでした。"
+
+msgid "Edit Live Monitor"
+msgstr "ライブモニタの編集"
+
+msgid "Monitor was updated successfully."
+msgstr "ライブモニタを更新しました。"
+
+msgid "Delete Monitor"
+msgstr "ライブモニタの削除"
+
+msgid "Monitor was deleted successfully."
+msgstr "ライブモニタを削除しました。"
+
+msgid "Onvif Type"
+msgstr "Onvif利用タイプ"
+
+msgid "Onvif user"
+msgstr "Onvifユーザ名"
+
+msgid "Onvif password"
+msgstr "Onvifパスワード"
+
+msgid "Onvif URI"
+msgstr "OnvifライブURL"
+
+msgid "Onvif Port"
+msgstr "Onvifライブポート番号"
+
+msgid "Onvif Audio"
+msgstr "Onvif音声出力"
+
+msgid "Onvif Talking"
+msgstr "Onvif音声呼び掛け"
+
+msgid "Live is disabled."
+msgstr "このカメラはライブ利用不可です。"
+
+msgid "PTZ is disabled."
+msgstr "このカメラはPTZ利用不可です。"
+
+msgctxt "Cameraoption"
+msgid "ovf_type"
+msgstr "Onvif利用タイプ"
+
+msgctxt "Cameraoption"
+msgid "ovf_user"
+msgstr "Onvifユーザ名"
+
+msgctxt "Cameraoption"
+msgid "ovf_passwd"
+msgstr "Onvifパスワード"
+
+msgctxt "Cameraoption"
+msgid "ovf_uri"
+msgstr "OnvifライブURL"
+
+msgctxt "Cameraoption"
+msgid "ovf_port"
+msgstr "Onvifライブポート番号"
+
+msgctxt "Cameraoption"
+msgid "ovf_audio"
+msgstr "Onvif音声出力"
+
+msgctxt "Cameraoption"
+msgid "ovf_talk"
+msgstr "Onvif音声呼び掛け"
+
+msgctxt "Camera"
+msgid "ovf_type"
+msgstr "Onvif利用タイプ"
+
+msgctxt "Camera"
+msgid "ovf_user"
+msgstr "Onvifユーザ名"
+
+msgctxt "Camera"
+msgid "ovf_passwd"
+msgstr "Onvifパスワード"
+
+msgctxt "Camera"
+msgid "ovf_uri"
+msgstr "OnvifライブURL"
+
+msgctxt "Camera"
+msgid "ovf_port"
+msgstr "Onvifライブポート番号"
+
+msgctxt "Camera"
+msgid "ovf_audio"
+msgstr "Onvif音声出力"
+
+msgctxt "Camera"
+msgid "ovf_talk"
+msgstr "Onvif音声呼び掛け"
+
+
+msgid "User matches conditions cannot found."
+msgstr "指定した条件と一致するサービサは見つかりませんでした。"
+
+msgid "Member matches conditions cannot found."
+msgstr "指定した条件と一致する会員は見つかりませんでした。"
+
+msgid "Camera matches conditions cannot found."
+msgstr "指定した条件と一致する監視カメラは見つかりませんでした。"
+
+
+msgid "The Group cannot be deleted because Model Agentbox refers it."
+msgstr "登録済みのエージェントボックスから参照されているため、階層を削除できませんでした。"
+
+msgid "The Group cannot be deleted because Model Camera refers it."
+msgstr "登録済みの監視カメラから参照されているため、階層を削除できませんでした。"
+
+msgid "Please specify Level of this Group."
+msgstr "階層レベルを指定してください。"
+
+msgid "Value of Account Name already exists."
+msgstr "入力したアカウント名は既に使用されています。"
+
+msgid "Value of Admin Account Name already exists."
+msgstr "入力した管理アカウント名は既に使用されています。"
+
+msgid "The User cannot be deleted because Model Agentbox refers it."
+msgstr "登録済みのエージェントボックスから参照されているため、ユーザを削除できませんでした。"
+
+msgid "The User cannot be deleted because Model Camera refers it."
+msgstr "登録済みのカメラから参照されているため、ユーザを削除できませんでした。"
+
+msgid "The User cannot be deleted because Model Group refers it."
+msgstr "登録済みの拠点階層から参照されているため、ユーザを削除できませんでした。"
+
+msgid "The User cannot be deleted because Model Member refers it."
+msgstr "登録済みの会員から参照されているため、ユーザを削除できませんでした。"
+
+msgid "The User cannot be deleted because Model Membergroup refers it."
+msgstr "登録済みの会員グループから参照されているため、ユーザを削除できませんでした。"
+
+msgid "The Membergroup cannot be deleted because Model Member refers it."
+msgstr "登録済みの会員から参照されているため、会員グループを削除できませんでした。"
+
+msgid "The Member cannot be deleted because Model License refers it."
+msgstr "登録済みのクラウド連携キーから参照されているため、会員を削除できませんでした。"
+
+msgid "The Agentbox cannot be deleted because Model Camera refers it."
+msgstr "登録済みの監視カメラから参照されているため、エージェントボックスを削除できませんでした。"
+
+msgid "The Role cannot be deleted because Model User refers it."
+msgstr "登録済みユーザから参照されているため、権限を削除できませんでした。"
+
+msgid "Value of Agentbox Unique Key already exists."
+msgstr "入力されたエージェントボックス固有キーは既に使用されています。"
+
+msgid "%s is required"
+msgstr "%s は入力必須項目です。"
+
+msgid "%s is not valid format"
+msgstr "入力した %s の書式に誤りがあります。"
+
+msgid "The value of %s already exists"
+msgstr "入力した %s は既に存在しています。"
+
+msgid "Login requires less than 32 characters"
+msgstr "アカウント名は最大32文字までにしてください。"
+
+msgid "Login requires more than 8 characters"
+msgstr "アカウント名は8文字以上必要です。"
+
+msgid "The value of %s is not valid format"
+msgstr "入力した %s の書式に誤りがあります。"
+
+msgid "The value of %s is not valid URL"
+msgstr "入力した %s は正しいURL書式ではありません。"
+
+msgid "%s is not valid IP Address format"
+msgstr "入力した %s は正しいIPアドレス書式ではありません。"
+
+msgid "The value of %s is not valid numeric format"
+msgstr "%s は正しい数値ではありません。"
+
+msgctxt "Surveil"
+msgid "System error due to other reason."
+msgstr "その他不明な理由によるシステムエラーが検出されました。"
+
+msgctxt "Surveil"
+msgid "Data transmission from the camera stopped."
+msgstr "監視カメラからの録画データアップロードが途絶しました。"
+
+msgctxt "Surveil"
+msgid "Insufficient space in external storage."
+msgstr "エージェントボックス外部ストレージの保存容量がしきい値を超えました。"
+
+msgctxt "Surveil"
+msgid "Can not write to external storage."
+msgstr "エージェントボックス外部ストレージが書き込みできません。"
+
+msgctxt "Surveil"
+msgid "Data transmission from the motion-camera stopped."
+msgstr "動体検知中の監視カメラからの録画データアップロードが途絶しました。"
+
+msgctxt "Surveil"
+msgid "There is no ping response from the recorder."
+msgstr "外部レコーダ機器からのping応答が途絶しました。"
+
+msgctxt "Surveil"
+msgid "Averaged bitrate has exceeded the value of the contract."
+msgstr "動画データ平均ビットレートが契約値を超過しました。"
+
+msgctxt "Surveil"
+msgid "Data transmission from the unregistered camera detected."
+msgstr "未登録の監視カメラから録画データアップロードが検出されました。"
+
+msgctxt "Surveil"
+msgid "Polling access from the Agentbox stopped."
+msgstr "エージェントボックスからの定期アクセスが途絶しました。"
+
+msgctxt "Surveil"
+msgid "The uploaded file was damaged."
+msgstr "アップロードされた動画データの破損・異常が検出されました。"
+
+msgctxt "Surveil"
+msgid "Undefined Event"
+msgstr "未定義の警告"
+
+msgctxt "Surveil"
+msgid "Recording disruption"
+msgstr "録画停止"
+
+msgctxt "Surveil"
+msgid "Memory exceeded"
+msgstr "メモリ超過"
+
+msgctxt "Surveil"
+msgid "Memory I/O error"
+msgstr "メモリ書込不可"
+
+msgctxt "Surveil"
+msgid "Recording disruption(Motion)"
+msgstr "録画停止(モーション録画)"
+
+msgctxt "Surveil"
+msgid "Ping response disruption"
+msgstr "ping応答途絶"
+
+msgctxt "Surveil"
+msgid "Bitrate exceeded"
+msgstr "ビットレート超過"
+
+msgctxt "Surveil"
+msgid "Unregistered camera"
+msgstr "未登録カメラ録画"
+
+msgctxt "Surveil"
+msgid "Periodic access disruption"
+msgstr "アクセス途絶"
+
+msgctxt "Surveil"
+msgid "Defender-X found suspects"
+msgstr "不審者検知(Defender-X)"
+
+msgctxt "Surveil"
+msgid "Field Analyst notified"
+msgstr "入退者検知(Field Analyst)"
+
+msgctxt "Surveil"
+msgid "Media corrupted"
+msgstr "ファイル破損"
+
+msgctxt "Surveil"
+msgid "Notifications sent List"
+msgstr "検知・アラートメール送信済み一覧"
+
+msgctxt "Surveil"
+msgid "Notified at"
+msgstr "送信年月日"
+
+msgctxt "Surveil"
+msgid "Member/Endpoint"
+msgstr "会員・発生拠点"
+
+msgctxt "Surveil"
+msgid "Alert for"
+msgstr "アラート対象"
+
+msgctxt "Surveil"
+msgid "Alert type"
+msgstr "アラート種別"
+
+msgctxt "Surveil"
+msgid "Target"
+msgstr "対象"
+
+msgctxt "Surveil"
+msgid "Error Detection Datetime"
+msgstr "異常検知日時"
+
+msgctxt "Surveil"
+msgid "Sent Mail Status"
+msgstr "メール送付有無"
+
+msgctxt "Filter"
+msgid "Filter..."
+msgstr "絞り込み"
+
+msgctxt "Filter"
+msgid "Apply filter"
+msgstr "絞り込みを適用"
+
+msgctxt "Filter"
+msgid "Discards filter"
+msgstr "絞り込みを解除"
+
+msgctxt "Filter"
+msgid "Filter Servicers"
+msgstr "サービサの絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Members"
+msgstr "会員の絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Membergroups"
+msgstr "会員グループの絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Agentboxes"
+msgstr "エージェントボックスの絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Wondergates"
+msgstr "ワンダーゲートの絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Cameras"
+msgstr "カメラの絞り込み"
+
+msgctxt "Filter"
+msgid "Filter Recorders"
+msgstr "外部レコーダーの絞り込み"
+
+msgctxt "Filter"
+msgid "Enter any chars to search"
+msgstr "部分入力で絞り込み検索"
+
+msgctxt "Filter"
+msgid "Enter HW Address"
+msgstr "部分入力可（例）00ff"
+
+msgctxt "Filter"
+msgid "Enter Firmware version"
+msgstr "部分入力可（例）613"
+
+msgctxt "Picker"
+msgid "{0} item(s) selected"
+msgstr "{0} 件 選択中"
+
+msgctxt "Picker"
+msgid "No results matched {0}"
+msgstr "{0} は見つかりません"
+
+msgctxt "Picker"
+msgid "Nothing selected"
+msgstr "未選択"
+
+msgctxt "Picker"
+msgid "Limit reached ({n} item(s) max)"
+msgstr "最大数({n}件)に達しました"
+
+msgctxt "Picker"
+msgid "Select All"
+msgstr "すべてを選択"
+
+msgctxt "Picker"
+msgid "Deselect All"
+msgstr "すべてを選択解除"
+
+msgctxt "Picker"
+msgid "Close"
+msgstr "閉じる"
+
+msgctxt "Picker"
+msgid "Enter any chars to search"
+msgstr "部分入力で絞り込み検索"
+
+msgid "Vendor Options"
+msgstr "マーケティング連携"
+
+msgid "Search Member for Vendor Options"
+msgstr "マーケティング連携を設定する会員"
+
+msgid "You must create and specify Member before configure vendor options."
+msgstr "マーケティング連携を設定する前に会員を登録・指定してください。"
+
+msgid "The Member has no Available Vendor Options."
+msgstr "有効なオプションはありません。"
+
+msgid "The Member has no Available Licenses."
+msgstr "有効なマーケティング連携キーを所有していません。"
+
+msgid "You don't have any unused vendor options."
+msgstr "利用可能なマーケティング連携キーがありません。"
+
+msgid "Specified License cannot found."
+msgstr "指定されたマーケティング連携キーは見つかりません。"
+
+msgid "Specified Vendor Option cannot found."
+msgstr "指定されたマーケティング連携キーはオプションと結びつけられていません。"
+
+msgid "New License was created successfully."
+msgstr "マーケティング連携キーを発行しました。"
+
+msgid "New Vendor Option was created successfully."
+msgstr "マーケティング連携が可能になりました。"
+
+msgid "Vendor Option was saved successfully."
+msgstr "マーケティング連携を保存しました。"
+
+msgid "License was deleted successfully."
+msgstr "マーケティング連携キーを破棄しました。"
+
+msgid "Vendor Option was deleted successfully."
+msgstr "マーケティング連携を削除しました。"
+
+msgid "Vendor Options Summary"
+msgstr "マーケティング連携一覧"
+
+msgid "Edit Vendor Options"
+msgstr "マーケティング連携の変更"
+
+msgid "Delete Vendor Option"
+msgstr "マーケティング連携の削除"
+
+msgid "New Vendor Option License"
+msgstr "マーケティング連携キーの発行"
+
+msgid "Expire Vendor Option License"
+msgstr "マーケティング連携キーの削除"
+
+msgid "License For"
+msgstr "ライセンス対象"
+
+msgid "License No."
+msgstr "マーケティング連携キー"
+
+msgid "Expired"
+msgstr "破棄年月日"
+
+msgid "Option Name"
+msgstr "オプション名称"
+
+msgid "Option For"
+msgstr "対象オプション"
+
+msgid "Camera Names"
+msgstr "利用カメラ"
+
+msgid "Member Vendor Options"
+msgstr "会員のマーケティング連携サービス利用状況"
+
+msgid "Member Licenses"
+msgstr "会員のマーケティング連携サービス利用ライセンス"
+
+msgctxt "Vendoroption"
+msgid "Add Option"
+msgstr "オプションを追加"
+
+msgctxt "Vendoroption"
+msgid "Add License"
+msgstr "新規連携キーを発行"
+
+msgctxt "Vendoroption"
+msgid "Specified License is not for The Service"
+msgstr "指定された連携キーはこのオプション用のものではありません。"
+
+msgctxt "Vendoroption"
+msgid "vendor"
+msgstr "オプション名"
+
+msgctxt "Vendoroption"
+msgid "name"
+msgstr "表示名"
+
+msgctxt "Vendoroption"
+msgid "license"
+msgstr "連携キー"
+
+msgctxt "License"
+msgid "uuid"
+msgstr "連携キー"
+
+msgctxt "License"
+msgid "vendor"
+msgstr "オプション名"
+
+msgid "Defender-X Link"
+msgstr "Defender-X 連携"
+
+msgid "Field Analyst Link"
+msgstr "FieldAnalyst 連携"
+
+msgid "Analysis of Entering / Leaving"
+msgstr "入退店集計の表示"
+
+msgid "Entering / Leaving (by gender)"
+msgstr "入退場者数"
+
+msgid "Number of visitors(by gender)"
+msgstr "男女別入場者数"
+
+msgid "Men (by age)"
+msgstr "男性：年齢別"
+
+msgid "Women (by age)"
+msgstr "女性：年齢別"
+
+msgid "Number of visitors(by gender, time series)"
+msgstr "時系列男女別入場者数"
+
+msgid "Number of visitors(by age, time series)"
+msgstr "時系列年齢別入場者数"
+
+msgid "Visitors during the period"
+msgstr "期間内の入場者数"
+
+msgid "Male visitors during the period"
+msgstr "期間内の男性入場者数"
+
+msgid "Female visitors during the period"
+msgstr "期間内の女性入場者数"
+
+msgid "Visitors Today"
+msgstr "対象日の入場者数"
+
+msgid "Visitors Lastday"
+msgstr "前日の入場者数"
+
+msgid "Groups:"
+msgstr "拠点:"
+
+msgid "Cameras:"
+msgstr "カメラ:"
+
+msgid "Period:"
+msgstr "集計期間:"
+
+msgid "Range:"
+msgstr "集計範囲:"
+
+msgid "Analyze"
+msgstr "更新"
+
+msgid "Analysis Summary"
+msgstr "集計サマリー"
+
+msgid "Analysis By Time"
+msgstr "時系列分析"
+
+msgctxt "FAnalyst"
+msgid "day"
+msgstr "1日"
+
+msgctxt "FAnalyst"
+msgid "6h"
+msgstr "6時間"
+
+msgctxt "FAnalyst"
+msgid "3h"
+msgstr "3時間"
+
+msgctxt "FAnalyst"
+msgid "week"
+msgstr "1週間"
+
+msgctxt "RTSP"
+msgid "RTSP options"
+msgstr "RTSPライブ 利用タイプ"
+
+msgctxt "RTSP"
+msgid "RTSP Live Streaming URI"
+msgstr "RTSPライブ 接続先URL"
+
+msgctxt "RTSP"
+msgid "Live disabled"
+msgstr "RTSPライブ無効"
+
+msgctxt "RTSP"
+msgid "Live streaming and Server recording"
+msgstr "RTSPライブ視聴とサーバへの録画"
+
+msgctxt "RTSP"
+msgid "Live streaming only"
+msgstr "RTSPライブのみ"
+
+msgctxt "RTSP"
+msgid "Live streaming and Agentbox recording"
+msgstr "RTSPライブ視聴とAgentboxへの録画"
+
+msgid "Campaign"
+msgstr "キャンペーン"
+
+msgid "Manage Campaigns"
+msgstr "キャンペーン管理"
+
+msgid "List Campaigns"
+msgstr "キャンペーン一覧"
+
+msgid "Create New Campaign"
+msgstr "キャンペーンの新規登録"
+
+msgid "Add New Campaign"
+msgstr "キャンペーンの追加"
+
+msgid "Edit Campaign"
+msgstr "キャンペーンの編集"
+
+msgid "Delete Campaign"
+msgstr "キャンペーンの削除"
+
+msgid "Detail of Campaign"
+msgstr "キャンペーン詳細"
+
+msgctxt "Campaign"
+msgid "name"
+msgstr "キャンペーン名称"
+
+msgctxt "Campaign"
+msgid "term_from"
+msgstr "開始"
+
+msgctxt "Campaign"
+msgid "term_to"
+msgstr "終了"
+
+msgctxt "Campaign"
+msgid "disabled"
+msgstr "キャンペーンの使用・不使用"
+
+msgctxt "Campaign"
+msgid "enabled/disabled"
+msgstr "使用・不使用"
+
+msgid "Use this campaign"
+msgstr "使用する"
+
+msgid "NOT use this campaign"
+msgstr "使用しない"
+
+msgid "Specified Campaign cannot found."
+msgstr "指定されたキャンペーンは見つかりませんでした。"
+
+msgid "Campaign was created successfully."
+msgstr "キャンペーンを登録しました。"
+
+msgid "Campaign was updated successfully."
+msgstr "キャンペーンを更新しました。"
+
+msgid "Campaign was deleted successfully."
+msgstr "キャンペーンを削除しました。"
+
+msgctxt "Filter"
+msgid "Filter Campaigns"
+msgstr "キャンペーンの絞り込み"
+
+msgid "Specify Servicer"
+msgstr "サービサを選択"
+
+msgid "Search Servicer for Campaign"
+msgstr "キャンペーンを紐付けるサービサ"
+
+msgid "You must create and specify User before create Campaign."
+msgstr "キャンペーンを登録するサービサを先に登録してください。"
+
+msgid "No campaigns are registered"
+msgstr "キャンペーンがまだ登録されていません。"
+
+msgctxt "Audit"
+msgid "(modified at %s)"
+msgstr "(%s 変更)"
+
+msgctxt "Filter"
+msgid "Confirmation: Export as CSV"
+msgstr "CSVエクスポートの確認"
+
+msgid "Export the list as a CSV. Are you sure?"
+msgstr "CSVとしてエクスポートします。よろしいですか？"
+
+msgctxt "Filter"
+msgid "Confirmation: Delete uploaded file"
+msgstr "アップロード済みファイル削除の確認"
+
+msgid "The image will be deleted. Are you sure?"
+msgstr "この画像を削除します。本当によろしいですか？"
+
+msgid "The file will be deleted. Are you sure?"
+msgstr "このファイルを削除します。本当によろしいですか？"
+
+msgid "Network Information"
+msgstr "ネットワーク構成情報"
+
+msgid "Manage Network figure"
+msgstr "ネットワーク構成の管理"
+
+msgid "Manage Network devices"
+msgstr "ネットワーク機器の管理"
+
+msgid "Network diagram"
+msgstr "ネットワーク構成図"
+
+msgid "Activated"
+msgstr "利用中"
+
+msgid "Deleted"
+msgstr "削除済"
+
+msgid "Download File"
+msgstr "ファイルをダウンロード"
+
+msgid "Network devices / Operation histories"
+msgstr "利用中のネットワーク機器・操作履歴"
+
+msgid "Network devices"
+msgstr "ネットワーク機器"
+
+msgid "Operation histories"
+msgstr "操作履歴"
+
+msgid "Device type"
+msgstr "機器種別"
+
+msgid "Product name / number"
+msgstr "製品名・型番等"
+
+msgid "Logged messages"
+msgstr "操作内容"
+
+msgid "Specified NetworkFigure cannot found."
+msgstr "指定された拠点ネットワーク構成は見つかりませんでした。"
+
+msgid "Specified NetworkMachine cannot found."
+msgstr "指定されたネットワーク機器は見つかりませんでした。"
+
+msgid "Please upload at least one of image of file for network diagram."
+msgstr "ネットワーク図は画像・ファイルの少なくともどちらか一つをアップロードしてください。"
+
+msgid "Types of Network connections"
+msgstr "接続回線種別"
+
+msgid "Line type"
+msgstr "回線の種別"
+
+msgid "Service name"
+msgstr "プロバイダ・サービス名等"
+
+msgid "No images are uploaded."
+msgstr "画像はアップロードされていません。"
+
+msgid "No files are uploaded."
+msgstr "ファイルはアップロードされていません。"
+
+msgid "No types of connection are selected."
+msgstr "回線種別が選択されていません。"
+
+msgid "Upload a image"
+msgstr "画像をアップロード"
+
+msgid "Upload a file"
+msgstr "ファイルをアップロード"
+
+msgid "Uploaded image"
+msgstr "アップロード済み画像"
+
+msgid "Uploaded file"
+msgstr "アップロード済みファイル"
+
+msgid "previous image could not delete properly."
+msgstr "以前のアップロード済みファイル削除に失敗しました。"
+
+msgid "image could not save properly."
+msgstr "アップロードした画像の保存に失敗しました。"
+
+msgid "%s (%s) was successfully created."
+msgstr "%s (%s) を登録しました。"
+
+msgid "%s (%s) was successfully updated."
+msgstr "%s (%s) を更新しました。"
+
+msgid "%s (%s) was successfully deleted."
+msgstr "%s (%s) を削除しました。"
+
+msgid "This machine has been deleted from the network."
+msgstr "この機器はネットワークから削除済み"
+
+msgid "NetworkFigure was updated successfully."
+msgstr "ネットワーク構成を更新しました。"
+
+msgid "NetworkMachine was created successfully."
+msgstr "ネットワーク機器を作成しました。"
+
+msgid "NetworkMachine was updated successfully."
+msgstr "ネットワーク機器を変更しました。"
+
+msgid "Create change history of network figure failed."
+msgstr "ネットワーク構成変更履歴の作成に失敗しました。"
+
+msgid "Find Devices"
+msgstr "拠点設置機器検索"
+
+msgid "Search active network devices"
+msgstr "利用中ネットワーク機器の検索"
+
+msgid "Using Agentbox"
+msgstr "利用している"
+
+msgid "Keywords"
+msgstr "キーワード"
+
+msgid "Add more condition"
+msgstr "条件を追加"
+
+msgid "Can not add more condition."
+msgstr "条件を追加できません。"
+
+msgid "No data available in table."
+msgstr "データなし"
+
+
+msgid "Export email addresses"
+msgstr "メールアドレス抽出"
+
+msgid "Membership Suspension"
+msgstr "会員一時停止"
+
+msgid "Agentbox existence"
+msgstr "エージェントボックス有無"
+
+msgid "Agentbox Status"
+msgstr "エージェントボックス接続状況"
+
+msgid "Camera Suspension"
+msgstr "カメラ一時停止"
+
+msgid "Camera Types"
+msgstr "カメラのタイプ"
+
+msgctxt "Emails"
+msgid "Yes"
+msgstr "あり"
+
+msgctxt "Emails"
+msgid "No"
+msgstr "なし"
+
+msgctxt "Emails"
+msgid "Clear"
+msgstr "クリア"
+
+msgctxt "Emails"
+msgid "Export"
+msgstr "抽出"
+
+msgctxt "Emails"
+msgid "Execution result"
+msgstr "実行結果"
+
+msgid "Customize"
+msgstr "カスタマイズ"
+
+msgid "Customize appearance"
+msgstr "外観の変更"
+
+msgid "Domain name"
+msgstr "カスタマイズするドメイン"
+
+msgid "CANNOT modify this domain. sorry."
+msgstr "このドメインは視聴ページのカスタマイズはできません。"
+
+msgid "Customize appearance is ONLY available for the user of domain master."
+msgstr "視聴ページのカスタマイズはドメインのマスターサービサに紐付くユーザ以外は実行できません。"
+
+msgid "Main image"
+msgstr "メイン画像"
+
+msgid "Login image"
+msgstr "サイン・イン画像"
+
+msgid "Thumbnail image"
+msgstr "カメラ サムネイル"
+
+msgid "Favicon"
+msgstr "favicon"
+
+msgid "Color themes"
+msgstr "カラーテーマ"
+
+msgid "Default theme"
+msgstr "デフォルト"
+
+msgid "Dark"
+msgstr "ダーク"
+
+msgid "Light"
+msgstr "ライト"
+
+msgid "Pop"
+msgstr "ポップ"
+
+msgid "Snow"
+msgstr "スノウ"
+
+msgid "Contrast"
+msgstr "コントラスト"
+
+msgid "The name of your service."
+msgstr "このサービスの名称"
+
+msgid "Displays as a poster image for video. res:720x406px, size:1MB, format:jpeg,png."
+msgstr "ビデオ未再生時にポスター画像として表示。［最大解像度:720×406px、最大サイズ:1MB、形式:JPEG/PNG］"
+
+msgid "Displays sign-in page of your service. res:740x100px, size:1MB, format:jpeg,png."
+msgstr "サイン・イン画面に表示。［最大解像度:740×100px、最大サイズ:1MB、形式:JPEG/PNG］"
+
+msgid "Displays when connecting a camera. res:80x60px, size:1MB, format:gif."
+msgstr "カメラへ接続中の間に表示。［最大解像度:80×60px、最大サイズ:1MB、形式:GIF（アニメーション可）］"
+
+msgid "Displays as a icon in bookmarks, or url field. size:1MB, format:ico,png(alpha),gif."
+msgstr "URL欄やブックマークに表示されるアイコン。［最大サイズ:1MB、形式:ICO/GIF/PNG（透過可）］"
+
+msgid "Predefined CSS stylesheets for ipcam viewer."
+msgstr "登録済みの利用可能なCSSテーマ。"
+
+msgid "router"
+msgstr "ルータ"
+
+msgid "switch"
+msgstr "スイッチ"
+
+msgid "repeater"
+msgstr "リピータ"
+
+msgid "agentbox"
+msgstr "エージェントボックス"
+
+msgid "ipcam"
+msgstr "IPカメラ"
+
+msgid "ipcam_nis"
+msgstr "IPカメラ(サービス外)"
+
+msgid "musicbox"
+msgstr "有線放送"
+
+msgid "tablet_pc"
+msgstr "タブレット・パソコン"
+
+msgid "print_server"
+msgstr "プリンタ"
+
+msgid "pos_cacher"
+msgstr "POSレジ・通信機"
+
+msgid "cc_reader"
+msgstr "クレジットカードリーダ"
+
+msgid "poe_injector"
+msgstr "PoEインジェクタ"
+
+
+msgid "fiber"
+msgstr "光ケーブル"
+
+msgid "dsn"
+msgstr "メタル回線"
+
+msgid "catv"
+msgstr "ケーブルTV"
+
+msgid "3g"
+msgstr "3G移動通信"
+
+msgid "4g"
+msgstr "4G移動通信"
+
+msgid "5g"
+msgstr "5G移動通信"
+
+msgid "Duration"
+msgstr "録画欠損（秒）"
+
+msgctxt "export"
+msgid "Duration"
+msgstr "録画欠損"
+
+msgctxt "export"
+msgid "Day"
+msgstr "日"
+
+msgctxt "export"
+msgid "Month"
+msgstr "月"
+
+msgid "Day"
+msgstr "日別"
+
+msgid "Month"
+msgstr "月別"
+
+msgid "Video missing logs"
+msgstr "録画⽋損リスト"
+
+msgid "No Result"
+msgstr "データがありません"
+
+msgid "Duration (Minute)"
+msgstr "録画欠損(分)"
+
+msgid "Use Agents or Wondergates"
+msgstr "エージェント/ワンダーゲート 有り"
+
+msgid "Missing Duration"
+msgstr "欠損時間"
+
+msgid "Show Suspended Camera"
+msgstr "一時停止のカメラを表示する"
+
+msgid "Missing logs Filter"
+msgstr "録画欠損の絞り込み"
+
+msgid "List by day"
+msgstr "日別検索"
+
+msgid "Export by month"
+msgstr "月別エクスポート"
+
+msgid "Export"
+msgstr "エクスポート"
+
+msgid "min"
+msgstr "分"
+
+msgid "Show all"
+msgstr "すべて表示"
+
+msgid "Year"
+msgstr "年"
+
+msgctxt "export"
+msgid "Year"
+msgstr "年"
+
+msgctxt "csvtitle"
+msgid "Servicer Name"
+msgstr "サービサ名"
+
+msgctxt "csvtitle"
+msgid "Member Name"
+msgstr "会員名"
+
+msgctxt "csvtitle"
+msgid "Endpoint"
+msgstr "第3階層(拠点)"
+
+msgctxt "csvtitle"
+msgid "Agentbox/Wondergate Name"
+msgstr "Agentbox/Wondergate 端末名"
+
+msgctxt "csvtitle"
+msgid "Agentbox/Wondergate Version"
+msgstr "Agentbox/Wondergate バージョン"
+
+msgctxt "csvtitle"
+msgid "Agentbox/Wondergate Status (0:stop,1:connecting,2:changing,3:restart,4:being restart)"
+msgstr "接続状況 (0:停止中、1:接続中、２:変更中、３:再起動、４:再起動中)"
+
+msgctxt "csvtitle"
+msgid "Last access"
+msgstr "最終ポーリング日時"
+
+msgctxt "csvtitle"
+msgid "Camera ID"
+msgstr "カメラID"
+
+msgctxt "csvtitle"
+msgid "Camera Name"
+msgstr "カメラ名"
+
+msgctxt "csvtitle"
+msgid "Type Name"
+msgstr "メーカー名"
+
+msgctxt "csvtitle"
+msgid "Model Name"
+msgstr "型番"
+
+msgctxt "csvtitle"
+msgid "Suspended"
+msgstr "カメラ一時停止"
+
+msgctxt "csvtitle"
+msgid "Placed Date"
+msgstr "カメラ設置日"
+
+msgctxt "csvtitle"
+msgid "Camera Status (0:stop,1:working)"
+msgstr "保存状況 (0:停止中、1:保存中)"
+
+msgctxt "csvtitle"
+msgid "Duration (Minutes)"
+msgstr "欠損時間(分)"
+
+msgctxt "csvtitle"
+msgid "Duration (Seconds)"
+msgstr "欠損時間(秒)"
+
+msgctxt "csvtitle"
+msgid "Percentage"
+msgstr "欠損率(%)"
+
+msgctxt "csvtitle"
+msgid "Remarks"
+msgstr "備考"
+
+msgid "Group Name"
+msgstr "拠点名"
+
+msgid "Sent Mail"
+msgstr "メール送付"
+
+msgid "Filter alerts"
+msgstr "検知項目の絞り込み"
+
+msgid "Within 48 Hours"
+msgstr "48時間以内"
+
+msgid "Select Within 48 Hours"
+msgstr "48時間以内を選ぶ"
+
+msgctxt "period"
+msgid "Period"
+msgstr "期間"
+
+msgctxt "period"
+msgid "Datetime"
+msgstr "日付"
+
+msgctxt "period"
+msgid "Weekday"
+msgstr "曜日"
+
+msgctxt "period"
+msgid "Month"
+msgstr "月間"
+
+msgctxt "period"
+msgid "Year"
+msgstr "年間"
+
+msgid "Sun"
+msgstr "日曜日"
+
+msgid "Mon"
+msgstr "月曜日"
+
+msgid "Tue"
+msgstr "火曜日"
+
+msgid "Wed"
+msgstr "水曜日"
+
+msgid "Thu"
+msgstr "木曜日"
+
+msgid "Fri"
+msgstr "金曜日"
+
+msgid "Sat"
+msgstr "土曜日"
+
+msgid "Saving Type"
+msgstr "録画設定"
+
+msgid "Agentbox Mode"
+msgstr "転送のみ (Agentboxと同じ)"
+
+msgid "Only This Device"
+msgstr "本機への保存のみ"
+
+msgid "Cloud (not keep data)"
+msgstr "クラウドに転送 (本機に残さない)"
+
+msgid "Cloud (keep data)"
+msgstr "クラウドに転送 (本機に残す)"
+
+msgid "Back to VOD"
+msgstr "VODに戻る"
+
+msgid "AI Image Processing List"
+msgstr "AI画像処理一覧"
+
+msgid "Choose group"
+msgstr "拠点を選択"
+
+msgid "Camera in group"
+msgstr "拠点のカメラ"
+
+msgid "Detection target"
+msgstr "検知対象"
