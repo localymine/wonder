@@ -589,9 +589,12 @@ class InvoicesController extends ControllerBase
   public function beforeExecuteRoute($dispatcher)
   {
     $cond = [
-      'conditions' => 'disabled=:disabled:',
-      'bind' => ['disabled' => 0],
-      'order' => 'name'
+      'conditions' => 'disabled=:disabled: AND type<>:type:',
+      'bind' => [
+        'disabled' => 0,
+        'type' => 2,
+      ],
+      'order' => 'type desc, name'
     ];
     $clients = Client::find($this->qi->inject('Client', $cond));
     $dClients = [];

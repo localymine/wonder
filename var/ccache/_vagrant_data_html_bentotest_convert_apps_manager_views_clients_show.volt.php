@@ -36,7 +36,7 @@
     <h1><?php echo $this->l10n->_('Manage Clients'); ?></h1>
     <ol class="breadcrumb">
       <li><?php echo $this->tag->linkTo(array('manager/main/index', $this->l10n->_('<i class="fa fa-dashboard"></i> DashBoard'))); ?></li>
-      <li><?php echo $this->tag->linkTo(array('manager/clients/index', $this->l10n->_('Manage Clients'))); ?></li>
+      <li><?php echo $this->tag->linkTo(array('manager/clients/index', $this->l10n->_('Manage Client'))); ?></li>
       <li class="active"><?php echo $this->escaper->escapeHtml($page_heading); ?></li>
     </ol>
   </section>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Remarks'); ?></th>
-              <td><?php echo $this->escaper->escapeHtml($client->remarks); ?></td>
+              <td><?php echo nl2br($client->remarks); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Disabled'); ?></th>

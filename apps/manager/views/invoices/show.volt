@@ -78,6 +78,14 @@
               <th>{{ l10n._('Updated at') }}</th>
               <td>{{ date(l10n._('Y-m-d H:i:s'), invoice.updated|strtotime) }}</td>
             </tr>
+            {% if invoice.transportinvoice.transport_id is defined %}
+            <tr>
+              <th>Link to Transport</th>
+              <td>
+               {{ invoice.transportinvoice.transport.name }} {{ link_to('/manager/transports/show/'~invoice.transportinvoice.transport_id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
+              </td>
+            </tr>
+            {% endif %}
             </table>
           </div>
         </div>

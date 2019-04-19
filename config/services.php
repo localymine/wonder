@@ -194,7 +194,7 @@ $di->setShared('qi', function () {
  */
 $di->setShared('l10n', function () {
   return new Translator(array(
-    'locale'    => 'ja_JP.UTF-8',
+    'locale'    => 'vi_VN.UTF-8',
     'file'      => 'messages',
     'directory' => SKR_ROOT.DS.'lang',
   ));

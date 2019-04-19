@@ -105,6 +105,14 @@
               <th><?php echo $this->l10n->_('Updated at'); ?></th>
               <td><?php echo date($this->l10n->_('Y-m-d H:i:s'), strtotime($invoice->updated)); ?></td>
             </tr>
+            <?php if (isset($invoice->transportinvoice->transport_id)) { ?>
+            <tr>
+              <th>Link to Transport</th>
+              <td>
+               <?php echo $invoice->transportinvoice->transport->name; ?> <?php echo $this->tag->linkTo(array('/manager/transports/show/' . $invoice->transportinvoice->transport_id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
+              </td>
+            </tr>
+            <?php } ?>
             </table>
           </div>
         </div>

@@ -74,7 +74,7 @@
             </tr>
             <tr>
               <th>{{ l10n._('Remarks') }}</th>
-              <td>{{ client.remarks|e }}</td>
+              <td>{{ client.remarks|nl2br }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Disabled') }}</th>

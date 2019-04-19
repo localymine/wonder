@@ -47,9 +47,21 @@ class InventoryController  extends ControllerBase
     $this->view->disable();
 
     ob_start();
-    $cond = [
-      'order' => 'name'
-    ];
+    if ($this->request->hasPost('from') && ($this->request->getPost('from') != 0) &&
+      $this->request->hasPost('to') && ($this->request->getPost('to') != 0)) {
+      $cond = [
+        'conditions' => 'id BETWEEN :from: AND :to:',
+        'bind' => [
+          'from' => $this->request->getPost('from'),
+          'to' => $this->request->getPost('to'),
+        ],
+        'order' => 'name'
+      ];
+    } else {
+      $cond = [
+        'order' => 'name'
+      ];
+    }
     $products = Product::find($cond);
 
     $objPHPExcel = new \PHPExcel();

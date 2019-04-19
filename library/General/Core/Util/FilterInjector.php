@@ -431,10 +431,10 @@ class FilterInjector extends Component
     $sql .= " WHERE ";
     $sql .= "    IV.disabled = 0 AND ";
     $sql .= "    IV.user_id = $user_id AND ";
+    $sql .= "    IV.deliver = 0 AND ";
     $sql .= "    IV.id NOT IN ( ";
     $sql .= "       SELECT invoice_id ";
     $sql .= "       FROM transport_invoices )";
-    $sql .= " IV.deliver = 0 ";
 //    $sql .= " ORDER BY IV.id DESC";
 
     $invoice = new Invoice();
