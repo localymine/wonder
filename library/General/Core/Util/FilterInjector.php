@@ -10,6 +10,7 @@ use General\Core\Manager\Models\Common;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\InvoiceDetail;
 use General\Core\Manager\Models\Product;
+use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\TransportInvoice;
 use General\Core\Manager\Models\Warehouse;
@@ -679,5 +680,36 @@ class FilterInjector extends Component
       $invoices_details,
       $invoices_details->getReadConnection()->query($sql)
     );
+  }
+
+
+  public static function updatePurchasePrice(DependencyInjector $di) {
+    /* if $_SESSION['auth'] not found, returns false.
+         * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    $sql  = " SELECT pi.product_id, CEIL(AVG(pi.purchase_price)) AS purchase_price ";
+    $sql .= " FROM `product_ins` AS pi ";
+    $sql .= " LEFT JOIN `products` AS p ON (p.id = pi.product_id) ";
+    $sql .= " WHERE p.user_id = $user_id AND pi.purchase_price > 0 ";
+    $sql .= " GROUP BY pi.product_id ";
+    $product_ins = new ProductIn();
+    $data = new Resultset(
+      null,
+      $product_ins,
+      $product_ins->getReadConnection()->query($sql)
+    );
+    if ($data) {
+      foreach ($data as $item) {
+        $product = Product::findFirst($item->product_id);
+        $product->purchase_price = $item->purchase_price;
+        $product->update();
+      }
+    }
   }
 }

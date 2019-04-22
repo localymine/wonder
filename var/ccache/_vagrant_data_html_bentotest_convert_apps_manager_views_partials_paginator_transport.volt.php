@@ -38,7 +38,11 @@
           <td class="text-right"><?php echo number_format($transport->total_others); ?></td>
           <td class="text-right"><?php echo number_format(($transport->total + $transport->total_others)); ?></td>
           <td class="text-center <?php echo $this->escaper->escapeHtml($status[$transport->status]); ?>"><?php echo $this->escaper->escapeHtml($status[$transport->status]); ?></td>
-          <td><?php echo $this->tag->linkTo(array('manager/transports/show/' . $transport->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
+          <td>
+
+              <?php echo $this->tag->linkTo(array('manager/transports/exportMore/' . $transport->id, '<i class="fa fa-file-excel-o"></i>', 'class' => 'btn btn-xs btn-yahoo', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Export More'))); ?>
+
+              <?php echo $this->tag->linkTo(array('manager/transports/show/' . $transport->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
 
               <?php echo $this->tag->linkTo(array('manager/transports/edit/' . $transport->id, '<i class="fa fa-pencil"></i>', 'class' => 'btn btn-xs btn-success', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Edit'))); ?>
 

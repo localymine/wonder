@@ -47,7 +47,12 @@
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title pull-left"><?php echo $this->escaper->escapeHtml($page_heading); ?></h3>
+
         <?php echo $this->tag->linkTo(array('manager/invoices/new/', $this->l10n->_('<i class="fa fa-file"></i><span>New</span>'), 'class' => 'btn btn-primary btn-sm xcenter')); ?>
+
+        <button class="btn btn-default btn-sm xoutput" data-target="#invoices-export-dialog" data-toggle="modal">
+          <i class="fa fa-file-excel-o"></i> <span>Export</span>
+        </button>
 
       </div>
       <div class="box-body" data-csrftoken="<?php echo $this->security->getToken(); ?>">

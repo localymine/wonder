@@ -74,6 +74,10 @@
                 <td class="text-right"><?php echo number_format($product->wholesale_price); ?> (&#8363;)</td>
               </tr>
               <tr>
+                <th><?php echo $this->l10n->_('Purchase Price (avg)'); ?></th>
+                <td class="text-right"><?php echo number_format($product->purchase_price); ?> (¥)</td>
+              </tr>
+              <tr>
                 <th><?php echo $this->l10n->_('Quantity'); ?></th>
                 <td class="text-right"><?php echo $product->quantity; ?></td>
               </tr>

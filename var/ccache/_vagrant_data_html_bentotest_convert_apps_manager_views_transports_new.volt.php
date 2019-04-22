@@ -96,6 +96,22 @@
           </div>
         </div>
 
+        <div class="form-group required">
+          <label for="send_id" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Sender'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('send_id', $send_receive, 'using' => array('id', 'name'), 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => 0)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="receive_id" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
+          <div class="col-xs-12 col-sm-3">
+            <?php echo $this->tag->select(array('receive_id', $send_receive, 'using' => array('id', 'name'), 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => 0)); ?>
+
+          </div>
+        </div>
+
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Disabled'); ?></label>
           <div class="col-xs-12 col-sm-8">

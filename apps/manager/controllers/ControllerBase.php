@@ -255,4 +255,8 @@ class ControllerBase extends Controller
     }
   }
 
+  protected function updatePurchasePrice() {
+    FilterInjector::updatePurchasePrice($this->di);
+  }
+
 }

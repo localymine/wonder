@@ -242,22 +242,22 @@ class InvoicesController extends ControllerBase
       $apds = $post['apd'];   // add new invoice_detail
       if ($apds != null) {
         foreach ($apds as $item) {
-          $cond = [
-            'conditions' => 'client_id=:client_id: AND invoice_id=:invoice_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
-            'bind' => [
-              'client_id'    => $post['client_id'],
-              'invoice_id'   => $invoice->id,
-              'product_id'   => $item['product'],
-              'warehouse_id' => $item['warehouse'],
-            ]
-          ];
-          $invoice_detail = InvoiceDetail::findFirst($cond);
-          if ($invoice_detail) {
-            $invoice_detail->quantity = $invoice_detail->quantity + $item['quantity'];
-            $invoice_detail->update();
-            $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
-            $this->sumProducts($this->di, $identity['id'], $invoice_detail->product_id);
-          } else {
+//          $cond = [
+//            'conditions' => 'client_id=:client_id: AND invoice_id=:invoice_id: AND product_id=:product_id: AND warehouse_id=:warehouse_id:',
+//            'bind' => [
+//              'client_id'    => $post['client_id'],
+//              'invoice_id'   => $invoice->id,
+//              'product_id'   => $item['product'],
+//              'warehouse_id' => $item['warehouse'],
+//            ]
+//          ];
+//          $invoice_detail = InvoiceDetail::findFirst($cond);
+//          if ($invoice_detail) {
+//            $invoice_detail->quantity = $invoice_detail->quantity + $item['quantity'];
+//            $invoice_detail->update();
+//            $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
+//            $this->sumProducts($this->di, $identity['id'], $invoice_detail->product_id);
+//          } else {
             $new_invoice_detail = new InvoiceDetail();
             $new_invoice_detail->client_id = $post['client_id'];
             $new_invoice_detail->invoice_id = $invoice->id;
@@ -268,7 +268,7 @@ class InvoicesController extends ControllerBase
             $new_invoice_detail->create();
             $this->subStock($identity['id'], $item['product'], $item['warehouse'], $item['quantity']);
             $this->sumProducts($this->di, $identity['id'], $new_invoice_detail->product_id);
-          }
+//          }
         }
       }
       $dpds = $post['dpd'];   // delete invoice_detail

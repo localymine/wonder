@@ -95,6 +95,12 @@
             <i class="fa fa-plus"></i>
           </a>
         </div>
+        <div class="mb-max">
+          <a id="update_purchase_price" href="javascript:void(0);" class="btn btn-lg btn-instagram col-sm-12 col-xs-12">
+            Update Purchase Price
+            <i class="fa fa-refresh"></i>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -201,6 +207,17 @@
       var chartTheMostBrand = new Chart(ctxTheMostBrand, {
         type: 'doughnut',
         data: dataTheMostBrand
+      });
+      //
+      $('#update_purchase_price').on('click', function() {
+        $.ajax({
+          url: '/manager/products/updatePurchasePrice',
+          type:'POST',
+          async:true,
+          cache:false
+        }).done(function() {
+          alert('OK');
+        });
       });
       //
       $('.pop').on('click', function() {

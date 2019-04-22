@@ -7,6 +7,7 @@ use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\OtherCost;
 use General\Core\Manager\Models\Transport;
 use General\Core\Manager\Models\TransportInvoice;
+use General\Core\Util\Enums;
 
 /**
  * Class IndexController
@@ -468,7 +469,8 @@ class TransportsController extends ControllerBase
         ->setCellValue('C1', 'SPham')
         ->setCellValue('D1', 'DGia')
         ->setCellValue('E1', 'SLg')
-        ->setCellValue('F1', 'TTien');
+        ->setCellValue('F1', 'TTien')
+        ->setCellValue('J1', $transport->total);
 
       $fname = 'Other-List-' . $transport->name . '-' . time() . '.xlsx';
 
@@ -477,6 +479,7 @@ class TransportsController extends ControllerBase
 
       //
       $i = 2;
+      $j = 2;
       $transportInvoices = $transport->getRelated('transportinvoice');
       foreach ($transportInvoices as $tiv) {
         $invoice = Invoice::findFirst($tiv->invoice_id);
@@ -498,7 +501,11 @@ class TransportsController extends ControllerBase
           ->setCellValue('F' . $i, $total);
         $objPHPExcel->getActiveSheet()->getStyle('F' . $i)->getFont()
           ->setBold(true);
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('I' . $j, $invoice->client->name)
+          ->setCellValue('J' . $j, $total);
         $i++;
+        $j++;
       }
 
       $objPHPExcel->getActiveSheet()->getStyle('A1:F1')
@@ -512,8 +519,12 @@ class TransportsController extends ControllerBase
         ]);
       $objPHPExcel->getActiveSheet()->getStyle('D2:F200')->getNumberFormat()
         ->setFormatCode('#,###');
+      $objPHPExcel->getActiveSheet()->getStyle('J1')->getFont()
+        ->setBold(true);
+      $objPHPExcel->getActiveSheet()->getStyle('J1:J200')->getNumberFormat()
+        ->setFormatCode('#,###');
 
-      foreach (range('A', 'F') as $columnId) {
+      foreach (range('A', 'J') as $columnId) {
         $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
       }
 
@@ -539,6 +550,247 @@ class TransportsController extends ControllerBase
     return $this->response;
   }
 
+
+  public function exportMoreAction($id=null) {
+    $this->view->disable();
+    if ($id == null) {
+      return false;
+    }
+
+    ob_start();
+    $transport = Transport::findFirst($id);
+    if ($transport) {
+      $objPHPExcel = new \PHPExcel();
+      // Set document properties
+      $objPHPExcel->getProperties()
+        ->setCreator("Sakura Shop")
+        ->setDescription("DS Order Khach Hang");
+      // Set default font
+      $objPHPExcel->getDefaultStyle()->getFont()
+        ->setName('Arial')
+        ->setSize(12);
+      // set Title
+      $objPHPExcel->getActiveSheet()->setTitle('Order List');
+      // set data
+      $objPHPExcel->setActiveSheetIndex(0)
+        ->setCellValue('A1', 'No.')
+        ->setCellValue('B1', 'KH')
+        ->setCellValue('C1', 'SPham')
+        ->setCellValue('D1', 'DGia')
+        ->setCellValue('E1', 'SLg')
+        ->setCellValue('F1', 'TTien')
+        ->setCellValue('G1', 'DGia(mua)')
+        ->setCellValue('H1', 'TTien(mua)')
+        ->setCellValue('I1', Enums::RATE)
+        ->setCellValue('J1','=SUM(J2:J200)')
+        ->setCellValue('M1', $transport->total);
+
+      $fname = 'Other-List-' . $transport->name . '-' . time() . '.xlsx';
+
+      // temp file name to save before output
+      $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');
+
+      //
+      $i = 2;
+      $j = 2;
+      $transportInvoices = $transport->getRelated('transportinvoice');
+      foreach ($transportInvoices as $tiv) {
+        $invoice = Invoice::findFirst($tiv->invoice_id);
+        $invoiceDetails = $invoice->getRelated('invoicedetail');
+        $total = 0;
+        $total_purchase = 0;
+        foreach ($invoiceDetails as $ind) {
+          $product = $ind->getRelated('product');
+          $objPHPExcel->getActiveSheet()
+            ->setCellValue('A' . $i, $i-1)
+            ->setCellValue('B' . $i, $invoice->client->name)
+            ->setCellValue('C' . $i, $product->name)
+            ->setCellValue('D' . $i, $ind->price)
+            ->setCellValue('E' . $i, $ind->quantity)
+            ->setCellValue('F' . $i, ($ind->price*$ind->quantity))
+            ->setCellValue('G' . $i, $product->purchase_price)
+            ->setCellValue('H' . $i, ($product->purchase_price*$ind->quantity));
+          $total += $ind->price*$ind->quantity;
+          $total_purchase += $product->purchase_price*$ind->quantity;
+          $i++;
+        }
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('F' . $i, $total);
+        $objPHPExcel->getActiveSheet()->getStyle('F' . $i)->getFont()
+          ->setBold(true);
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('H' . $i, $total_purchase);
+        $objPHPExcel->getActiveSheet()->getStyle('H' . $i)->getFont()
+          ->setBold(true);
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('I' . $i,'=H' . $i . '*$I$1');
+        $objPHPExcel->getActiveSheet()->getStyle('I' . $i)->getFont()
+          ->setBold(true);
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('J' . $i,'=F' . $i . '-I' . $i);
+        $objPHPExcel->getActiveSheet()->getStyle('J' . $i)->getFont()
+          ->setBold(true);
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('L' . $j, $invoice->client->name)
+          ->setCellValue('M' . $j, $total)
+          ->setCellValue('N' . $j, $total_purchase);
+        $i++;
+        $j++;
+      }
+
+      $objPHPExcel->getActiveSheet()->getStyle('A1:H1')
+        ->applyFromArray([
+          'font' => [
+            'bold' => true
+          ],
+          'alignment' => [
+            'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
+          ]
+        ]);
+      $objPHPExcel->getActiveSheet()->getStyle('J1:J1')->getFont()
+        ->setBold(true);
+      $objPHPExcel->getActiveSheet()->getStyle('J1:J1')->getNumberFormat()
+        ->setFormatCode('#,###');
+      $objPHPExcel->getActiveSheet()->getStyle('D2:J200')->getNumberFormat()
+        ->setFormatCode('#,###');
+      $objPHPExcel->getActiveSheet()->getStyle('M1:N1')->getFont()
+        ->setBold(true);
+      $objPHPExcel->getActiveSheet()->getStyle('M1:N200')->getNumberFormat()
+        ->setFormatCode('#,###');
+
+      foreach (range('A', 'N') as $columnId) {
+        $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
+      }
+
+      $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+      $objWriter->save($temp_file);
+
+    } else {
+      return false;
+    }
+
+    $this->response->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    $this->response->setHeader('Content-Disposition', 'attachment; filename="'.$fname.'"');
+    $this->response->setHeader('Cache-Control', 'max-age=0, private, must-revalidate');
+    $this->response->setContent(file_get_contents($temp_file));
+    //
+    for ($i = 0; $i < ob_get_level(); $i++) {
+      ob_end_flush();
+    }
+    ob_implicit_flush(1);
+    ob_clean();
+    // delete temp file
+    unlink($temp_file);
+    return $this->response;
+  }
+
+
+  public function exportListAction($id=null) {
+    $this->view->disable();
+    if ($id == null) {
+      return false;
+    }
+
+    ob_start();
+    $transport = Transport::findFirst($id);
+    if ($transport) {
+      $objPHPExcel = new \PHPExcel();
+      // Set document properties
+      $objPHPExcel->getProperties()
+        ->setCreator("Sakura Shop")
+        ->setDescription("List Products");
+      // Set default font
+      $objPHPExcel->getDefaultStyle()->getFont()
+        ->setName('Arial')
+        ->setSize(12);
+      // set Title
+      $objPHPExcel->getActiveSheet()->setTitle('Products');
+      // set data
+      $objPHPExcel->setActiveSheetIndex(0)
+        ->setCellValue('A1', 'MẪU YÊU CẦU NHẬN HÀNG VẬN CHUYỂN')
+        ->setCellValue('A2', 'Từ Nhật Bản đến Hà Nội (Việt Nam)')
+        ->setCellValue('A4', 'Người gửi tại Nhật Bản')
+        ->setCellValue('A5', 'Họ & Tên')
+        ->setCellValue('A6', 'Số vận đơn')
+        ->setCellValue('A8', 'Người nhận tại Việt Nam')
+        ->setCellValue('A9', 'Họ & Tên')
+        ->setCellValue('A10', 'Địa chỉ')
+        ->setCellValue('A11', 'ĐT')
+        ->setCellValue('A13', 'No.')
+        ->setCellValue('B13', 'SPham')
+        ->setCellValue('C13', 'PLoai')
+        ->setCellValue('D13', 'SLg');
+
+      $fname = 'Products-List-' . $transport->name . '-' . time() . '.xlsx';
+
+      // temp file name to save before output
+      $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');
+
+      $objPHPExcel->getActiveSheet()
+        ->setCellValue('B5', $transport->sender->lastname.' '.$transport->sender->firstname)
+        ->setCellValue('B6', $transport->name)
+        ->setCellValue('B9', $transport->receiver->lastname.' '.$transport->receiver->firstname)
+        ->setCellValue('B10', $transport->receiver->address)
+        ->setCellValue('B11', $transport->receiver->phone);
+
+      //
+      $i = 14;
+      $transportInvoices = $transport->getRelated('transportinvoice');
+      foreach ($transportInvoices as $tiv) {
+        $invoice = Invoice::findFirst($tiv->invoice_id);
+        $invoiceDetails = $invoice->getRelated('invoicedetail');
+        foreach ($invoiceDetails as $ind) {
+          $product = $ind->getRelated('product');
+          $objPHPExcel->getActiveSheet()
+            ->setCellValue('A' . $i, $i-12-1)
+            ->setCellValue('B' . $i, $product->name)
+            ->setCellValue('C' . $i, $product->category->name)
+            ->setCellValue('D' . $i, $ind->quantity);
+          $i++;
+        }
+      }
+
+      $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+      $objPHPExcel->getActiveSheet()->getStyle('A4')->getFont()->setBold(true)->setUnderline(true);
+      $objPHPExcel->getActiveSheet()->getStyle('A8')->getFont()->setBold(true)->setUnderline(true);
+
+      $objPHPExcel->getActiveSheet()->getStyle('A13:C13')
+        ->applyFromArray([
+          'font' => [
+            'bold' => true
+          ],
+          'alignment' => [
+            'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
+          ]
+        ]);
+
+      foreach (range('B', 'D') as $columnId) {
+        $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
+      }
+
+      $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+      $objWriter->save($temp_file);
+
+    } else {
+      return false;
+    }
+
+    $this->response->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    $this->response->setHeader('Content-Disposition', 'attachment; filename="'.$fname.'"');
+    $this->response->setHeader('Cache-Control', 'max-age=0, private, must-revalidate');
+    $this->response->setContent(file_get_contents($temp_file));
+    //
+    for ($i = 0; $i < ob_get_level(); $i++) {
+      ob_end_flush();
+    }
+    ob_implicit_flush(1);
+    ob_clean();
+    // delete temp file
+    unlink($temp_file);
+    return $this->response;
+  }
+
+
   public function beforeExecuteRoute($dispatcher)
   {
 
@@ -550,6 +802,22 @@ class TransportsController extends ControllerBase
     $clients = Client::find($this->qi->inject('Client', $cond));
     $this->view->setVar('clients', $clients);
     $this->view->setVar('status', $this->enum->transportStatus());
+
+    $cond = [
+      'conditions' => 'disabled=:disabled: AND type=:type:',
+      'bind' => ['disabled' => 0, 'type' => 3],
+      'order' => 'name',
+    ];
+    $sender = Client::find($this->qi->inject('Client', $cond));
+    $this->view->setVar('sender', $sender);
+
+    $cond = [
+      'conditions' => 'disabled=:disabled: AND type=:type:',
+      'bind' => ['disabled' => 0, 'type' => 1],
+      'order' => 'name',
+    ];
+    $receiver = Client::find($this->qi->inject('Client', $cond));
+    $this->view->setVar('receiver', $receiver);
 
     parent::beforeExecuteRoute($dispatcher);
     return true;

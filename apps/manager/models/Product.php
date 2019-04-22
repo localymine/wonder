@@ -57,6 +57,12 @@ class Product extends ModelBase implements ModelInterface
    */
   public $wholesale_price;
   /**
+   * purchase_price.
+   * @var float
+   * @Column(type="float", nullable=false)
+   */
+  public $purchase_price;
+  /**
    * quantity.
    * @var integer
    * @Column(type="integer")
@@ -132,6 +138,7 @@ class Product extends ModelBase implements ModelInterface
       'unit'        => 'unit',
       'price'       => 'price',
       'wholesale_price' => 'wholesale_price',
+      'purchase_price'  => 'purchase_price',
       'quantity'    => 'quantity',
       'image'       => 'image',
       'category_id' => 'category_id',

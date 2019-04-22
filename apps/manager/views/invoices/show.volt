@@ -136,6 +136,7 @@
               <i class="fa fa-cogs"></i> {{ l10n._('Other Options') }}</button>
             <ul class="dropdown-menu">
               <li>{{ link_to('manager/invoices/new/',l10n._('New')) }}</li>
+              <li><button class="btn text-center btn-yahoo btn-print" data-id="{{ invoice.id }}" data-target="#bill-dialog" data-toggle="modal"><i class="fa fa-image"></i></button></li>
             </ul>
           </div>
 
@@ -143,8 +144,65 @@
       </div>
     </div>
 
+    {{ partial('partials/modal/bill') }}
   </section>
 {% endblock %}
 
 {% block pagescript %}
+  <script>
+  $(function() {
+    $('.btn-print').on('click', function() {
+      var post_data = {
+        'id' : $(this).data('id')
+      };
+      $.ajax({
+        url: '/manager/invoices/print',
+        type:'POST',
+        data:post_data,
+        dataType:'json',
+        async:true,
+        cache:false
+      }).done(function (data) {
+        if (data['success'] === 1) {
+          $('.tb-detail tbody').empty();
+          $('.tb-detail tfoot .qty').html('');
+          $('.tb-detail tfoot .sum').html('');
+          $('.bill-num').html(data['id']);
+          $('.client-name').html(data['client']);
+          $('.buy-date').html(data['date']);
+          var detail = data['detail'];
+          for (var i=0; i<detail.length; i++) {
+            var tr = '<tr>' +
+              '<td>'+detail[i]['product']+'</td>' +
+              '<td class="text-right">'+(detail[i]['price']).format()+'</td>' +
+              '<td class="text-right">'+detail[i]['quantity']+'</td>' +
+              '<td class="text-right">'+(detail[i]['total']).format()+'</td>' +
+              '</tr>';
+            $('.tb-detail tbody').append(tr);
+          }
+          $('.tb-detail tfoot .qty').html(data['qty']);
+          $('.tb-detail tfoot .sum').html(data['sum'].format());
+          $('.tb-detail tfoot .remarks').html(data['remarks']);
+          //
+          html2canvas(element, {
+            onrendered: function (canvas) {
+              $("#previewImage").empty().append(canvas);
+              getCanvas = canvas;
+            }
+          });
+        }
+      });
+    });
+  });
+
+  var element = document.getElementById('bill-holder');
+  var getCanvas;
+  $('#btn-download').on('click', function() {
+    var r = Math.random().toString(36).substring(7);
+    var imgageData = getCanvas.toDataURL('image/png');
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $('#btn-download').attr('download', r+'.png').attr('href', newData);
+  });
+
+  </script>
 {% endblock %}

@@ -161,7 +161,9 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> {{ l10n._('Other Options') }}</button>
             <ul class="dropdown-menu">
-              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export Excel')) }}</li>
+              <li>{{ link_to('manager/transports/export/'~transport.id,l10n._('Export Transport')) }}</li>
+              <li>{{ link_to('manager/transports/exportMore/'~transport.id,l10n._('Export Transport (more)')) }}</li>
+              <li>{{ link_to('manager/transports/exportList/'~transport.id,l10n._('Export Products')) }}</li>
             </ul>
           </div>
 

@@ -38,7 +38,11 @@
           <td class="text-right">{{ transport.total_others|number_format }}</td>
           <td class="text-right">{{ (transport.total + transport.total_others)|number_format }}</td>
           <td class="text-center {{ status[transport.status]|e }}">{{ status[transport.status]|e }}</td>
-          <td>{{ link_to('manager/transports/show/'~transport.id,'<i class="fa fa-eye"></i>','class':'btn btn-xs btn-info','data-toggle':'tooltip','data-placement':'top','title':l10n._('Show')) }}
+          <td>
+
+              {{ link_to('manager/transports/exportMore/'~transport.id,'<i class="fa fa-file-excel-o"></i>','class':'btn btn-xs btn-yahoo','data-toggle':'tooltip','data-placement':'top','title':l10n._('Export More')) }}
+
+              {{ link_to('manager/transports/show/'~transport.id,'<i class="fa fa-eye"></i>','class':'btn btn-xs btn-info','data-toggle':'tooltip','data-placement':'top','title':l10n._('Show')) }}
 
               {{ link_to('manager/transports/edit/'~transport.id,'<i class="fa fa-pencil"></i>','class':'btn btn-xs btn-success','data-toggle':'tooltip','data-placement':'top','title':l10n._('Edit')) }}
 

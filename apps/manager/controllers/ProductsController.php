@@ -594,6 +594,23 @@ class ProductsController  extends ControllerBase
   }
 
 
+  public function updatePurchasePriceAction()
+  {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+        $this->updatePurchasePrice();
+        $response['success'] = 1;
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
+  }
+
+
   public function imageAction($id) {
     $this->view->disable();
     $data = '';

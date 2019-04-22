@@ -71,6 +71,22 @@
           </div>
         </div>
 
+        <div class="form-group required">
+          <label for="send_id" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Sender') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            {{ select('send_id',sender,'using':['id','name'],'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':transport.send_id) }}
+
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="receive_id" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
+          <div class="col-xs-12 col-sm-3">
+            {{ select('receive_id',receiver,'using':['id','name'],'class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':transport.receive_id) }}
+
+          </div>
+        </div>
+
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label">{{ l10n._('Disabled') }}</label>
           <div class="col-xs-12 col-sm-8">

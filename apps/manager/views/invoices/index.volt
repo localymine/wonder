@@ -20,7 +20,12 @@
     <div class="box">
       <div class="box-header with-border">
         <h3 class="box-title pull-left">{{ page_heading|e }}</h3>
+
         {{ link_to('manager/invoices/new/',l10n._('<i class="fa fa-file"></i><span>New</span>'),'class':'btn btn-primary btn-sm xcenter') }}
+
+        <button class="btn btn-default btn-sm xoutput" data-target="#invoices-export-dialog" data-toggle="modal">
+          <i class="fa fa-file-excel-o"></i> <span>Export</span>
+        </button>
 
       </div>
       <div class="box-body" data-csrftoken="{{ security.getToken() }}">

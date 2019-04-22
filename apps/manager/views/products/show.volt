@@ -47,6 +47,10 @@
                 <td class="text-right">{{ product.wholesale_price|number_format }} (&#8363;)</td>
               </tr>
               <tr>
+                <th>{{ l10n._('Purchase Price (avg)') }}</th>
+                <td class="text-right">{{ product.purchase_price|number_format }} (¥)</td>
+              </tr>
+              <tr>
                 <th>{{ l10n._('Quantity') }}</th>
                 <td class="text-right">{{ product.quantity }}</td>
               </tr>

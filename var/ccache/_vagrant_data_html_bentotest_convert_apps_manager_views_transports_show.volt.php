@@ -188,7 +188,9 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cogs"></i> <?php echo $this->l10n->_('Other Options'); ?></button>
             <ul class="dropdown-menu">
-              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export Excel'))); ?></li>
+              <li><?php echo $this->tag->linkTo(array('manager/transports/export/' . $transport->id, $this->l10n->_('Export Transport'))); ?></li>
+              <li><?php echo $this->tag->linkTo(array('manager/transports/exportMore/' . $transport->id, $this->l10n->_('Export Transport (more)'))); ?></li>
+              <li><?php echo $this->tag->linkTo(array('manager/transports/exportList/' . $transport->id, $this->l10n->_('Export Products'))); ?></li>
             </ul>
           </div>
 

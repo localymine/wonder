@@ -18,6 +18,7 @@ use Phalcon\Mvc\Model\ResultsetInterface;
 class Enums extends Component
 {
 
+  const RATE = 208;
 
   /**
    * Status of Invoice
@@ -59,6 +60,7 @@ class Enums extends Component
       0 => 'Retail',
       1 => 'Wholesale',
       2 => 'Transporter',
+      3 => 'Sender',
     ];
   }
 

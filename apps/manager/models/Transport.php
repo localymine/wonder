@@ -75,6 +75,18 @@ class Transport extends ModelBase implements ModelInterface
    */
   public $remarks;
   /**
+   * send_id.
+   * @var string
+   * @Column(type="integer")
+   */
+  public $send_id;
+  /**
+   * receive_id.
+   * @var string
+   * @Column(type="integer")
+   */
+  public $receive_id;
+  /**
    * status.
    * @var string
    * @Column(type="integer")
@@ -115,6 +127,8 @@ class Transport extends ModelBase implements ModelInterface
       'total_others'=> 'total_others',
       'flight_date' => 'flight_date',
       'remarks'     => 'remarks',
+      'send_id'     => 'send_id',
+      'receive_id'  => 'receive_id',
       'status'      => 'status',
       'disabled'    => 'disabled',
       'created'     => 'created',
@@ -160,6 +174,12 @@ class Transport extends ModelBase implements ModelInterface
     ]);
     $this->belongsTo('client_id', Client::class, 'id', [
       'alias' => 'client'
+    ]);
+    $this->belongsTo('send_id', Client::class, 'id', [
+      'alias' => 'sender'
+    ]);
+    $this->belongsTo('receive_id', Client::class, 'id', [
+      'alias' => 'receiver'
     ]);
     $this->hasMany('id', OtherCost::class, 'transport_id', [
       'alias' => 'othercost',
