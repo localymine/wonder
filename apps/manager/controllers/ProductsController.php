@@ -6,6 +6,7 @@ use General\Core\Manager\Models\Common;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\Product;
 use General\Core\Manager\Models\ProductIn;
+use General\Core\Manager\Models\ProductPrice;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\Warehouse;
 use General\Core\Util\Enums;
@@ -175,6 +176,16 @@ class ProductsController  extends ControllerBase
         'bind' => ['id' => $post['product_id']],
       ];
       $product = Product::findFirst($this->qi->inject('Product', $cond));
+      $oldPrice = $product->price;
+      $oldDate  = $product->updated;
+      if ($post['price'] != $oldPrice) {
+        $pp = new ProductPrice();
+        $pp->product_id = $product->id;
+        $pp->price   = $oldPrice;
+        $pp->created = $oldDate;
+        $pp->create();
+      }
+
       $product->assign($post);
       if (!$this->request->hasPost('disabled')) {
         $product->disabled = 0;
@@ -278,6 +289,18 @@ class ProductsController  extends ControllerBase
       ]);
       return;
     }
+
+    $productPrice = $product->getRelated('productprice');
+    $price_dt = [];
+    $price_lb = [];
+    foreach ($productPrice as $item) {
+      array_push($price_dt, $item->price);
+      array_push($price_lb, substr($item->created,0,10));
+    }
+    array_push($price_dt, $product->price);
+    array_push($price_lb, date('Y-m-d'));
+    $this->view->setVar('price_dt', implode(',', $price_dt));
+    $this->view->setVar('price_lb', '"'.implode('","', $price_lb).'"');
 
     /* set parameters to display page. */
     $this->view->setVar('product', $product);

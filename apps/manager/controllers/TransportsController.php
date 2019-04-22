@@ -472,7 +472,7 @@ class TransportsController extends ControllerBase
         ->setCellValue('F1', 'TTien')
         ->setCellValue('J1', $transport->total);
 
-      $fname = 'Other-List-' . $transport->name . '-' . time() . '.xlsx';
+      $fname = 'Order-List-' . $transport->name . '-' . time() . '.xlsx';
 
       // temp file name to save before output
       $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');
@@ -585,7 +585,7 @@ class TransportsController extends ControllerBase
         ->setCellValue('J1','=SUM(J2:J200)')
         ->setCellValue('M1', $transport->total);
 
-      $fname = 'Other-List-' . $transport->name . '-' . time() . '.xlsx';
+      $fname = 'Order-List-More-' . $transport->name . '-' . time() . '.xlsx';
 
       // temp file name to save before output
       $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');

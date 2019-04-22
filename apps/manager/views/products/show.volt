@@ -106,6 +106,12 @@
           </div>
         </div>
 
+        <div class="row row-gutter-20">
+          <div class="col-xs-12 col-sm-12">
+            <canvas id="chart-price"></canvas>
+          </div>
+        </div>
+
       </div>
       <div class="box-footer">
         <div class="action-area">
@@ -129,4 +135,62 @@
 {% endblock %}
 
 {% block pagescript %}
+  <script>
+    $(function () {
+      //
+      var price_dt = [{{ price_dt }}];
+      var dataPrice = {
+        labels: [
+          {{ price_lb }}
+        ],
+        datasets : [{
+          label: 'Sale Price',
+          data: price_dt,
+          borderWidth: 2,
+          backgroundColor: 'rgba(245,127,23,1)',
+          borderColor: 'rgba(245,127,23,1)',
+          pointRadius: 5,
+          fill: false
+        }]
+      };
+      var options = {
+        responsive: true,
+          tooltips: {
+          mode: 'index',
+            intersect: false,
+            callbacks: {
+            label: function (tooltipItems, data) {
+              return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems.yLabel + '₫';
+            },
+            footer: function (tooltipItems, data) {
+              return '^^';
+            }
+          }
+        },
+        hover: {
+          mode: 'index',
+            intersect: false
+        },
+        scales: {
+          yAxes: [{
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Price'
+            },
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      };
+      var ctxPrice = document.getElementById('chart-price').getContext('2d');
+      var chartPrice = new Chart(ctxPrice, {
+        type: 'line',
+        data: dataPrice,
+        options: options
+    });
+      //
+    });
+  </script>
 {% endblock %}

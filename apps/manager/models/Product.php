@@ -203,6 +203,13 @@ class Product extends ModelBase implements ModelInterface
         'action' => Relation::ACTION_RESTRICT,
       ]
     ]);
+    $this->hasMany('id', ProductPrice::class, 'product_id', [
+      'alias' => 'productprice',
+      'foreignKey' => [
+        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
+        'action' => Relation::ACTION_RESTRICT,
+      ]
+    ]);
     /* configure model behaviours. */
     $this->addBehavior(
       /* insert timestamp on create / update. */
