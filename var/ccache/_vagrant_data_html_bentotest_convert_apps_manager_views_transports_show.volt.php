@@ -133,34 +133,34 @@
           </div>
         </div>
 
-        <h4><?php echo $this->l10n->_('Invoices'); ?></h4>
         <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-6">
-            <table class="table table-bordered">
-              <colgroup>
-                <col class="col-1">
-                <col class="col-8">
-                <col class="col-3">
-              </colgroup>
-              <tbody>
-              <?php foreach ($transportInvoice as $transinvoice) { ?>
-              <tr>
-                <td><?php echo $transinvoice->invoice->id; ?></td>
-                <td>
-                  <i class="fa fa-glass"></i><?php echo $transinvoice->invoice->client->name; ?>
-                  <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $transinvoice->invoice->id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
-                </td>
-                <td class="text-right"><?php echo number_format($transinvoice->invoice->total_price); ?> (&#8363;)</td>
-              </tr>
-              <?php } ?>
-              </tbody>
-            </table>
+            <h4><?php echo $this->l10n->_('Invoices'); ?></h4>
+            <div id="accordion">
+            <?php foreach ($transportInvoice as $transinvoice) { ?>
+              <h5>
+                <?php echo $transinvoice->invoice->id; ?> - <?php echo $transinvoice->invoice->client->name; ?> <span style="float:right;"><?php echo number_format($transinvoice->invoice->total_price); ?> (&#8363;)</span>
+              </h5>
+              <div style="padding: 1em 1em;">
+                <p>
+                  <?php echo $transinvoice->invoice->created; ?> <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $transinvoice->invoice->id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
+                </p>
+                <table class="table table-responsive">
+                  <?php foreach ($transinvoice->invoice->invoicedetail as $invoice_detail) { ?>
+                  <tr>
+                    <td><?php echo $invoice_detail->product->name; ?></td>
+                    <td class="text-right"><?php echo $invoice_detail->quantity; ?></td>
+                    <td class="text-right"><?php echo number_format($invoice_detail->price); ?></td>
+                  </tr>
+                  <?php } ?>
+                </table>
+              </div>
+            <?php } ?>
+            </div>
           </div>
-        </div>
 
-        <h4><?php echo $this->l10n->_('OtherCosts'); ?></h4>
-        <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-6">
+            <h4><?php echo $this->l10n->_('OtherCosts'); ?></h4>
             <table class="table table-bordered">
               <colgroup>
                 <col class="col-5">
@@ -168,15 +168,16 @@
               </colgroup>
               <tbody>
               <?php foreach ($transportOtherCost as $transothercost) { ?>
-              <tr>
-                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $transothercost->name; ?></th>
-                <td class="text-right"><?php echo number_format($transothercost->price); ?> (&#8363;)</td>
-              </tr>
+                <tr>
+                  <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $transothercost->name; ?></th>
+                  <td class="text-right"><?php echo number_format($transothercost->price); ?> (&#8363;)</td>
+                </tr>
               <?php } ?>
               </tbody>
             </table>
           </div>
         </div>
+
       </div>
       <div class="box-footer">
         <div class="action-area">
@@ -211,6 +212,13 @@
 
 <?php echo $this->partial('partials/javascripts'); ?>
 
+  <script>
+    $( function() {
+      $( "#accordion" ).accordion({
+        collapsible: true
+      });
+    } );
+  </script>
 
 </body>
 </html>

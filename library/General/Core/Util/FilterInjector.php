@@ -693,10 +693,17 @@ class FilterInjector extends Component
 
     $user_id = $identity['id'];
 
+    $firstDayUTS = mktime (0, 0, 0, date('m') - 3, 1, date('Y'));
+    $lastDayUTS = mktime (0, 0, 0, date('m') - 1, date('t'), date('Y'));
+
+    $firstDay = date('Y-m-d', $firstDayUTS);
+    $lastDay  = date('Y-m-d', $lastDayUTS);
+
     $sql  = " SELECT pi.product_id, CEIL(AVG(pi.purchase_price)) AS purchase_price ";
     $sql .= " FROM `product_ins` AS pi ";
     $sql .= " LEFT JOIN `products` AS p ON (p.id = pi.product_id) ";
     $sql .= " WHERE p.user_id = $user_id AND pi.purchase_price > 0 ";
+    $sql .= "    AND (pi.created BETWEEN '$firstDay' AND '$lastDay') ";
     $sql .= " GROUP BY pi.product_id ";
     $product_ins = new ProductIn();
     $data = new Resultset(

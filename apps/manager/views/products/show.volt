@@ -189,7 +189,7 @@
               labelString: 'Price'
             },
             ticks: {
-              beginAtZero: true
+              beginAtZero: false
             }
           }]
         }

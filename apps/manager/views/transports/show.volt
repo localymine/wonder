@@ -106,34 +106,34 @@
           </div>
         </div>
 
-        <h4>{{ l10n._('Invoices') }}</h4>
         <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-6">
-            <table class="table table-bordered">
-              <colgroup>
-                <col class="col-1">
-                <col class="col-8">
-                <col class="col-3">
-              </colgroup>
-              <tbody>
-              {% for transinvoice in transportInvoice %}
-              <tr>
-                <td>{{ transinvoice.invoice.id }}</td>
-                <td>
-                  <i class="fa fa-glass"></i>{{ transinvoice.invoice.client.name }}
-                  {{ link_to('manager/invoices/show/'~transinvoice.invoice.id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
-                </td>
-                <td class="text-right">{{ transinvoice.invoice.total_price|number_format }} (&#8363;)</td>
-              </tr>
-              {% endfor %}
-              </tbody>
-            </table>
+            <h4>{{ l10n._('Invoices') }}</h4>
+            <div id="accordion">
+            {% for transinvoice in transportInvoice %}
+              <h5>
+                {{ transinvoice.invoice.id }} - {{ transinvoice.invoice.client.name }} <span style="float:right;">{{ transinvoice.invoice.total_price|number_format }} (&#8363;)</span>
+              </h5>
+              <div style="padding: 1em 1em;">
+                <p>
+                  {{ transinvoice.invoice.created }} {{ link_to('manager/invoices/show/'~transinvoice.invoice.id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
+                </p>
+                <table class="table table-responsive">
+                  {% for invoice_detail in transinvoice.invoice.invoicedetail %}
+                  <tr>
+                    <td>{{ invoice_detail.product.name }}</td>
+                    <td class="text-right">{{ invoice_detail.quantity }}</td>
+                    <td class="text-right">{{ invoice_detail.price|number_format }}</td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            {% endfor %}
+            </div>
           </div>
-        </div>
 
-        <h4>{{ l10n._('OtherCosts') }}</h4>
-        <div class="row row-gutter-20">
           <div class="col-xs-12 col-sm-6">
+            <h4>{{ l10n._('OtherCosts') }}</h4>
             <table class="table table-bordered">
               <colgroup>
                 <col class="col-5">
@@ -141,15 +141,16 @@
               </colgroup>
               <tbody>
               {% for transothercost in transportOtherCost %}
-              <tr>
-                <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ transothercost.name }}</th>
-                <td class="text-right">{{ transothercost.price|number_format }} (&#8363;)</td>
-              </tr>
+                <tr>
+                  <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ transothercost.name }}</th>
+                  <td class="text-right">{{ transothercost.price|number_format }} (&#8363;)</td>
+                </tr>
               {% endfor %}
               </tbody>
             </table>
           </div>
         </div>
+
       </div>
       <div class="box-footer">
         <div class="action-area">
@@ -175,4 +176,11 @@
 {% endblock %}
 
 {% block pagescript %}
+  <script>
+    $( function() {
+      $( "#accordion" ).accordion({
+        collapsible: true
+      });
+    } );
+  </script>
 {% endblock %}

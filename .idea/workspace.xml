@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cedb7685-348b-43c8-beaa-b3893af76067" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/models/Client.php" afterPath="$PROJECT_DIR$/apps/manager/models/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/models/ProductPrice.php" afterPath="$PROJECT_DIR$/apps/manager/models/ProductPrice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/clients/edit.volt" afterPath="$PROJECT_DIR$/apps/manager/views/clients/edit.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/clients/new.volt" afterPath="$PROJECT_DIR$/apps/manager/views/clients/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/clients/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/clients/show.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/products/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/products/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_edit.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_edit.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_new.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_new.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_show.volt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" afterPath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_show.volt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,16 +23,6 @@
           <provider selected="true" editor-type-id="LogFileEditorProvider">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -174,9 +158,7 @@
         <option value="$PROJECT_DIR$/apps/manager/views/invoices/show.volt" />
         <option value="$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php" />
         <option value="$PROJECT_DIR$/apps/manager/views/main/dashboard.volt" />
-        <option value="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
         <option value="$PROJECT_DIR$/apps/manager/views/invoices/index.volt" />
-        <option value="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
         <option value="$PROJECT_DIR$/library/General/Core/Util/Enums.php" />
         <option value="$PROJECT_DIR$/apps/manager/views/partials/paginator/transport.volt" />
         <option value="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" />
@@ -185,11 +167,13 @@
         <option value="$PROJECT_DIR$/apps/manager/views/clients/edit.volt" />
         <option value="$PROJECT_DIR$/apps/manager/models/Client.php" />
         <option value="$PROJECT_DIR$/apps/manager/views/clients/show.volt" />
-        <option value="$PROJECT_DIR$/var/log/exeption.log" />
-        <option value="$PROJECT_DIR$/apps/manager/views/products/show.volt" />
         <option value="$PROJECT_DIR$/apps/manager/models/ProductPrice.php" />
         <option value="$PROJECT_DIR$/config/config.php" />
         <option value="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" />
+        <option value="$PROJECT_DIR$/apps/manager/views/products/show.volt" />
+        <option value="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
+        <option value="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
+        <option value="$PROJECT_DIR$/var/log/exeption.log" />
       </list>
     </option>
   </component>
@@ -240,19 +224,6 @@
               <item name="convert" type="b2602c69:ProjectViewProjectNode" />
               <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="converter" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="converter" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="libraries" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -261,20 +232,6 @@
               <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="libraries" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="convert" type="b2602c69:ProjectViewProjectNode" />
@@ -296,205 +253,7 @@
               <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="brands" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="categories" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="clients" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="inventory" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="invoices" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="main" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modal" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="paginator" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="products" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="transports" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ja_JP.UTF-8" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ja_JP.UTF-8" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="LC_MESSAGES" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vi_VN.UTF-8" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vi_VN.UTF-8" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="LC_MESSAGES" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="General" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="General" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Core" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="General" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Core" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="General" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Core" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Paginator" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="General" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Core" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Util" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="datatable" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="convert" type="b2602c69:ProjectViewProjectNode" />
-              <item name="convert" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="datatable" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="datatables.js" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="convert" type="b2602c69:ProjectViewProjectNode" />
@@ -655,12 +414,12 @@
       <workItem from="1555773146876" duration="10975000" />
       <workItem from="1555895147568" duration="12993000" />
       <workItem from="1555948142979" duration="4103000" />
-      <workItem from="1555982452717" duration="4309000" />
+      <workItem from="1555982452717" duration="8522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="817462000" />
+    <option name="totallyTimeSpent" value="821675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -698,13 +457,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/categories/index.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/views/partials/paginator/categories.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -805,14 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/models/Invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="157" column="32" lean-forward="false" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/models/Transport.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -871,22 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="695" column="64" lean-forward="false" selection-start-line="695" selection-start-column="64" selection-end-line="695" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="257" column="40" lean-forward="false" selection-start-line="257" selection-start-column="21" selection-end-line="257" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/views/invoices/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -921,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="42" column="137" lean-forward="false" selection-start-line="42" selection-start-column="137" selection-end-line="42" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/show.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="164" column="18" lean-forward="false" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="112" />
         </state>
       </provider>
     </entry>
@@ -1026,14 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/products/show.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="153" column="21" lean-forward="false" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/models/ProductIn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1050,14 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/models/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -1070,6 +775,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="122" column="32" lean-forward="false" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/views/products/show.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="191" column="32" lean-forward="false" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="705" column="41" lean-forward="false" selection-start-line="705" selection-start-column="41" selection-end-line="705" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="258" column="35" lean-forward="false" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="631" column="30" lean-forward="false" selection-start-line="631" selection-start-column="30" selection-end-line="631" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/models/Invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="150" column="31" lean-forward="false" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/show.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="147" column="26" lean-forward="true" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#h5#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportInvoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="115" column="25" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="25" />
           <folding />
         </state>
       </provider>
