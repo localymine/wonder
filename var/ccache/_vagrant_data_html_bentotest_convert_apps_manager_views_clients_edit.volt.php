@@ -96,9 +96,17 @@
         </div>
 
         <div class="form-group">
+          <label for="postal" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Postal'); ?></label>
+          <div class="col-xs-12 col-sm-2">
+            <?php echo $this->tag->textField(array('postal', 'class' => 'form-control', 'value' => $client->postal)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="address" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Address'); ?></label>
           <div class="col-xs-12 col-sm-8">
-            <?php echo $this->tag->textField(array('address', 'class' => 'form-control')); ?>
+            <?php echo $this->tag->textField(array('address', 'class' => 'form-control', 'value' => $client->address)); ?>
 
           </div>
         </div>

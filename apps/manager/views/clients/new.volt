@@ -69,6 +69,14 @@
         </div>
 
         <div class="form-group">
+          <label for="postal" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Postal') }}</label>
+          <div class="col-xs-12 col-sm-2">
+            {{ text_field('postal','class':'form-control') }}
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="address" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Address') }}</label>
           <div class="col-xs-12 col-sm-8">
             {{ text_field('address','class':'form-control') }}

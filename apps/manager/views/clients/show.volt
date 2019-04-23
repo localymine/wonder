@@ -39,6 +39,10 @@
             <td>{{ client.name|e }}</td>
             </tr>
             <tr>
+              <th>{{ l10n._('Country') }}</th>
+              <td>{{ client.country.name|e }}</td>
+            </tr>
+            <tr>
               <th>{{ l10n._('Type') }}</th>
               <td>{{ type[client.type]|e }}</td>
             </tr>
@@ -49,6 +53,10 @@
             <tr>
               <th>{{ l10n._('Phone') }}</th>
               <td>{{ client.phone|e }}</td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Postal') }}</th>
+              <td>{{ client.postal|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Address') }}</th>

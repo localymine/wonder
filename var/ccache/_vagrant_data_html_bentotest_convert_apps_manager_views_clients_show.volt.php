@@ -66,6 +66,10 @@
             <td><?php echo $this->escaper->escapeHtml($client->name); ?></td>
             </tr>
             <tr>
+              <th><?php echo $this->l10n->_('Country'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($client->country->name); ?></td>
+            </tr>
+            <tr>
               <th><?php echo $this->l10n->_('Type'); ?></th>
               <td><?php echo $this->escaper->escapeHtml($type[$client->type]); ?></td>
             </tr>
@@ -76,6 +80,10 @@
             <tr>
               <th><?php echo $this->l10n->_('Phone'); ?></th>
               <td><?php echo $this->escaper->escapeHtml($client->phone); ?></td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Postal'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($client->postal); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Address'); ?></th>

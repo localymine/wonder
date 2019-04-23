@@ -66,6 +66,12 @@ class Client extends ModelBase implements ModelInterface
    */
   public $lastname;
   /**
+   * postal of client.
+   * @var string
+   * @Column(type="string")
+   */
+  public $postal;
+  /**
    * address of client.
    * @var string
    * @Column(type="string")
@@ -128,6 +134,7 @@ class Client extends ModelBase implements ModelInterface
       'name'        => 'name',
       'firstname'   => 'firstname',
       'lastname'    => 'lastname',
+      'postal'      => 'postal',
       'address'     => 'address',
       'email'       => 'email',
       'phone'       => 'phone',

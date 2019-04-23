@@ -139,6 +139,7 @@
     $(function () {
       //
       var price_dt = [{{ price_dt }}];
+      var price_wholesale_dt = [{{ price_wholesale_dt }}];
       var dataPrice = {
         labels: [
           {{ price_lb }}
@@ -147,11 +148,20 @@
           label: 'Sale Price',
           data: price_dt,
           borderWidth: 2,
-          backgroundColor: 'rgba(245,127,23,1)',
-          borderColor: 'rgba(245,127,23,1)',
+          backgroundColor: 'rgba(255,23,68,1)',
+          borderColor: 'rgba(255,23,68,1)',
           pointRadius: 5,
           fill: false
-        }]
+        },{
+          label: 'Wholesale Price',
+          data: price_wholesale_dt,
+          borderWidth: 2,
+          backgroundColor: 'rgba(85,139,47,1)',
+          borderColor: 'rgba(85,139,47,1)',
+          pointRadius: 5,
+          fill: false
+        }
+        ]
       };
       var options = {
         responsive: true,

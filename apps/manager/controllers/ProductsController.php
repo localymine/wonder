@@ -177,11 +177,13 @@ class ProductsController  extends ControllerBase
       ];
       $product = Product::findFirst($this->qi->inject('Product', $cond));
       $oldPrice = $product->price;
+      $oldWholeSalePrice = $product->wholesale_price;
       $oldDate  = $product->updated;
-      if ($post['price'] != $oldPrice) {
+      if ($post['price'] != $oldPrice || $post['wholesale_price'] != $oldWholeSalePrice) {
         $pp = new ProductPrice();
         $pp->product_id = $product->id;
         $pp->price   = $oldPrice;
+        $pp->wholesale_price = $oldWholeSalePrice;
         $pp->created = $oldDate;
         $pp->create();
       }
@@ -292,14 +294,18 @@ class ProductsController  extends ControllerBase
 
     $productPrice = $product->getRelated('productprice');
     $price_dt = [];
+    $price_wholesale_dt = [];
     $price_lb = [];
     foreach ($productPrice as $item) {
       array_push($price_dt, $item->price);
+      array_push($price_wholesale_dt, $item->wholesale_price);
       array_push($price_lb, substr($item->created,0,10));
     }
     array_push($price_dt, $product->price);
+    array_push($price_wholesale_dt, $product->wholesale_price);
     array_push($price_lb, date('Y-m-d'));
     $this->view->setVar('price_dt', implode(',', $price_dt));
+    $this->view->setVar('price_wholesale_dt', implode(',', $price_wholesale_dt));
     $this->view->setVar('price_lb', '"'.implode('","', $price_lb).'"');
 
     /* set parameters to display page. */
