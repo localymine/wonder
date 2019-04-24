@@ -30,19 +30,10 @@
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
           <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
           <td class="text-center deliver <?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?>">
-            <?php if ($invoice->deliver == 0 || $invoice->deliver == 1) { ?>
-              
               <span class="btn-delivery hand" data-id="<?php echo $invoice->id; ?>"><?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?></span>
-            <?php } else { ?>
-              <?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?>
-            <?php } ?>
           </td>
           <td class="text-center status <?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?>">
-            <?php if ($invoice->status == 0) { ?>
-              <button class="btn btn-sm btn-danger btn-status" data-id="<?php echo $invoice->id; ?>">UnPaid</button>
-            <?php } else { ?>
-              <?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?>
-            <?php } ?>
+            <span class="btn-status hand" data-id="<?php echo $invoice->id; ?>"><?php echo $this->escaper->escapeHtml($status[$invoice->status]); ?></span>
           </td>
           <td class="text-right"><?php echo $invoice->created; ?></td>
           <td>

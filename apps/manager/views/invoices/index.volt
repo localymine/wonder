@@ -92,8 +92,9 @@
         });
       });
       //
-      $('.btn-delivery').on('click', function() {
-        var me = $(this).parent();
+      $('.btn-delivery').live('click', function() {
+        var me = $(this);
+        var td = me.parent();
         var post_data = {
           'id' : $(this).data('id')
         };
@@ -106,14 +107,27 @@
           cache:false
         }).done(function(data) {
           if (data['success'] === 1) {
-            me.html('Finished');
-            me.removeClass('Shop Delivering').addClass('Finished');
+            switch (data['deliver']) {
+              case 0:
+                me.html('Shop');
+                td.removeClass('Delivering Finished').addClass('Shop');
+                break;
+              case 1:
+                me.html('Delivering');
+                td.removeClass('Shop Finished').addClass('Delivering');
+                break;
+              case 2:
+                me.html('Finished');
+                td.removeClass('Shop Delivering').addClass('Finished');
+                break;
+            }
           }
         });
       });
       //
-      $('.btn-status').on('click', function() {
-        var me = $(this).parent();
+      $('.btn-status').live('click', function() {
+        var me = $(this);
+        var td = me.parent();
         var post_data = {
           'id' : $(this).data('id')
         };
@@ -126,8 +140,16 @@
           cache:false
         }).done(function(data) {
           if (data['success'] === 1) {
-            me.html('Paid');
-            me.removeClass('Shop Delivering').addClass('Finished');
+            switch (data['status']) {
+              case 0:
+                me.html('Unpaid');
+                td.removeClass('Paid').addClass('Unpaid');
+                break;
+              case 1:
+                me.html('Paid');
+                td.removeClass('Unpaid').addClass('Paid');
+                break;
+            }
           }
         });
       });

@@ -546,13 +546,22 @@ class InvoicesController extends ControllerBase
         $data = $this->request->getPost();
 
         $invoice = Invoice::findFirst($data['id']);
-        if ($invoice) {
-          $invoice->deliver = 2;
-          $invoice->update();
-
-          $response['success'] = 1;
+        switch ($invoice->deliver) {
+          case 0:
+            $invoice->deliver = 1;
+            $response['deliver'] = 1;
+            break;
+          case 1:
+            $invoice->deliver = 2;
+            $response['deliver'] = 2;
+            break;
+          case 2:
+            $invoice->deliver = 0;
+            $response['deliver'] = 0;
+            break;
         }
-
+        $invoice->update();
+        $response['success'] = 1;
       }
     }
     $this->response->resetHeaders();
@@ -570,13 +579,18 @@ class InvoicesController extends ControllerBase
         $data = $this->request->getPost();
 
         $invoice = Invoice::findFirst($data['id']);
-        if ($invoice) {
-          $invoice->status = 1;
-          $invoice->update();
-
-          $response['success'] = 1;
+        switch ($invoice->status) {
+          case 0:
+            $invoice->status = 1;
+            $response['status'] = 1;
+            break;
+          case 1:
+            $invoice->status = 0;
+            $response['status'] = 0;
+            break;
         }
-
+        $invoice->update();
+        $response['success'] = 1;
       }
     }
     $this->response->resetHeaders();
