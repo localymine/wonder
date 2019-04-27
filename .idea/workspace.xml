@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cedb7685-348b-43c8-beaa-b3893af76067" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/manager/views/partials/filter/invoices.volt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/readmore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/readmore.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/uploads/user/0000001/product/0000045/white_conc_body_gommage.jpg" afterPath="$PROJECT_DIR$/public/uploads/user/0000001/product/0000045/white_conc_body_gommage.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/uploads/user/0000001/product/0000045/white_conc_body_gommage.jpg" afterPath="$PROJECT_DIR$/var/uploads/user/0000001/product/0000045/white_conc_body_gommage.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/ControllerBase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/clients/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/clients/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/invoices/index.volt" afterPath="$PROJECT_DIR$/apps/manager/views/invoices/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/javascripts.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/javascripts.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/paginator/inventory.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/paginator/inventory.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/paginator/invoices.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/paginator/invoices.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/paginator/products.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/paginator/products.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/paginator/transport.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/paginator/transport.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/products/edit.volt" afterPath="$PROJECT_DIR$/apps/manager/views/products/edit.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/products/new.volt" afterPath="$PROJECT_DIR$/apps/manager/views/products/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/products/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/products/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" afterPath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/General/Core/Util/Utility.php" afterPath="$PROJECT_DIR$/library/General/Core/Util/Utility.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_clients_show.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_invoices_index.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_invoices_index.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_javascripts.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_javascripts.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_inventory.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_inventory.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_invoices.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_invoices.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_products.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_products.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_transport.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_paginator_transport.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_edit.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_edit.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_new.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_new.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_products_show.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" />
-    </list>
+    <list default="true" id="cedb7685-348b-43c8-beaa-b3893af76067" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -536,12 +500,12 @@
       <workItem from="1556171933724" duration="36000" />
       <workItem from="1556172424522" duration="1390000" />
       <workItem from="1556266184070" duration="1896000" />
-      <workItem from="1556344165346" duration="7002000" />
+      <workItem from="1556344165346" duration="7134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="842508000" />
+    <option name="totallyTimeSpent" value="842640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
