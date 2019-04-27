@@ -118,7 +118,9 @@
               </tr>
               <tr>
                 <th><?php echo $this->l10n->_('Remarks'); ?></th>
-                <td><?php echo nl2br($product->remarks); ?></td>
+                <td>
+                  <div class="remarks"><?php echo $this->utility->make_links_from_http(nl2br($product->remarks)); ?></div>
+                </td>
               </tr>
               <tr>
                 <th><?php echo $this->l10n->_('Disabled'); ?></th>
@@ -173,6 +175,15 @@
 
   <script>
     $(function () {
+      $('.remarks').readmore({
+        speed: 75,
+        lessLink: '<a href="#">Read less</a>',
+        afterToggle: function(trigger, element, expanded) {
+          if(! expanded) { // The "Close" link was clicked
+            $('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+          }
+        }
+    });
       //
       var price_dt = [<?php echo $price_dt; ?>];
       var price_wholesale_dt = [<?php echo $price_wholesale_dt; ?>];

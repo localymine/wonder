@@ -40,8 +40,6 @@
 
             <button class="btn btn-xs btn-yahoo btn-print" data-id="<?php echo $invoice->id; ?>" data-target="#bill-dialog" data-toggle="modal"><i class="fa fa-image"></i></button>
 
-              
-
               <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $invoice->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
 
               <?php echo $this->tag->linkTo(array('manager/invoices/edit/' . $invoice->id, '<i class="fa fa-pencil"></i>', 'class' => 'btn btn-xs btn-success', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Edit'))); ?>

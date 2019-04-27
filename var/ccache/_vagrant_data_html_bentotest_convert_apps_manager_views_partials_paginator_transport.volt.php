@@ -31,7 +31,7 @@
 
           <tr>
           <td title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->id); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($transport->name); ?></td>
+          <td><div title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->name); ?></div></td>
           <td class="text-center"><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_date, 0, 10)); ?></td>
           <td><?php echo $this->escaper->escapeHtml($transport->client->name); ?></td>
           <td class="text-right"><?php echo number_format($transport->total); ?></td>

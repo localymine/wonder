@@ -91,7 +91,9 @@
               </tr>
               <tr>
                 <th>{{ l10n._('Remarks') }}</th>
-                <td>{{ product.remarks|nl2br }}</td>
+                <td>
+                  <div class="remarks">{{ utility.make_links_from_http(product.remarks|nl2br) }}</div>
+                </td>
               </tr>
               <tr>
                 <th>{{ l10n._('Disabled') }}</th>
@@ -137,6 +139,15 @@
 {% block pagescript %}
   <script>
     $(function () {
+      $('.remarks').readmore({
+        speed: 75,
+        lessLink: '<a href="#">Read less</a>',
+        afterToggle: function(trigger, element, expanded) {
+          if(! expanded) { // The "Close" link was clicked
+            $('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+          }
+        }
+    });
       //
       var price_dt = [{{ price_dt }}];
       var price_wholesale_dt = [{{ price_wholesale_dt }}];

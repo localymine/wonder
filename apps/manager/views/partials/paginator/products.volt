@@ -2,8 +2,8 @@
 
           <table id="table-products" class="table table-bordered table-condenced table-hover">
           <colgroup>
-          <col>
-          <col>
+          <col style="width:1%;">
+          <col style="width:32px;">
           <col>
           <col>
           <col>
@@ -32,12 +32,15 @@
           <tr id="p{{ product.id }}">
           <td title="{{ product.remarks }}">{{ product.id|e }}</td>
           {#<td class="" style="width:32px;">{{ image('manager/products/image/'~product.id,'class':'img-responsive') }}</td>#}
-          <td class="" style="width:32px;">
+          <td>
             <a href="javascript:void(0)" class="pop">
               {{ utility.image(product.user_id, product.id, product.image) }}
             </a>
           </td>
-          <td class="width-m">{{ product.name|e }}<span style="display: none;">{{ product.remarks }}</span></td>
+          <td>
+            <div class="width-m" title="{{ product.name|e }}">{{ product.name|e }}</div>
+            <span style="display: none;">{{ product.remarks }}</span>
+          </td>
           <td class="text-right price">{{ product.price|number_format }}</td>
           <td class="text-right price">{{ product.wholesale_price|number_format }}</td>
           <td class="text-right quantity">{{ product.quantity }}</td>

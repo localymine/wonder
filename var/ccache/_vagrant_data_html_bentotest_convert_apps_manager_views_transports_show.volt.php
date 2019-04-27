@@ -62,7 +62,7 @@
             <td><?php echo $this->escaper->escapeHtml($transport->id); ?></td>
             </tr>
             <tr>
-              <th><?php echo $this->l10n->_('Client'); ?></th>
+              <th><?php echo $this->l10n->_('Transporter'); ?></th>
               <td>
                 <?php echo $this->escaper->escapeHtml($transport->client->name); ?>
                 <?php echo $this->tag->linkTo(array('manager/clients/show/' . $transport->client_id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
@@ -141,7 +141,7 @@
               <h5>
                 <?php echo $transinvoice->invoice->id; ?> - <?php echo $transinvoice->invoice->client->name; ?> <span style="float:right;"><?php echo number_format($transinvoice->invoice->total_price); ?> (&#8363;)</span>
               </h5>
-              <div style="padding: 1em 1em;">
+              <div style="padding: 1em 1em;height:auto !important;">
                 <p>
                   <?php echo $transinvoice->invoice->created; ?> <?php echo $this->tag->linkTo(array('manager/invoices/show/' . $transinvoice->invoice->id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class' => 'client')); ?>
                 </p>
@@ -164,13 +164,15 @@
             <table class="table table-bordered">
               <colgroup>
                 <col class="col-5">
-                <col class="col-7">
+                <col class="col-3">
+                <col class="col-4">
               </colgroup>
               <tbody>
               <?php foreach ($transportOtherCost as $transothercost) { ?>
                 <tr>
                   <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i><?php echo $transothercost->name; ?></th>
                   <td class="text-right"><?php echo number_format($transothercost->price); ?> (&#8363;)</td>
+                  <td><?php echo $transothercost->remarks; ?></td>
                 </tr>
               <?php } ?>
               </tbody>
@@ -214,8 +216,9 @@
 
   <script>
     $( function() {
-      $( "#accordion" ).accordion({
-        collapsible: true
+      $('#accordion').accordion({
+        collapsible: true,
+        heightStyle: 'content'
       });
     } );
   </script>

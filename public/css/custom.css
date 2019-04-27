@@ -435,7 +435,8 @@ input[name*=invoice], .modal-body ul li .icheckbox_minimal-blue {
 .modal-body ul li:hover{
   background: rgba(135, 206, 235, 0.3);
 }
-th.width-m, td.width-m, col.width-m{
+th.width-m, td.width-m, col.width-m,
+th .width-m, td .width-m, col .width-m{
   width: 150px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -471,7 +472,7 @@ table thead tr th {
 .Unpaid {
   color: red;
   font-family: 'Asap', sans-serif;
-  font-weight:500;
+  font-weight:700;
   font-style:italic;
   /*      text-decoration:blink; */
   animation: blink 2s ease infinite;
@@ -499,4 +500,8 @@ table thead tr th {
 }
 .table-invoices tbody td.Shop button {
   background: transparent;
+}
+
+table.dataTable tbody th, table.dataTable tbody td{
+  padding: 0 3px !important;
 }

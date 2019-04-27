@@ -31,7 +31,7 @@
 
           <tr>
           <td title="{{ transport.remarks }}">{{ transport.id|e }}</td>
-          <td>{{ transport.name|e }}</td>
+          <td><div title="{{ transport.remarks }}">{{ transport.name|e }}</div></td>
           <td class="text-center">{{ utility.substr(transport.flight_date,0,10)|e }}</td>
           <td>{{ transport.client.name|e }}</td>
           <td class="text-right">{{ transport.total|number_format }}</td>

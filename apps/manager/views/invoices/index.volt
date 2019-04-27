@@ -23,7 +23,7 @@
 
         {{ link_to('manager/invoices/new/',l10n._('<i class="fa fa-file"></i><span>New</span>'),'class':'btn btn-primary btn-sm xcenter') }}
 
-        <button class="btn btn-default btn-sm xoutput" data-target="#invoices-export-dialog" data-toggle="modal">
+        <button class="btn btn-default btn-sm xoutput btn-export">
           <i class="fa fa-file-excel-o"></i> <span>Export</span>
         </button>
 
@@ -32,6 +32,7 @@
 
         {{ partial('partials/paginator/invoices') }}
         {{ partial('partials/modal/bill') }}
+        {{ partial('partials/filter/invoices') }}
 
       </div>
     </div>

@@ -51,6 +51,7 @@
           </td>
           <td>
             <button class="btn btn-xs btn-foursquare btn-chart" title="{{ l10n._('Price in Stock') }}" data-id="{{ product.id }}" data-product="{{ product.name }}" data-target="#chart-product-dialog" data-toggle="modal" data-placement="top"><i class="fa fa-line-chart"></i></button>
+            {{ link_to('manager/products/export/'~product.id,'<i class="fa fa-file-excel-o"></i>','class':'btn btn-xs btn-yahoo','data-toggle':'tooltip','data-placement':'top','title':l10n._('Export')) }}
             <button class="btn btn-xs btn-yahoo btn-add" title="{{ l10n._('Add') }}" data-id="{{ product.id }}" data-product="{{ product.name }}" data-price="{{ product.price }}" data-target="#add-stock-dialog" data-toggle="modal" data-placement="top"><i class="fa fa-plus-circle"></i></button>
             <button class="btn btn-xs btn-flickr btn-sub" title="{{ l10n._('Subtract') }}" data-id="{{ product.id }}" data-product="{{ product.name }}" data-price="{{ product.price }}" data-target="#sub-stock-dialog" data-toggle="modal" data-placement="top"><i class="fa fa-minus-circle"></i></button>
             <button class="btn btn-xs btn-success btn-move" title="{{ l10n._('Move') }}" data-id="{{ product.id }}" data-product="{{ product.name }}" data-price="{{ product.price }}" data-target="#move-stock-dialog" data-toggle="modal" data-placement="top"><i class="fa fa-arrows-h"></i></button>

@@ -17,3 +17,4 @@
 <?php echo $this->tag->javascriptInclude('js/Chart.min.js'); ?>
 <?php echo $this->tag->javascriptInclude('js/palette.js'); ?>
 <?php echo $this->tag->javascriptInclude('js/html2canvas.js'); ?>
+<?php echo $this->tag->javascriptInclude('js/readmore.min.js'); ?>

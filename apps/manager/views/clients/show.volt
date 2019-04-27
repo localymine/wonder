@@ -35,7 +35,7 @@
             <td>{{ client.id|e }}</td>
             </tr>
             <tr>
-            <th>{{ l10n._('Client Name') }}</th>
+            <th>{{ type[client.type]|e }} {{ l10n._('Name') }}</th>
             <td>{{ client.name|e }}</td>
             </tr>
             <tr>

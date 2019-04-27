@@ -85,6 +85,16 @@
         </div>
 
         <div class="form-group">
+          <label for="purchase_price" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Purechase Price (avg)'); ?></label>
+          <div class="col-xs-12 col-sm-4">
+            <div class="input-group">
+              <?php echo $this->tag->textField(array('purchase_price', 'class' => 'form-control', 'value' => $product->purchase_price)); ?>
+              <span class="input-group-addon">¥</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="unit" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Unit'); ?></label>
           <div class="col-xs-12 col-sm-2">
             <?php echo $this->tag->textField(array('unit', 'class' => 'form-control', 'value' => $product->unit)); ?>
@@ -188,7 +198,6 @@
 
 <?php echo $this->partial('partials/javascripts'); ?>
 
-  <?php echo $this->tag->javascriptInclude('js/product.js'); ?>
   <script>
     $(function(){
       $('input[type=checkbox]').iCheck({

@@ -35,7 +35,7 @@
             <td>{{ transport.id|e }}</td>
             </tr>
             <tr>
-              <th>{{ l10n._('Client') }}</th>
+              <th>{{ l10n._('Transporter') }}</th>
               <td>
                 {{ transport.client.name|e }}
                 {{ link_to('manager/clients/show/'~transport.client_id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
@@ -114,7 +114,7 @@
               <h5>
                 {{ transinvoice.invoice.id }} - {{ transinvoice.invoice.client.name }} <span style="float:right;">{{ transinvoice.invoice.total_price|number_format }} (&#8363;)</span>
               </h5>
-              <div style="padding: 1em 1em;">
+              <div style="padding: 1em 1em;height:auto !important;">
                 <p>
                   {{ transinvoice.invoice.created }} {{ link_to('manager/invoices/show/'~transinvoice.invoice.id, '<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>', 'class':'client') }}
                 </p>
@@ -137,13 +137,15 @@
             <table class="table table-bordered">
               <colgroup>
                 <col class="col-5">
-                <col class="col-7">
+                <col class="col-3">
+                <col class="col-4">
               </colgroup>
               <tbody>
               {% for transothercost in transportOtherCost %}
                 <tr>
                   <th class="font-light" style="padding-left:15px"><i class="fa fa-dot-circle-o"></i>{{ transothercost.name }}</th>
                   <td class="text-right">{{ transothercost.price|number_format }} (&#8363;)</td>
+                  <td>{{ transothercost.remarks }}</td>
                 </tr>
               {% endfor %}
               </tbody>
@@ -178,8 +180,9 @@
 {% block pagescript %}
   <script>
     $( function() {
-      $( "#accordion" ).accordion({
-        collapsible: true
+      $('#accordion').accordion({
+        collapsible: true,
+        heightStyle: 'content'
       });
     } );
   </script>

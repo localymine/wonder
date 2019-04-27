@@ -583,7 +583,9 @@ class TransportsController extends ControllerBase
         ->setCellValue('H1', 'TTien(mua)')
         ->setCellValue('I1', Enums::RATE)
         ->setCellValue('J1','=SUM(J2:J200)')
-        ->setCellValue('M1', $transport->total);
+        ->setCellValue('K1', $transport->total_others)
+        ->setCellValue('M1', $transport->total)
+        ->setCellValue('O1', '=J1-K1');
 
       $fname = 'Order-List-More-' . $transport->name . '-' . time() . '.xlsx';
 
@@ -649,13 +651,13 @@ class TransportsController extends ControllerBase
         ]);
       $objPHPExcel->getActiveSheet()->getStyle('J1:J1')->getFont()
         ->setBold(true);
-      $objPHPExcel->getActiveSheet()->getStyle('J1:J1')->getNumberFormat()
+      $objPHPExcel->getActiveSheet()->getStyle('J1:K1')->getNumberFormat()
         ->setFormatCode('#,###');
       $objPHPExcel->getActiveSheet()->getStyle('D2:J200')->getNumberFormat()
         ->setFormatCode('#,###');
       $objPHPExcel->getActiveSheet()->getStyle('M1:N1')->getFont()
         ->setBold(true);
-      $objPHPExcel->getActiveSheet()->getStyle('M1:N200')->getNumberFormat()
+      $objPHPExcel->getActiveSheet()->getStyle('M1:O200')->getNumberFormat()
         ->setFormatCode('#,###');
 
       foreach (range('A', 'N') as $columnId) {

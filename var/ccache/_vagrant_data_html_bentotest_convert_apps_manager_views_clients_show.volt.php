@@ -62,7 +62,7 @@
             <td><?php echo $this->escaper->escapeHtml($client->id); ?></td>
             </tr>
             <tr>
-            <th><?php echo $this->l10n->_('Client Name'); ?></th>
+            <th><?php echo $this->escaper->escapeHtml($type[$client->type]); ?> <?php echo $this->l10n->_('Name'); ?></th>
             <td><?php echo $this->escaper->escapeHtml($client->name); ?></td>
             </tr>
             <tr>

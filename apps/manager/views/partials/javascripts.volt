@@ -17,3 +17,4 @@
 {{ javascript_include('js/Chart.min.js') }}
 {{ javascript_include('js/palette.js') }}
 {{ javascript_include('js/html2canvas.js') }}
+{{ javascript_include('js/readmore.min.js') }}

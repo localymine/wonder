@@ -2,8 +2,8 @@
 
           <table id="table-products" class="table table-bordered table-condenced table-hover">
           <colgroup>
-          <col>
-          <col>
+          <col style="width:1%;">
+          <col style="width:32px;">
           <col>
           <col>
           <col>
@@ -32,12 +32,15 @@
           <tr id="p<?php echo $product->id; ?>">
           <td title="<?php echo $product->remarks; ?>"><?php echo $this->escaper->escapeHtml($product->id); ?></td>
           
-          <td class="" style="width:32px;">
+          <td>
             <a href="javascript:void(0)" class="pop">
               <?php echo $this->utility->image($product->user_id, $product->id, $product->image); ?>
             </a>
           </td>
-          <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?><span style="display: none;"><?php echo $product->remarks; ?></span></td>
+          <td>
+            <div class="width-m" title="<?php echo $this->escaper->escapeHtml($product->name); ?>"><?php echo $this->escaper->escapeHtml($product->name); ?></div>
+            <span style="display: none;"><?php echo $product->remarks; ?></span>
+          </td>
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
           <td class="text-right price"><?php echo number_format($product->wholesale_price); ?></td>
           <td class="text-right quantity"><?php echo $product->quantity; ?></td>

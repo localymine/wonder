@@ -719,4 +719,51 @@ class FilterInjector extends Component
       }
     }
   }
+
+
+  public static function getClientWasBoughtProduct(DependencyInjector $di, $product_id) {
+    /* if $_SESSION['auth'] not found, returns false.
+             * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    /* create fully qualified class name. */
+    $Model = 'General\Core\Manager\Models\Product';
+    /* create Model instance. */
+    /** @var \General\Core\Manager\Models\ModelInterface $instance */
+    $instance = new $Model;
+    /** @var \Phalcon\Mvc\Model\Metadata\Memory $metadata */
+    $metadata = $di->getShared('modelsMetadata');
+    $dataType = $metadata->getDataTypes($instance);
+
+    /* initialize query condition. */
+    $criteria = new Criteria();
+    $criteria->setModelName($Model);
+
+    $criteria->leftJoin(InvoiceDetail::class, '['.$Model.'].id=[IVDT].product_id', 'IVDT');
+    $criteria->leftJoin(Invoice::class, '[IV].id=[IVDT].invoice_id', 'IV');
+    $criteria->leftJoin(Client::class, '[CL].id=[IV].client_id ', 'CL');
+
+    $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
+    $criteria->andWhere('['.$Model.'].id=:id:', ['id' => $product_id]);
+
+    $criteria->columns(
+      [
+        '[IV].id',
+        '[CL].name AS client_name',
+        '['.$Model.'].name AS product_name',
+        '[IVDT].quantity AS quantity',
+        '[IVDT].price AS price',
+        '[IVDT].created AS created',
+      ]
+    );
+
+    $criteria->orderBy('[IVDT].created DESC');
+
+    return $criteria->execute();
+  }
 }

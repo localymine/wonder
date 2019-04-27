@@ -67,4 +67,35 @@ class Utility extends Component
     }
   }
 
+  public static function make_links_from_http($content)
+  {
+    // The link list
+    $links = array();
+
+    // Links out of text links
+    preg_match_all('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', $content, $matches);
+    foreach ($matches[0] as $key=>$link)
+    {
+      $links[$link] = $link;
+    }
+
+    // Get existing
+    preg_match_all('/<a\s[^>]*href=([\"\']??)([^\" >]*?)\\1[^>]*>(.*)<\/a>/siU', $content, $matches);
+    foreach ($matches[2] as $key=>$value)
+    {
+      if (isset($links[$value]))
+      {
+        unset($links[$value]);
+      }
+    }
+
+    // Replace in content
+    foreach ($links as $key=>$link)
+    {
+      $content = str_replace($link, '<a href="'.$link.'" target="_blank">'.$link.'</a>', $content);
+    }
+
+    return $content;
+  }
+
 }
