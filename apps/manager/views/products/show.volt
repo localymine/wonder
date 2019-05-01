@@ -90,6 +90,12 @@
                 </td>
               </tr>
               <tr>
+                <th>{{ l10n._('Description') }}</th>
+                <td>
+                  <div class="description">{{ utility.make_links_from_http(product.description|nl2br) }}</div>
+                </td>
+              </tr>
+              <tr>
                 <th>{{ l10n._('Remarks') }}</th>
                 <td>
                   <div class="remarks">{{ utility.make_links_from_http(product.remarks|nl2br) }}</div>
@@ -139,7 +145,7 @@
 {% block pagescript %}
   <script>
     $(function () {
-      $('.remarks').readmore({
+      $('.remarks , .description').readmore({
         speed: 75,
         lessLink: '<a href="#">Read less</a>',
         afterToggle: function(trigger, element, expanded) {

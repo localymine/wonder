@@ -105,6 +105,12 @@ class Product extends ModelBase implements ModelInterface
    */
   public $remarks;
   /**
+   * description
+   * @var string
+   * @Column(type="string", nullable=false)
+   */
+  public $description;
+  /**
    * flag indicating whether disabled or not.
    * @var integer
    * @Column(type="integer", nullable=false)
@@ -143,6 +149,7 @@ class Product extends ModelBase implements ModelInterface
       'image'       => 'image',
       'category_id' => 'category_id',
       'brand_id'    => 'brand_id',
+      'description' => 'description',
       'remarks'     => 'remarks',
       'disabled'    => 'disabled',
       'created'     => 'created',

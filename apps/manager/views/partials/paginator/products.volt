@@ -29,7 +29,7 @@
 {% if page.items is defined %}
 {% for product in page.items %}
 
-          <tr id="p{{ product.id }}">
+          <tr id="p{{ product.id }}" data-disabled="{{ product.disabled }}">
           <td title="{{ product.remarks }}">{{ product.id|e }}</td>
           {#<td class="" style="width:32px;">{{ image('manager/products/image/'~product.id,'class':'img-responsive') }}</td>#}
           <td>
@@ -39,7 +39,7 @@
           </td>
           <td>
             <div class="width-m" title="{{ product.name|e }}">{{ product.name|e }}</div>
-            <span style="display: none;">{{ product.remarks }}</span>
+            <span style="display: none;">{{ product.description }}</span>
           </td>
           <td class="text-right price">{{ product.price|number_format }}</td>
           <td class="text-right price">{{ product.wholesale_price|number_format }}</td>

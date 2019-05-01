@@ -29,7 +29,7 @@
 <?php if (isset($page->items)) { ?>
 <?php foreach ($page->items as $product) { ?>
 
-          <tr id="p<?php echo $product->id; ?>">
+          <tr id="p<?php echo $product->id; ?>" data-disabled="<?php echo $product->disabled; ?>">
           <td title="<?php echo $product->remarks; ?>"><?php echo $this->escaper->escapeHtml($product->id); ?></td>
           
           <td>
@@ -39,7 +39,7 @@
           </td>
           <td>
             <div class="width-m" title="<?php echo $this->escaper->escapeHtml($product->name); ?>"><?php echo $this->escaper->escapeHtml($product->name); ?></div>
-            <span style="display: none;"><?php echo $product->remarks; ?></span>
+            <span style="display: none;"><?php echo $product->description; ?></span>
           </td>
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
           <td class="text-right price"><?php echo number_format($product->wholesale_price); ?></td>

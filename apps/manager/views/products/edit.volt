@@ -119,6 +119,14 @@
         </div>
 
         <div class="form-group">
+          <label for="description" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Description') }}</label>
+          <div class="col-xs-12 col-sm-8">
+            {{ text_area('description','class':'form-control','rows':'3','value':product.description) }}
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="remarks" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Remarks') }}</label>
           <div class="col-xs-12 col-sm-8">
             {{ text_area('remarks','class':'form-control','rows':'3','value':product.remarks) }}

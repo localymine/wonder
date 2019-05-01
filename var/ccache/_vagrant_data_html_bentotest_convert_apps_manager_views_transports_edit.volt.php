@@ -119,7 +119,7 @@
           <div class="col-xs-12 col-sm-8">
             <div class="checkbox-inline">
               <label for="disabled">
-                <?php if ($invoice->disabled == 1) { ?>
+                <?php if ($transport->disabled == 1) { ?>
                   <?php echo $this->tag->checkField(array('disabled', 'name' => 'disabled', 'value' => 1, 'checked' => true)); ?> <?php echo $this->l10n->_('Disabled'); ?>
 
                 <?php } else { ?>

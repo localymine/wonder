@@ -50,15 +50,20 @@ class InventoryController  extends ControllerBase
     if ($this->request->hasPost('from') && ($this->request->getPost('from') != 0) &&
       $this->request->hasPost('to') && ($this->request->getPost('to') != 0)) {
       $cond = [
-        'conditions' => 'id BETWEEN :from: AND :to:',
+        'conditions' => 'id BETWEEN :from: AND :to: AND disabled=:disabled:',
         'bind' => [
           'from' => $this->request->getPost('from'),
           'to' => $this->request->getPost('to'),
+          'disabled' => 0,
         ],
         'order' => 'name'
       ];
     } else {
       $cond = [
+        'conditions' => 'disabled=:disabled:',
+        'bind' => [
+          'disabled' => 0,
+        ],
         'order' => 'name'
       ];
     }

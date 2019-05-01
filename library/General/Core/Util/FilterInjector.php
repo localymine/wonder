@@ -485,7 +485,7 @@ class FilterInjector extends Component
     $criteria->andWhere('['.$Model.'].disabled=:disabled:', ['disabled' => 0]);
     $criteria->andWhere('[PQ].quantity>:quantity:', ['quantity' => 0]);
 
-    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword: OR [CTG].name LIKE :keyword: OR [BD].name LIKE :keyword:';
+    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].description LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword: OR [CTG].name LIKE :keyword: OR [BD].name LIKE :keyword:';
     $c = '%'.trim($keyword).'%';
     $criteria->andWhere($t,
       ['keyword' => $c]

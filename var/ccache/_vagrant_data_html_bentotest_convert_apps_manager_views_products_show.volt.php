@@ -117,6 +117,12 @@
                 </td>
               </tr>
               <tr>
+                <th><?php echo $this->l10n->_('Description'); ?></th>
+                <td>
+                  <div class="description"><?php echo $this->utility->make_links_from_http(nl2br($product->description)); ?></div>
+                </td>
+              </tr>
+              <tr>
                 <th><?php echo $this->l10n->_('Remarks'); ?></th>
                 <td>
                   <div class="remarks"><?php echo $this->utility->make_links_from_http(nl2br($product->remarks)); ?></div>
@@ -175,7 +181,7 @@
 
   <script>
     $(function () {
-      $('.remarks').readmore({
+      $('.remarks , .description').readmore({
         speed: 75,
         lessLink: '<a href="#">Read less</a>',
         afterToggle: function(trigger, element, expanded) {

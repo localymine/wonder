@@ -489,6 +489,9 @@ table thead tr th {
   /*      text-decoration:blink; */
   animation: blink 2s ease infinite;
 }
+tr[data-disabled="1"]{
+  background: lightgrey !important;
+}
 @keyframes blink{
   0%{opacity:0;}
   50%{opacity:1;}

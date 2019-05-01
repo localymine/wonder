@@ -92,7 +92,7 @@
           <div class="col-xs-12 col-sm-8">
             <div class="checkbox-inline">
               <label for="disabled">
-                {% if invoice.disabled == 1 %}
+                {% if transport.disabled == 1 %}
                   {{ check_field('disabled','name':'disabled','value':1,'checked':true) }} {{ l10n._('Disabled') }}
 
                 {% else %}
