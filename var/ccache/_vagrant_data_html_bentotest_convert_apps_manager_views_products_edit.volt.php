@@ -57,6 +57,13 @@
       <div class="box-body">
 
         <div class="form-group required">
+          <label for="id" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('ID'); ?></label>
+          <div class="col-xs-12 col-sm-2">
+            <?php echo $this->tag->textField(array('id', 'class' => 'form-control text-right', 'readonly' => true, 'value' => $product->id)); ?>
+          </div>
+        </div>
+
+        <div class="form-group required">
           <label for="name" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Product Name'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('name', 'class' => 'form-control', 'value' => $product->name)); ?>
@@ -141,6 +148,14 @@
           <label for="brand_id" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Brand'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->select(array('brand_id', $brands, 'using' => array('id', 'name'), 'name' => 'brand_id', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $product->brand_id)); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Description'); ?></label>
+          <div class="col-xs-12 col-sm-8">
+            <?php echo $this->tag->textArea(array('description', 'class' => 'form-control', 'rows' => '3', 'value' => $product->description)); ?>
 
           </div>
         </div>

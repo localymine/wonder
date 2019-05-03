@@ -66,7 +66,7 @@
           <div class="col-xs-12 col-sm-8">
             {{ text_area('remarks','class':'form-control','rows':'3') }}
 
-          </div>send_receive
+          </div>
         </div>
 
         <div class="form-group required">
@@ -141,7 +141,9 @@
       <div class="box-footer">
         <div class="action-area">
           {{ hidden_field('mode','value':mode is defined ? mode : 'new') }}
-          {{ hidden_field('choseInvoices','value':selected_invoice_ids) }}
+          {% if selected_invoice_ids is defined %}
+            {{ hidden_field('choseInvoices','value':selected_invoice_ids) }}
+          {% endif %}
           {{ submit_button(l10n._('Save'),'class':'btn btn-info') }}
 
           {{ link_to('manager/transports/index',l10n._('Cancel'),'class':'btn btn-default') }}

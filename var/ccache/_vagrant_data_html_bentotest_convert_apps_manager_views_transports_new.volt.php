@@ -93,7 +93,7 @@
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textArea(array('remarks', 'class' => 'form-control', 'rows' => '3')); ?>
 
-          </div>send_receive
+          </div>
         </div>
 
         <div class="form-group required">
@@ -168,7 +168,9 @@
       <div class="box-footer">
         <div class="action-area">
           <?php echo $this->tag->hiddenField(array('mode', 'value' => (isset($mode) ? $mode : 'new'))); ?>
+          <?php if (isset($selected_invoice_ids)) { ?>
           <?php echo $this->tag->hiddenField(array('choseInvoices', 'value' => $selected_invoice_ids)); ?>
+          <?php } ?>
           <?php echo $this->tag->submitButton(array($this->l10n->_('Save'), 'class' => 'btn btn-info')); ?>
 
           <?php echo $this->tag->linkTo(array('manager/transports/index', $this->l10n->_('Cancel'), 'class' => 'btn btn-default')); ?>

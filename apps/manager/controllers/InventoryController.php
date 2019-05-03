@@ -79,7 +79,9 @@ class InventoryController  extends ControllerBase
       ->setName('Arial')
       ->setSize(12);
     // set Title
-    $objPHPExcel->getActiveSheet()->setTitle('Order List');
+    $objPHPExcel->getActiveSheet()
+      ->setTitle('Order List')
+      ->freezePane('A2');;
     // set data
     $objPHPExcel->setActiveSheetIndex(0)
       ->setCellValue('A1', 'No.')
@@ -87,7 +89,8 @@ class InventoryController  extends ControllerBase
       ->setCellValue('C1', 'G.Lẻ')
       ->setCellValue('D1', 'G.Sỉ')
       ->setCellValue('E1', 'SG')
-      ->setCellValue('F1', 'LG');
+      ->setCellValue('F1', 'LG')
+      ->setCellValue('G1', 'Ghi Chú');
 
     $fname = 'Inventory-List-' . time() . '.xlsx';
 
@@ -101,7 +104,8 @@ class InventoryController  extends ControllerBase
         ->setCellValue('A' . $i, $i-1)
         ->setCellValue('B' . $i, $product->name)
         ->setCellValue('C' . $i, $product->price)
-        ->setCellValue('D' . $i, $product->wholesale_price);
+        ->setCellValue('D' . $i, $product->wholesale_price)
+        ->setCellValue('G' . $i, $product->remarks);
       //
       foreach ($productQts as $item) {
         if ($item->warehouse_id == 1) {
@@ -115,7 +119,7 @@ class InventoryController  extends ControllerBase
       $i++;
     }
 
-    $objPHPExcel->getActiveSheet()->getStyle('A1:F1')
+    $objPHPExcel->getActiveSheet()->getStyle('A1:G1')
       ->applyFromArray([
         'font' => [
           'bold' => true
@@ -127,7 +131,7 @@ class InventoryController  extends ControllerBase
     $objPHPExcel->getActiveSheet()->getStyle('C2:F200')->getNumberFormat()
       ->setFormatCode('#,###');
 
-    foreach (range('A', 'F') as $columnId) {
+    foreach (range('A', 'G') as $columnId) {
       $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
     }
 

@@ -30,6 +30,13 @@
       <div class="box-body">
 
         <div class="form-group required">
+          <label for="id" class="col-xs-12 col-sm-3 control-label">{{ l10n._('ID') }}</label>
+          <div class="col-xs-12 col-sm-2">
+            {{ text_field('id','class':'form-control text-right','readonly':true, 'value':product.id) }}
+          </div>
+        </div>
+
+        <div class="form-group required">
           <label for="name" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Product Name') }}</label>
           <div class="col-xs-12 col-sm-8">
             {{ text_field('name','class':'form-control','value':product.name) }}
