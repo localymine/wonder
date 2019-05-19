@@ -133,6 +133,14 @@
         </div>
 
         <div class="form-group">
+          <label for="description" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Description'); ?></label>
+          <div class="col-xs-12 col-sm-8">
+            <?php echo $this->tag->textArea(array('description', 'class' => 'form-control', 'rows' => '3')); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="remarks" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Remarks'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textArea(array('remarks', 'class' => 'form-control', 'rows' => '3')); ?>

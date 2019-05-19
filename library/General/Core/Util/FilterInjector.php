@@ -141,6 +141,7 @@ class FilterInjector extends Component
        * サービサは自身に紐づくデータのみ */
       switch ($alias) {
         case 'client':
+        case 'member':
         case 'invoice':
         case 'transport':
           $criteria->andWhere('['.$Model.'].user_id=:user_id:',
@@ -230,152 +231,13 @@ class FilterInjector extends Component
      * フォーム要素を設定 */
     $alias = strtolower($ModelName);
     switch ($alias) {
-      case 'agentbox':
-      case 'wondergate':
-      case 'camera':
-      case 'campaign':
-      case 'recorder':
-      case 'livemonitor':
-        $cond1 = [
-          'conditions' => 'layer=:layer:',
-          'bind' => ['layer' => 1],
-          'order' => 'name ASC',
-        ];
-        $cond2 = [
-          'conditions' => 'layer=:layer:',
-          'bind' => ['layer' => 2],
-          'order' => 'name ASC',
-        ];
-        $cond3 = [
-          'conditions' => 'layer=:layer:',
-          'bind' => ['layer' => 3],
-          'order' => 'name ASC',
-        ];
-        $layer1 = [];
-        $layer2 = [];
-        $layer3 = [];
-
-        if (1 == $identity['role_id']
-        ||  3 == $identity['role_id']) {
-
-          if (isset($posts['group_id'])) {
-            $cond2['conditions'] .= ' AND parent_id=:parent_id:';
-            $cond2['bind']['parent_id'] = $posts['area_id'];
-
-            if (!isset($posts['area_id'])) {
-              $g3 = Group::findFirst(['id='.$posts['group_id']]);
-              if ($g3 && $g3->user_id == $identity['id']) {
-                $posts['area_id'] = $g3->parent_id;
-              }
-            }
-          }
-          if (isset($posts['area_id'])) {
-            $cond3['conditions'] .= ' AND parent_id=:parent_id:';
-            $cond3['bind']['parent_id'] = $posts['area_id'];
-
-            if (!isset($posts['root_id'])) {
-              $g2 = Group::findFirst(['id='.$posts['area_id']]);
-              if ($g2 && $g2->user_id == $identity['id']) {
-                $posts['root_id'] = $g2->parent_id;
-              }
-            }
-          }
-          if (isset($posts['root_id'])) {
-            $cond2['conditions'] .= ' AND parent_id=:parent_id:';
-            $cond2['bind']['parent_id'] = $posts['root_id'];
-          }
-          $layer1 = Group::find($cond1);
-          $layer2 = Group::find($cond2);
-          $layer3 = Group::find($cond3);
-
-        } else if (4 == $identity['role_id']) {
-
-          $cond3['conditions'] .= ' AND user_id=:user_id:';
-          $cond3['bind']['user_id'] = $identity['id'];
-          if (isset($posts['group_id'])) {
-            if (!isset($posts['area_id'])) {
-              $g3 = Group::findFirst(['id='.$posts['group_id']]);
-              if ($g3 && $g3->user_id == $identity['id']) {
-                $posts['area_id'] = $g3->parent_id;
-              }
-            }
-          }
-
-          $cond2['conditions'] .= ' AND user_id=:user_id:';
-          $cond2['bind']['user_id'] = $identity['id'];
-          if (isset($posts['area_id'])) {
-            $cond3['conditions'] .= ' AND parent_id=:parent_id:';
-            $cond3['bind']['parent_id'] = $posts['area_id'];
-            if (!isset($posts['root_id'])) {
-              $g2 = Group::findFirst(['id='.$posts['area_id']]);
-              if ($g2 && $g2->user_id == $identity['id']) {
-                $posts['root_id'] = $g2->parent_id;
-              }
-            }
-          }
-
-          $cond1['conditions'] .= ' AND user_id=:user_id:';
-          $cond1['bind']['user_id'] = $identity['id'];
-          if (isset($posts['root_id'])) {
-            $cond2['conditions'] .= ' AND parent_id=:parent_id:';
-            $cond2['bind']['parent_id'] = $posts['root_id'];
-          }
-
-          $layer1 = Group::find($cond1);
-          $layer2 = Group::find($cond2);
-          $layer3 = Group::find($cond3);
-
-        } else if (5 == $identity['role_id']) {
-
-          switch ($identity['layer']) {
-            case 3:
-              $cond3['conditions'] .= ' AND id=:id:';
-              $cond3['bind']['id'] = $identity['id'];
-              $mygrp = Group::findFirst($cond3);
-              /** @var Group $myparent */
-              $myparent = $mygrp->getRelated('parent');
-              $cond2['conditions'] .= ' AND parent_id=:parent_id:';
-              $cond2['bind']['parent_id'] = $myparent->id;
-              $cond1['conditions'] .= ' AND parent_id=:parent_id:';
-              $cond1['bind']['parent_id'] = $myparent->parent_id;
-              $layer1 = Group::find($cond1);
-              $layer2 = Group::find($cond2);
-              $layer3 = Group::find($cond3);
-              break;
-            case 2:
-              $cond2['conditions'] .= ' AND id=:id:';
-              $cond2['bind']['id'] = $identity['id'];
-              $mygrp = Group::findFirst($cond2);
-              $layer1 = Group::find($cond2);
-              $layer2 = $mygrp->getRelated('children');
-              $layer3 = $mygrp->getRelated('parent');
-              break;
-            case 1:
-              $cond1['conditions'] .= ' AND id=:id:';
-              $cond1['bind']['id'] = $identity['id'];
-              $mygrp = Group::findFirst($cond1);
-              $layer1 = Group::find($cond1);
-              $layer2 = $mygrp->getRelated('children');
-              $gchild = [];
-              foreach ($layer2 as $grp) {
-                $gchild[] = $grp->id;
-              }
-              $cond3['conditions'] .= ' AND parent_id IN (:parent_ids:)';
-              $cond3['bind']['parent_ids'] = implode(',', $gchild);
-              $layer3 = Group::find($cond3);
-              break;
-            default:
-              break;
-          }
-
-        }
-        $controller->{'view'}->setVar('layer1', $layer1);
-        $controller->{'view'}->setVar('layer2', $layer2);
-        $controller->{'view'}->setVar('layer3', $layer3);
-        break;
+      case 'client':
       case 'member':
-        break;
-      case 'membergroup':
+      case 'invoice':
+      case 'transport':
+      case 'brand':
+      case 'category':
+      case 'product':
       default:
         break;
     }

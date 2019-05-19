@@ -25,7 +25,7 @@
 {% if page.items is defined %}
 {% for product in page.items %}
 
-          <tr id="p{{ product.id }}">
+          <tr id="p{{ product.id }}" data-disabled="{{ product.disabled }}">
           <td title="{{ product.remarks }}">{{ product.id|e }}</td>
           <td>
             <a href="javascript:void(0)" class="pop">
@@ -33,7 +33,10 @@
               {{ utility.image(product.user_id, product.id, product.image, ['width:32px']) }}
             </a>
           </td>
-          <td class="width-m">{{ product.name|e }}<span style="display: none;">{{ product.remarks }}</span></td>
+          <td class="width-m">
+            {{ product.name|e }}<span style="display: none;">{{ product.remarks }}</span>
+            <span style="display: none;">{{ product.description }}</span>
+          </td>
           <td class="text-center">
             {% if product.category_id != 0 %}
               {{ product.category.name|e }}

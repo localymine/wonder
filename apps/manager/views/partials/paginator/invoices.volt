@@ -4,6 +4,7 @@
           <colgroup>
           <col style="width:2%;">
           <col>
+          <col>
           <col style="width:15%;">
           <col style="width:10%;">
           <col style="width:10%;">
@@ -14,6 +15,7 @@
           <tr>
           <th>{{ l10n.__('ID', 'invoice') }}</th>
           <th>{{ l10n.__('Client', 'invoice') }}</th>
+          <th>{{ l10n.__('Transport', 'invoice') }}</th>
           <th>{{ l10n.__('Total (&#8363;)', 'invoice') }}</th>
           <th>{{ l10n.__('Delivery', 'invoice') }}</th>
           <th>{{ l10n.__('Status', 'invoice') }}</th>
@@ -28,6 +30,7 @@
           <tr>
           <td>{{ invoice.id|e }}</td>
           <td>{{ invoice.client.name|e }}</td>
+          <td class="text-center" title="{{ invoice.transportinvoice.transport.remarks|e }}">{{ invoice.transportinvoice.transport.name is defined ? invoice.transportinvoice.transport.name : '' }}</td>
           <td class="text-right">{{ invoice.total_price|number_format }}</td>
           <td class="text-center deliver {{ deliver[invoice.deliver]|e }}">
               <span class="btn-delivery hand" data-id="{{ invoice.id }}">{{ deliver[invoice.deliver]|e }}</span>

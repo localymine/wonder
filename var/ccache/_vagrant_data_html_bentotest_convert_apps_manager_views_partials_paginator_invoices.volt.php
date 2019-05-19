@@ -4,6 +4,7 @@
           <colgroup>
           <col style="width:2%;">
           <col>
+          <col>
           <col style="width:15%;">
           <col style="width:10%;">
           <col style="width:10%;">
@@ -14,6 +15,7 @@
           <tr>
           <th><?php echo $this->l10n->__('ID', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Client', 'invoice'); ?></th>
+          <th><?php echo $this->l10n->__('Transport', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Total (&#8363;)', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Delivery', 'invoice'); ?></th>
           <th><?php echo $this->l10n->__('Status', 'invoice'); ?></th>
@@ -28,6 +30,7 @@
           <tr>
           <td><?php echo $this->escaper->escapeHtml($invoice->id); ?></td>
           <td><?php echo $this->escaper->escapeHtml($invoice->client->name); ?></td>
+          <td class="text-center" title="<?php echo $this->escaper->escapeHtml($invoice->transportinvoice->transport->remarks); ?>"><?php echo (isset($invoice->transportinvoice->transport->name) ? $invoice->transportinvoice->transport->name : ''); ?></td>
           <td class="text-right"><?php echo number_format($invoice->total_price); ?></td>
           <td class="text-center deliver <?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?>">
               <span class="btn-delivery hand" data-id="<?php echo $invoice->id; ?>"><?php echo $this->escaper->escapeHtml($deliver[$invoice->deliver]); ?></span>

@@ -61,6 +61,7 @@ class Enums extends Component
       1 => 'Wholesale',
       2 => 'Transporter',
       3 => 'Sender',
+      9 => 'Special',
     ];
   }
 

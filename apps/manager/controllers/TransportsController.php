@@ -5,6 +5,7 @@ namespace General\Core\Manager\Controllers;
 use General\Core\Manager\Models\Client;
 use General\Core\Manager\Models\Invoice;
 use General\Core\Manager\Models\OtherCost;
+use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\Transport;
 use General\Core\Manager\Models\TransportInvoice;
 use General\Core\Util\Enums;
@@ -490,7 +491,8 @@ class TransportsController extends ControllerBase
           $objPHPExcel->getActiveSheet()
             ->setCellValue('A' . $i, $i-1)
             ->setCellValue('B' . $i, $invoice->client->name)
-            ->setCellValue('C' . $i, $product->name)
+            ->setCellValue('C' . $i, $product->remarks)
+//            ->setCellValue('C' . $i, $product->name)
             ->setCellValue('D' . $i, $ind->price)
             ->setCellValue('E' . $i, $ind->quantity)
             ->setCellValue('F' . $i, ($ind->price*$ind->quantity));
@@ -603,14 +605,22 @@ class TransportsController extends ControllerBase
         $total_purchase = 0;
         foreach ($invoiceDetails as $ind) {
           $product = $ind->getRelated('product');
+          $productIns = ProductIn::find([
+            'conditions' => 'product_id=:pid:',
+            'bind' => ['pid' => $product->id],
+            'order' => 'created DESC',
+            'limit' => 1
+            ]);
           $objPHPExcel->getActiveSheet()
             ->setCellValue('A' . $i, $i-1)
             ->setCellValue('B' . $i, $invoice->client->name)
-            ->setCellValue('C' . $i, $product->name)
+            ->setCellValue('C' . $i, $product->remarks)
+//            ->setCellValue('C' . $i, $product->name)
             ->setCellValue('D' . $i, $ind->price)
             ->setCellValue('E' . $i, $ind->quantity)
             ->setCellValue('F' . $i, ($ind->price*$ind->quantity))
-            ->setCellValue('G' . $i, $product->purchase_price)
+            ->setCellValue('G' . $i, $productIns[0]->purchase_price)
+//            ->setCellValue('G' . $i, $product->purchase_price)
             ->setCellValue('H' . $i, ($product->purchase_price*$ind->quantity));
           $total += $ind->price*$ind->quantity;
           $total_purchase += $product->purchase_price*$ind->quantity;

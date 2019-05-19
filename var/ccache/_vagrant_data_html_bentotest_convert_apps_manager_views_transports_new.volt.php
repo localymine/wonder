@@ -169,7 +169,7 @@
         <div class="action-area">
           <?php echo $this->tag->hiddenField(array('mode', 'value' => (isset($mode) ? $mode : 'new'))); ?>
           <?php if (isset($selected_invoice_ids)) { ?>
-          <?php echo $this->tag->hiddenField(array('choseInvoices', 'value' => $selected_invoice_ids)); ?>
+            <?php echo $this->tag->hiddenField(array('choseInvoices', 'value' => $selected_invoice_ids)); ?>
           <?php } ?>
           <?php echo $this->tag->submitButton(array($this->l10n->_('Save'), 'class' => 'btn btn-info')); ?>
 

@@ -329,6 +329,7 @@ class ProductsController  extends ControllerBase
           $clone = new Product();
           $clone->assign($data);
           $clone->id = null;
+          $clone->quantity = 0;
           if($clone->create()) {
             $response['success'] = 1;
           }

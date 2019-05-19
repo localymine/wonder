@@ -25,7 +25,7 @@
 <?php if (isset($page->items)) { ?>
 <?php foreach ($page->items as $product) { ?>
 
-          <tr id="p<?php echo $product->id; ?>">
+          <tr id="p<?php echo $product->id; ?>" data-disabled="<?php echo $product->disabled; ?>">
           <td title="<?php echo $product->remarks; ?>"><?php echo $this->escaper->escapeHtml($product->id); ?></td>
           <td>
             <a href="javascript:void(0)" class="pop">
@@ -33,7 +33,10 @@
               <?php echo $this->utility->image($product->user_id, $product->id, $product->image, array('width:32px')); ?>
             </a>
           </td>
-          <td class="width-m"><?php echo $this->escaper->escapeHtml($product->name); ?><span style="display: none;"><?php echo $product->remarks; ?></span></td>
+          <td class="width-m">
+            <?php echo $this->escaper->escapeHtml($product->name); ?><span style="display: none;"><?php echo $product->remarks; ?></span>
+            <span style="display: none;"><?php echo $product->description; ?></span>
+          </td>
           <td class="text-center">
             <?php if ($product->category_id != 0) { ?>
               <?php echo $this->escaper->escapeHtml($product->category->name); ?>
