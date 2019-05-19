@@ -1,0 +1,12 @@
+[Mon, 20 May 19 04:06:22 +0900][ERROR] Column 'email' doesn\'t make part of the column map
+[Mon, 20 May 19 04:06:22 +0900][ERROR] #0 /vagrant_data/html/bentotest/convert/apps/manager/controllers/MembersController.php(60): Phalcon\Mvc\Model->assign(Array)
+#1 [internal function]: General\Core\Manager\Controllers\MembersController->createAction()
+#2 [internal function]: Phalcon\Dispatcher->dispatch()
+#3 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#4 {main}
+[Mon, 20 May 19 04:07:14 +0900][ERROR] Column 'email' doesn\'t make part of the column map
+[Mon, 20 May 19 04:07:14 +0900][ERROR] #0 /vagrant_data/html/bentotest/convert/apps/manager/controllers/MembersController.php(60): Phalcon\Mvc\Model->assign(Array)
+#1 [internal function]: General\Core\Manager\Controllers\MembersController->createAction()
+#2 [internal function]: Phalcon\Dispatcher->dispatch()
+#3 /vagrant_data/html/bentotest/convert/public/index.php(44): Phalcon\Mvc\Application->handle()
+#4 {main}

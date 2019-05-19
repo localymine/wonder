@@ -115,10 +115,10 @@ class MembersController extends ControllerBase
       'conditions' => 'id=:id:',
       'bind' => ['id' => $id],
     ];
-    $client = Member::findFirst($this->qi->inject('Member', $cond));
+    $member = Member::findFirst($this->qi->inject('Member', $cond));
 
     /* put error in session and will be forwarded, if result is empty. */
-    if (!$client) {
+    if (!$member) {
       $this->flash->error($this->l10n->_('Specified Member cannot found.') . "($id)");
       $this->dispatcher->forward([
         'module' => 'manager',
@@ -128,7 +128,7 @@ class MembersController extends ControllerBase
       return;
     }
     /* set parameters to display page. */
-    $this->view->setVar('client', $client);
+    $this->view->setVar('member', $member);
   }
 
   public function editAction($id)
@@ -150,10 +150,10 @@ class MembersController extends ControllerBase
       'conditions' => 'id=:id:',
       'bind' => ['id' => $id],
     ];
-    $client = Member::findFirst($this->qi->inject('Member', $cond));
+    $member = Member::findFirst($this->qi->inject('Member', $cond));
 
     /* put error in session and will be forwarded, if result is empty. */
-    if (!$client) {
+    if (!$member) {
       $this->flash->error($this->l10n->_('Specified Member cannot found.') . "($id)");
       $this->dispatcher->forward([
         'module' => 'manager',
@@ -163,7 +163,7 @@ class MembersController extends ControllerBase
       return;
     }
     /* set parameters to display page. */
-    $this->view->setVar('client', $client);
+    $this->view->setVar('member', $member);
   }
 
   public function saveAction()

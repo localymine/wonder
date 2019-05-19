@@ -30,15 +30,23 @@
       <div class="box-body">
         <div class="form-group required">
           <label for="name" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Name') }}</label>
-          <div class="col-xs-12 col-sm-8">
+          <div class="col-xs-12 col-sm-4">
             {{ text_field('name','class':'form-control') }}
 
           </div>
         </div>
 
         <div class="form-group">
-          <label for="phone" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Phone') }}</label>
+          <label for="email" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Email') }}</label>
           <div class="col-xs-12 col-sm-8">
+            {{ text_field('email','class':'form-control') }}
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Phone') }}</label>
+          <div class="col-xs-12 col-sm-3">
             {{ text_field('phone','class':'form-control') }}
 
           </div>
@@ -46,7 +54,7 @@
 
         <div class="form-group">
           <label for="login" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Login') }}</label>
-          <div class="col-xs-12 col-sm-8">
+          <div class="col-xs-12 col-sm-2">
             {{ text_field('login','class':'form-control') }}
 
           </div>

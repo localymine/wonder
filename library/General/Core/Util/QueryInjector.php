@@ -184,6 +184,7 @@ class QueryInjector extends Component
         case 'brand':
         case 'category':
         case 'client':
+        case 'member':
         case 'product':
           $avail = true;
           break;
@@ -211,6 +212,7 @@ class QueryInjector extends Component
         case 'brand':
         case 'category':
         case 'client':
+        case 'member':
         case 'product':
           $avail = true;
           break;

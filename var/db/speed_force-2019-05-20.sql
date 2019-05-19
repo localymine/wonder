@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019 年 5 月 17 日 10:52
+-- Generation Time: 2019 年 5 月 20 日 02:49
 -- サーバのバージョン： 5.5.60
 -- PHP Version: 5.6.36
 
@@ -100,7 +100,11 @@ INSERT INTO `brands` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (57, 'ILIFE', 'cleaning robot', '2019-04-28 01:50:07', '2019-04-28 01:50:07'),
 (58, 'TOSHIBA', '東芝', '2019-04-28 01:53:10', '2019-04-28 11:31:03'),
 (59, 'Hada Labo', '', '2019-05-12 00:26:03', '2019-05-12 00:26:03'),
-(60, 'PITTA', '', '2019-05-13 12:52:02', '2019-05-13 12:52:02');
+(60, 'PITTA', '', '2019-05-13 12:52:02', '2019-05-13 12:52:02'),
+(61, 'Deonatulle', '', '2019-05-18 01:45:51', '2019-05-18 01:45:51'),
+(62, 'Kailijumei', '', '2019-05-18 10:47:14', '2019-05-18 10:47:14'),
+(63, '8x4', '', '2019-05-19 02:43:53', '2019-05-19 02:43:53'),
+(64, 'Morinaga', '', '2019-05-19 13:33:44', '2019-05-19 13:33:44');
 
 -- --------------------------------------------------------
 
@@ -147,7 +151,11 @@ INSERT INTO `categories` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (24, 'Mask', NULL, '2019-04-12 00:00:00', '2019-04-12 00:00:00'),
 (25, 'Treatment', '', '2019-04-23 12:02:22', '2019-04-23 12:02:22'),
 (26, 'Cleaning Robot', '', '2019-04-28 01:51:34', '2019-04-28 01:51:34'),
-(27, 'Placenta', '', '2019-05-13 12:19:09', '2019-05-13 12:19:09');
+(27, 'Placenta', '', '2019-05-13 12:19:09', '2019-05-13 12:19:09'),
+(28, 'EyeCare', '', '2019-05-18 01:03:37', '2019-05-18 01:03:37'),
+(29, 'Deodorant', '', '2019-05-18 01:48:05', '2019-05-18 01:48:05'),
+(30, 'Supplement', '', '2019-05-18 10:45:38', '2019-05-18 10:45:38'),
+(31, 'Pregnant Milk', '', '2019-05-19 13:34:08', '2019-05-19 13:34:08');
 
 -- --------------------------------------------------------
 
@@ -254,11 +262,12 @@ INSERT INTO `clients` (`id`, `user_id`, `country_id`, `name`, `firstname`, `last
 (74, 1, 1, 'Bé Tín (nhỏ)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-04-29 10:52:44', '2019-04-29 10:52:44'),
 (75, 1, 1, 'Vân (Lagi)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-05 18:58:23', '2019-05-05 18:58:23'),
 (76, 1, 1, 'Nhung (VTA)', '', '', '', '', 'shopping@client.com', '', '', 1, 0, '2019-05-05 19:15:47', '2019-05-12 01:24:01'),
-(77, 1, 1, 'z mới 10', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-05 19:17:37', '2019-05-05 19:17:37'),
-(78, 1, 1, 'z Mới 6', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-05 19:20:59', '2019-05-05 19:20:59'),
+(77, 1, 1, 'Trúc (sỉ)', '', '', '', '', 'shopping@client.com', '', '', 1, 0, '2019-05-05 19:17:37', '2019-05-19 03:12:17'),
+(78, 1, 1, 'Liên', '', '', '', '', 'shopping@client.com', '', '', 0, 0, '2019-05-05 19:20:59', '2019-05-19 03:13:54'),
 (79, 1, 1, 'Nghĩa (Phan Thiết)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:53:00', '2019-05-12 00:53:00'),
 (80, 1, 1, 'Anh (Lagi)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:55:36', '2019-05-12 00:55:36'),
-(81, 1, 1, 'Anh Kiện', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:56:32', '2019-05-12 00:56:32');
+(81, 1, 1, 'Anh Kiện', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:56:32', '2019-05-12 00:56:32'),
+(82, 1, 1, 'Anh Duy', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-19 03:18:52', '2019-05-19 03:18:52');
 
 -- --------------------------------------------------------
 
@@ -470,7 +479,18 @@ INSERT INTO `invoices` (`id`, `user_id`, `client_id`, `remarks`, `total_price`, 
 (138, 1, 11, '', 470000, 0, 0, 0, '2019-05-12 01:26:10', '2019-05-12 01:26:10'),
 (139, 1, 33, '', 4200000, 0, 0, 0, '2019-05-12 01:32:54', '2019-05-12 01:32:54'),
 (140, 1, 65, '', 1230000, 0, 0, 0, '2019-05-12 01:41:04', '2019-05-12 01:41:04'),
-(141, 1, 64, '', 2310000, 0, 0, 0, '2019-05-12 01:45:33', '2019-05-12 01:45:33');
+(141, 1, 64, '', 2310000, 0, 0, 0, '2019-05-12 01:45:33', '2019-05-12 01:45:33'),
+(142, 1, 8, '', 1470000, 0, 0, 0, '2019-05-19 03:10:26', '2019-05-19 03:10:26'),
+(143, 1, 64, '', 300000, 0, 0, 0, '2019-05-19 03:11:24', '2019-05-19 03:11:24'),
+(144, 1, 77, '', 680000, 0, 0, 0, '2019-05-19 03:12:59', '2019-05-19 03:12:59'),
+(145, 1, 52, '', 680000, 0, 0, 0, '2019-05-19 03:13:22', '2019-05-19 03:13:22'),
+(146, 1, 78, '', 700000, 0, 0, 0, '2019-05-19 03:15:43', '2019-05-19 03:15:43'),
+(147, 1, 65, 'tặng kèm 8x4', 4050000, 0, 0, 0, '2019-05-19 03:17:11', '2019-05-19 03:17:11'),
+(148, 1, 82, '', 250000, 0, 0, 0, '2019-05-19 03:18:52', '2019-05-19 03:18:52'),
+(149, 1, 15, '', 1272000, 0, 0, 0, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
+(150, 1, 21, '', 200000, 0, 0, 0, '2019-05-19 03:27:40', '2019-05-19 03:27:40'),
+(151, 1, 24, '', 900000, 0, 0, 0, '2019-05-19 03:28:11', '2019-05-19 03:28:11'),
+(152, 1, 10, '', 2550000, 0, 0, 0, '2019-05-19 13:45:14', '2019-05-19 13:45:14');
 
 -- --------------------------------------------------------
 
@@ -781,7 +801,28 @@ INSERT INTO `invoices_details` (`id`, `client_id`, `invoice_id`, `product_id`, `
 (286, 65, 140, 166, 1, 670000, 1, NULL, '2019-05-12 01:41:04', '2019-05-12 01:41:04'),
 (287, 65, 140, 204, 1, 240000, 1, NULL, '2019-05-12 01:41:04', '2019-05-12 01:41:04'),
 (288, 65, 140, 200, 1, 160000, 2, NULL, '2019-05-12 01:41:04', '2019-05-12 01:41:04'),
-(289, 64, 141, 206, 1, 1155000, 2, NULL, '2019-05-12 01:45:33', '2019-05-12 01:45:33');
+(289, 64, 141, 206, 1, 1155000, 2, NULL, '2019-05-12 01:45:33', '2019-05-12 01:45:33'),
+(290, 8, 142, 221, 1, 750000, 1, NULL, '2019-05-19 03:10:26', '2019-05-19 03:10:26'),
+(291, 8, 142, 191, 1, 40000, 10, NULL, '2019-05-19 03:10:26', '2019-05-19 03:10:26'),
+(292, 8, 142, 218, 1, 40000, 5, NULL, '2019-05-19 03:10:26', '2019-05-19 03:10:26'),
+(293, 8, 142, 219, 1, 40000, 3, NULL, '2019-05-19 03:10:26', '2019-05-19 03:10:26'),
+(294, 64, 143, 198, 1, 300000, 1, NULL, '2019-05-19 03:11:24', '2019-05-19 03:11:24'),
+(295, 77, 144, 214, 1, 340000, 2, NULL, '2019-05-19 03:12:59', '2019-05-19 03:12:59'),
+(296, 52, 145, 214, 1, 340000, 2, NULL, '2019-05-19 03:13:22', '2019-05-19 03:13:22'),
+(297, 78, 146, 214, 1, 390000, 1, NULL, '2019-05-19 03:15:43', '2019-05-19 03:15:43'),
+(298, 78, 146, 161, 1, 310000, 1, NULL, '2019-05-19 03:15:43', '2019-05-19 03:15:43'),
+(299, 65, 147, 199, 1, 450000, 9, NULL, '2019-05-19 03:17:11', '2019-05-19 03:17:11'),
+(300, 65, 147, 217, 1, 0, 1, NULL, '2019-05-19 03:17:11', '2019-05-19 03:17:11'),
+(301, 82, 148, 216, 1, 250000, 1, NULL, '2019-05-19 03:18:52', '2019-05-19 03:18:52'),
+(302, 15, 149, 220, 1, 730000, 1, NULL, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
+(303, 15, 149, 222, 1, 112000, 1, NULL, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
+(304, 15, 149, 216, 1, 200000, 1, NULL, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
+(305, 15, 149, 223, 1, 230000, 1, NULL, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
+(306, 21, 150, 224, 1, 200000, 1, NULL, '2019-05-19 03:27:40', '2019-05-19 03:27:40'),
+(307, 24, 151, 39, 1, 900000, 1, NULL, '2019-05-19 03:28:11', '2019-05-19 03:28:11'),
+(308, 10, 152, 225, 1, 255000, 3, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
+(309, 10, 152, 226, 1, 255000, 3, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
+(310, 10, 152, 227, 1, 255000, 4, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14');
 
 -- --------------------------------------------------------
 
@@ -837,17 +878,20 @@ INSERT INTO `other_costs` (`id`, `transport_id`, `name`, `price`, `remarks`, `di
 (10, 6, 'HN -> SG', 178000, '', 0, '2019-04-27 15:27:26', '2019-05-01 23:30:40'),
 (11, 5, 'JP -> VN', 0, '', 0, '2019-04-27 15:30:03', '2019-05-01 23:26:33'),
 (12, 5, 'HN -> SG', 324000, '', 0, '2019-04-27 15:30:03', '2019-05-01 23:26:33'),
-(13, 9, 'Saitama -> Fukuoka', 710000, 'rate 208', 0, '2019-05-02 00:19:23', '2019-05-14 13:39:38'),
-(14, 9, 'JP -> VN', 0, '', 0, '2019-05-02 00:19:23', '2019-05-14 13:39:38'),
-(15, 9, 'HN -> SG', 0, '', 0, '2019-05-02 00:19:23', '2019-05-14 13:39:39'),
-(16, 10, 'Saitama -> Fukuoka', 331000, '', 0, '2019-05-06 23:17:48', '2019-05-14 13:39:54'),
-(17, 10, 'JP -> VN', 0, '', 0, '2019-05-06 23:17:48', '2019-05-14 13:39:54'),
-(18, 10, 'HN -> SG', 0, '', 0, '2019-05-06 23:17:48', '2019-05-14 13:39:54'),
+(13, 9, 'Saitama -> Fukuoka', 715000, '3418 * rate 209', 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
+(14, 9, 'JP -> VN', 0, '', 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
+(15, 9, 'HN -> SG', 0, '', 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
+(16, 10, 'Saitama -> Fukuoka', 333000, '1593 * 209', 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
+(17, 10, 'JP -> VN', 0, '', 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
+(18, 10, 'HN -> SG', 0, '', 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
 (19, 8, 'JP -> VN', 2790000, '', 0, '2019-05-08 15:14:02', '2019-05-08 15:14:17'),
 (20, 8, 'HN -> SG', 0, '', 0, '2019-05-08 15:14:02', '2019-05-08 15:14:17'),
-(21, 11, 'Saitama -> Kuma', 0, '', 0, '2019-05-13 11:34:58', '2019-05-14 13:40:22'),
-(22, 11, 'JP -> VN', 0, '', 0, '2019-05-13 11:34:58', '2019-05-14 13:40:22'),
-(23, 11, 'HN -> SG', 0, '', 0, '2019-05-13 11:34:58', '2019-05-14 13:40:22');
+(21, 11, 'Saitama -> Kuma', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
+(22, 11, 'JP -> VN', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
+(23, 11, 'HN -> SG', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
+(24, 12, 'Nhà -> Fukuoka', 473000, '2262 * 209 (25.5kg -> size160)', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56'),
+(25, 12, 'JP -> HN', 0, '', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56'),
+(26, 12, 'HN -> SG', 0, '', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56');
 
 -- --------------------------------------------------------
 
@@ -917,7 +961,7 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (12, 1, 'Transino Whitening Clear Milk 120ml', '120ml', 'tuýp', 900000, 800000, 0, 0, 'transino_whitening_clear_milk.jpg', 7, 6, 'Sữa dưỡng\r\nトランシーノ薬用ホワイトニングクリアミルク　120ml', 'sữa dưỡng', 0, '2019-03-20 15:19:49', '2019-05-02 23:48:29'),
 (13, 1, 'Transino ii 240', '240viên', 'hộp', 1450000, 1350000, 5891, 2, 'transino_ii_240.jpg', 10, 6, 'thuốc trị nám, tàn nhang\r\nトランシーノII　240錠\r\nトランシーノ 錠剤 しみ そばかす', 'thuốc trị nám 240 viên', 0, '2019-03-20 15:53:27', '2019-05-02 23:47:33'),
 (14, 1, 'Transino WhiteC Clear 120 tablets', '120 viên', 'hộp', 680000, 600000, 2260, 11, 'transino_whiteC_clear.jpg', 10, 6, 'thuốc trắng da, trị nám\r\ntrang da\r\nトランシーノ　ホワイトCクリア　120錠 ', 'thuốc trắng da 120 viên', 0, '2019-03-20 16:00:17', '2019-05-02 23:47:45'),
-(15, 1, 'DHC Vitamin C 60 Days (120 Tablets)', '120 viên', 'bịch', 230000, 170000, 420, 0, 'dhc_vitamin_C_60days.jpg', 10, 9, 'DHC ビタミンC ハードカプセル 60日(120粒)', 'Viên Vitamin C DHC 60 ngày', 0, '2019-03-20 16:36:23', '2019-05-02 08:17:22'),
+(15, 1, 'DHC Vitamin C 60 Days (120 Tablets)', '120 viên', 'bịch', 230000, 170000, 420, 10, 'dhc_vitamin_C_60days.jpg', 10, 9, 'DHC ビタミンC ハードカプセル 60日(120粒)', 'Viên Vitamin C DHC 60 ngày', 0, '2019-03-20 16:36:23', '2019-05-18 23:09:34'),
 (16, 1, 'DHC Hatomugi 20 Days (20 Tablets)', '20 viên', 'bịch', 150000, 120000, 363, 0, 'dhc_hatomugi_20days.jpg', 10, 9, 'trắng da\r\nＤＨＣ はとむぎエキス ２０日分 ２０粒入', 'viên trắng da DHC 20 ngày', 0, '2019-03-20 16:50:58', '2019-05-02 08:08:56'),
 (17, 1, 'Inclear 1.7g×10', '10', 'cây', 900000, 800000, 2651, 3, 'inclear_vaginal_cleaner_10.jpg', 10, 0, 'Inclear - Vaginal Cleaner\r\n', 'gel đặt trị huyết trắng', 0, '2019-03-20 16:58:46', '2019-05-02 08:26:16'),
 (18, 1, 'Attonon EX Gel 15g', '15 g', 'tuýp', 330000, 290000, 658, 10, 'attonon_ex_gel_15g.jpg', 25, 37, 'アットノンEX ジェル 15g \r\nGel liền xẹo\r\nGel lien xeo\r\nGel lien theo', 'gel trị thẹo', 0, '2019-03-20 17:12:07', '2019-05-12 01:48:18'),
@@ -927,7 +971,7 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (22, 1, 'iSDG Diet Hot 121 (red) 30 days (60 tablets)', '60 viên', 'bịch', 350000, 280000, 540, 6, 'iSDG_diet_beauty_121_red.jpg', 9, 11, '', 'viên giảm cân 121 loại', 0, '2019-03-20 17:57:26', '2019-05-02 08:27:14'),
 (23, 1, '232 Diet Enzyme Premium (120 tablets) (green)', '120 viên', 'bịch', 570000, 450000, 1500, 5, 'iSDG_diet_green_232.jpg', 9, 11, 'giảm cân\r\n232ダイエット酵素プレミアム（120粒）\r\n🍀🍀🍀🍀🍀Công dụng của viên uống giảm cân thực vật lên men Enzyme Diet Premium nhật bản\r\nViên uống giảm cân thực vật lên men enzyme diet premium nhật bản được chiết xuất từ hơn 232 loại rau củ quả tự nhiên lên men giúp đốt cháy mỡ thừa tốt nhất, giúp bạn trở lại dáng thon gọn. \r\n👉Với Enzyme diet Premium không những giúp bạn giảm cân hiệu quả mà còn làm cho bạn khỏe, trẻ đẹp ra với công dụng như sau:\r\n\r\n-👉Viên uống giảm cân Enzyme Diet Premium Nhật Bản hỗ trợ đào thải mỡ, đốt cháy mỡ thừa trong cơ thể giúp giảm cân\r\n\r\n- 👉Enzyme Diet Premium Nhật Bản bổ sung chất xúc tác để phân giải hết năng lượng trong cơ thể để tránh tích tụ mỡ.\r\n\r\n- 👉Viên giảm cân Enzyme Diet Premium thanh lọc cơ thể, tăng sức đề kháng phòng ngừa bệnh\r\n\r\n- 👉Enzyme rất cần thiết cho các hoạt động trao đổi chất trong tế bào khi tuổi càng cao thì Enzyme càng giảm vì vậy hoạt động trao đổi chất cũng giảm theo nên đó cũng là nguyên nhân bạn ăn ít hơn lúc còn trẻ mà tại sao ngày càng mập ra, vì thế cần bổ sung enzyme từ bên ngoài.\r\n\r\n🍀🍀🍀Viên uống giảm cân Enzyme Diet Premium còn được bổ sung thêm men Koubo và Koji tự nhiên từ ngũ cốc giúp phân giải đường để tạo năng lượng cho cơ thể hoạt động khỏe mạnh.\r\n🥰🥰Ngày 2 lần mỗi lần 2 viên viên uống giảm cân thực vật lên men Enzyme Diet Premium Nhật Bản vào buổi sáng hoặc tối, uống trước bữa ăn 30 phút.', 'giảm cân 232 loại', 0, '2019-03-20 18:03:16', '2019-05-02 07:50:38'),
 (24, 1, 'WHITE CONC Watery Gel II 90g', '90 g', 'chai', 350000, 300000, 1049, 1, 'white_conc_body_gel.jpg', 16, 52, '薬用ホワイトコンク　ウォータリークリームII　90g\r\nGel duong trang da', 'gel dưỡng trắng da ban đêm', 0, '2019-03-20 18:11:27', '2019-05-02 23:55:27'),
-(25, 1, 'WHITE CONC Body Sampoo CII 360ml', '360 ml', 'chai', 400000, 350000, 0, 0, 'white_conc_body_sampoo.jpg', 16, 52, '薬用ホワイトコンク　ボディシャンプーCII　360ml', 'sữa tắm trắng da', 0, '2019-03-20 18:18:17', '2019-05-02 23:54:56'),
+(25, 1, 'WHITE CONC Body Sampoo CII 360ml', '360 ml', 'chai', 400000, 350000, 0, 4, 'white_conc_body_sampoo.jpg', 16, 52, '薬用ホワイトコンク　ボディシャンプーCII　360ml', 'sữa tắm trắng da', 0, '2019-03-20 18:18:17', '2019-05-18 23:11:14'),
 (26, 1, 'Pueraria Mirifica 99EX (66 tablets)', '66 viên', 'hộp', 750000, 650000, 3024, 2, 'pueraria_mirifica_99_ex.jpg', 10, 0, 'プエラリア99EX（66粒）', 'viên nở ngực', 0, '2019-03-20 18:31:07', '2019-05-02 12:11:09'),
 (27, 1, 'Botanical Oil Hair Treatment 100ml', '100 ml', 'chai', 490000, 400000, 540, 8, 'botanical_hair_oil.jpg', 7, 12, 'dưỡng tóc botanical\r\nArgan Serum Vitamin Not washed type 100ml.', 'dầu dưỡng tóc botanist', 0, '2019-03-22 10:48:08', '2019-05-02 07:54:20'),
 (28, 1, 'Botanical Honey Oil Hair Treatment 100ml', '100 ml', 'chai', 0, 0, 0, 0, 'botanical_honey_hair_oil.jpg', 7, 12, 'dưỡng tóc botanical\r\nArgan Serum Vitamin Not washed type 100ml.', 'dầu dưỡng tóc botanist', 1, '2019-03-22 10:51:47', '2019-05-02 07:54:35'),
@@ -939,9 +983,9 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (34, 1, 'Anessa Perfect Skin Gel SPF 50+ PA++++ 90g', '90 g', 'tuýp', 590000, 540000, 2138, 2, 'anessa_gold.png', 14, 7, 'スキンケアする強力UVジェル\r\nパーフェクトUV スキンケアジェル\r\n〈日焼け止め用ジェル〉90g\r\nGel chống nắng, Gel UV mạnh mẽ\r\nGel chong nang, Gel UV manh me\r\nChống nắng toàn diện với Anessa Whitening UV Sunscreen Gel\r\n🍀🍀🍀🍀🍀Gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen Gel 90g:\r\nlà giải pháp chống nắng toàn diện, hiệu quả. Với công nghệ Aqua Booster chống nước kết hợp cùng hoạt chất làm mờ vết thâm nám, giúp bảo vệ làn da khỏi tác hại của ánh nắng mặt trời, đồng thời cung cấp thành phần dưỡng da cho bạn làn da trắng sáng rạng rỡ.\r\n\r\n🍀🍀🍀Công dụng của gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- ❄️Chỉ số chống nắng cao, bảo vệ làn da bạn dưới tác hại của ánh nắng mặt trời. \r\n- ❄️Chứa thành phần dưỡng trắng và dưỡng ẩm da, ức chế sự phát triển của hắc tố melanin, trả lại làn da trắng sáng, đều màu.\r\n- ❄️Chống lão hóa da và dưỡng ẩm chuyên sâu cho làn da mềm mịn, mượt mà.\r\n- ❄️Dạng gel sữa thấm nhanh vào da, không gây bết dính, bí bách tạo cảm giác thoải mái, thông thoáng cho da, hạn chế gây mụn.\r\n\r\n🍀🍀🍀Hướng dẫn sử dụng gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- 🥑Thoa kem trước khi ra nắng 15-20 phút để kem có thời gian phát huy hiệu quả và giúp những dưỡng chất thấm sâu vào da.\r\n- 🍓Bước 1: Thực hiện các bước chăm sóc da cơ bản, sử dụng kem chống nắng sau khi dưỡng ẩm. \r\n- 🍓Bước 2: Làm sạch tay, lắc đều và sử dụng:\r\n+ 🥝Đối với vùng mặt: Cho một lượng vừa đủ (khoảng bằng hạt ngọc trai) thoa đều lên mặt và cổ theo hướng từ trong ra ngoài, vỗ nhẹ để kem thấm vào da tốt hơn.\r\n+ 🥝Đối với cơ thể: Cho sản phẩm lên da theo đường dọc cơ thể, nên sử dụng một lượng nhiều sản phẩm và thoa bằng lòng bàn tay với động tác xoay tròn.\r\n- 🍓Bước 3: Thoa lại sau 2-3 giờ tiếp xúc với nắng để được bảo vệ tối ưu nhất.\r\n\r\n* Kem chống nắng Anessa màu vàng: Khả năng chống thấm nước vượt trội, thích hợp cho người chơi thể thao, đi biển.', 'gel chống nắng vàng', 0, '2019-03-22 15:36:27', '2019-05-02 07:51:57'),
 (35, 1, 'Labo BB Essence Cream SPF50 PA++++ 03 33g', '33 g', 'tuýt', 320000, 260000, 768, 3, 'labo_essence_cream_03.jpg', 12, 15, 'モイストラボBB エッセンスクリーム ナチュラルオークル(SPF50 PA++++) 33g', 'kem nền', 0, '2019-03-22 16:55:31', '2019-05-02 08:28:29'),
 (36, 1, 'Labo BB Essence Cream SPF50 PA++++ 01 33g', '33 g', 'tuýt', 320000, 260000, 800, 1, 'labo_essence_cream_01.jpg', 12, 15, 'モイストラボBBエッセンスクリームナチュラルベージュ', 'kem nền', 0, '2019-03-22 17:04:08', '2019-05-02 08:28:19'),
-(37, 1, 'Melano CC 20ml', '20 ml', 'tuýp', 340000, 280000, 1052, 2, 'merano_cc.jpg', 12, 14, 'メラノCC 薬用しみ集中美容液20ml', 'serum melano', 0, '2019-03-22 17:25:59', '2019-05-02 08:30:19'),
+(37, 1, 'Melano CC 20ml', '20 ml', 'tuýp', 340000, 280000, 1052, 5, 'merano_cc.jpg', 12, 14, 'メラノCC 薬用しみ集中美容液20ml', 'serum melano', 0, '2019-03-22 17:25:59', '2019-05-19 02:37:27'),
 (38, 1, 'AQUALABEL Special Gel Cream Oil In 90g', '90 g', '', 490000, 420000, 2030, 2, 'aqualabel_special_gel_cream_oil_in_gold_90g.jpg', 12, 7, 'アクアレーベル スペシャルジェルクリーム (オイルイン) エイジングケアタイプオールインワン 90g\r\n\r\nKem Dưỡng Trắng Da Shiseido Aqualabel (xanh, đỏ, vàng)\r\n     \r\n Trọng lượng: 50g\r\n Xuất xứ: Nhật Bản\r\nCông dụng từng loại :\r\n- Kem màu xanh: Giúp dưỡng trắng sáng da, ngăn ngừa nám, tàn nhang và các vùng da sậm màu, cho bạn làn da trắng hồng rạng rỡ một cách tự nhiên.\r\n- Kem màu đỏ: Có chứa Na Axit Hyaluronic là thành phần rất hiệu quả trong việc cấp & giữ nước cho bề mặt da giúp da bạn mịn màng & mềm mại hơn. Điều này sẽ cảm nhận được sau lần đầu tiên sử dụng.\r\n- Kem màu vàng: Với tinh chất sâm và sữa ong chúa, Aqualabel nhãn vàng được mọi người ưa chuộng vì nó cung cấp dưỡng chất mà da cần, kéo dài vẻ mịn màng, tươi mới của làn da, ngăn ngừa những dấu hiệu lão hóa đến sớm của da.', 'kem dưỡng đêm shiseido', 0, '2019-03-22 18:30:11', '2019-05-13 19:07:17'),
-(39, 1, 'Shu Uemura Smoothfit Mineral Foundation', '', '', 1000000, 900000, 4980, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, 'シュウウエムラ スムースフィット ミネラル ファンデーション\r\nhttps://www.shuuemura.jp/?p_id=MFD009', 'kem nền shu', 0, '2019-03-22 18:43:02', '2019-05-02 12:14:06'),
+(39, 1, 'Shu Uemura Smoothfit Mineral Foundation', '', '', 1000000, 900000, 4980, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, 'シュウウエムラ スムースフィット ミネラル ファンデーション\r\nhttps://www.shuuemura.jp/?p_id=MFD009', 'kem nền shu', 0, '2019-03-22 18:43:02', '2019-05-19 03:28:11'),
 (40, 1, 'AQUALABEL White Up Cream 50g (Blue)', '50 g', '', 490000, 420000, 1640, 0, 'shiseido_aqua_blue.jpg', 12, 7, 'アクアレーベル ホワイトアップ クリーム 保湿・美白クリーム (3) とてもしっとり 50g ', 'ken dưỡng trắng da đêm shiseido', 0, '2019-03-25 14:09:25', '2019-05-02 07:53:00'),
 (41, 1, 'Skin Aqua Tone Up UV Essence SPF 50+ PA++++ 80g', '80 g', 'tuýp', 310000, 250000, 861, 5, 'skin_aqua_uv.jpg', 14, 14, 'SKIN AQUA（スキンアクア） トーンアップUVエッセンス （80g）', 'chống nắng', 0, '2019-03-25 14:31:22', '2019-05-02 23:44:00'),
 (42, 1, 'Chondroitin ZS Tablets 270 (tablets)', '270 viên', 'hủ', 1600000, 1500000, 7500, 1, 'chonroitin_zs_270.jpg', 10, 17, 'コンドロチンZS錠（270錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-03-25 15:23:13', '2019-05-02 08:02:46'),
@@ -952,7 +996,7 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (47, 1, 'Spirulina 100% 2200 cap', '2200 viên', 'hủ', 800000, 730000, 2570, 1, 'supirurina_2200.jpg', 8, 0, '🌸🌸🌸🌸🌸Tảo biển spirulina 2200 viên:\r\nTảo biển spirulina Nhật Bản được chế biến từ 100 % tảo xoắn Nhật nguyên chất và đã được các tổ chứcTokyo Chamber of Commerce and Industry và Japan Food Research Laboratories (JFRL) công nhận là một loại thực phẩm chức năng có chất lượng và có nhiều tác dụng cho con người. \r\n🌸Tảo biển spirulina Nhật Bản 2200 viên là sản phẩm phù hợp với mọi lứa tuổi khi giúp bổ sung nguồn dinh dưỡng dồi dào cho cơ thể, giúp tăng cường sức đề kháng, nâng cao hệ thống miễn dịch.\r\n🌸Tác dụng của tảo biển Nhật Bản còn giúp điều hòa huyết áp, giảm cholesterol. Theo đó, nghiên cứu tại Mexico cho thấy, cả nam và nữ dùng 4,5g tảo spirulina hàng ngày đã làm giảm tỉ lệ huyết áp cao trong vòng 6 tuần.\r\n🌸Công dụng tảo Nhật Bản 2200 viên giúp giải độc cho gan, giải độc cho cơ thể rất hiệu quả nhờ thành phần chất diệp lục và chất chống oxy hóa cao trong sản phẩm tảo biển này.\r\n🌸Ngoài ra, một nghiên cứu khác về tảo biển của Nhật trên bệnh nhân cao tuổi cho thấy mức cholesterol thấp có liên quan đến việc tiêu thụ 8g spirulina mỗi ngày trong 16 tuần.\r\n🌸Tác dụng của tảo spirulina chống lão hóa và ngừa ung thư nhờ có chứa hàm lượng chất chống oxy hóa cao như là Beta-caroten, vitamin E, các sắc tố Carotenoid, Chlorophyll và Phycocyanin, hay selenium, mangan, kẽm, đồng, sắt và crôm…\r\n🌸Tảo Spirulina còn được chứng minh hiệu quả trong hỗ trợ chữa trị các chứng dị ứng ở mũi bằng cách ngăn chặn sự giải phóng histamine. Việc sử dụng tảo xoắn giúp cải thiện triệu chứng như hắt hơi, nghẹt mũi, ngứa mũi và xổ mũi.\r\n🌸Bên cạnh đó, tảo Spirulina còn hỗ trợ phòng và điều trị bệnh tiểu đường bằng cách kích thích insulin, kiểm soát lượng đường huyết, giúp chuyển hóa đường thành năng lượng.\r\n🌸Ngoài ra, tảo Spirulina là thực phẩm dinh dưỡng tự nhiên có tính kiềm giúp trung hòa axit trong dạ dày, đồng thời bổ sung dinh dưỡng đầy đủ mà không sợ người bệnh thiếu chất.\r\n🌸Công dụng của tảo Spirulina Nhật không những thế còn giúp tăng cường sinh lý, sinh lực cho phái mạnh, giúp bổ thận tráng dương, cho nam giới có được những giây phút thăng hoa.\r\n🌸Tác dụng của tảo biển spirulina còn đặc biệt giúp làm đẹp da, kháng khuẩn, giảm dị ứng, sưng tấy cho làn da, hỗ trợ đẩy lùi quá trình lão hóa, bên cạnh đó còn tốt cho răng và tóc.\r\n🌸Hơn thế, tảo biển Spirulina Nhật Bản còn hỗ trợ chống béo phì giúp cho quá trình tiêu hóa được tốt hơn, đem lại cho chị em một vóc dáng và thân hình cân đối, khỏe mạnh nhất.\r\n🌸🌸🌸Hướng dẫn sử dụng tảo biển Spirulina Nhật Bản:\r\n🌸Đối với người lớn ngày uống 20 - 30 viên trước bữa ăn hoặc sau bữa ăn (có thể chia làm 2 - 3 lần).\r\n🌸Đối với trẻ em dưới 5 tuổi: uống dưới 5 viên/lần, có thể nghiền thành bột chung với thức ăn (nên hỏi ý kiến bác sĩ trước khi sử dụng).\r\n🌸Đối với trẻ em trên 5 tuổi: uống 10 - 20 viên/ngày, mỗi ngày uống 2 - 3 lần.\r\n🌸Người đang giảm cân: uống tảo trước bữa ăn 30 phút.\r\n🌸Nếu muốn tăng cân: uống tảo biển sau bữa ăn 30 phút. \r\n🌸Tảo biển Spirulina còn dùng để đắp mặt nạ mỗi ngày.\r\n-Mặt nạ tảo biển khô: bột tảo biển khô cũng có giá trị dinh dưỡng tương tự như tảo tươi,khi đắp mặt nạ tảo biển nhật bản sẽ giúp thanh lọc da, tăng cường dưỡng chất, bổ sung độ ẩm giúp da mềm mại, cung cấp chất chống oxy hoá xóa đi các nếp nhăn, đốm nám, mụn đầu đen trên mũi,mặt. Do có đặc tính lành nên khi sử dụng mặt nạ này bạn có thể kết hợp với các nguyên liệu khác như: mật ong, nha đam, cam,tinh dầu dừa, bưởi.v..v. mà không lo có tác dụng phụ xảy ra.\r\n-Để chế mặt nạ từ tảo biển này không khó, chị em cần dùng 2 - 5 thìa tảo biển đã nghiền nát tương đương 13 - 15 gam tảo biển. Pha cùng 20ml nước nóng để tạo thành hỗn hợp bột nhão. Tiếp đó thêm 1 thìa gel lô hội, 1 thìa mật ong vào hỗn hợp vừa tạo được.\r\nRửa mặt thật sạch bằng sữa rửa mặt có hoạt tính dịu nhẹ, sau đó thoa hỗn hợp này lên da mặt và cả vùng cổ. Nằm thư giãn 20 - 30 phút cho đến khi lớp mặt nạ se và khô lại. Cuối cùng rửa sạch da mặt và da vùng cổ bằng nước ấm.\r\n\r\n=====\r\nスピルリナ100% 海洋深層水スピルリナブレンド 2200粒\r\nSpirulina 100% Kaiyoushinsosui Spirulina Blend 2200 tablets\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2200 viên dạng hủ', 0, '2019-03-30 03:44:15', '2019-05-03 02:22:42'),
 (48, 1, 'Night Diet Tea (2g x 20 follicles)', '20 gói', 'bịch', 290000, 230000, 753, 13, 'night_diet_tea.jpg', 9, 20, 'Trà giảm cân', 'trà giảm cân ban đêm', 0, '2019-03-30 10:28:20', '2019-05-12 00:31:21'),
 (49, 1, 'DHC Vitamin B Mix 60 days (120 tablets)', '120 viên', 'bịch', 230000, 170000, 321, 5, 'dhc_vitamin_B_60days.jpg', 10, 9, 'DHC（ディーエイチシー） ビタミンBミックス 60日分（120粒）〔栄養補助食品〕', 'Viên vitamin B Mix 60 ngày', 0, '2019-03-30 10:32:09', '2019-05-02 08:17:07'),
-(50, 1, 'DHC Multi Vitamin 60 days (120 tablets)', '120 viên', 'bịch', 260000, 200000, 555, 1, 'dhc_multi_vitamin_60days.jpg', 10, 9, 'DHC（ディーエイチシー） マルチビタミン 60日分（60粒）〔栄養補助食品〕', 'viên vitamin tổng hợp DHC 60 ngày', 0, '2019-03-30 11:11:12', '2019-05-05 19:17:37'),
+(50, 1, 'DHC Multi Vitamin 60 days (120 tablets)', '120 viên', 'bịch', 260000, 200000, 555, 7, 'dhc_multi_vitamin_60days.jpg', 10, 9, 'DHC（ディーエイチシー） マルチビタミン 60日分（60粒）〔栄養補助食品〕', 'viên vitamin tổng hợp DHC 60 ngày', 0, '2019-03-30 11:11:12', '2019-05-18 23:03:35'),
 (51, 1, 'DHC Fragrant Bulgarian Rose 20 days (40 tablets)', '40 viên', 'bịch', 350000, 300000, 1004, 9, 'dhc_burugaria_rose_20days.jpg', 10, 9, 'DHC（ディーエイチシー） 香るブルガリアンローズ 20日分（40粒）〔栄養補助食品〕\r\n🌹🌹🌹🌹🌹Viên uống dầu hoa hồng thơm cơ thể DHC:20 ngày\r\n🌹Viên uống dầu hoa hồng thơm cơ thể DHC kết hợp thành phần Citronellol (có trong tinh dầu xả) và Geraniol (có trong tinh dầu hoa hồng) là một chất chống oxy hóa tự nhiên và hương thơm của nó khi vào cơ thể, sẽ được bài tiết qua lỗ chân lông, tạo mùi ngọt tự nhiên có thể kéo dài hàng giờ.\r\n\r\n🌹Trong dầu hoa hồng là chất chống oxy hóa mạnh, nó có đến 850 thành phần có thể tạo ra mùi hương cho cơ thể, bạn sẽ cảm nhận được cơ thể sẽ thay đổi sau 2-3 giờ uống.\r\n🌹Có thể nói, cơ thể có mùi tuy không gây hại nhưng nó vô tình làm chúng ta mất đi cảm giác tự tin trong giao tiếp, mọi người sẽ vô tình cảm thấy khó chịu và muốn đứng xa mình 1 chút. \r\n🌹🌹Liều dùng:\r\nUống mỗi ngày 2 viên sau bữa ăn để duy trì và tránh được sự tiết mùi không đáng có.', 'viên hoa hồng thơm cơ thể 20 ngày', 0, '2019-03-30 12:47:15', '2019-05-02 08:03:47'),
 (52, 1, 'DHC Vitamin E 60 days (60 tablets)', '60 viên', 'bịch', 290000, 230000, 606, 5, 'dhc_vitamin_E_60days.jpg', 10, 9, 'DHC（ディーエイチシー） ビタミンE 60日分（60粒）〔栄養補助食品〕', 'Viên Vitamin E DHC 60 ngày', 0, '2019-03-30 13:09:25', '2019-05-02 08:17:35'),
 (53, 1, 'Inochi no haha 420 pills', '420 viên', 'hủ', 630000, 560000, 2138, 3, 'inochinohana_420.jpg', 10, 21, '【第2類医薬品】 女性保健薬命の母A（420錠）\r\n\r\ntien man kinh', 'thuốc tiền mãn kinh', 0, '2019-03-30 22:22:30', '2019-05-02 08:26:34'),
@@ -1063,15 +1107,15 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (157, 1, 'Slim Up Slim Cafe Latte Colalgen 360g', '360g', '', 550000, 450000, 0, 2, 'slimup-caef-latte-colalgen.jpg', 9, 8, 'collagen', 'bột giảm cân slim up slim', 0, '2019-04-15 11:24:33', '2019-05-02 23:44:39'),
 (158, 1, 'Muhi  Children Eyedrops 15ml', '15 ml', '', 190000, 150000, 512, 0, 'muhi-eyedrops.jpg', 13, 26, '【第3類医薬品】ムヒのこども目薬 15mL', 'nhỏ mắt cho trẻ', 0, '2019-04-17 15:40:24', '2019-05-02 12:05:40'),
 (159, 1, 'Chikunain 56 caps', '56 viên', '', 520000, 450000, 1665, 0, 'chikunain.jpg', 10, 37, '【第2類医薬品】チクナインb 56錠\r\nthuoc tri viem xoang', 'thuốc trị viêm xoang', 0, '2019-04-17 16:07:56', '2019-05-02 08:00:38'),
-(160, 1, 'Nissin Mug Noodle 2tp', '', '', 80000, 70000, 195, 6, 'nissin-mug-noodle.jpg', 17, 53, '', 'mì gói trẻ em', 0, '2019-04-17 16:58:51', '2019-05-02 12:09:51'),
-(161, 1, 'Dai Ginjo Sake Kasu Mask 33 (peach sake)', '', '', 310000, 260000, 703, 5, 'sake-kasu-face-mask.jpg', 24, 0, '大吟醸酒粕マスク　桃酒の香り（３３枚入り）', 'mặt nạ sake', 0, '2019-04-18 10:48:12', '2019-05-02 08:03:00'),
+(160, 1, 'Nissin Mug Noodle 2tp', '', '', 80000, 70000, 195, 30, 'nissin-mug-noodle.jpg', 17, 53, '', 'mì gói trẻ em', 0, '2019-04-17 16:58:51', '2019-05-18 22:56:16'),
+(161, 1, 'Dai Ginjo Sake Kasu Mask 33 (peach sake)', '', '', 310000, 260000, 703, 19, 'sake-kasu-face-mask.jpg', 24, 0, '大吟醸酒粕マスク　桃酒の香り（３３枚入り）', 'mặt nạ sake', 0, '2019-04-18 10:48:12', '2019-05-19 03:15:43'),
 (162, 1, 'Muji Mairudo Oil Cleansing 400ml', '400 ml', '', 450000, 390000, 1071, 0, 'muji-mairudo-oil-cleansing.jpg', 7, 46, '', 'tẩy trang muji', 0, '2019-04-19 22:51:01', '2019-05-02 12:07:55'),
 (163, 1, 'Son MaybeLine', '', '', 470000, 420000, 1620, 0, NULL, 18, 54, '', 'son maybeline dạng nước', 0, '2019-04-21 00:36:15', '2019-05-02 23:45:49'),
 (164, 1, 'Chondroitin ZS Tablets 180 (tablets)', '180 viên', 'hủ', 1330000, 1250000, 5466, 0, 'chondroitin-zs-180.jpg', 10, 17, 'コンドロチンZS錠（180錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-04-21 12:39:03', '2019-05-02 08:02:34'),
 (165, 1, 'Chondroitin ZS Tablets 108 (tablets)', '108 viên', 'hủ', 1000000, 930000, 0, 0, 'chondroitin-zs-108.jpg', 10, 17, 'コンドロチンZS錠（108錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-04-21 12:40:28', '2019-05-02 08:02:22'),
-(166, 1, 'Spirulina 100% 2200 + 400 cap', '2400 viên', 'bịch', 750000, 670000, 2116, 1, 'supirurina_2200_400.jpg', 8, 0, 'スピルリナ100%　【2000粒+400粒増量】1粒200mg（約2ヵ月分）\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2400 viên dạng túi', 0, '2019-04-26 14:11:37', '2019-05-12 01:41:04'),
+(166, 1, 'Spirulina 100% 2200 + 400 cap', '2400 viên', 'bịch', 750000, 670000, 2116, 4, 'supirurina_2200_400.jpg', 8, 0, 'スピルリナ100%　【2000粒+400粒増量】1粒200mg（約2ヵ月分）\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2400 viên dạng túi', 0, '2019-04-26 14:11:37', '2019-05-18 23:07:07'),
 (167, 1, 'Natto Kinaze 2000FU 60 caps', '', '60 viên', 620000, 540000, 2108, 4, 'natto-kinaze-60.jpg', 10, 36, '明治薬品 納豆キナーゼ　６０粒\r\n\r\n\r\n💊💊💊💊💊Viên Uống Nattokinase 2000FU Noguchi phòng ngừa và hỗ trợ điều trị đột quỵ: 60 viên\r\nMột sản phẩm chăm sóc sức khỏe đến từ xứ sở hoa anh đào nằm trong top những loại thuốc chống đột quỵ tốt nhất hiện nay chính là Viên uống Nattokinase 2000FU Noguchi. Sản phẩm được sản xuất từ sự kết hợp tuyệt vời giữa Công ty Dược phẩm Meiji và Viện Nghiên Cứu Y học Noguchi hàng đầu Nhật Bản.\r\n💊💊💊Thành phần của viên Nattokinase 2000FU Noguchi:\r\n💊Men bia, gelatin, dextrin, natto chiết xuất (nattokinase men), da củ hành (chứa quercetin), axit stearic Ca, chiết xuất bột tiêu đen, hạt silic oxit, (bao gồm cả một số trong những đậu nành thô).\r\n💊Thành phần dinh dưỡng trong mỗi 2 viên uống nattokinase (420 mg) : Năng lượng -1.6 kcal, Lipid 0,013 g, Protein 0,19 g, Carbohydrate 0,18 g, Natto chiết xuất (Nattokinase) 100mg (2000FU), Natri 1,25 mg, màng vỏ hành tây 40 mg, tinh chất bột tiêu đen 3mg.\r\n💊💊💊Công dụng tuyệt vời của viên uống Nattokinase 2000FU Noguchi:\r\n💊Nattokinase 2000FU Noguchi có khả năng làm tan huyết khối, điều hòa ổn định huyết áp, phòng ngừa đột quỵ một cách hiệu quả.\r\n💊Bên cạnh đó, nó còn hỗ trợ tích cực cho việc điều trị những di chứng của tai biến mạch máu não.\r\n💊Một ưu điểm nữa của Nattokinase 2000FU Noguchi đó là nó có khả năng làm tăng tuần hoàn não, cải thiện tình trạng suy giảm trí nhớ.\r\n💊Ngoài ra, viên uống Nattokinase 2000FU Noguchi còn giúp tăng cường sinh lực, ngăn ngừa sự hình thành các cục máu đông và phòng ngừa tình trạng xơ vữa động mạch hiệu quả cho người sử dụng.\r\n💊💊💊Những ai nên dùng viên uống Nattokinase 2000FU Noguchi: người bị tắc mạch máu do có cục máu đông, người béo phì, tiểu đường, mắc bệnh xơ vữa động mạch,người bị cao huyết áp, người cao tuổi,…\r\n💊💊💊Liều dùng và cách dùng viên uống Nattokinase 2000FU Noguchi:\r\n💊Dùng để dự phòng thì bạn chỉ cần uống 1 viên/ngày trước khi đi ngủ.\r\n💊Dùng để hỗ trợ điều trị: dùng 2 viên/ngày, chia làm 2 lần uống, mỗi lần 1 viên.\r\n💊Nên dùng thuốc trước bữa ăn 30 phút và sua bữa ăn 1 tiếng, không uống thuốc với nước nóng trên 40 độ vì có thể làm mất tác dụng của thuốc.\r\n💊Những trường hợp không nên dùng viên uống Nattokinase 2000FU Noguchi: người bị viêm loét nặng, người mới phẫu thuật trong vòng nửa năm, người bị chảy máu nội so, người huyết áp quá cao, người đáng dùng thuốc chống đông máu. Phụ nữ mang thai và cho con bú thì cần tham khảo ý kiến của bác sĩ trước khi dùng thuốc.\r\n💊Viên uống Nattokinase 2000FU Noguchi không phải là thuốc điều trị mà chỉ là thuốc hỗ trợ điều trị vì thế nó không có tác dụng thay thế thuốc chữa bệnh.', 'thuốc chống đột quỵ', 0, '2019-04-26 14:26:07', '2019-05-02 12:09:05'),
-(168, 1, 'WHITE CONC Whitening CC Cream CII 200g', '200 g', 'bịch', 400000, 350000, 1080, 2, 'white_conc_whitening_cream_200.jpg', 16, 52, '薬用ホワイトコンク ホワイトニングCCクリーム CII 200g\r\n\r\n🍓🍓🍓🍓🍓Dưỡng thể White Con CC cream 200g:\r\nSữa dưỡng thể White Conc White CC Cream có thành phần chính là vitamin C chiết xuất từ những quả cam tự nhiên giúp dưỡng da trắng sáng an toàn và mềm mịn hiệu quả. Thành phần vitamin C còn kích thích tái tạo lại tế bào da, điều trị các tổn thương từ sâu bên trong đảm bảo da căng mịn và luôn trong trạng thái tươi trẻ.\r\n🍓🍓🍓Thành phần dưỡng thể White CC White ConC gồm:\r\nSữa dưỡng trắng White conc white cc Cream có thành phần chính là Vitamin C chiết xuất từ những quả cam giúp dưỡng trắng da toàn thân. Vitamin C còn giúp kích thích tái tạo tế bào da, điều trị các tổn thương từ sâu bên trong.\r\n🍓🍓🍓Công dụng dưỡng thể White Conc như sau:\r\n🍓Dưỡng thể CC Cream dạng chất kem lỏng nhẹ giúp nhanh chóng dưỡng da trắng sáng, mịn màng, thành phần vitamin C chính trong sữa dưỡng thể còn có tác dụng tái tạo tế bào, da căng mịn và luôn tươi trẻ.\r\n🍓Hylaluronic Acid như tấm màng bảo vệ giúp da luôn được dưỡng ẩm đầy đủ, chấm dứt tình trạng da khô nứt hay bong tróc vào những ngày khô hanh, ngăn chặn các tia UV hiệu quả.\r\n🍓Collagen trong sữa dưỡng thể là nhân tố vô cùng quan trọng để da ngày càng sáng khỏe, đẩy lùi các dấu hiệu lão hóa.\r\n🍓🍓🍓Hướng dẫn dụng dưỡng thể White Conc:\r\n🍓Cho một lượng kem vừa đủ lên lòng bàn tay, thoa đều lên những nơi vùng da bạn cần dưỡng trắng và massage nhẽ nhàng, kết hợp vỗ nhẹ để kem thấm nhanh và đều.\r\n🍓Sử dụng kết hợp với sữa tắm white conc để cho kết quả tốt nhất', 'kem dưỡng trắng da ban đêm', 0, '2019-04-26 14:50:54', '2019-05-02 23:55:50'),
+(168, 1, 'WHITE CONC Whitening CC Cream CII 200g', '200 g', 'bịch', 400000, 350000, 1080, 5, 'white_conc_whitening_cream_200.jpg', 16, 52, '薬用ホワイトコンク ホワイトニングCCクリーム CII 200g\r\n\r\n🍓🍓🍓🍓🍓Dưỡng thể White Con CC cream 200g:\r\nSữa dưỡng thể White Conc White CC Cream có thành phần chính là vitamin C chiết xuất từ những quả cam tự nhiên giúp dưỡng da trắng sáng an toàn và mềm mịn hiệu quả. Thành phần vitamin C còn kích thích tái tạo lại tế bào da, điều trị các tổn thương từ sâu bên trong đảm bảo da căng mịn và luôn trong trạng thái tươi trẻ.\r\n🍓🍓🍓Thành phần dưỡng thể White CC White ConC gồm:\r\nSữa dưỡng trắng White conc white cc Cream có thành phần chính là Vitamin C chiết xuất từ những quả cam giúp dưỡng trắng da toàn thân. Vitamin C còn giúp kích thích tái tạo tế bào da, điều trị các tổn thương từ sâu bên trong.\r\n🍓🍓🍓Công dụng dưỡng thể White Conc như sau:\r\n🍓Dưỡng thể CC Cream dạng chất kem lỏng nhẹ giúp nhanh chóng dưỡng da trắng sáng, mịn màng, thành phần vitamin C chính trong sữa dưỡng thể còn có tác dụng tái tạo tế bào, da căng mịn và luôn tươi trẻ.\r\n🍓Hylaluronic Acid như tấm màng bảo vệ giúp da luôn được dưỡng ẩm đầy đủ, chấm dứt tình trạng da khô nứt hay bong tróc vào những ngày khô hanh, ngăn chặn các tia UV hiệu quả.\r\n🍓Collagen trong sữa dưỡng thể là nhân tố vô cùng quan trọng để da ngày càng sáng khỏe, đẩy lùi các dấu hiệu lão hóa.\r\n🍓🍓🍓Hướng dẫn dụng dưỡng thể White Conc:\r\n🍓Cho một lượng kem vừa đủ lên lòng bàn tay, thoa đều lên những nơi vùng da bạn cần dưỡng trắng và massage nhẽ nhàng, kết hợp vỗ nhẹ để kem thấm nhanh và đều.\r\n🍓Sử dụng kết hợp với sữa tắm white conc để cho kết quả tốt nhất', 'kem dưỡng trắng da ban đêm', 0, '2019-04-26 14:50:54', '2019-05-18 23:05:30'),
 (169, 1, 'Son YSL', '', '', 1200000, 1100000, 4447, 1, NULL, 18, 55, '', 'son YSL', 0, '2019-04-26 16:23:10', '2019-05-05 19:05:05'),
 (170, 1, 'Ecovacs Deebot N79', '3.5 kg', '', 6300000, 5800000, 19900, 0, 'deebot-n79-1.jpg', 26, 56, 'https://youtu.be/vrPEQAA9i-Q\r\nnormal price: 6500000 / 6000000\r\n\r\nSản phẩm đang được giảm giá hốt lẹ hốt lẹ!!!!\r\n\r\n🥴🥴🥴🥴🥴Bạn là người hiện đại với nhiều công việc bận rộn, hãy tiết kiệm thời gian và công sức của mình cho việc dọn dẹp nhà cửa bằng Robot hút bụi tự động Ecovacs Deebot N79 thông minh đầy tiện dụng.\r\n\r\n👍👍👍Tiết kiệm thời gian và công sức với Robot hút bụi Ecovacs Deebot N79:\r\nTheo bước phát triển hiện đại của công nghệ thì đã có không ít những phát minh Robot tiên tiến ra đời. Một trong số đó phải kể đến Robot hút bụi Ecovacs Deebot N79, dòng thiết bị thông minh được trang bị nhiều tính năng hữu ích để hỗ trợ người dùng dọn dẹp nhà cửa một cách nhanh chóng và tiết kiệm thời gian nhất có thể.\r\n🤪🤪🤪Bạn đã biết gì về Robot hút bụi tự động?\r\n\r\n👉Khái niệm về Robot hút bụi:\r\n\r\n🥴Đúng như những gì bạn đang nghĩ, chức năng chính của nó là hút bụi. Nhưng không giống như những máy hút bụi thông thường, Robot hút bụi rất “thông minh”. Thông minh ở đây không có nghĩa là nó có khả năng như một con người mà chỉ đơn giản là nó có thể giúp bạn làm được những gì bạn cần mà không cần bất kỳ tác động hay kiểm soát từ con người với khả năng thích ứng với môi trường xung quanh.\r\n🥴Robot sẽ giúp bạn hút sạch bụi từ sàn nhà, thảm rồi sau đó tự làm sạch thùng chứa bụi. Khi kết thúc nhiệm vụ hầu hết chúng sẽ tự động tìm và đứng trên trạm sạc của mình hoặc một số trang bị hỗ trợ khác.\r\n\r\n👉Cấu tạo của Robot hút bụi:\r\n\r\n🥴Trên thị trường hiện nay đã có không ít thương hiệu Robot húi bụi ra đời với thiết kế khác nhau về kích thước, hình dáng nhưng cơ bản thì chúng thường có cấu tạo gồm hai bộ phận chính là thân máy và phụ kiện đi kèm.\r\n\r\n🥴Thân máy được làm nên từ các chi tiết như bánh xe, vỏ, hệ thống phần cữngs, hộp xử lý rác, wifi thông minh và các kết nối laser.\r\n🥴Phụ kiện kèm theo cho Robot hút bụi thường là sạc, dây và chổi quét…\r\n\r\n👉Cơ chế hoạt động của một Robot hút bụi:\r\n\r\n🥴Theo thống kế cơ bản thì hầu hết Robot hút bụi hoạt động tương tự như máy hút bụi thông thường, chính là dựa trên cơ chế hoạt động phản lực để tạo ra sức hút lớn rồi từ đó hút sạch toàn bộ bụi bẩn trên suốt quãng đường mà nó di chuyển qua.\r\n🥴Hệ thống bánh xe bên dưới giúp Robot hút bụi di chuyển, bên trong máy là bộ phận cảm biến giúp nó cảm nhận và phản hồi địa hình xung quanh, như việc nó có khả năng phát hiện những vật gây cản trở như tường, tủ, cầu thang… để tránh qua một bên.\r\n\r\n👉👉👉Những ưu và nhược điểm của Robot hút bụi:\r\n👌Ưu điểm:\r\n👍Tiết kiệm thời gian và sức lực: Robot hút bụi tự động thông minh ở chỗ chúng có khả năng tự vận hành, người dùng chỉ cần thiết lập sẵn các chức năng thì Robot sẽ dựa theo đó làm theo một cách trơn tru nhất có thể, từ đó giúp bạn tiết kiệm được khá nhiều thời gian và công sức của mình.\r\n👍Tiết kiệm chi phí: So với việc bỏ ra một khoảng để mua máy hút bụi thì Robot hút bụi vừa nhỏ gọn lại vừa mang đến hiệu quả tốt hơn. Về lâu về dài sẽ giúp bạn tiết kiệm được khá nhiều chi phí cho gia đình.\r\n👍Hiệu quả hút bụi khá cao: Kiểu dáng gọn nhẹ cùng thiết kế mỏng như một chiếc đĩa giúp robot hút bụi thuận lợi di chuyển và luồn lách vào những vị trí mà máy hút bụi thông thường khó mà hút được như gầm tủ, gầm giường, gầm ghế sofa…\r\n👍Điều khiển thông minh: Với Robot hút bụi bạn có thể dễ dàng kết nối chúng với các thiết bị thông minh như máy tính bảng hay Smartphone góp phần giúp bạn kiểm soát tốt hơn các hoạt động của Robot.\r\n\r\n👉👉👉Nhược điểm:\r\n\r\n🥴Giá thành hơi cao, một con Robot hút bụi tự động thấp nhất cũng khoảng 5 triệu đồng.\r\n🥴Chỉ hoạt động hiệu quả tốt đối với sàn nhà bằng phẳng, nếu sàn có độ dốc từ 30-35 độ thì khả năng hoạt động của Robot sẽ bị hạn chế, và dĩ nhiên là không leo được cầu thang.\r\n🥴Đối với những bề mặt có màu quá tối cũng ảnh hưởng đến cơ chế hoạt động của Robot do cảm biến ánh sáng không làm việc.\r\n\r\n👉👉👉Thông số kĩ thuật:\r\n• Màu: Đen\r\n• Chế độ làm việc: Auto Spot Edge\r\n• Kết nối điện thoại: Có\r\n• Thời gian sạch sẽ tại chỗ: 2-5 phút\r\n• Lọc: Bộ lọc hiệu quả cao\r\n• Chổi bên: 2 chổi\r\n• Chổi cuốn: 3D đảm bảo hút được rác lớn hơn\r\n• Điện áp đầu vào & Tần số: 100V AC 50 / 60Hz\r\n• Tự động sạc: Có\r\n• Cảm biết tránh tường, chống rơi: Siêu nhạy\r\n• Lập kế hoạch Thời gian: Vệ sinh chu kỳ hàng ngày\r\n• Mức ồn (db.): Khoảng 64\r\n• Thời gian sạc (h): Khoảng 3-4 giờ\r\n• Dung lượng pin (mAH): NI-MH (2600)\r\n• Dung tích thùng rác (mL): 500ml\r\n• Thời gian làm việc tối đa mỗi lần (phí): 100 phút\r\n\r\n👉👉👉Tính năng của Ecovacs Deebot N79:\r\n\r\n👍Là một thiết bị tự động có kết nối WiFi với ứng dụng điện thoại thông minh cho phép bạn truy cập và điều khiển Robot từ xa.\r\n👍Không có tangle, hút mạnh mẽ giúp làm sạch bụi bẩn, tóc, lông thú, mảnh vụn một cách dễ dàng và hiệu quả, vô cùng phù hợp cho các hộ gia đình có vật nuôi.\r\n👍Có hệ thống bàn chải 2 mặt giúp dễ dàng làm sạch bụi bẩn.\r\n👍Chổi quét Double V cung cấp tốt kích động cho việc thu thập bụi, rác trên sàn nhà.\r\n👍Hệ thống lọc hiệu quả cao làm giảm các tác nhân không khí có liên quan đến dị ứng và hen.\r\n👍Bộ cảm biến thông minh, cảm biến hồng ngoại được trang bị để tránh cầu thang và đồ nội thất.\r\n👍Pin Lithium ion 2.600 mAh giúp Robot hoạt động trong khoảng 100 phút.\r\n👍Được hãng ECOVACS bảo hành một năm.\r\n\r\n👉👉👉Điểm mạnh:\r\n\r\n👍Ecovacs Deebot N79 là một trong những chân không Robot giá rẻ với kết nối WiFi.\r\n👍Thời gian chạy lâu với công suất tối thiểu mờ dần nhờ vào Pin Lithium ion.\r\n👍Hoạt động vượt trội trên sàn trần, có cửa hút lớn kèm lô cuốn 3D giúp đảm bảo hút được những rác lớn.\r\n👍Hai bên bàn chải làm việc tuyệt vời và dễ dàng trong việc hút bụi bẩn trong các góc khuất.\r\n👍Ứng dụng thông minh cho phép bạn lên lịch và điều khiển robot mà không cần phải ở nhà vô cùng tiện lợi.\r\n\r\n🥴🥴🥴Điểm yếu:\r\n\r\n🥴Điều hướng ngẫu nhiên không hiệu quả.\r\n🥴Không hoạt động được trên những tấm thảm dày hoặc địa hình gồ ghề.', 'robot quét nhà N79', 0, '2019-04-27 21:14:11', '2019-05-12 00:52:12'),
 (171, 1, 'Mentholatum Water Lip Raspberry Red', '', '', 120000, 80000, 0, 5, 'mentholatum-lip-spf20-pa++-uv-cut.png', 18, 31, 'メンソレータム ウォーターリップ\r\nラズベリーレッド', 'son dưỡng có màu', 0, '2019-04-29 00:43:18', '2019-05-02 08:36:23'),
@@ -1094,29 +1138,43 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (188, 1, 'Viết bi Muji', '', '', 50000, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:09:01', '2019-05-05 19:11:21'),
 (189, 1, 'Ruột viết bi Muji', '', '', 20000, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:09:37', '2019-05-05 19:11:21'),
 (190, 1, 'Yunopap sID 30 sheets', '', '', 390000, 350000, 0, 1, 'yunopappu-sid-30.jpg', 0, 0, '腰痛，筋肉痛，肩こりに伴う肩の痛み，関節痛，腱鞘炎（手・手首の痛み），肘の痛み（テニス肘など），打撲，捻挫', 'Yunopap sID hộp 30 miếng', 0, '2019-05-05 19:11:56', '2019-05-12 01:15:26'),
-(191, 1, 'Orihiro Jelly drink', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:15:05', '2019-05-05 19:15:47'),
+(191, 1, 'Orihiro Jelly drink', '', '', 45000, 40000, 108, 0, NULL, 0, 20, '', 'Jelly Orihiro', 0, '2019-05-05 19:15:05', '2019-05-19 03:10:26'),
 (192, 1, 'Yakult Lúa mạch', '', '', 0, 0, 0, 2, NULL, 0, 0, '', 'ヤクルト 私の青汁 4g×60袋', 0, '2019-05-05 19:22:31', '2019-05-05 19:23:16'),
 (193, 1, 'Daiso Đèn Pin Xe Đạp', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:24:14', '2019-05-05 19:27:18'),
 (194, 1, 'Daiso Cạo lông mày', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:25:24', '2019-05-05 19:27:18'),
 (195, 1, 'Gôm', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:26:27', '2019-05-12 01:17:46'),
 (196, 1, 'Mochida Awasekken Pink 300ml', '300 ml', '', 670000, 610000, 610000, 0, 'mochida-awasekken-bottle.jpg', 0, 0, 'コラージュフルフル 泡石鹸 ピンク 300m L (医薬部外品)', 'Mochida nước rửa phụ khoa 300ml', 0, '2019-05-11 23:09:40', '2019-05-11 23:11:55'),
 (197, 1, 'Hepally Plus II 180 pills', '180 viên', '', 1100000, 1020000, 0, 0, 'hepally-Zeria-ii.jpg', 10, 17, '【第3類医薬品】ヘパリーゼプラスII 180錠', 'Thuốc  bổ gan Zeria II 180 viên', 0, '2019-05-11 23:21:13', '2019-05-12 00:56:32'),
-(198, 1, 'White Label Luxury Placenta', '', '', 370000, 300000, 0, 1, 'whitelabel-pracenta.jpg', 0, 0, 'ホワイトラベル 贅沢プラセンタのもっちり白肌クマトール\r\nWhite Label Luxury placentitis of a Crepe 白肌 Bear Tall\r\nKem tan mở mắt', 'Kem tan mở mắt nhau thai 100%', 0, '2019-05-11 23:36:45', '2019-05-11 23:37:38'),
-(199, 1, 'Spring・Autumn・Purple 3 Turmeric 240 pills', '240 pills', '', 550000, 450000, 0, 10, '3-turmeric.jpg', 0, 0, '野口医学研究所 春・秋・紫3種ウコン 240粒', '3 Loại củ nghệ 240 viên', 0, '2019-05-11 23:44:19', '2019-05-11 23:45:11'),
-(200, 1, 'Fine Bone Kids Calcium', '', '', 250000, 190000, 0, 1, 'fine-bone-kids-calcium.jpg', 8, 48, 'ファイン 骨キッズカルシウム カルシウム500mg ビタミンD5.0μg ビタミンK2 7.0μg配合 チョコレート風味 14杯分 (1回20g/140g入)', 'Fine Canxi bổ xương trẻ em', 0, '2019-05-11 23:51:34', '2019-05-12 01:41:04'),
+(198, 1, 'White Label Luxury Placenta', '', '', 370000, 300000, 0, 0, 'whitelabel-pracenta.jpg', 0, 0, 'ホワイトラベル 贅沢プラセンタのもっちり白肌クマトール\r\nWhite Label Luxury placentitis of a Crepe 白肌 Bear Tall\r\nKem tan mở mắt', 'Kem tan mở mắt nhau thai 100%', 0, '2019-05-11 23:36:45', '2019-05-19 03:11:24'),
+(199, 1, 'Spring・Autumn・Purple 3 Turmeric 240 pills', '240 pills', '', 550000, 450000, 0, 1, '3-turmeric.jpg', 10, 36, '野口医学研究所 春・秋・紫3種ウコン 240粒\r\nUkon', '3 Loại củ nghệ 240 viên', 0, '2019-05-11 23:44:19', '2019-05-19 03:17:11'),
+(200, 1, 'Fine Bone Kids Calcium', '', '', 250000, 190000, 0, 7, 'fine-bone-kids-calcium.jpg', 8, 48, 'ファイン 骨キッズカルシウム カルシウム500mg ビタミンD5.0μg ビタミンK2 7.0μg配合 チョコレート風味 14杯分 (1回20g/140g入)', 'Fine Canxi bổ xương trẻ em', 0, '2019-05-11 23:51:34', '2019-05-18 23:12:19'),
 (201, 1, 'Unicharm Softoku Super Solid Mask 100 p', '100 miếng', '', 350000, 300000, 0, 0, 'softoku-mask-100.jpg', 24, 0, 'ユニチャーム ソフトーク 超立体マスク 100枚入', 'Khẩu trang Softoku 100 cái', 0, '2019-05-12 00:05:27', '2019-05-13 13:25:42'),
-(202, 1, 'PITTA MASK GRAY 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-gray-3.jpg', 0, 0, 'ピッタマスク(PITTA MASK) GRAY 3枚入', 'Khẩu trang Pitta xám set 3', 0, '2019-05-12 00:08:43', '2019-05-12 00:09:28'),
+(202, 1, 'PITTA MASK GRAY 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-gray-3.jpg', 24, 60, 'ピッタマスク(PITTA MASK) GRAY 3枚入', 'Khẩu trang Pitta xám set 3', 0, '2019-05-12 00:08:43', '2019-05-18 00:47:14'),
 (203, 1, 'PITTA MASK for Kids 3 Sheets', '', '', 150000, 110000, 0, 1, 'pitta-mask-kids-3.jpg', 24, 60, 'ピッタマスクキッズクール(PITTA MASK KIDS COOL) 3枚入 青・グレー・黄緑各色1枚入', 'Khẩu trang Pitta trẻ em set 3', 0, '2019-05-12 00:09:31', '2019-05-13 13:18:47'),
 (204, 1, 'Hotate no chikara', '', '', 290000, 240000, 0, 5, 'hotate-no-chikara.jpg', 0, 0, 'ホタテの力 野菜・くだもの洗い', 'Bột rửa rau củ Hotate', 0, '2019-05-12 00:13:09', '2019-05-12 01:41:04'),
-(205, 1, 'Son Kailijumei', '', '', 550000, 470000, 0, 0, 'kailijumei-lip.jpg', 0, 0, 'ティーサイド　カイリジュメイ　フラワーティントリップN オイルイン 日本限定オリジナルパッケージ ブルー 　', 'Son Kailijumei', 0, '2019-05-12 00:16:38', '2019-05-12 01:26:10'),
-(206, 1, 'Sankusuai Profile 15 sheets', '15 sheets', '', 0, 0, 0, 0, 'sankusuai-profile.jpg', 0, 0, 'サンクスアイ プロフィル 15枚', 'Sankusuai Profile 15', 0, '2019-05-12 00:19:58', '2019-05-12 01:45:33'),
+(205, 1, 'Son Kailijumei', '', '', 550000, 470000, 0, 0, 'kailijumei-lip.jpg', 18, 0, 'ティーサイド　カイリジュメイ　フラワーティントリップN オイルイン 日本限定オリジナルパッケージ ブルー 　', 'Son Kailijumei', 0, '2019-05-12 00:16:38', '2019-05-18 10:47:05'),
+(206, 1, 'Sankusuai Profile 15 sheets', '15 sheets', '', 0, 0, 0, 0, 'sankusuai-profile.jpg', 30, 0, 'サンクスアイ プロフィル 15枚', 'Sankusuai Profile 15', 0, '2019-05-12 00:19:58', '2019-05-18 10:46:37'),
 (207, 1, 'Hada Labo Hakujun Lotion 170ml', '170 ml', '', 300000, 240000, 0, 0, 'hada-labo-hakujun-blue.jpg', 7, 59, '肌ラボ 白潤 薬用美白化粧水 高純度アルブチン×ビタミンC×和漢ハトムギエキス配合 170mL 【医薬部外品】', 'Hada Labo Nước hoa hồng Hakujun 170ml', 0, '2019-05-12 00:24:47', '2019-05-12 00:55:36'),
 (208, 1, 'Hada Labo Gokujun Lotion 170ml', '170 ml', '', 300000, 240000, 0, 1, 'hada-labo-gokujun-green.jpg', 7, 59, '【医薬部外品】肌研 薬用 極潤 スキンコンディショナー 抗炎症成分2種×ヒアルロン酸×スクワラン×ハトムギエキス配合 170mL', 'Hada Labo Nước hoa hồng Gokujun 170ml', 0, '2019-05-12 00:26:36', '2019-05-12 00:55:36'),
-(209, 1, 'Funwari Honey 90 pills', '90 pills', '', 590000, 510000, 0, 1, 'funwari-honey.jpg', 0, 0, 'ふんわりハニー 90粒', 'Nở ngực Funwari Honey 90', 0, '2019-05-12 00:34:06', '2019-05-12 01:25:08'),
+(209, 1, 'Funwari Honey 90 pills', '90 pills', '', 590000, 510000, 0, 1, 'funwari-honey.jpg', 30, 0, 'ふんわりハニー 90粒', 'Nở ngực Funwari Honey 90', 0, '2019-05-12 00:34:06', '2019-05-18 10:46:00'),
 (210, 1, 'Nón Adidas', '', '', 0, 0, 0, 0, NULL, 0, 1, '', '', 0, '2019-05-12 01:06:14', '2019-05-12 01:17:46'),
-(211, 1, 'Shiseido Benefiance WrinkleResist 24', '', '', 1490000, 1400000, 0, 0, NULL, 0, 7, '', 'Kem Dưỡng chống nhăng Shiseido', 0, '2019-05-12 01:12:50', '2019-05-12 01:15:26'),
-(212, 1, 'Soft Stone Ex Strong (xanh)', '', '', 0, 0, 0, 0, NULL, 0, 0, '', 'Lăn nách Soft Stone Ex (xanh)', 0, '2019-05-12 01:20:10', '2019-05-12 01:22:00'),
-(213, 1, 'PITTA MASK PINK 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-pink-3.jpg', 24, 60, 'ピッタマスク(PITTA MASK) PINK 3枚入', 'Khẩu trang Pitta hồng set 3', 0, '2019-05-12 01:53:59', '2019-05-13 13:12:36');
+(211, 1, 'Shiseido Benefiance WrinkleResist 24', '', '', 1490000, 1400000, 0, 0, 'Shiseido-Benefiance-WrinkleResist-24.jpg', 28, 7, 'ベネフィアンス Wレジスト24 インテンシブ アイコントアクリーム 15ml', 'Kem Dưỡng chống nhăng Shiseido', 0, '2019-05-12 01:12:50', '2019-05-18 01:04:29'),
+(212, 1, 'Soft Stone Double Color Control  Ex Strong', '', '', 0, 0, 0, 0, 'softstone-w-deonachure.jpg', 29, 61, '医薬部外品】デオナチュレ ソフトストーンW \"カラーコントロール\"  ワキ用 直ヌリ 制汗剤 スティック', 'Lăn nách Soft Stone Ex (xanh)', 0, '2019-05-12 01:20:10', '2019-05-18 01:49:23'),
+(213, 1, 'PITTA MASK PINK 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-pink-3.jpg', 24, 60, 'ピッタマスク(PITTA MASK) PINK 3枚入', 'Khẩu trang Pitta hồng set 3', 0, '2019-05-12 01:53:59', '2019-05-18 00:54:16'),
+(214, 1, 'Melano CC Mask 30 sheet', '30 sheets', 'bịch', 390000, 340000, 980, 6, 'melano-cc-mask-30.jpg', 24, 14, 'ロート製薬 メラノCC 集中対策マスク 大容量 ３０枚', 'Mặt nạ Melano 30 miếng', 0, '2019-05-18 23:16:37', '2019-05-19 03:15:43'),
+(215, 1, 'Melano CC Mask premium 20 sheet', '20 sheets', 'bịch', 390000, 340000, 980, 11, 'melano-cc-mask-premium-30.jpg', 24, 14, 'ロート製薬 メラノＣＣ 集中対策マスクＭＫ しっとり ２０枚', 'Mặt nạ Melano premium 20 miếng', 0, '2019-05-18 23:55:00', '2019-05-19 00:09:07'),
+(216, 1, 'Soft Stone for Feet 7g', '7g', '', 250000, 200000, 638, 3, 'soft-stone-for-feet.jpg', 29, 61, '', 'Lăn chân Soft Stone 7g', 0, '2019-05-19 02:18:31', '2019-05-19 03:24:49'),
+(217, 1, '8x4 Rose + Verbena 150g', '', '', 0, 0, 0, 0, '8x4-rose-verbena.jpg', 29, 0, '8×4パウダースプレー ガーリーアロマ 150g 【ローズ&ヴァーベナの香り】 [医薬部外品]', 'Xịt nách 8x4 Hoa Hồng + Cỏ Roi Ngựa', 0, '2019-05-19 02:43:42', '2019-05-19 03:17:11'),
+(218, 1, 'Meiji Gumi', '', '', 45000, 35000, 100, 30, NULL, 23, 36, '', 'Kẹo dẽo Meiji', 0, '2019-05-19 02:52:24', '2019-05-19 03:10:26'),
+(219, 1, 'Kororo Gumi', '', '', 40000, 35000, 100, 9, NULL, 23, 38, '', 'Kẹo dẽo Kororo', 0, '2019-05-19 02:53:14', '2019-05-19 03:10:26'),
+(220, 1, 'Shuuemura aitobarubu UV Compact FD (Refill) 574 ', '', '', 1000000, 900000, 4980, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, 'シュウウエムラ ザ・ライトバルブUVコンパクトFD(レフィル)574', 'Phấn phủ Shu', 0, '2019-05-19 03:02:26', '2019-05-19 03:24:49'),
+(221, 1, 'Maka SIXTEEN 200 pills', '', '', 0, 0, 0, 0, NULL, 0, 0, 'マカ皇帝倫SIXTEEN 200粒', 'Maka Sixteen 200', 0, '2019-05-19 03:06:27', '2019-05-19 03:10:26'),
+(222, 1, 'Shu Sponsor', '', '', 112000, 0, 0, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, '', 'Bông Shu', 0, '2019-05-19 03:20:43', '2019-05-19 03:24:49'),
+(223, 1, 'Kẻ mắt', '', '', 230000, 0, 0, 0, NULL, 0, 0, '', 'Kẻ mắt', 0, '2019-05-19 03:24:16', '2019-05-19 03:24:49'),
+(224, 1, 'PAIR ACNE Face Soap', '', '', 320000, 250000, 0, 0, NULL, 25, 0, '', 'Sữa rửa mặt trị mụn PAIR ACNE', 0, '2019-05-19 03:26:48', '2019-05-19 03:27:40'),
+(225, 1, 'E Okasan Cafe au Lait 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-cafe-au-lait.jpg', 31, 64, '森永 Eお母さん カフェオレ風味', 'Sữa bầu E Okasan Cafe au Lait 18gx12 ', 0, '2019-05-19 13:33:21', '2019-05-19 13:45:14'),
+(226, 1, 'E Okasan Matcha 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-matcha.jpg', 31, 64, '森永 Eお母さん 抹茶風味', 'Sữa bầu E Okasan Matcha 18gx12 ', 0, '2019-05-19 13:37:13', '2019-05-19 13:45:14'),
+(227, 1, 'E Okasan Milk tea 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-milk-tea.jpg', 31, 64, '森永 Eお母さん ミルクティ風味', 'Sữa bầu E Okasan Milk tea 18gx12 ', 0, '2019-05-19 13:38:43', '2019-05-19 13:45:14');
 
 -- --------------------------------------------------------
 
@@ -1274,7 +1332,14 @@ INSERT INTO `products_prices` (`id`, `product_id`, `price`, `wholesale_price`, `
 (134, 196, 450000, 390000, NULL, '2019-05-11 23:09:40'),
 (135, 203, 140000, 100000, NULL, '2019-05-12 00:09:31'),
 (136, 184, 0, 0, NULL, '2019-05-05 19:04:22'),
-(137, 190, 360000, 0, NULL, '2019-05-11 00:55:52');
+(137, 190, 360000, 0, NULL, '2019-05-11 00:55:52'),
+(138, 214, 340000, 280000, NULL, '2019-05-18 23:16:37'),
+(139, 216, 0, 0, NULL, '2019-05-19 02:18:31'),
+(140, 219, 45000, 35000, NULL, '2019-05-19 02:53:14'),
+(141, 191, 0, 0, NULL, '2019-05-05 19:15:47'),
+(142, 216, 210000, 200000, NULL, '2019-05-19 02:38:28'),
+(143, 222, 1000000, 900000, NULL, '2019-05-19 03:20:43'),
+(144, 222, 1000000, 900000, NULL, '2019-05-19 03:20:43');
 
 -- --------------------------------------------------------
 
@@ -1296,8 +1361,8 @@ CREATE TABLE `products_quantities` (
 
 INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`, `quantity`) VALUES
 (1, 1, 9, 1, 0),
-(2, 1, 1, 1, 4),
-(3, 1, 15, 1, 0),
+(2, 1, 1, 1, 14),
+(3, 1, 15, 1, 10),
 (4, 1, 10, 1, 1),
 (5, 1, 8, 1, 2),
 (6, 1, 11, 1, 1),
@@ -1320,7 +1385,7 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (23, 1, 35, 2, 1),
 (24, 1, 36, 2, 0),
 (25, 1, 26, 2, 1),
-(26, 1, 37, 1, 1),
+(26, 1, 37, 1, 4),
 (27, 1, 37, 2, 1),
 (28, 1, 11, 2, 1),
 (29, 1, 14, 2, 6),
@@ -1352,7 +1417,7 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (55, 1, 48, 1, 11),
 (56, 1, 49, 1, 3),
 (57, 1, 49, 2, 2),
-(58, 1, 50, 1, 0),
+(58, 1, 50, 1, 6),
 (59, 1, 50, 2, 1),
 (60, 1, 51, 1, 6),
 (61, 1, 51, 2, 3),
@@ -1415,7 +1480,7 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (118, 1, 65, 1, 0),
 (119, 1, 66, 1, 0),
 (120, 1, 113, 1, 0),
-(121, 1, 25, 1, 0),
+(121, 1, 25, 1, 4),
 (122, 1, 71, 1, 0),
 (123, 1, 48, 2, 2),
 (124, 1, 114, 1, 6),
@@ -1467,13 +1532,13 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (170, 1, 156, 1, 0),
 (171, 1, 158, 1, 0),
 (172, 1, 159, 1, 0),
-(173, 1, 161, 1, 5),
+(173, 1, 161, 1, 19),
 (174, 1, 162, 1, 0),
 (175, 1, 163, 1, 0),
-(176, 1, 160, 1, 6),
-(177, 1, 166, 1, 1),
+(176, 1, 160, 1, 30),
+(177, 1, 166, 1, 4),
 (178, 1, 169, 1, 1),
-(179, 1, 168, 1, 2),
+(179, 1, 168, 1, 5),
 (180, 1, 167, 1, 4),
 (181, 1, 170, 1, 0),
 (182, 1, 171, 1, 5),
@@ -1498,9 +1563,9 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (201, 1, 194, 1, 0),
 (202, 1, 195, 1, 0),
 (203, 1, 197, 1, 0),
-(204, 1, 198, 1, 1),
-(205, 1, 199, 1, 10),
-(206, 1, 200, 1, 1),
+(204, 1, 198, 1, 0),
+(205, 1, 199, 1, 1),
+(206, 1, 200, 1, 7),
 (207, 1, 201, 1, 0),
 (208, 1, 202, 1, 1),
 (209, 1, 203, 1, 1),
@@ -1513,7 +1578,21 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (216, 1, 210, 1, 0),
 (217, 1, 211, 1, 0),
 (218, 1, 212, 1, 0),
-(219, 1, 176, 1, 2);
+(219, 1, 176, 1, 2),
+(220, 1, 213, 1, 1),
+(221, 1, 214, 1, 6),
+(222, 1, 216, 1, 3),
+(223, 1, 217, 1, 0),
+(224, 1, 218, 1, 30),
+(225, 1, 219, 1, 9),
+(226, 1, 220, 1, 0),
+(227, 1, 221, 1, 0),
+(228, 1, 222, 1, 0),
+(229, 1, 223, 1, 0),
+(230, 1, 224, 1, 0),
+(231, 1, 225, 1, 0),
+(232, 1, 226, 1, 0),
+(233, 1, 227, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1906,12 +1985,38 @@ INSERT INTO `product_ins` (`id`, `product_id`, `warehouse_id`, `market_price`, `
 (365, 190, 1, 997, 997, 390000, 2, 'sundrug', '2019-05-12 01:10:20', '2019-05-12 01:10:20'),
 (366, 211, 1, 5399, 5199, 1490000, 1, 'belcosme', '2019-05-12 01:14:53', '2019-05-12 01:14:53'),
 (367, 195, 1, 327, 327, 0, 11, 'bic shinjuku', '2019-05-12 01:16:37', '2019-05-12 01:16:37'),
-(368, 212, 1, 0, 0, 0, 1, 'bic shinjuku', '2019-05-12 01:20:35', '2019-05-12 01:20:35'),
+(368, 212, 1, 904, 969, 0, 1, 'bic shinjuku', '2019-05-12 01:20:35', '2019-05-12 01:20:35'),
 (369, 149, 1, 0, 0, 550000, 1, '', '2019-05-12 01:22:27', '2019-05-12 01:22:27'),
 (370, 176, 1, 0, 0, 460000, 3, '', '2019-05-12 01:24:48', '2019-05-12 01:24:48'),
 (371, 115, 1, 4549, 4549, 1225000, 2, 'amazon', '2019-05-12 01:27:13', '2019-05-12 01:27:13'),
 (372, 115, 1, 0, 0, 0, -2, '', '2019-05-12 01:28:52', '2019-05-12 01:28:52'),
-(373, 18, 1, 998, 998, 330000, 10, 'rakuten', '2019-05-12 01:48:18', '2019-05-12 01:48:18');
+(373, 18, 1, 998, 998, 330000, 10, 'rakuten', '2019-05-12 01:48:18', '2019-05-12 01:48:18'),
+(374, 213, 1, 499, 616, 140000, 1, 'amazon', '2019-05-18 00:54:16', '2019-05-18 00:54:16'),
+(375, 39, 1, 3780, 3765, 1000000, 1, 'amazon #554', '2019-05-18 22:52:50', '2019-05-18 22:52:50'),
+(376, 160, 1, 211, 195, 80000, 24, 'amazon', '2019-05-18 22:56:16', '2019-05-18 22:56:16'),
+(377, 50, 1, 594, 533, 260000, 6, 'amazon', '2019-05-18 23:03:35', '2019-05-18 23:03:35'),
+(378, 168, 1, 1080, 1080, 400000, 3, 'amazon', '2019-05-18 23:05:30', '2019-05-18 23:05:30'),
+(379, 166, 1, 2116, 2116, 750000, 3, 'amazon', '2019-05-18 23:07:07', '2019-05-18 23:07:07'),
+(380, 15, 1, 501, 442, 230000, 10, 'amazon', '2019-05-18 23:09:34', '2019-05-18 23:09:34'),
+(381, 25, 1, 1080, 1080, 400000, 4, 'amazon', '2019-05-18 23:11:14', '2019-05-18 23:11:14'),
+(382, 200, 1, 522, 500, 250000, 6, 'amazon', '2019-05-18 23:12:19', '2019-05-18 23:12:19'),
+(383, 214, 1, 980, 980, 390000, 11, 'matsumotokiyoshi ikebukuro', '2019-05-18 23:54:40', '2019-05-18 23:54:40'),
+(384, 161, 1, 540, 398, 310000, 15, 'donki ikebukuro', '2019-05-19 02:15:38', '2019-05-19 02:15:38'),
+(385, 1, 1, 1880, 1213, 500000, 10, 'qoo10', '2019-05-19 02:17:42', '2019-05-19 02:17:42'),
+(386, 216, 1, 698, 638, 210000, 5, 'amazon', '2019-05-19 02:26:02', '2019-05-19 02:26:02'),
+(387, 37, 1, 988, 930, 340000, 3, 'amazon', '2019-05-19 02:37:27', '2019-05-19 02:37:27'),
+(388, 217, 1, 0, 0, 0, 1, '', '2019-05-19 02:47:14', '2019-05-19 02:47:14'),
+(389, 191, 1, 108, 108, 45000, 10, 'matumotokiyoshi ike', '2019-05-19 02:58:03', '2019-05-19 02:58:03'),
+(390, 218, 1, 98, 98, 45000, 35, 'matsumotokiyoshi ike', '2019-05-19 03:00:06', '2019-05-19 03:00:06'),
+(391, 219, 1, 98, 98, 40000, 12, 'matsumotokiyoshi ike', '2019-05-19 03:00:53', '2019-05-19 03:00:53'),
+(392, 220, 1, 5076, 3645, 1000000, 1, 'amazon #574', '2019-05-19 03:05:20', '2019-05-19 03:05:20'),
+(393, 221, 1, 3308, 3308, 0, 1, 'amazon', '2019-05-19 03:06:56', '2019-05-19 03:06:56'),
+(394, 222, 1, 540, 540, 112000, 1, 'shuuemura ike', '2019-05-19 03:23:06', '2019-05-19 03:23:06'),
+(395, 223, 1, 0, 0, 230000, 1, 'donki', '2019-05-19 03:24:34', '2019-05-19 03:24:34'),
+(396, 224, 1, 0, 0, 320000, 1, '', '2019-05-19 03:27:22', '2019-05-19 03:27:22'),
+(397, 225, 1, 925, 925, 0, 3, 'omni7', '2019-05-19 13:42:59', '2019-05-19 13:42:59'),
+(398, 226, 1, 925, 925, 0, 3, 'omni7', '2019-05-19 13:43:15', '2019-05-19 13:43:15'),
+(399, 227, 1, 925, 925, 0, 4, 'omni7', '2019-05-19 13:43:34', '2019-05-19 13:43:34');
 
 -- --------------------------------------------------------
 
@@ -1957,23 +2062,9 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `data`, `created`, `updated`) VALUES
-('ddnj6320t4pbcq7j4k7drhdmv1', 'navigated|i:1557595827;General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\BrandsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\InventoryController|a:1:{s:10:\"parameters\";a:1:{s:5:\"order\";s:44:\"[General\\Core\\Manager\\Models\\Product].id ASC\";}}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";N;}$PHALCON/CSRF$|s:16:\"Jj8DDoUWubOwNQkW\";', 1557583421, 1557595827),
-('kfk67uug1irfpkjp783q4ro5p7', 'navigated|i:1557593697;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\InventoryController|a:1:{s:10:\"parameters\";a:1:{s:5:\"order\";s:44:\"[General\\Core\\Manager\\Models\\Product].id ASC\";}}General\\Core\\Manager\\Controllers\\ClientsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:55:\"[General\\Core\\Manager\\Models\\Invoice].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:45:\"[General\\Core\\Manager\\Models\\Invoice].id DESC\";}}$PHALCON/CSRF$|s:16:\"zqaClQ604Tp8ykAc\";', 1557586738, 1557593698),
-('rf3ivoeo0eesecp7op98tirv65', 'navigated|i:1557713718;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1557713718, 1557713719),
-('elmhnj7vjntrrq7oojmhbf9qe1', 'navigated|i:1557725275;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ClientsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";a:1:{s:5:\"order\";s:44:\"[General\\Core\\Manager\\Models\\Product].id ASC\";}}General\\Core\\Manager\\Controllers\\CategoriesController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\BrandsController|a:1:{s:10:\"parameters\";N;}$PHALCON/CSRF$|s:15:\"fQU9Qy7kz1ITrZk\";', 1557713718, 1557725276),
-('ddaobhecv7egsnsace2ajv2f72', 'General\\Core\\Manager\\Controllers\\ClientsController|a:1:{s:10:\"parameters\";N;}navigated|i:1557729283;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}$PHALCON/CSRF$|s:16:\"vyaQlDcbxV2wZnOU\";', 1557729267, 1557729284),
-('frei4rh01mr9jt3rivhs0crs21', 'navigated|i:1557742037;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}', 1557741989, 1557742037),
-('622p65bbmc87mta76ko0qsp1j0', 'navigated|i:1557798046;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1557798045, 1557798046),
-('t2uftolaeke42rlv8nvpbuf157', 'navigated|i:1557798141;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\InventoryController|a:1:{s:10:\"parameters\";N;}$PHALCON/CSRF$|s:15:\"VQ3Th9cjFNTBvvb\";', 1557798046, 1557798146),
-('safs4kh8dbj3enipg76pqraoq0', 'navigated|i:1557807140;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1557807140, 1557807142),
-('60a76n7h57akc2i5i0tfr9ngn2', 'navigated|i:1557811010;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}', 1557807140, 1557811012),
-('bnpdb6cqnhrrj4rdl0m9tinnl1', 'navigated|i:1557821997;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:55:\"[General\\Core\\Manager\\Models\\Invoice].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:45:\"[General\\Core\\Manager\\Models\\Invoice].id DESC\";}}$PHALCON/CSRF$|s:15:\"G5HzptVXd7ByVH0\";', 1557816090, 1557821998),
-('oau6l4fipvrilugop55sehf757', 'General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";N;}navigated|i:1557882054;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}$PHALCON/CSRF$|s:16:\"ht0gDxdUdTUw7ZrK\";', 1557882014, 1557882056),
-('6qgkacfvmmojmihpvrnvnqlhk6', 'General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}navigated|i:1557887173;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}', 1557887028, 1557887174),
-('bscutegb6blotf2823pb4kqbe2', 'navigated|i:1557969325;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1557969324, 1557969326),
-('ia6hghsudu0g6meg1ejtqm0qa6', 'navigated|i:1557969347;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}', 1557969325, 1557969349),
-('o8gt45fo2l9t66dvl9lo0n4h24', 'navigated|i:1557973878;General\\Core\\Manager\\Controllers\\MembersController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:54:\"[General\\Core\\Manager\\Models\\Member].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:43:\"[General\\Core\\Manager\\Models\\Member].id ASC\";}}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}$PHALCON/CSRF$|s:16:\"1BSdEnPle3oUeuFg\";', 1557973704, 1557973879),
-('ej883bqjeer2javd0av45udp46', 'navigated|i:1557984322;General\\Core\\Manager\\Controllers\\MembersController|a:1:{s:10:\"parameters\";N;}$PHALCON/CSRF$|s:16:\"7QeAc1gqR7BgnOBH\";General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1557982332, 1557984322);
+('u11d030dmnm2m8djgd1pve1l02', 'General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}navigated|i:1558242262;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\BrandsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\CategoriesController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:55:\"[General\\Core\\Manager\\Models\\Invoice].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:45:\"[General\\Core\\Manager\\Models\\Invoice].id DESC\";}}$PHALCON/CSRF$|s:16:\"wPVdqMxn7NlKtmj0\";', 1558236217, 1558242263),
+('mjdppagjhdr3c2jmtml04ci065', 'General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";N;}navigated|i:1558248467;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}', 1558248433, 1558248468),
+('gbt8i1t2ei3o6sgnor49tqpsv7', 'General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:57:\"[General\\Core\\Manager\\Models\\Transport].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:47:\"[General\\Core\\Manager\\Models\\Transport].id DESC\";}}navigated|i:1558278065;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}$PHALCON/CSRF$|s:16:\"apETSyosy4rYwZMR\";', 1558277690, 1558278066);
 
 -- --------------------------------------------------------
 
@@ -2011,9 +2102,10 @@ INSERT INTO `transports` (`id`, `name`, `user_id`, `client_id`, `total`, `total_
 (6, '330860913596', 1, 36, 25395000, 2906000, '2019-04-14 00:00:00', 'Dot7-20190406', 0, 0, 6, 0, '2019-04-14 00:55:36', '2019-05-01 23:30:41'),
 (7, '330861520986', 1, 36, 16124000, 3092000, '2019-04-18 00:00:00', 'Dot8-20190406', 53, 10, 6, 0, '2019-04-14 02:24:09', '2019-05-01 23:32:09'),
 (8, '3308-6217-4683', 1, 63, 13330000, 3107000, '2019-04-25 00:00:00', 'Dot 9 - 2019-04-21', 53, 10, 6, 0, '2019-04-20 01:27:22', '2019-05-08 15:14:17'),
-(9, '745-8776-8474', 1, 36, 19190000, 710000, '2019-05-02 00:00:00', 'Dot 10', 53, 10, 5, 0, '2019-05-02 00:19:23', '2019-05-14 13:39:39'),
-(10, '3308-6395-4046', 1, 36, 13637000, 331000, '2019-05-07 00:00:00', '', 53, 10, 5, 0, '2019-05-06 23:17:48', '2019-05-14 13:39:54'),
-(11, '3308-6480-2590', 1, 63, 32310000, 0, '2019-05-17 00:00:00', 'Đợt 12', 53, 10, 2, 0, '2019-05-13 11:34:58', '2019-05-14 13:40:22');
+(9, '745-8776-8474', 1, 36, 19190000, 715000, '2019-05-02 00:00:00', 'Dot 10', 53, 10, 6, 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
+(10, '3308-6395-4046', 1, 36, 13637000, 333000, '2019-05-07 00:00:00', 'Dot 11', 53, 10, 6, 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
+(11, '3308-6480-2590', 1, 63, 32310000, 0, '2019-05-17 00:00:00', 'Đợt 12', 53, 10, 5, 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
+(12, '3308-6541-7761', 1, 36, 13052000, 473000, '2019-05-21 00:00:00', 'Dot 13', 53, 10, 1, 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56');
 
 -- --------------------------------------------------------
 
@@ -2128,48 +2220,59 @@ INSERT INTO `transport_invoices` (`id`, `transport_id`, `invoice_id`, `created`,
 (284, 8, 95, '2019-05-08 15:14:17', '2019-05-08 15:14:17'),
 (285, 8, 96, '2019-05-08 15:14:17', '2019-05-08 15:14:17'),
 (286, 8, 97, '2019-05-08 15:14:17', '2019-05-08 15:14:17'),
-(334, 9, 100, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(335, 9, 101, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(336, 9, 102, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(337, 9, 103, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(338, 9, 104, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(339, 9, 105, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(340, 9, 106, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(341, 9, 107, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(342, 9, 108, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(343, 9, 109, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(344, 9, 110, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(345, 9, 111, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(346, 9, 112, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(347, 9, 113, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(348, 9, 114, '2019-05-14 13:39:39', '2019-05-14 13:39:39'),
-(349, 10, 115, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(350, 10, 116, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(351, 10, 117, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(352, 10, 118, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(353, 10, 119, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(354, 10, 120, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(355, 10, 121, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(356, 10, 122, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(357, 10, 123, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(358, 10, 124, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(359, 10, 125, '2019-05-14 13:39:54', '2019-05-14 13:39:54'),
-(360, 11, 126, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(361, 11, 127, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(362, 11, 128, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(363, 11, 129, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(364, 11, 130, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(365, 11, 131, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(366, 11, 132, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(367, 11, 133, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(368, 11, 134, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(369, 11, 135, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(370, 11, 136, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(371, 11, 137, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(372, 11, 138, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(373, 11, 139, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(374, 11, 140, '2019-05-14 13:40:22', '2019-05-14 13:40:22'),
-(375, 11, 141, '2019-05-14 13:40:22', '2019-05-14 13:40:22');
+(417, 9, 100, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(418, 9, 101, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(419, 9, 102, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(420, 9, 103, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(421, 9, 104, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(422, 9, 105, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(423, 9, 106, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(424, 9, 107, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(425, 9, 108, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(426, 9, 109, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(427, 9, 110, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(428, 9, 111, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(429, 9, 112, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(430, 9, 113, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(431, 9, 114, '2019-05-19 15:47:47', '2019-05-19 15:47:47'),
+(432, 10, 115, '2019-05-19 23:55:38', '2019-05-19 23:55:38'),
+(433, 10, 116, '2019-05-19 23:55:38', '2019-05-19 23:55:38'),
+(434, 10, 117, '2019-05-19 23:55:38', '2019-05-19 23:55:38'),
+(435, 10, 118, '2019-05-19 23:55:38', '2019-05-19 23:55:38'),
+(436, 10, 119, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(437, 10, 120, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(438, 10, 121, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(439, 10, 122, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(440, 10, 123, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(441, 10, 124, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(442, 10, 125, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
+(443, 11, 126, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(444, 11, 127, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(445, 11, 128, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(446, 11, 129, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(447, 11, 130, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(448, 11, 131, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(449, 11, 132, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(450, 11, 133, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(451, 11, 134, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(452, 11, 135, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(453, 11, 136, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(454, 11, 137, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(455, 11, 138, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(456, 11, 139, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(457, 11, 140, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(458, 11, 141, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
+(470, 12, 142, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(471, 12, 143, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(472, 12, 144, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(473, 12, 145, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(474, 12, 146, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(475, 12, 147, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(476, 12, 148, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(477, 12, 149, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(478, 12, 150, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(479, 12, 151, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
+(480, 12, 152, '2019-05-20 00:00:56', '2019-05-20 00:00:56');
 
 -- --------------------------------------------------------
 
@@ -2347,19 +2450,19 @@ ALTER TABLE `warehouses`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `commons`
@@ -2377,13 +2480,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT for table `invoices_details`
 --
 ALTER TABLE `invoices_details`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
 
 --
 -- AUTO_INCREMENT for table `members`
@@ -2395,7 +2498,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `other_costs`
 --
 ALTER TABLE `other_costs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -2407,25 +2510,25 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
 
 --
 -- AUTO_INCREMENT for table `products_prices`
 --
 ALTER TABLE `products_prices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `products_quantities`
 --
 ALTER TABLE `products_quantities`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT for table `product_ins`
 --
 ALTER TABLE `product_ins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=374;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -2437,13 +2540,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `transports`
 --
 ALTER TABLE `transports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `transport_invoices`
 --
 ALTER TABLE `transport_invoices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=376;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=481;
 
 --
 -- AUTO_INCREMENT for table `users`

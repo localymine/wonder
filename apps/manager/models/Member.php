@@ -107,6 +107,7 @@ class Member extends ModelBase implements ModelInterface
       'id'      => 'id',
       'user_id' => 'user_id',
       'name'    => 'name',
+      'email'   => 'email',
       'phone'   => 'phone',
       'login'   => 'login',
       'password'=> 'password',
