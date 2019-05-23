@@ -508,3 +508,9 @@ tr[data-disabled="1"]{
 table.dataTable tbody th, table.dataTable tbody td{
   padding: 0 3px !important;
 }
+
+.fa-income {
+  width: 32px;
+  height: 32px;
+  background: url('../img/income.png');
+}

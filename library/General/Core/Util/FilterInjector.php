@@ -150,6 +150,7 @@ class FilterInjector extends Component
           break;
         case 'brand':
         case 'category':
+        case 'type':
         case 'product':
           break;
         default:
@@ -237,6 +238,7 @@ class FilterInjector extends Component
       case 'transport':
       case 'brand':
       case 'category':
+      case 'type':
       case 'product':
       default:
         break;

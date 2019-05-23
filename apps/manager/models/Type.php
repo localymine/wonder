@@ -18,11 +18,11 @@ use Phalcon\Validation\Validator\PresenceOf;
  *
  * @package General\Core\Manager\Models
  */
-class Brand extends ModelBase implements ModelInterface
+class Type extends ModelBase implements ModelInterface
 {
 
   /** @var string define class name. */
-  protected $className = 'Brand';
+  protected $className = 'Type';
 
   /**
    * primary key.
@@ -53,7 +53,7 @@ class Brand extends ModelBase implements ModelInterface
    */
   public function getSource()
   {
-    return 'brands';
+    return 'types';
   }
 
 
@@ -106,13 +106,13 @@ class Brand extends ModelBase implements ModelInterface
     /* enable partial update instead of all-field update. */
     $this->useDynamicUpdate(true);
     /* configure relationship. */
-    $this->hasMany('id', Product::class, 'brand_id', [
-      'alias' => 'product',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
-    ]);
+//    $this->hasMany('id', Income::class, 'type_id', [
+//      'alias' => 'income',
+//      'foreignKey' => [
+//        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
+//        'action' => Relation::ACTION_RESTRICT,
+//      ]
+//    ]);
     /* configure model behaviours. */
     $this->addBehavior(
       /* insert timestamp on create / update. */

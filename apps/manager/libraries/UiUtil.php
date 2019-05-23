@@ -62,12 +62,30 @@ class UiUtil extends BootstrapPaginator
     'invoices' => [
       'link'  => 'manager/invoices/index',
       'label' => '<i class="fa fa-sticky-note"></i><span>Invoices</span>',
-      'controller' => ['invoices'],
+      'controller' => ['invoicdes'],
     ],
     'transport' => [
       'link'  => 'manager/transports/index',
       'label' => '<i class="fa fa-plane"></i><span>Transport</span>',
       'controller' => ['transports'],
+    ],
+  ];
+
+  private $inout = [
+    'types' => [
+      'link'  => 'manager/types/index',
+      'label' => '<i class="fa fa-xing"></i><span>Types</span>',
+      'controller' => ['types'],
+    ],
+    'incomes' => [
+      'link'  => 'manager/incomes/index',
+      'label' => '<i class="fa fa-sort-amount-asc"></i><span>Incomes</span>',
+      'controller' => ['incomes'],
+    ],
+    'outgoing' => [
+      'link'  => 'manager/outgoing/index',
+      'label' => '<i class="fa fa-sort-amount-desc"></i><span>Outgoing</span>',
+      'controller' => ['outgoing'],
     ],
   ];
 
@@ -158,6 +176,27 @@ class UiUtil extends BootstrapPaginator
 
     // Goods submenu
     foreach ($this->goods as $menu) {
+      $li = Tag::linkTo($menu['link'], $l10n->_($menu['label']));
+      if (in_array($controllerName, $menu['controller'])) {
+        $out .= '<li class="active">'.$li.'</li>'."\n";
+      } else {
+        $out .= '<li>'.$li.'</li>'."\n";
+      }
+    }
+    $out .= '</ul></li>'."\n";
+
+    // incomes outgoing
+    $label = $l10n->_('<i class="fa fa-suitcase"></i><span>Bag</span>').
+      '<i class="fa fa-angle-right pull-right"></i>';
+    $li = Tag::linkTo('manager/incomes/index', $label);
+    if (in_array($controllerName, $goodsCtrls)) {
+      $out .= '<li class="treeview active">'.$li."\n";
+    } else {
+      $out .= '<li class="treeview">'.$li."\n";
+    }
+    $out .= '<ul class="treeview-menu">'."\n";
+
+    foreach ($this->inout as $menu) {
       $li = Tag::linkTo($menu['link'], $l10n->_($menu['label']));
       if (in_array($controllerName, $menu['controller'])) {
         $out .= '<li class="active">'.$li.'</li>'."\n";

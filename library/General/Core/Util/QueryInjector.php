@@ -183,6 +183,7 @@ class QueryInjector extends Component
       switch(strtolower($model)) {
         case 'brand':
         case 'category':
+        case 'type':
         case 'client':
         case 'member':
         case 'product':
@@ -211,6 +212,7 @@ class QueryInjector extends Component
       switch(strtolower($model)) {
         case 'brand':
         case 'category':
+        case 'type':
         case 'client':
         case 'member':
         case 'product':
