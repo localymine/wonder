@@ -6,10 +6,10 @@
 
 {% block content %}
   <section class="content-header">
-    <h1>{{ l10n._('Manage Incomes') }}</h1>
+    <h1>{{ l10n._('Manage Outgoings') }}</h1>
     <ol class="breadcrumb">
       <li>{{ link_to('manager/main/index', l10n._('<i class="fa fa-dashboard"></i> DashBoard')) }}</li>
-      <li>{{ link_to('manager/incomes/index', l10n._('Manage Income')) }}</li>
+      <li>{{ link_to('manager/outgoing/index', l10n._('Manage Outgoing')) }}</li>
       <li class="active">{{ page_heading|e }}</li>
     </ol>
   </section>
@@ -32,27 +32,27 @@
             <tbody>
             <tr>
             <th>{{ l10n._('Id') }}</th>
-            <td>{{ income.id|e }}</td>
+            <td>{{ outgoing.id|e }}</td>
             </tr>
             <tr>
             <th>{{ l10n._('Name') }}</th>
-            <td>{{ income.name|e }}</td>
+            <td>{{ outgoing.name|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Responsible Person') }}</th>
-              <td>{{ income.member.name|e }}</td>
+              <td>{{ outgoing.member.name|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Type') }}</th>
-              <td>{{ income.type.name|e }}</td>
+              <td>{{ outgoing.type.name|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Amount') }}</th>
-              <td class="text-right">{{ income.amount|number_format }} (&#8363;)</td>
+              <td class="text-right">{{ outgoing.amount|number_format }} (&#8363;)</td>
             </tr>
             <tr>
               <th>{{ l10n._('Execute Date') }}</th>
-              <td>{{ date('Y-m-d H:i', income.exec_date|strtotime) }}</td>
+              <td>{{ date('Y-m-d H:i', outgoing.exec_date|strtotime) }}</td>
             </tr>
             </tbody>
             </table>
@@ -66,16 +66,16 @@
             <tbody>
             <tr>
               <th>{{ l10n._('Remarks') }}</th>
-              <td>{{ income.remarks|nl2br }}</td>
+              <td>{{ outgoing.remarks|nl2br }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Disabled') }}</th>
-              <td>{% if income.disabled == 1 %}{{ l10n._('Disabled') }}{% endif %}</td>
+              <td>{% if outgoing.disabled == 1 %}{{ l10n._('Disabled') }}{% endif %}</td>
             </tr>
             <tr>
             <tr>
               <th>{{ l10n._('Updated at') }}</th>
-              <td>{{ date(l10n._('Y-m-d H:i:s'), income.updated|strtotime) }}</td>
+              <td>{{ date(l10n._('Y-m-d H:i:s'), outgoing.updated|strtotime) }}</td>
             </tr>
             </table>
           </div>
@@ -83,9 +83,9 @@
       </div>
       <div class="box-footer">
         <div class="action-area">
-          {{ link_to('manager/incomes/edit/'~income.id,l10n._('<i class="fa fa-pencil"></i> Edit'),'class':'btn btn-success pull-left') }}
+          {{ link_to('manager/outgoing/edit/'~outgoing.id,l10n._('<i class="fa fa-pencil"></i> Edit'),'class':'btn btn-success pull-left') }}
 
-          {{ link_to('manager/incomes/delete/'~income.id,l10n._('<i class="fa fa-trash"></i> Delete'),'class':'btn btn-danger pull-left') }}
+          {{ link_to('manager/outgoing/delete/'~outgoing.id,l10n._('<i class="fa fa-trash"></i> Delete'),'class':'btn btn-danger pull-left') }}
 
         </div>
       </div>

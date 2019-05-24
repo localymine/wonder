@@ -6,10 +6,10 @@
 
 {% block content %}
   <section class="content-header">
-    <h1>{{ l10n._('Manage Incomes') }}</h1>
+    <h1>{{ l10n._('Manage Outgoing') }}</h1>
     <ol class="breadcrumb">
       <li>{{ link_to('manager/main/index', l10n._('<i class="fa fa-dashboard"></i> DashBoard')) }}</li>
-      <li>{{ link_to('manager/incomes/index', l10n._('Manage Incomes')) }}</li>
+      <li>{{ link_to('manager/outgoing/index', l10n._('Manage Outgoing')) }}</li>
       <li class="active">{{ page_heading|e }}</li>
     </ol>
   </section>
@@ -21,7 +21,7 @@
       <div class="box-header with-border">
         <h3 class="box-title pull-left">{{ page_heading|e }}</h3>
       </div>
-      {{ form('manager/incomes/save','method':'post','class':'form-horizontal','role':'form') }}
+      {{ form('manager/outgoing/save','method':'post','class':'form-horizontal','role':'form') }}
 
       {#{{ hidden_field('user_id','value':income.user_id) }}#}
 
@@ -115,7 +115,7 @@
         <div class="action-area">
           {{ submit_button(l10n._('Save'),'class':'btn btn-info') }}
 
-          {{ link_to('manager/incomes/index',l10n._('Cancel'),'class':'btn btn-default') }}
+          {{ link_to('manager/outgoing/index',l10n._('Cancel'),'class':'btn btn-default') }}
 
         </div>
       </div>

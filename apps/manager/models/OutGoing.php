@@ -155,11 +155,8 @@ class OutGoing extends ModelBase implements ModelInterface
     $this->belongsTo('member_id', Member::class, 'id', [
       'alias' => 'member'
     ]);
-    $this->hasOne('id', Type::class, 'type_id', [
+    $this->belongsTo('type_id', Type::class, 'id', [
       'alias' => 'type',
-      'foreignKey' => [
-        'action' => Relation::ACTION_RESTRICT,
-      ]
     ]);
     /* configure model behaviours. */
     $this->addBehavior(
