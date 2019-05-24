@@ -18,11 +18,11 @@ use Phalcon\Validation\Validator\PresenceOf;
  *
  * @package General\Core\Manager\Models
  */
-class Type extends ModelBase implements ModelInterface
+class InCome extends ModelBase implements ModelInterface
 {
 
   /** @var string define class name. */
-  protected $className = 'Type';
+  protected $className = 'InCome';
 
   /**
    * primary key.
@@ -33,17 +33,54 @@ class Type extends ModelBase implements ModelInterface
    */
   public $id;
   /**
+   * user_id
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $user_id;
+  /**
+   * member_id
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $member_id;
+  /**
+   * type_id
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $type_id;
+  /**
    * client name
    * @var string
    * @Column(type="string", nullable=false)
    */
   public $name;
   /**
-   * remarks.
+   * amount
+   * @var float
+   * @Column(type="float", nullable=false)
+   */
+  public $amount;
+  /**
+   * remarks
    * @var string
    * @Column(type="string", nullable=false)
    */
   public $remarks;
+  /**
+   * exec_date
+   * @var string
+   * @Column(type="string", nullable=false)
+   */
+  public $exec_date;
+  /**
+   * flag indicating whether disabled or not.
+   * @var integer
+   * @Column(type="integer", nullable=false)
+   */
+  public $disabled;
+
 
 
   /**
@@ -53,7 +90,7 @@ class Type extends ModelBase implements ModelInterface
    */
   public function getSource()
   {
-    return 'types';
+    return 'incomes';
   }
 
 
@@ -66,8 +103,14 @@ class Type extends ModelBase implements ModelInterface
   {
     return [
       'id'          => 'id',
+      'user_id'     => 'user_id',
+      'member_id'   => 'member_id',
+      'type_id'     => 'type_id',
       'name'        => 'name',
+      'amount'      => 'amount',
       'remarks'     => 'remarks',
+      'exec_date'   => 'exec_date',
+      'disabled'    => 'disabled',
       'created'     => 'created',
       'updated'     => 'updated',
     ];
@@ -106,19 +149,14 @@ class Type extends ModelBase implements ModelInterface
     /* enable partial update instead of all-field update. */
     $this->useDynamicUpdate(true);
     /* configure relationship. */
-    $this->hasMany('id', Income::class, 'type_id', [
-      'alias' => 'income',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
+    $this->belongsTo('user_id', User::class, 'id', [
+      'alias' => 'user'
     ]);
-    $this->hasMany('id', OutGoing::class, 'type_id', [
-      'alias' => 'outgoing',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
+    $this->belongsTo('member_id', Member::class, 'id', [
+      'alias' => 'member'
+    ]);
+    $this->belongsTo('type_id', Type::class, 'id', [
+      'alias' => 'type',
     ]);
     /* configure model behaviours. */
     $this->addBehavior(

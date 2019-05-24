@@ -144,6 +144,8 @@ class FilterInjector extends Component
         case 'member':
         case 'invoice':
         case 'transport':
+        case 'income':
+        case 'outgoing':
           $criteria->andWhere('['.$Model.'].user_id=:user_id:',
             ['user_id' => $identity['id']]
           );
@@ -240,6 +242,8 @@ class FilterInjector extends Component
       case 'category':
       case 'type':
       case 'product':
+      case 'income':
+      case 'outgoing':
       default:
         break;
     }

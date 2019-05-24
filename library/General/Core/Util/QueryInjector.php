@@ -187,6 +187,8 @@ class QueryInjector extends Component
         case 'client':
         case 'member':
         case 'product':
+        case 'income':
+        case 'outgoing':
           $avail = true;
           break;
         case 'invoice':
@@ -222,6 +224,8 @@ class QueryInjector extends Component
         case 'othercost':
         case 'good':
         case 'transport':
+        case 'income':
+        case 'outgoing':
           if ((0 != $data->user_id) && ($identity['id'] == $data->user_id)) {
             $avail = true;
           } else {
@@ -294,6 +298,8 @@ class QueryInjector extends Component
         case 'good':
         case 'transport':
         case 'upload':
+        case 'income':
+        case 'outgoing':
           $avail = true;
           break;
         case 'user':
@@ -317,6 +323,8 @@ class QueryInjector extends Component
         case 'othercost':
         case 'good':
         case 'transport':
+        case 'income':
+        case 'outgoing':
           break;
         default:
           $avail = false;

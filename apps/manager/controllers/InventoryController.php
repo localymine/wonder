@@ -86,11 +86,11 @@ class InventoryController  extends ControllerBase
     $objPHPExcel->setActiveSheetIndex(0)
       ->setCellValue('A1', 'No.')
       ->setCellValue('B1', 'SPham')
-      ->setCellValue('C1', 'G.Lẻ')
-      ->setCellValue('D1', 'G.Sỉ')
-      ->setCellValue('E1', 'SG')
-      ->setCellValue('F1', 'LG')
-      ->setCellValue('G1', 'Ghi Chú');
+      ->setCellValue('C1', 'Ghi Chú')
+      ->setCellValue('D1', 'G.Lẻ')
+      ->setCellValue('E1', 'G.Sỉ')
+      ->setCellValue('F1', 'SG')
+      ->setCellValue('G1', 'LG');
 
     $fname = 'Inventory-List-' . time() . '.xlsx';
 
@@ -103,17 +103,17 @@ class InventoryController  extends ControllerBase
       $objPHPExcel->getActiveSheet()
         ->setCellValue('A' . $i, $i-1)
         ->setCellValue('B' . $i, $product->name)
-        ->setCellValue('C' . $i, $product->price)
-        ->setCellValue('D' . $i, $product->wholesale_price)
-        ->setCellValue('G' . $i, $product->remarks);
+        ->setCellValue('C' . $i, $product->remarks)
+        ->setCellValue('D' . $i, $product->price)
+        ->setCellValue('E' . $i, $product->wholesale_price);
       //
       foreach ($productQts as $item) {
         if ($item->warehouse_id == 1) {
           $objPHPExcel->getActiveSheet()
-            ->setCellValue('E' . $i, $item->quantity);
+            ->setCellValue('F' . $i, $item->quantity);
         } else {
           $objPHPExcel->getActiveSheet()
-            ->setCellValue('F' . $i, $item->quantity);
+            ->setCellValue('G' . $i, $item->quantity);
         }
       }
       $i++;

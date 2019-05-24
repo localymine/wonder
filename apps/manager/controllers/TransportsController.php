@@ -462,7 +462,7 @@ class TransportsController extends ControllerBase
         ->setName('Arial')
         ->setSize(12);
       // set Title
-      $objPHPExcel->getActiveSheet()->setTitle('Order List');
+      $objPHPExcel->getActiveSheet()->setTitle($transport->remarks);
       // set data
       $objPHPExcel->setActiveSheetIndex(0)
         ->setCellValue('A1', 'No.')
