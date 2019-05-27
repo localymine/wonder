@@ -23,7 +23,7 @@
           <tr>
           <td id="<?php echo $this->escaper->escapeHtml($brand->id); ?>"><?php echo $idx; ?></td>
           <td><?php echo $this->escaper->escapeHtml($brand->name); ?></td>
-          <td><?php echo $this->escaper->escapeHtml($brand->remarks); ?></td>
+          <td><?php echo $this->utility->make_links_from_http(nl2br($brand->remarks)); ?></td>
           <td><?php echo $this->tag->linkTo(array('manager/brands/show/' . $brand->id, '<i class="fa fa-eye"></i>', 'class' => 'btn btn-xs btn-info', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Show'))); ?>
 
               <?php echo $this->tag->linkTo(array('manager/brands/edit/' . $brand->id, '<i class="fa fa-pencil"></i>', 'class' => 'btn btn-xs btn-success', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => $this->l10n->_('Edit'))); ?>

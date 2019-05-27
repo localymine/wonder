@@ -72,6 +72,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="flight_end" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Flight End'); ?></label>
+          <div class="col-xs-12 col-sm-8">
+            <?php echo $this->tag->textField(array('flight_end', 'class' => 'form-control col-3')); ?>
+
+          </div>
+        </div>
+
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
           <div class="col-xs-12 col-sm-3">
@@ -163,6 +171,31 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Products Transportation'); ?></label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"></label>
+          <div class="col-xs-12 col-sm-8">
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add Products'); ?></a>
+            <?php echo $this->tag->hiddenField(array('prtranscount', 'value' => $prtranscount)); ?>
+            <table class="table table-responsive lstProducts">
+              <thead>
+              <tr>
+                <th scope="col"><?php echo $this->l10n->_('Warehouse'); ?></th>
+                <th scope="col"><?php echo $this->l10n->_('Product'); ?></th>
+                <th class="text-center" scope="col"><?php echo $this->l10n->_('Amount'); ?></th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <?php echo $this->partial('partials/tr-pr-trans-row'); ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="box-footer">
@@ -198,7 +231,9 @@
 <?php echo $this->partial('partials/javascripts'); ?>
 
   <?php echo $this->tag->javascriptInclude('js/other.js'); ?>
-  <script>
+  <script type="text/javascript">
+    WAREHOUSES = <?php echo json_encode($warehousesArr); ?>;
+    console.log(WAREHOUSES)
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",
@@ -222,7 +257,7 @@
         $('input[type=checkbox]', this).iCheck('toggle');
       });
       //
-      $('[name=flight_date]').datetimepicker({
+      $('[name=flight_date],[name=flight_end]').datetimepicker({
         format: 'Y-MM-DD',
         useCurrent: true,
         dayViewHeaderFormat: "<?php echo $this->l10n->_('MMM YYYY'); ?>",
