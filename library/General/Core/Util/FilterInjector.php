@@ -364,6 +364,64 @@ class FilterInjector extends Component
         '['.$Model.'].user_id',
         '['.$Model.'].id',
         '['.$Model.'].name',
+        '['.$Model.'].remarks',
+        'price',
+        'wholesale_price',
+        'image',
+        '['.$Model.'].quantity as qty',
+        '[PQ].quantity',
+        '[PQ].warehouse_id',
+        '[WH].name as warehouse',
+      ]
+    );
+
+    return $criteria->execute();
+  }
+
+
+  public static function getProducts(DependencyInjector $di, $keyword) {
+    /* if $_SESSION['auth'] not found, returns false.
+     * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    /* create fully qualified class name. */
+    $Model = 'General\Core\Manager\Models\Product';
+    /* create Model instance. */
+    /** @var \General\Core\Manager\Models\ModelInterface $instance */
+    $instance = new $Model;
+    /** @var \Phalcon\Mvc\Model\Metadata\Memory $metadata */
+    $metadata = $di->getShared('modelsMetadata');
+    $dataType = $metadata->getDataTypes($instance);
+
+    /* initialize query condition. */
+    $criteria = new Criteria();
+    $criteria->setModelName($Model);
+
+    $criteria->leftJoin(ProductQuantity::class, '['.$Model.'].id=[PQ].product_id ', 'PQ');
+    $criteria->leftJoin(Warehouse::class, '[WH].id=[PQ].warehouse_id ', 'WH');
+    $criteria->leftJoin(Category::class, '['.$Model.'].category_id=[CTG].id ', 'CTG');
+    $criteria->leftJoin(Brand::class, '['.$Model.'].brand_id=[BD].id ', 'BD');
+
+    $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
+    $criteria->andWhere('['.$Model.'].disabled=:disabled:', ['disabled' => 0]);
+
+    $t = '['.$Model.'].name LIKE :keyword: OR ['.$Model.'].description LIKE :keyword: OR ['.$Model.'].remarks LIKE :keyword: OR [CTG].name LIKE :keyword: OR [BD].name LIKE :keyword:';
+    $c = '%'.trim($keyword).'%';
+    $criteria->andWhere($t,
+      ['keyword' => $c]
+    );
+
+    $criteria->columns(
+      [
+        '['.$Model.'].user_id',
+        '['.$Model.'].id',
+        '['.$Model.'].name',
+        '['.$Model.'].remarks',
         'price',
         'wholesale_price',
         'image',

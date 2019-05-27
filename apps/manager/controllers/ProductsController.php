@@ -10,6 +10,7 @@ use General\Core\Manager\Models\ProductPrice;
 use General\Core\Manager\Models\ProductQuantity;
 use General\Core\Manager\Models\Warehouse;
 use General\Core\Util\Enums;
+use General\Core\Util\FilterInjector;
 
 /**
  * Class IndexController
@@ -773,6 +774,27 @@ class ProductsController  extends ControllerBase
       'product'.DS.sprintf("%07d", $id);
     $savepath = SKR_UPLOAD_DIR.DS.$savedir;
     return $savepath;
+  }
+
+
+  public function getproductAction() {
+    $response = ['success' => 0];
+    $this->view->disable();
+    if ($this->request->isAjax()) {
+      if ($this->request->isPost()) {
+
+        $products = FilterInjector::getProducts($this->di, $this->request->getPost('keyword'));
+        if ($products->count() > 0) {
+          $response['product'] = $products->toArray();
+          $response['success'] = 1;
+        }
+
+      }
+    }
+    $this->response->resetHeaders();
+    $this->response->setContentType('application/json', 'UTF-8');
+    $this->response->setContent(json_encode($response,JSON_NUMERIC_CHECK));
+    return $this->response->send();
   }
 
 

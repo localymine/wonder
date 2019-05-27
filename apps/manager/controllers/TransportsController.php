@@ -8,6 +8,7 @@ use General\Core\Manager\Models\OtherCost;
 use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\Transport;
 use General\Core\Manager\Models\TransportInvoice;
+use General\Core\Manager\Models\Warehouse;
 use General\Core\Util\Enums;
 
 /**
@@ -78,7 +79,7 @@ class TransportsController extends ControllerBase
       if (!$this->request->hasPost('disabled')) {
         $transport->disabled = 0;
       }
-
+print_r($post);exit;
       /* test whether the current user can edit this Client. */
       if (!$this->qi->is_editable('Transport', $transport)) {
         $this->flash->notice($this->l10n->_("You don't have access to this module: ") . 'transports:create');
@@ -830,6 +831,10 @@ class TransportsController extends ControllerBase
     ];
     $receiver = Client::find($this->qi->inject('Client', $cond));
     $this->view->setVar('receiver', $receiver);
+
+    $warehouses = Warehouse::find();
+    $this->view->setVar('warehouses', $warehouses);
+    $this->view->setVar('warehousesArr', $warehouses->toArray());
 
     parent::beforeExecuteRoute($dispatcher);
     return true;

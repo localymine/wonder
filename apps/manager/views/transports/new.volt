@@ -45,6 +45,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="flight_end" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Flight End') }}</label>
+          <div class="col-xs-12 col-sm-8">
+            {{ text_field('flight_end','class':'form-control col-3') }}
+
+          </div>
+        </div>
+
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
           <div class="col-xs-12 col-sm-3">
@@ -136,6 +144,31 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label">{{ l10n._('Products Transportation') }}</label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"></label>
+          <div class="col-xs-12 col-sm-8">
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> {{ l10n._('Add Products') }}</a>
+            {{ hidden_field('prtranscount','value':prtranscount) }}
+            <table class="table table-responsive lstProducts">
+              <thead>
+              <tr>
+                <th scope="col">{{ l10n._('Warehouse') }}</th>
+                <th scope="col">{{ l10n._('Product') }}</th>
+                <th class="text-center" scope="col">{{ l10n._('Amount') }}</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              {{ partial('partials/tr-pr-trans-row') }}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="box-footer">
@@ -162,7 +195,9 @@
 
 {% block pagescript %}
   {{ javascript_include('js/other.js') }}
-  <script>
+  <script type="text/javascript">
+    WAREHOUSES = {{ warehousesArr|json_encode }};
+    console.log(WAREHOUSES)
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",
@@ -186,7 +221,7 @@
         $('input[type=checkbox]', this).iCheck('toggle');
       });
       //
-      $('[name=flight_date]').datetimepicker({
+      $('[name=flight_date],[name=flight_end]').datetimepicker({
         format: 'Y-MM-DD',
         useCurrent: true,
         dayViewHeaderFormat: "{{ l10n._('MMM YYYY') }}",

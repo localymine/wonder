@@ -40,7 +40,7 @@
             </tr>
             <tr>
               <th>{{ l10n._('Remarks') }}</th>
-              <td>{{ brand.remarks|nl2br }}</td>
+              <td>{{ utility.make_links_from_http(brand.remarks|nl2br) }}</td>
             </tr>
             </tbody>
             </table>
