@@ -74,7 +74,7 @@
         </div>
 
         <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transporter'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->textField(array('client_name', 'class' => 'form-control', 'disabled' => 'true', 'value' => $transport->client->name)); ?>
             <?php echo $this->tag->hiddenField(array('client', 'value' => $transport->client->id)); ?>
@@ -172,6 +172,31 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Products Transportation'); ?></label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"></label>
+          <div class="col-xs-12 col-sm-8">
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add Products'); ?></a>
+            <?php echo $this->tag->hiddenField(array('prtranscount', 'value' => $prtranscount)); ?>
+            <table class="table table-responsive lstProducts">
+              <thead>
+              <tr>
+                <th scope="col"><?php echo $this->l10n->_('Warehouse'); ?></th>
+                <th scope="col"><?php echo $this->l10n->_('Product'); ?></th>
+                <th class="text-center" scope="col"><?php echo $this->l10n->_('Amount'); ?></th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <?php echo $this->partial('partials/tr-pr-trans-row'); ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="box-footer">
@@ -204,6 +229,7 @@
 
   <?php echo $this->tag->javascriptInclude('js/other.js'); ?>
   <script>
+    WAREHOUSES = <?php echo json_encode($warehousesArr); ?>;
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",

@@ -81,7 +81,7 @@
         </div>
 
         <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Receiver'); ?></label>
+          <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transporter'); ?></label>
           <div class="col-xs-12 col-sm-3">
             <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'data-mode' => 'new', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '')); ?>
 
@@ -233,7 +233,6 @@
   <?php echo $this->tag->javascriptInclude('js/other.js'); ?>
   <script type="text/javascript">
     WAREHOUSES = <?php echo json_encode($warehousesArr); ?>;
-    console.log(WAREHOUSES)
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",

@@ -180,7 +180,34 @@
           </div>
         </div>
 
+        <div class="row row-gutter-20">
+          <div class="col-xs-12 col-sm-6">
+            <h4><?php echo $this->l10n->_('Transport Products'); ?></h4>
+            <div id="products">
+              <?php foreach ($warehousesArr as $warehouse) { ?>
+                <h5>
+                  <?php echo $warehouse['name']; ?>
+                </h5>
+                <div>
+                  <table class="table table-responsive">
+                  <?php foreach ($transportProduct as $transproduct) { ?>
+                    <?php if ($transproduct->warehouse_id == $warehouse['id']) { ?>
+                      <tr>
+                        <td><?php echo $transproduct->product->name; ?></td>
+                        <td class="text-right"><?php echo $transproduct->amount; ?></td>
+                      </tr>
+                    <?php } ?>
+                  <?php } ?>
+                  </table>
+                </div>
+              <?php } ?>
+
+            </div>
+          </div>
+        </div>
+
       </div>
+
       <div class="box-footer">
         <div class="action-area">
           <?php echo $this->tag->linkTo(array('manager/transports/edit/' . $transport->id, $this->l10n->_('<i class="fa fa-pencil"></i> Edit'), 'class' => 'btn btn-success pull-left')); ?>
@@ -215,12 +242,17 @@
 <?php echo $this->partial('partials/javascripts'); ?>
 
   <script>
+    WAREHOUSES = <?php echo json_encode($warehousesArr); ?>;
     $( function() {
       $('#accordion').accordion({
         collapsible: true,
         heightStyle: 'content'
       });
-    } );
+      $('#products').accordion({
+        collapsible: false,
+        heightStyle: 'content'
+      });
+    });
   </script>
 
 </body>
