@@ -565,6 +565,17 @@ class TransportsController extends ControllerBase
         $j++;
       }
 
+      $k = $i;
+      $transportProducts = $transport->getRelated('transportproduct');
+      foreach ($transportProducts as $tpd) {
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('A' . $k, $k-1)
+          ->setCellValue('B' . $k, $tpd->warehouse->name)
+          ->setCellValue('C' . $k, $tpd->product->remarks)
+          ->setCellValue('E' . $k, $tpd->amount);
+        $k++;
+      }
+
       $objPHPExcel->getActiveSheet()->getStyle('A1:F1')
         ->applyFromArray([
           'font' => [

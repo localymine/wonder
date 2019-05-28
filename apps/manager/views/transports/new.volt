@@ -151,7 +151,6 @@
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"></label>
           <div class="col-xs-12 col-sm-8">
-            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> {{ l10n._('Add Products') }}</a>
             {{ hidden_field('prtranscount','value':prtranscount) }}
             <table class="table table-responsive lstProducts">
               <thead>
@@ -166,6 +165,7 @@
               {{ partial('partials/tr-pr-trans-row') }}
               </tbody>
             </table>
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> {{ l10n._('Add Products') }}</a>
           </div>
         </div>
 
