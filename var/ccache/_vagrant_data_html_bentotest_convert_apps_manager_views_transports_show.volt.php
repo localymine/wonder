@@ -244,12 +244,8 @@
   <script>
     WAREHOUSES = <?php echo json_encode($warehousesArr); ?>;
     $( function() {
-      $('#accordion').accordion({
+      $('#accordion,#products').accordion({
         collapsible: true,
-        heightStyle: 'content'
-      });
-      $('#products').accordion({
-        collapsible: false,
         heightStyle: 'content'
       });
     });

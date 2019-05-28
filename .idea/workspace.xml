@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cedb7685-348b-43c8-beaa-b3893af76067" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/manager/models/TransportProduct.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" afterPath="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/models/Transport.php" afterPath="$PROJECT_DIR$/apps/manager/models/Transport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/partials/tr-pr-trans-row.volt" afterPath="$PROJECT_DIR$/apps/manager/views/partials/tr-pr-trans-row.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/transports/edit.volt" afterPath="$PROJECT_DIR$/apps/manager/views/transports/edit.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/transports/new.volt" afterPath="$PROJECT_DIR$/apps/manager/views/transports/new.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" afterPath="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" afterPath="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/transport.js" afterPath="$PROJECT_DIR$/public/js/transport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_tr-pr-trans-row.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_partials_tr-pr-trans-row.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_edit.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_edit.volt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/config/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_new.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_new.volt.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" afterPath="$PROJECT_DIR$/var/ccache/_vagrant_data_html_bentotest_convert_apps_manager_views_transports_show.volt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/log/exeption.log" afterPath="$PROJECT_DIR$/var/log/exeption.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,38 +22,18 @@
       <file leaf-file-name="new.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/new.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="198" column="4" lean-forward="false" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="49" />
+            <state relative-caret-position="289">
+              <caret line="167" column="134" lean-forward="false" selection-start-line="167" selection-start-column="134" selection-end-line="167" selection-end-column="134" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/edit.volt">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="195" column="4" lean-forward="false" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="othersrow.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/manager/views/partials/othersrow.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tr-pr-trans-row.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/manager/views/partials/tr-pr-trans-row.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="75" lean-forward="false" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
+            <state relative-caret-position="323">
+              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -75,31 +48,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransportsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransportsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/manager/controllers/TransportsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="372" column="40" lean-forward="false" selection-start-line="372" selection-start-column="40" selection-end-line="372" selection-end-column="40" />
+            <state relative-caret-position="219">
+              <caret line="567" column="13" lean-forward="false" selection-start-line="567" selection-start-column="13" selection-end-line="567" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransportInvoice.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportInvoice.php">
+      <file leaf-file-name="TransportProduct.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportProduct.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1275">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="129" column="26" lean-forward="false" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.volt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/show.volt">
+      <file leaf-file-name="Transport.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/manager/models/Transport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="214" column="5" lean-forward="true" selection-start-line="214" selection-start-column="5" selection-end-line="214" selection-end-column="5" />
+            <state relative-caret-position="378">
+              <caret line="205" column="34" lean-forward="false" selection-start-line="205" selection-start-column="34" selection-end-line="205" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -241,18 +214,18 @@
         <option value="$PROJECT_DIR$/apps/manager/views/incomes/show.volt" />
         <option value="$PROJECT_DIR$/apps/manager/views/partials/paginator/brands.volt" />
         <option value="$PROJECT_DIR$/apps/manager/views/brands/show.volt" />
-        <option value="$PROJECT_DIR$/config/config.php" />
         <option value="$PROJECT_DIR$/apps/manager/controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/apps/manager/models/Transport.php" />
-        <option value="$PROJECT_DIR$/public/js/transport.js" />
         <option value="$PROJECT_DIR$/var/log/exeption.log" />
         <option value="$PROJECT_DIR$/apps/manager/views/partials/tr-pr-trans-row.volt" />
-        <option value="$PROJECT_DIR$/apps/manager/views/transports/new.volt" />
         <option value="$PROJECT_DIR$/apps/manager/views/transports/edit.volt" />
         <option value="$PROJECT_DIR$/apps/manager/models/TransportProduct.php" />
         <option value="$PROJECT_DIR$/library/General/Core/Util/FilterInjector.php" />
-        <option value="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" />
         <option value="$PROJECT_DIR$/apps/manager/views/transports/show.volt" />
+        <option value="$PROJECT_DIR$/config/config.php" />
+        <option value="$PROJECT_DIR$/apps/manager/views/transports/new.volt" />
+        <option value="$PROJECT_DIR$/public/js/transport.js" />
+        <option value="$PROJECT_DIR$/apps/manager/models/Transport.php" />
+        <option value="$PROJECT_DIR$/apps/manager/controllers/TransportsController.php" />
       </list>
     </option>
   </component>
@@ -640,12 +613,12 @@
       <workItem from="1558662239601" duration="15731000" />
       <workItem from="1558722479056" duration="10510000" />
       <workItem from="1558920409886" duration="14986000" />
-      <workItem from="1559005140455" duration="15975000" />
+      <workItem from="1559005140455" duration="20395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="938931000" />
+    <option name="totallyTimeSpent" value="943351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -967,24 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/transport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="78" lean-forward="false" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
-          <folding>
-            <marker date="1559015429167" expanded="true" signature="1621:1645" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportInvoice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1275">
@@ -993,26 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/models/Transport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="203" column="7" lean-forward="true" selection-start-line="203" selection-start-column="7" selection-end-line="203" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/views/partials/othersrow.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/new.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="198" column="4" lean-forward="false" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1033,26 +972,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="132" column="27" lean-forward="false" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/TransportsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="372" column="40" lean-forward="false" selection-start-line="372" selection-start-column="40" selection-end-line="372" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/edit.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="195" column="4" lean-forward="false" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/show.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="214" column="5" lean-forward="true" selection-start-line="214" selection-start-column="5" selection-end-line="214" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/transport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding>
+            <marker date="1559032070617" expanded="true" signature="1621:1645" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/new.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="167" column="134" lean-forward="false" selection-start-line="167" selection-start-column="134" selection-end-line="167" selection-end-column="134" />
           <folding />
         </state>
       </provider>
@@ -1064,10 +1021,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/manager/views/transports/show.volt">
+    <entry file="file://$PROJECT_DIR$/apps/manager/models/TransportProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="214" column="5" lean-forward="true" selection-start-line="214" selection-start-column="5" selection-end-line="214" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="129" column="26" lean-forward="false" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/models/Transport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="205" column="34" lean-forward="false" selection-start-line="205" selection-start-column="34" selection-end-line="205" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/manager/controllers/TransportsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="567" column="13" lean-forward="false" selection-start-line="567" selection-start-column="13" selection-end-line="567" selection-end-column="13" />
           <folding />
         </state>
       </provider>

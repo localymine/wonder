@@ -178,7 +178,6 @@
         <div class="form-group">
           <label class="col-xs-12 col-sm-3 control-label"></label>
           <div class="col-xs-12 col-sm-8">
-            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add Products'); ?></a>
             <?php echo $this->tag->hiddenField(array('prtranscount', 'value' => $prtranscount)); ?>
             <table class="table table-responsive lstProducts">
               <thead>
@@ -193,6 +192,7 @@
               <?php echo $this->partial('partials/tr-pr-trans-row'); ?>
               </tbody>
             </table>
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> <?php echo $this->l10n->_('Add Products'); ?></a>
           </div>
         </div>
 
