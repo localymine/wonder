@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
+          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Transporter') }}</label>
           <div class="col-xs-12 col-sm-3">
             {{ text_field('client_name','class':'form-control','disabled':'true','value':transport.client.name) }}
             {{ hidden_field('client','value':transport.client.id) }}
@@ -145,6 +145,31 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label">{{ l10n._('Products Transportation') }}</label>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 control-label"></label>
+          <div class="col-xs-12 col-sm-8">
+            <a class="acond addProducts" href="javascript:void(0);"><i class="fa fa-plus-circle"></i> {{ l10n._('Add Products') }}</a>
+            {{ hidden_field('prtranscount','value':prtranscount) }}
+            <table class="table table-responsive lstProducts">
+              <thead>
+              <tr>
+                <th scope="col">{{ l10n._('Warehouse') }}</th>
+                <th scope="col">{{ l10n._('Product') }}</th>
+                <th class="text-center" scope="col">{{ l10n._('Amount') }}</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              {{ partial('partials/tr-pr-trans-row') }}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
       <div class="box-footer">
@@ -168,6 +193,7 @@
 {% block pagescript %}
   {{ javascript_include('js/other.js') }}
   <script>
+    WAREHOUSES = {{ warehousesArr|json_encode }};
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",

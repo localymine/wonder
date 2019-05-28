@@ -153,7 +153,34 @@
           </div>
         </div>
 
+        <div class="row row-gutter-20">
+          <div class="col-xs-12 col-sm-6">
+            <h4>{{ l10n._('Transport Products') }}</h4>
+            <div id="products">
+              {% for warehouse in warehousesArr %}
+                <h5>
+                  {{ warehouse['name'] }}
+                </h5>
+                <div>
+                  <table class="table table-responsive">
+                  {% for transproduct in transportProduct %}
+                    {% if transproduct.warehouse_id == warehouse['id'] %}
+                      <tr>
+                        <td>{{ transproduct.product.name }}</td>
+                        <td class="text-right">{{ transproduct.amount }}</td>
+                      </tr>
+                    {% endif %}
+                  {% endfor %}
+                  </table>
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+
       </div>
+
       <div class="box-footer">
         <div class="action-area">
           {{ link_to('manager/transports/edit/'~transport.id,l10n._('<i class="fa fa-pencil"></i> Edit'),'class':'btn btn-success pull-left') }}
@@ -179,11 +206,12 @@
 
 {% block pagescript %}
   <script>
+    WAREHOUSES = {{ warehousesArr|json_encode }};
     $( function() {
-      $('#accordion').accordion({
+      $('#accordion,#products').accordion({
         collapsible: true,
         heightStyle: 'content'
       });
-    } );
+    });
   </script>
 {% endblock %}

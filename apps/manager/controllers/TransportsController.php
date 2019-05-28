@@ -8,6 +8,7 @@ use General\Core\Manager\Models\OtherCost;
 use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\Transport;
 use General\Core\Manager\Models\TransportInvoice;
+use General\Core\Manager\Models\TransportProduct;
 use General\Core\Manager\Models\Warehouse;
 use General\Core\Util\Enums;
 
@@ -79,7 +80,7 @@ class TransportsController extends ControllerBase
       if (!$this->request->hasPost('disabled')) {
         $transport->disabled = 0;
       }
-print_r($post);exit;
+
       /* test whether the current user can edit this Client. */
       if (!$this->qi->is_editable('Transport', $transport)) {
         $this->flash->notice($this->l10n->_("You don't have access to this module: ") . 'transports:create');
@@ -133,6 +134,22 @@ print_r($post);exit;
       }
       $transport->transportinvoice = $transportInvoice;
       $transport->total = $total;
+
+      $transportProduct = [];
+      if ($this->request->hasPost('trans_prod')) {
+        $trans_prods = $post['trans_prod'];
+        foreach ($trans_prods as $pd_ele) {
+          if ($pd_ele['product_id'] != '') {
+            $transProduct = new TransportProduct();
+            $transProduct->warehouse_id = $pd_ele['warehouse_id'];
+            $transProduct->product_id   = $pd_ele['product_id'];
+            $transProduct->amount       = $pd_ele['amount'];
+            //
+            array_push($transportProduct, $transProduct);
+          }
+        }
+      }
+      $transport->transportproduct = $transportProduct;
 
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
@@ -227,6 +244,18 @@ print_r($post);exit;
         $data_oc['others'][$i]['name'] = $oc->name;
         $data_oc['others'][$i]['price'] = $oc->price;
         $data_oc['others'][$i]['remarks'] = $oc->remarks;
+        $i++;
+      }
+    }
+
+    $transportProduct = $transport->getRelated('transportproduct');
+    $i = 0;
+    if ($transportProduct->count() > 0) {
+      foreach($transportProduct as $tp) {
+        $data_oc['trans_prod'][$i]['warehouse_id'] = $tp->warehouse_id;
+        $data_oc['trans_prod'][$i]['product_id'] = $tp->product_id;
+        $data_oc['trans_prod'][$i]['name'] = $tp->product->name;
+        $data_oc['trans_prod'][$i]['amount'] = $tp->amount;
         $i++;
       }
     }
@@ -327,6 +356,28 @@ print_r($post);exit;
       $transport->transportinvoice = $transportInvoice;
       $transport->total = $total;
 
+      $cond = [
+        'conditions' => 'transport_id=:transport_id:',
+        'bind' => ['transport_id' => $transport_id],
+      ];
+      $oldTransProduct = TransportProduct::find($cond);
+
+      $transportProduct = [];
+      if ($this->request->hasPost('trans_prod')) {
+        $trans_prods = $post['trans_prod'];
+        foreach ($trans_prods as $pd_ele) {
+          if ($pd_ele['product_id'] != '') {
+            $transProduct = new TransportProduct();
+            $transProduct->warehouse_id = $pd_ele['warehouse_id'];
+            $transProduct->product_id   = $pd_ele['product_id'];
+            $transProduct->amount       = $pd_ele['amount'];
+            //
+            array_push($transportProduct, $transProduct);
+          }
+        }
+      }
+      $transport->transportproduct = $transportProduct;
+
       /* if failed to save, put error in session and will be forwarded. */
       /** @var \Phalcon\Mvc\Model\Message $msg */
       if (!$transport->save()) {
@@ -362,6 +413,7 @@ print_r($post);exit;
         return;
       } else {
         $oldTransInvoice->delete();
+        $oldTransProduct->delete();
       }
 
       /* if successfully saved, put message in session and redirect. */
@@ -426,6 +478,7 @@ print_r($post);exit;
     $transport = Transport::findFirst($this->qi->inject('Transport', $cond));
     $transportInvoice = $transport->getRelated('transportinvoice');
     $transportOtherCost = $transport->getRelated('othercost');
+    $transportProduct = $transport->getRelated('transportproduct');
 
     /* put error in session and will be forwarded, if result is empty. */
     if (!$transport) {
@@ -441,6 +494,7 @@ print_r($post);exit;
     $this->view->setVar('transport', $transport);
     $this->view->setVar('transportInvoice', $transportInvoice);
     $this->view->setVar('transportOtherCost', $transportOtherCost);
+    $this->view->setVar('transportProduct', $transportProduct);
   }
 
 

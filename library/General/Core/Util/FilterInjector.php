@@ -402,8 +402,6 @@ class FilterInjector extends Component
     $criteria = new Criteria();
     $criteria->setModelName($Model);
 
-    $criteria->leftJoin(ProductQuantity::class, '['.$Model.'].id=[PQ].product_id ', 'PQ');
-    $criteria->leftJoin(Warehouse::class, '[WH].id=[PQ].warehouse_id ', 'WH');
     $criteria->leftJoin(Category::class, '['.$Model.'].category_id=[CTG].id ', 'CTG');
     $criteria->leftJoin(Brand::class, '['.$Model.'].brand_id=[BD].id ', 'BD');
 
@@ -426,9 +424,6 @@ class FilterInjector extends Component
         'wholesale_price',
         'image',
         '['.$Model.'].quantity as qty',
-        '[PQ].quantity',
-        '[PQ].warehouse_id',
-        '[WH].name as warehouse',
       ]
     );
 

@@ -33,7 +33,7 @@ $(function () {
         '<input type="text" class="form-control getproduct">' +
       '</td>' +
       '<td>' +
-        '<input type="text" name="trans_prod[][amount]" value="1" class="form-control text-right p_amount" style="width:100px;float:right;">' +
+        '<input type="number" name="trans_prod[][amount]" value="1" min="1" class="form-control text-right p_amount" style="width:100px;float:right;">' +
       '</td>' +
       '<td>' +
         '<a class="acond rmProduct"><i class="fa fa-minus-circle text-red"></i></a>' +
@@ -50,16 +50,16 @@ $(function () {
 
   function resetProductName(){
     $('.lstProducts tbody').find('tr').each(function (index) {
-      $('select.p_warehouse', this).attr('name', 'trans_prod[' + index + '][name]');
-      $('input.p_pid', this).attr('name', 'trans_prod[' + index + '][price]');
-      $('input.p_amount', this).attr('name', 'trans_prod[' + index + '][remarks]');
+      $('select.p_warehouse', this).attr('name', 'trans_prod[' + index + '][warehouse_id]');
+      $('input.p_pid', this).attr('name', 'trans_prod[' + index + '][product_id]');
+      $('input.p_amount', this).attr('name', 'trans_prod[' + index + '][amount]');
     });
   }
 
   $('.getproduct').live('keyup', function() {
     var me = $(this);
     var keyword = me.val().trim();
-    if (keyword.length >= 3) {
+    if (keyword.length >= 2) {
       var selectLst = document.createElement('select');
       var post_data = {
         'keyword': keyword
@@ -75,6 +75,10 @@ $(function () {
         if(data['success'] === 1) {
           selectLst.id = 'selectProduct';
           selectLst.className = 'form-control';
+          var option = document.createElement('option');
+          option.value = '';
+          option.text  = '-- Choose --';
+          selectLst.appendChild(option);
           (data['product']).forEach(function(ele){
             var option = document.createElement('option');
             option.value = ele.id;

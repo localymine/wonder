@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group required">
-          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Receiver') }}</label>
+          <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Transporter') }}</label>
           <div class="col-xs-12 col-sm-3">
             {{ select('client',clients,'using':['id','name'],'name':'client_id','data-mode':'new','class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'') }}
 
@@ -197,7 +197,6 @@
   {{ javascript_include('js/other.js') }}
   <script type="text/javascript">
     WAREHOUSES = {{ warehousesArr|json_encode }};
-    console.log(WAREHOUSES)
     $(function(){
       $.invoiceForm({
         addButton: "a.addcond",

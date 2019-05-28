@@ -11,18 +11,21 @@ use Phalcon\Mvc\Model\Relation;
 use Phalcon\Mvc\Model\Resultset;
 use Phalcon\Mvc\Model\ResultsetInterface;
 use Phalcon\Validation;
+use Phalcon\Validation\Validator\Email;
 use Phalcon\Validation\Validator\PresenceOf;
+use Phalcon\Validation\Validator\Uniqueness;
+use Phalcon\Mvc\Model\Message;
 
 /**
  * class for Camera model Entity.
  *
  * @package General\Core\Manager\Models
  */
-class Transport extends ModelBase implements ModelInterface
+class TransportProduct extends ModelBase implements ModelInterface
 {
 
   /** @var string define class name. */
-  protected $className = 'Transport';
+  protected $className = 'TransportProduct';
 
   /**
    * primary key.
@@ -33,77 +36,29 @@ class Transport extends ModelBase implements ModelInterface
    */
   public $id;
   /**
-   * name
-   * @var string
-   * @Column(type="string", nullable=false)
-   */
-  public $name;
-  /**
-   * id of user.
+   * id of transport.
    * @var integer
    * @Column(type="integer", nullable=false)
    */
-  public $user_id;
+  public $transport_id;
   /**
-   * id of client.
+   * warehouse_id
    * @var integer
    * @Column(type="integer", nullable=false)
    */
-  public $client_id;
+  public $warehouse_id;
   /**
-   * total.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $total;
-  /**
-   * total others cost.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $total_others;
-  /**
-   * flight_date.
-   * @var string
-   * @Column(type="string", nullable=false)
-   */
-  public $flight_date;
-  /**
-   * flight_end.
-   * @var string
-   * @Column(type="string", nullable=false)
-   */
-  public $flight_end;
-  /**
-   * remarks.
-   * @var string
-   * @Column(type="string", nullable=false)
-   */
-  public $remarks;
-  /**
-   * send_id.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $send_id;
-  /**
-   * receive_id.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $receive_id;
-  /**
-   * status.
-   * @var string
-   * @Column(type="integer")
-   */
-  public $status;
-  /**
-   * flag indicating whether disabled or not.
+   * product_id
    * @var integer
    * @Column(type="integer", nullable=false)
    */
-  public $disabled;
+  public $product_id;
+  /**
+   * amount
+   * @var integer
+   * @Column(type="float", nullable=false)
+   */
+  public $amount;
 
 
   /**
@@ -113,7 +68,7 @@ class Transport extends ModelBase implements ModelInterface
    */
   public function getSource()
   {
-    return 'transports';
+    return 'transport_products';
   }
 
 
@@ -126,18 +81,10 @@ class Transport extends ModelBase implements ModelInterface
   {
     return [
       'id'          => 'id',
-      'name'        => 'name',
-      'user_id'     => 'user_id',
-      'client_id'   => 'client_id',
-      'total'       => 'total',
-      'total_others'=> 'total_others',
-      'flight_date' => 'flight_date',
-      'flight_end'  => 'flight_end',
-      'remarks'     => 'remarks',
-      'send_id'     => 'send_id',
-      'receive_id'  => 'receive_id',
-      'status'      => 'status',
-      'disabled'    => 'disabled',
+      'transport_id'=> 'transport_id',
+      'warehouse_id'=> 'warehouse_id',
+      'product_id'  => 'product_id',
+      'amount'      => 'amount',
       'created'     => 'created',
       'updated'     => 'updated',
     ];
@@ -176,38 +123,14 @@ class Transport extends ModelBase implements ModelInterface
     /* enable partial update instead of all-field update. */
     $this->useDynamicUpdate(true);
     /* configure relationship. */
-    $this->belongsTo('user_id', User::class, 'id', [
-      'alias' => 'user'
+    $this->belongsTo('transport_id', Transport::class, 'id', [
+      'alias' => 'transport'
     ]);
-    $this->belongsTo('client_id', Client::class, 'id', [
-      'alias' => 'client'
+    $this->belongsTo('product_id', Product::class, 'id', [
+      'alias' => 'product'
     ]);
-    $this->belongsTo('send_id', Client::class, 'id', [
-      'alias' => 'sender'
-    ]);
-    $this->belongsTo('receive_id', Client::class, 'id', [
-      'alias' => 'receiver'
-    ]);
-    $this->hasMany('id', OtherCost::class, 'transport_id', [
-      'alias' => 'othercost',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Member refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
-    ]);
-    $this->hasMany('id', TransportInvoice::class, 'transport_id', [
-      'alias' => 'transportinvoice',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Tranport refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
-    ]);
-    $this->hasMany('id', TransportProduct::class, 'transport_id', [
-      'alias' => 'transportproduct',
-      'foreignKey' => [
-        'message' => $l10n->_('The User cannot be deleted because Model Tranport refers it.'),
-        'action' => Relation::ACTION_RESTRICT,
-      ]
+    $this->belongsTo('warehouse_id', Warehouse::class, 'id', [
+      'alias' => 'warehouse'
     ]);
     /* configure model behaviours. */
     $this->addBehavior(
@@ -237,17 +160,12 @@ class Transport extends ModelBase implements ModelInterface
   protected function advancedValidation()
   {
     $validator = new Validation();
-    $validator->rules('name', [
+    $validator->rules('transport_id', [
       new PresenceOf([
         'model' => $this,
       ]),
     ]);
-    $validator->rules('user_id', [
-      new PresenceOf([
-        'model' => $this,
-      ]),
-    ]);
-    $validator->rules('client_id', [
+    $validator->rules('product_id', [
       new PresenceOf([
         'model' => $this,
       ]),
@@ -271,19 +189,13 @@ class Transport extends ModelBase implements ModelInterface
     /** @noinspection PhpParamsInspection PhpDeprecationInspection
      *                PhpUnnecessaryFullyQualifiedNameInspection */
     $this->validate(new \Phalcon\Mvc\Model\Validator\PresenceOf([
-      'field'    => 'name',
+      'field'    => 'transport_id',
       'required' => true,
     ]));
     /** @noinspection PhpParamsInspection PhpDeprecationInspection
      *                PhpUnnecessaryFullyQualifiedNameInspection */
     $this->validate(new \Phalcon\Mvc\Model\Validator\PresenceOf([
-      'field'    => 'user_id',
-      'required' => true,
-    ]));
-    /** @noinspection PhpParamsInspection PhpDeprecationInspection
-     *                PhpUnnecessaryFullyQualifiedNameInspection */
-    $this->validate(new \Phalcon\Mvc\Model\Validator\PresenceOf([
-      'field'    => 'client_id',
+      'field'    => 'product_id',
       'required' => true,
     ]));
     if (true === $this->validationHasFailed()) {
