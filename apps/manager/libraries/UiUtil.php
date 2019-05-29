@@ -62,7 +62,7 @@ class UiUtil extends BootstrapPaginator
     'invoices' => [
       'link'  => 'manager/invoices/index',
       'label' => '<i class="fa fa-sticky-note"></i><span>Invoices</span>',
-      'controller' => ['invoicdes'],
+      'controller' => ['invoices'],
     ],
     'transport' => [
       'link'  => 'manager/transports/index',
@@ -104,8 +104,9 @@ class UiUtil extends BootstrapPaginator
     $l10n = Di::getDefault()->get('l10n');
     $controllerName = $this->view->getControllerName();
     $actionName = $this->view->getActionName();
-    $clientsCtrls = ['clients'];
+    $clientsCtrls = ['clients','members'];
     $goodsCtrls   = ['products','invoices','transports'];
+    $inOutCtrls   = ['types','incomes','outgoing'];
 
     // Header
     $out .= '<li class="header">'.$l10n->_('Manager Menu').'</li>'."\n";
@@ -189,7 +190,7 @@ class UiUtil extends BootstrapPaginator
     $label = $l10n->_('<i class="fa fa-suitcase"></i><span>Bag</span>').
       '<i class="fa fa-angle-right pull-right"></i>';
     $li = Tag::linkTo('manager/incomes/index', $label);
-    if (in_array($controllerName, $goodsCtrls)) {
+    if (in_array($controllerName, $inOutCtrls)) {
       $out .= '<li class="treeview active">'.$li."\n";
     } else {
       $out .= '<li class="treeview">'.$li."\n";

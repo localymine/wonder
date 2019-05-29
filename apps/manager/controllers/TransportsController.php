@@ -828,11 +828,22 @@ class TransportsController extends ControllerBase
         }
       }
 
+      $k = $i;
+      $transportProducts = $transport->getRelated('transportproduct');
+      foreach ($transportProducts as $tpd) {
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('A' . $k, $k-1)
+          ->setCellValue('B' . $k, $tpd->product->name)
+          ->setCellValue('C' . $k, $tpd->product->category->name)
+          ->setCellValue('D' . $k, $tpd->amount);
+        $k++;
+      }
+
       $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
       $objPHPExcel->getActiveSheet()->getStyle('A4')->getFont()->setBold(true)->setUnderline(true);
       $objPHPExcel->getActiveSheet()->getStyle('A8')->getFont()->setBold(true)->setUnderline(true);
 
-      $objPHPExcel->getActiveSheet()->getStyle('A13:C13')
+      $objPHPExcel->getActiveSheet()->getStyle('A13:D13')
         ->applyFromArray([
           'font' => [
             'bold' => true

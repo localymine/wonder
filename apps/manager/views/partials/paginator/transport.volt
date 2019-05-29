@@ -9,6 +9,7 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="strstatus">
           <col class="actions actions-3">
           </colgroup>
@@ -17,6 +18,7 @@
           <th>{{ l10n.__('ID', 'transport') }}</th>
           <th>{{ l10n.__('Name', 'transport') }}</th>
           <th>{{ l10n.__('Flight Date', 'transport') }}</th>
+          <th>{{ l10n.__('Flight End', 'transport') }}</th>
           <th>{{ l10n.__('Receiver', 'transport') }}</th>
           <th>{{ l10n.__('Total Invoices (&#8363;)', 'transport') }}</th>
           <th>{{ l10n.__('Total Others (&#8363;)', 'transport') }}</th>
@@ -33,6 +35,7 @@
           <td title="{{ transport.remarks }}">{{ transport.id|e }}</td>
           <td><div title="{{ transport.remarks }}">{{ transport.name|e }}</div></td>
           <td class="text-center">{{ utility.substr(transport.flight_date,0,10)|e }}</td>
+          <td class="text-center">{{ utility.substr(transport.flight_end,0,10)|e }}</td>
           <td>{{ transport.client.name|e }}</td>
           <td class="text-right">{{ transport.total|number_format }}</td>
           <td class="text-right">{{ transport.total_others|number_format }}</td>
