@@ -514,3 +514,11 @@ table.dataTable tbody th, table.dataTable tbody td{
   height: 32px;
   background: url('../img/income.png');
 }
+
+.acopy {
+  float: right;
+  display: block;
+  position: relative;
+  margin-top: -20px;
+  right: 0;
+}

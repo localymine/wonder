@@ -38,7 +38,8 @@
             </a>
           </td>
           <td>
-            <div class="width-m" title="{{ product.name|e }}">{{ product.name|e }}</div>
+            <div id="pname-{{ product.id }}" class="width-m" title="{{ product.name|e }}">{{ product.name|e }}</div>
+            <a href="javascript:void(0);" class="acopy" data-clipboard-target="#pname-{{ product.id }}"><i class="fa fa-copy"></i></a>
             <span style="display: none;">{{ product.description }}</span>
           </td>
           <td class="text-right price">{{ product.price|number_format }}</td>
