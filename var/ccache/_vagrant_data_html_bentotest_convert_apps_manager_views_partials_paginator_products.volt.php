@@ -38,7 +38,8 @@
             </a>
           </td>
           <td>
-            <div class="width-m" title="<?php echo $this->escaper->escapeHtml($product->name); ?>"><?php echo $this->escaper->escapeHtml($product->name); ?></div>
+            <div id="pname-<?php echo $product->id; ?>" class="width-m" title="<?php echo $this->escaper->escapeHtml($product->name); ?>"><?php echo $this->escaper->escapeHtml($product->name); ?></div>
+            <a href="javascript:void(0);" class="acopy" data-clipboard-target="#pname-<?php echo $product->id; ?>"><i class="fa fa-copy"></i></a>
             <span style="display: none;"><?php echo $product->description; ?></span>
           </td>
           <td class="text-right price"><?php echo number_format($product->price); ?></td>
