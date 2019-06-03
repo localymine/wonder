@@ -75,6 +75,7 @@
   $(function() {
     $('#table-outgoing').DataTable({
 //        "iDisplayLength": 50,
+      "ordering": false,
       "bPaginate": false,
       "bInfo": false
     });

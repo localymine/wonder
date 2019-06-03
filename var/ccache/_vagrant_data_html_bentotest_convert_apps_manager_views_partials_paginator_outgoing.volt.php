@@ -7,12 +7,14 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th><?php echo $this->l10n->__('ID', 'outgoing'); ?></th>
           <th><?php echo $this->l10n->__('Name', 'outgoing'); ?></th>
+          <th><?php echo $this->l10n->__('Res.Per', 'outgoing'); ?></th>
           <th><?php echo $this->l10n->__('Amount', 'outgoing'); ?></th>
           <th><?php echo $this->l10n->__('Date', 'outgoing'); ?></th>
           <th><?php echo $this->l10n->__('Remarks', 'outgoing'); ?></th>
@@ -27,6 +29,7 @@
           <tr>
           <td id="<?php echo $this->escaper->escapeHtml($outgoing->id); ?>"><?php echo $idx; ?></td>
           <td><?php echo $this->escaper->escapeHtml($outgoing->name); ?></td>
+          <td><?php echo $this->escaper->escapeHtml($outgoing->member->name); ?></td>
           <td class="text-right"><?php echo number_format($outgoing->amount); ?></td>
           <td class="text-center"><?php echo date('Y-m-d H:i', strtotime($outgoing->exec_date)); ?></td>
           <td><?php echo $this->escaper->escapeHtml($outgoing->remarks); ?></td>
