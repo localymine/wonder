@@ -7,12 +7,14 @@
           <col>
           <col>
           <col>
+          <col>
           <col class="actions actions-3">
           </colgroup>
           <thead>
           <tr>
           <th>{{ l10n.__('ID', 'outgoing') }}</th>
           <th>{{ l10n.__('Name', 'outgoing') }}</th>
+          <th>{{ l10n.__('Res.Per', 'outgoing') }}</th>
           <th>{{ l10n.__('Amount', 'outgoing') }}</th>
           <th>{{ l10n.__('Date', 'outgoing') }}</th>
           <th>{{ l10n.__('Remarks', 'outgoing') }}</th>
@@ -27,6 +29,7 @@
           <tr>
           <td id="{{ outgoing.id|e }}">{{ idx }}</td>
           <td>{{ outgoing.name|e }}</td>
+          <td>{{ outgoing.member.name|e }}</td>
           <td class="text-right">{{ outgoing.amount|number_format }}</td>
           <td class="text-center">{{ date('Y-m-d H:i', outgoing.exec_date|strtotime) }}</td>
           <td>{{ outgoing.remarks|e }}</td>

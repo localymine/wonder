@@ -26,14 +26,14 @@ $(function () {
     });
     var row = '<tr>' +
       '<td class="text-center">' +
-      '<select id="warehouses" name="trans_prod[][warehouse_id]" class="form-control p_warehouse" data-mode="new">' + options + '</select>' +
+      '<select id="warehouses" name="trans_prod[][warehouse_id]" class="form-control p_warehouse no-border" data-mode="new">' + options + '</select>' +
       '</td>' +
       '<td>' +
         '<input type="hidden" name="trans_prod[][product_id]" class="p_pid" value="">' +
-        '<input type="text" class="form-control getproduct">' +
+        '<input type="text" class="form-control getproduct no-border">' +
       '</td>' +
       '<td>' +
-        '<input type="number" name="trans_prod[][amount]" value="1" min="1" class="form-control text-right p_amount" style="width:100px;float:right;">' +
+        '<input type="number" name="trans_prod[][amount]" value="1" min="1" class="form-control text-right p_amount no-border" style="width:100px;float:right;">' +
       '</td>' +
       '<td>' +
         '<a class="acond rmProduct"><i class="fa fa-minus-circle text-red"></i></a>' +

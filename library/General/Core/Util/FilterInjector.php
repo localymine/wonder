@@ -187,6 +187,9 @@ class FilterInjector extends Component
         case 'name':
           $orderby = '['.$Model.'].name';
           break;
+        case 'exec_date':
+          $orderby = '['.$Model.'].exec_date';
+          break;
         default:
           break;
       }

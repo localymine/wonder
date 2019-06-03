@@ -522,3 +522,8 @@ table.dataTable tbody th, table.dataTable tbody td{
   margin-top: -20px;
   right: 0;
 }
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}

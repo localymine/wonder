@@ -89,8 +89,9 @@ class InventoryController  extends ControllerBase
       ->setCellValue('C1', 'Ghi Chú')
       ->setCellValue('D1', 'G.Lẻ')
       ->setCellValue('E1', 'G.Sỉ')
-      ->setCellValue('F1', 'SG')
-      ->setCellValue('G1', 'LG');
+      ->setCellValue('F1', 'G.Mua')
+      ->setCellValue('G1', 'SG')
+      ->setCellValue('H1', 'LG');
 
     $fname = 'Inventory-List-' . time() . '.xlsx';
 
@@ -99,27 +100,38 @@ class InventoryController  extends ControllerBase
 
     $i = 2;
     foreach ($products as $product) {
-      $productQts = $product->getRelated('productquantity');
+      $purchase_price = $product->purchase_price;
+      $productIns = ProductIn::find([
+        'conditions' => 'product_id=:pid:',
+        'bind' => ['pid' => $product->id],
+        'order' => 'created DESC',
+        'limit' => 1
+      ]);;
+      if ($productIns->count() > 0) {
+        $purchase_price = $productIns[0]->purchase_price;
+      }
       $objPHPExcel->getActiveSheet()
         ->setCellValue('A' . $i, $i-1)
         ->setCellValue('B' . $i, $product->name)
         ->setCellValue('C' . $i, $product->remarks)
         ->setCellValue('D' . $i, $product->price)
-        ->setCellValue('E' . $i, $product->wholesale_price);
+        ->setCellValue('E' . $i, $product->wholesale_price)
+        ->setCellValue('F' . $i, $purchase_price);
       //
+      $productQts = $product->getRelated('productquantity');
       foreach ($productQts as $item) {
         if ($item->warehouse_id == 1) {
           $objPHPExcel->getActiveSheet()
-            ->setCellValue('F' . $i, $item->quantity);
+            ->setCellValue('G' . $i, $item->quantity);
         } else {
           $objPHPExcel->getActiveSheet()
-            ->setCellValue('G' . $i, $item->quantity);
+            ->setCellValue('H' . $i, $item->quantity);
         }
       }
       $i++;
     }
 
-    $objPHPExcel->getActiveSheet()->getStyle('A1:G1')
+    $objPHPExcel->getActiveSheet()->getStyle('A1:H1')
       ->applyFromArray([
         'font' => [
           'bold' => true
@@ -131,7 +143,7 @@ class InventoryController  extends ControllerBase
     $objPHPExcel->getActiveSheet()->getStyle('C2:F200')->getNumberFormat()
       ->setFormatCode('#,###');
 
-    foreach (range('A', 'G') as $columnId) {
+    foreach (range('A', 'H') as $columnId) {
       $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
     }
 

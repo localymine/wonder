@@ -23,7 +23,8 @@ class OutGoingController extends ControllerBase
     $limit = 100;
     /* initialize data to be passed to paginator. */
     $posts = isset($_REQUEST) ? $_REQUEST : [];
-    $posts['order'] = 'name';
+    $posts['order'] = 'exec_date';
+    $posts['direction'] = 'DESC';
 
     if ($this->request->hasQuery('limit')) {
       $limit = $this->request->getQuery('limit', 'int');
