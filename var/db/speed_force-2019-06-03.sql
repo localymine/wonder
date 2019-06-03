@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2019 年 5 月 20 日 02:49
+-- Generation Time: 2019 年 6 月 03 日 11:40
 -- サーバのバージョン： 5.5.60
 -- PHP Version: 5.6.36
 
@@ -43,11 +43,11 @@ CREATE TABLE `brands` (
 INSERT INTO `brands` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (1, 'Adidas', NULL, '2019-01-03 00:00:00', '2019-01-03 00:00:00'),
 (2, 'Chivas Regal Mizunara', 'Blended Scotch Whisky', '2019-01-03 00:00:00', '2019-01-03 00:00:00'),
-(3, 'Pigeon', 'nội địa jp', '2019-02-19 00:00:00', '2019-02-19 00:00:00'),
+(3, 'Pigeon', 'nội địa jp\r\nhttps://www.pigeon.co.jp/\r\nhttps://www.amazon.co.jp/stores/Pigeon%E3%83%94%E3%82%B8%E3%83%A7%E3%83%B3/Pigeon%E3%83%94%E3%82%B8%E3%83%A7%E3%83%B3/page/3E7C6BE4-A6D0-424A-A298-3429EBF594D2', '2019-02-19 00:00:00', '2019-05-31 12:08:41'),
 (4, 'Kowa', 'nội địa jp', '2019-02-19 00:00:00', '2019-02-19 00:00:00'),
 (5, 'Aneron', 'エスエス製薬株式会社', '2019-02-19 00:00:00', '2019-02-19 00:00:00'),
 (6, 'Transino', 'nội địa jp', '2019-02-22 00:00:00', '2019-02-22 00:00:00'),
-(7, 'Shiseido', NULL, '2019-03-20 00:00:00', '2019-03-20 00:00:00'),
+(7, 'Shiseido', 'https://www.shiseido.co.jp/', '2019-03-20 00:00:00', '2019-05-27 11:54:22'),
 (8, 'Asahi', NULL, '2019-03-20 00:00:00', '2019-03-20 00:00:00'),
 (9, 'DHC', NULL, '2019-03-20 00:00:00', '2019-03-20 00:00:00'),
 (10, 'Attonon', NULL, '2019-03-20 00:00:00', '2019-03-20 00:00:00'),
@@ -67,7 +67,7 @@ INSERT INTO `brands` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (24, 'Okinawan Fucoidan', NULL, '2019-04-05 00:00:00', '2019-04-05 00:00:00'),
 (25, 'byKuro', NULL, '2019-04-05 00:00:00', '2019-04-05 00:00:00'),
 (26, 'Muhi', 'Ikeda Mohando', '2019-04-05 00:00:00', '2019-04-05 00:00:00'),
-(27, 'SK-II', NULL, '2019-04-05 00:00:00', '2019-04-05 00:00:00'),
+(27, 'SK-II', 'https://www.sk-ii.jp/', '2019-04-05 00:00:00', '2019-05-27 11:53:42'),
 (28, 'Maquillage', NULL, '2019-04-06 00:00:00', '2019-04-06 00:00:00'),
 (29, 'Botanist', NULL, '2019-04-07 00:00:00', '2019-04-07 00:00:00'),
 (30, 'Nivea', NULL, '2019-04-08 00:00:00', '2019-04-08 00:00:00'),
@@ -89,7 +89,7 @@ INSERT INTO `brands` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (46, 'Muji', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
 (47, 'Cola', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
 (48, 'Fine', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
-(49, 'Pelican', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
+(49, 'Pelican Soap', 'http://www.pelicansoap.co.jp/item/allproduct.html', '2019-04-15 00:00:00', '2019-06-02 01:03:05'),
 (50, 'Kate', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
 (51, 'Calbee', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
 (52, 'WHITE CONC', NULL, '2019-04-15 00:00:00', '2019-04-15 00:00:00'),
@@ -99,12 +99,19 @@ INSERT INTO `brands` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (56, 'ECOVACS', 'cleaning robot', '2019-04-28 01:49:17', '2019-04-28 01:49:17'),
 (57, 'ILIFE', 'cleaning robot', '2019-04-28 01:50:07', '2019-04-28 01:50:07'),
 (58, 'TOSHIBA', '東芝', '2019-04-28 01:53:10', '2019-04-28 11:31:03'),
-(59, 'Hada Labo', '', '2019-05-12 00:26:03', '2019-05-12 00:26:03'),
+(59, 'Hada Labo', 'https://jp.rohto.com/hadalabo/\r\nhttps://www.rohto.co.jp/global/brands/\r\nhttps://www.rohto.co.jp/global/company/nsn/skincare/', '2019-05-12 00:26:03', '2019-05-29 17:06:09'),
 (60, 'PITTA', '', '2019-05-13 12:52:02', '2019-05-13 12:52:02'),
 (61, 'Deonatulle', '', '2019-05-18 01:45:51', '2019-05-18 01:45:51'),
 (62, 'Kailijumei', '', '2019-05-18 10:47:14', '2019-05-18 10:47:14'),
 (63, '8x4', '', '2019-05-19 02:43:53', '2019-05-19 02:43:53'),
-(64, 'Morinaga', '', '2019-05-19 13:33:44', '2019-05-19 13:33:44');
+(64, 'Morinaga', '', '2019-05-19 13:33:44', '2019-05-19 13:33:44'),
+(65, 'Canmake', 'https://www.canmake.com\r\nhttps://www.canmake.com/item/detail/76', '2019-05-26 19:26:53', '2019-06-02 01:35:07'),
+(66, 'Cezanne', 'https://www.cezanne.co.jp', '2019-05-27 11:23:17', '2019-05-27 11:49:49'),
+(67, 'Mochida', 'http://hc.mochida.co.jp\r\nhttp://hc.mochida.co.jp/brand/furfur.html', '2019-05-27 11:46:14', '2019-05-27 11:52:19'),
+(68, 'Daiso', '', '2019-05-27 12:07:27', '2019-05-27 12:07:27'),
+(69, 'Lush', 'https://jn.lush.com/', '2019-05-27 12:08:15', '2019-05-27 12:08:28'),
+(70, 'Iwako', 'イワコー', '2019-05-28 18:31:03', '2019-05-28 18:31:03'),
+(71, 'GU', 'https://www.gu-japan.com/jp/pc/', '2019-06-02 01:00:39', '2019-06-02 01:56:34');
 
 -- --------------------------------------------------------
 
@@ -155,7 +162,10 @@ INSERT INTO `categories` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
 (28, 'EyeCare', '', '2019-05-18 01:03:37', '2019-05-18 01:03:37'),
 (29, 'Deodorant', '', '2019-05-18 01:48:05', '2019-05-18 01:48:05'),
 (30, 'Supplement', '', '2019-05-18 10:45:38', '2019-05-18 10:45:38'),
-(31, 'Pregnant Milk', '', '2019-05-19 13:34:08', '2019-05-19 13:34:08');
+(31, 'Pregnant Milk', '', '2019-05-19 13:34:08', '2019-05-19 13:34:08'),
+(32, 'Baby Food', '', '2019-05-26 12:53:39', '2019-05-26 12:53:39'),
+(33, 'Water Lotion', 'Mineral Water Location', '2019-05-26 13:11:34', '2019-05-26 13:11:34'),
+(34, 'Toy', '', '2019-05-28 18:32:09', '2019-05-28 18:34:56');
 
 -- --------------------------------------------------------
 
@@ -267,7 +277,15 @@ INSERT INTO `clients` (`id`, `user_id`, `country_id`, `name`, `firstname`, `last
 (79, 1, 1, 'Nghĩa (Phan Thiết)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:53:00', '2019-05-12 00:53:00'),
 (80, 1, 1, 'Anh (Lagi)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:55:36', '2019-05-12 00:55:36'),
 (81, 1, 1, 'Anh Kiện', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-12 00:56:32', '2019-05-12 00:56:32'),
-(82, 1, 1, 'Anh Duy', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-19 03:18:52', '2019-05-19 03:18:52');
+(82, 1, 1, 'Anh Duy', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-19 03:18:52', '2019-05-19 03:18:52'),
+(83, 1, 1, 'Bé Hiền (ĐN)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-26 19:18:10', '2019-05-26 19:18:10'),
+(84, 1, 1, 'Thanh (Sỉ)', '', '', '', '', '', '', '', 1, 0, '2019-05-26 19:21:04', '2019-05-26 19:21:04'),
+(85, 1, 1, 'Thủy (Nail)', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-26 19:24:06', '2019-05-26 19:24:06'),
+(86, 1, 1, 'Bé Thuận', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-26 19:28:22', '2019-05-26 19:28:22'),
+(87, 1, 1, 'Uyên Thanh', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-26 19:33:11', '2019-05-26 19:33:11'),
+(88, 1, 1, 'Lan Thanh', NULL, NULL, NULL, NULL, 'shopping@client.com', NULL, NULL, 0, 0, '2019-05-26 19:41:20', '2019-05-26 19:41:20'),
+(89, 1, 1, 'Ruby Lê', '', '', '', '', '', '', '', 0, 0, '2019-06-02 02:07:22', '2019-06-02 02:07:22'),
+(90, 1, 1, 'Mi Mi', '', '', '', '', '', '', '', 0, 0, '2019-06-03 10:44:50', '2019-06-03 10:44:50');
 
 -- --------------------------------------------------------
 
@@ -314,6 +332,26 @@ INSERT INTO `countries` (`id`, `name`, `code`) VALUES
 (1, 'Viet Nam', 'vn'),
 (2, 'Nhat Ban', 'jp'),
 (3, 'Australia', 'au');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `incomes`
+--
+
+CREATE TABLE `incomes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `member_id` int(10) UNSIGNED NOT NULL,
+  `type_id` tinyint(3) UNSIGNED NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` float UNSIGNED NOT NULL,
+  `remarks` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `exec_date` datetime NOT NULL,
+  `disabled` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -490,7 +528,33 @@ INSERT INTO `invoices` (`id`, `user_id`, `client_id`, `remarks`, `total_price`, 
 (149, 1, 15, '', 1272000, 0, 0, 0, '2019-05-19 03:24:49', '2019-05-19 03:24:49'),
 (150, 1, 21, '', 200000, 0, 0, 0, '2019-05-19 03:27:40', '2019-05-19 03:27:40'),
 (151, 1, 24, '', 900000, 0, 0, 0, '2019-05-19 03:28:11', '2019-05-19 03:28:11'),
-(152, 1, 10, '', 2550000, 0, 0, 0, '2019-05-19 13:45:14', '2019-05-19 13:45:14');
+(152, 1, 10, '', 2550000, 0, 0, 0, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
+(153, 1, 83, '', 7660000, 0, 0, 0, '2019-05-26 19:18:10', '2019-05-26 19:20:10'),
+(154, 1, 18, '', 1340000, 0, 0, 0, '2019-05-26 19:19:47', '2019-05-26 19:19:47'),
+(155, 1, 84, '', 220000, 0, 0, 0, '2019-05-26 19:22:03', '2019-05-26 19:22:03'),
+(156, 1, 33, '', 2540000, 0, 0, 0, '2019-05-26 19:22:57', '2019-05-26 19:22:57'),
+(157, 1, 85, '', 1340000, 0, 0, 0, '2019-05-26 19:24:06', '2019-05-26 19:24:06'),
+(158, 1, 11, '', 530000, 0, 0, 0, '2019-05-26 19:25:43', '2019-05-26 19:25:43'),
+(159, 1, 86, '', 350000, 0, 0, 0, '2019-05-26 19:28:22', '2019-05-26 19:28:22'),
+(160, 1, 52, '', 630000, 0, 0, 0, '2019-05-26 19:29:01', '2019-05-26 19:29:01'),
+(161, 1, 25, '', 170000, 0, 0, 0, '2019-05-26 19:30:09', '2019-05-26 19:30:09'),
+(162, 1, 87, '', 1200000, 0, 0, 0, '2019-05-26 19:33:11', '2019-05-26 19:33:11'),
+(163, 1, 15, '', 930000, 0, 0, 0, '2019-05-26 19:37:08', '2019-05-26 19:37:08'),
+(164, 1, 81, '', 1100000, 0, 0, 0, '2019-05-26 19:37:34', '2019-05-26 19:37:34'),
+(165, 1, 11, '', 0, 0, 0, 0, '2019-05-26 19:38:28', '2019-05-26 19:38:28'),
+(166, 1, 10, '', 0, 0, 0, 0, '2019-05-26 19:38:42', '2019-05-26 19:39:20'),
+(167, 1, 45, '', 0, 0, 0, 0, '2019-05-26 19:40:14', '2019-05-26 19:40:14'),
+(168, 1, 27, '', 0, 0, 0, 0, '2019-05-26 19:40:48', '2019-05-26 19:40:48'),
+(169, 1, 88, '', 0, 0, 0, 0, '2019-05-26 19:41:20', '2019-05-26 19:41:20'),
+(170, 1, 45, '', 8500000, 0, 0, 0, '2019-06-02 02:01:46', '2019-06-02 02:01:46'),
+(171, 1, 16, '', 1450000, 0, 0, 0, '2019-06-02 02:02:44', '2019-06-02 02:02:44'),
+(172, 1, 81, '', 5500000, 1, 0, 0, '2019-06-02 02:03:59', '2019-06-02 02:03:59'),
+(173, 1, 11, '', 340000, 0, 0, 0, '2019-06-02 02:06:11', '2019-06-02 02:06:11'),
+(174, 1, 89, '', 665000, 0, 0, 0, '2019-06-02 02:15:00', '2019-06-02 02:15:00'),
+(175, 1, 8, '', 150000, 0, 0, 0, '2019-06-02 02:15:56', '2019-06-02 02:15:56'),
+(176, 1, 10, '', 2100000, 0, 0, 0, '2019-06-02 02:21:38', '2019-06-02 02:21:38'),
+(177, 1, 90, '', 0, 0, 0, 0, '2019-06-02 02:22:36', '2019-06-02 02:22:36'),
+(178, 1, 48, '', 900000, 0, 0, 0, '2019-06-02 02:25:42', '2019-06-02 02:25:42');
 
 -- --------------------------------------------------------
 
@@ -822,7 +886,43 @@ INSERT INTO `invoices_details` (`id`, `client_id`, `invoice_id`, `product_id`, `
 (307, 24, 151, 39, 1, 900000, 1, NULL, '2019-05-19 03:28:11', '2019-05-19 03:28:11'),
 (308, 10, 152, 225, 1, 255000, 3, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
 (309, 10, 152, 226, 1, 255000, 3, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
-(310, 10, 152, 227, 1, 255000, 4, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14');
+(310, 10, 152, 227, 1, 255000, 4, NULL, '2019-05-19 13:45:14', '2019-05-19 13:45:14'),
+(311, 83, 153, 229, 1, 250000, 1, NULL, '2019-05-26 19:18:10', '2019-05-26 19:20:09'),
+(312, 83, 153, 82, 1, 3750000, 1, NULL, '2019-05-26 19:18:10', '2019-05-26 19:20:09'),
+(313, 83, 153, 235, 1, 3300000, 1, NULL, '2019-05-26 19:18:10', '2019-05-26 19:20:10'),
+(314, 18, 154, 166, 1, 670000, 2, NULL, '2019-05-26 19:19:47', '2019-05-26 19:19:47'),
+(315, 83, 153, 232, 1, 60000, 6, NULL, '2019-05-26 19:20:10', '2019-05-26 19:20:10'),
+(316, 84, 155, 233, 1, 220000, 1, NULL, '2019-05-26 19:22:03', '2019-05-26 19:22:03'),
+(317, 33, 156, 230, 1, 1270000, 2, NULL, '2019-05-26 19:22:57', '2019-05-26 19:22:57'),
+(318, 85, 157, 149, 1, 670000, 2, NULL, '2019-05-26 19:24:06', '2019-05-26 19:24:06'),
+(319, 11, 158, 33, 1, 530000, 1, NULL, '2019-05-26 19:25:43', '2019-05-26 19:25:43'),
+(320, 86, 159, 236, 1, 350000, 1, NULL, '2019-05-26 19:28:22', '2019-05-26 19:28:22'),
+(321, 52, 160, 234, 1, 210000, 3, NULL, '2019-05-26 19:29:01', '2019-05-26 19:29:01'),
+(322, 25, 161, 181, 1, 170000, 1, NULL, '2019-05-26 19:30:09', '2019-05-26 19:30:09'),
+(323, 87, 162, 237, 1, 300000, 4, NULL, '2019-05-26 19:33:11', '2019-05-26 19:33:11'),
+(324, 15, 163, 238, 1, 140000, 1, NULL, '2019-05-26 19:37:08', '2019-05-26 19:37:08'),
+(325, 15, 163, 187, 1, 380000, 1, NULL, '2019-05-26 19:37:08', '2019-05-26 19:37:08'),
+(326, 15, 163, 231, 1, 410000, 1, NULL, '2019-05-26 19:37:08', '2019-05-26 19:37:08'),
+(327, 81, 164, 197, 1, 1100000, 1, NULL, '2019-05-26 19:37:34', '2019-05-26 19:37:34'),
+(328, 11, 165, 149, 1, 0, 1, NULL, '2019-05-26 19:38:28', '2019-05-26 19:38:28'),
+(329, 10, 166, 149, 1, 0, 1, NULL, '2019-05-26 19:38:42', '2019-05-26 19:39:20'),
+(330, 10, 166, 153, 1, 0, 3, NULL, '2019-05-26 19:39:20', '2019-05-26 19:39:20'),
+(331, 45, 167, 195, 1, 0, 1, NULL, '2019-05-26 19:40:14', '2019-05-26 19:40:14'),
+(332, 27, 168, 195, 1, 0, 1, NULL, '2019-05-26 19:40:48', '2019-05-26 19:40:48'),
+(333, 88, 169, 195, 1, 0, 1, NULL, '2019-05-26 19:41:20', '2019-05-26 19:41:20'),
+(334, 45, 170, 243, 1, 8500000, 1, NULL, '2019-06-02 02:01:46', '2019-06-02 02:01:46'),
+(335, 16, 171, 210, 1, 550000, 2, NULL, '2019-06-02 02:02:44', '2019-06-02 02:02:44'),
+(336, 16, 171, 250, 1, 350000, 1, NULL, '2019-06-02 02:02:44', '2019-06-02 02:02:44'),
+(337, 81, 172, 197, 1, 1100000, 5, NULL, '2019-06-02 02:03:59', '2019-06-02 02:03:59'),
+(338, 11, 173, 239, 1, 340000, 1, NULL, '2019-06-02 02:06:11', '2019-06-02 02:06:11'),
+(339, 89, 174, 244, 1, 420000, 1, NULL, '2019-06-02 02:15:00', '2019-06-02 02:15:00'),
+(340, 89, 174, 252, 1, 245000, 1, NULL, '2019-06-02 02:15:00', '2019-06-02 02:15:00'),
+(341, 8, 175, 245, 1, 150000, 1, NULL, '2019-06-02 02:15:56', '2019-06-02 02:15:56'),
+(342, 10, 176, 251, 1, 550000, 1, NULL, '2019-06-02 02:21:38', '2019-06-02 02:21:38'),
+(343, 10, 176, 253, 1, 680000, 1, NULL, '2019-06-02 02:21:38', '2019-06-02 02:21:38'),
+(344, 10, 176, 246, 1, 870000, 1, NULL, '2019-06-02 02:21:38', '2019-06-02 02:21:38'),
+(345, 11, 177, 247, 1, 0, 1, NULL, '2019-06-02 02:22:36', '2019-06-02 02:22:36'),
+(346, 48, 178, 247, 1, 900000, 1, NULL, '2019-06-02 02:25:42', '2019-06-02 02:25:42');
 
 -- --------------------------------------------------------
 
@@ -843,6 +943,15 @@ CREATE TABLE `members` (
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `members`
+--
+
+INSERT INTO `members` (`id`, `user_id`, `name`, `email`, `phone`, `login`, `password`, `remarks`, `disabled`, `created`, `updated`) VALUES
+(1, 1, 'Khang', 'leduongkhang@gmail.com', '', 'khang', 'khang', '', 0, '2019-05-25 10:24:59', '2019-05-25 10:24:59'),
+(2, 1, 'Thoa', 'nguyenthingockimthoa@gmail.com', '', 'thoa', 'thoa', '', 0, '2019-05-25 10:25:31', '2019-05-25 10:25:31'),
+(3, 1, 'Như Như', 'quynhnhu24888@gmail.com', '', 'nhu', 'nhu', '', 0, '2019-05-25 10:30:25', '2019-05-25 10:30:25');
 
 -- --------------------------------------------------------
 
@@ -886,12 +995,49 @@ INSERT INTO `other_costs` (`id`, `transport_id`, `name`, `price`, `remarks`, `di
 (18, 10, 'HN -> SG', 0, '', 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
 (19, 8, 'JP -> VN', 2790000, '', 0, '2019-05-08 15:14:02', '2019-05-08 15:14:17'),
 (20, 8, 'HN -> SG', 0, '', 0, '2019-05-08 15:14:02', '2019-05-08 15:14:17'),
-(21, 11, 'Saitama -> Kuma', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
-(22, 11, 'JP -> VN', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
-(23, 11, 'HN -> SG', 0, '', 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
-(24, 12, 'Nhà -> Fukuoka', 473000, '2262 * 209 (25.5kg -> size160)', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56'),
-(25, 12, 'JP -> HN', 0, '', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56'),
-(26, 12, 'HN -> SG', 0, '', 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56');
+(21, 11, 'Saitama -> Kuma', 0, '', 0, '2019-05-13 11:34:58', '2019-05-29 18:02:56'),
+(22, 11, 'JP -> VN', 0, '', 0, '2019-05-13 11:34:58', '2019-05-29 18:02:56'),
+(23, 11, 'HN -> SG', 0, '', 0, '2019-05-13 11:34:58', '2019-05-29 18:02:56'),
+(24, 12, 'Nhà -> Fukuoka', 473000, '2262 * 209 (25.5kg -> size160)', 0, '2019-05-20 00:00:41', '2019-05-29 18:04:46'),
+(25, 12, 'JP -> HN', 0, '', 0, '2019-05-20 00:00:41', '2019-05-29 18:04:46'),
+(26, 12, 'HN -> SG', 0, '', 0, '2019-05-20 00:00:41', '2019-05-29 18:04:46'),
+(27, 13, 'Nhà -> Itabashi', 339000, '1614 * 210 (24.5kg)', 0, '2019-05-28 17:40:01', '2019-06-02 13:32:46'),
+(28, 13, 'JP -> HN', 4797000, '24.6kg', 0, '2019-05-28 17:40:01', '2019-06-02 13:32:46'),
+(29, 13, 'HN -> SG', 0, '', 0, '2019-05-28 17:40:01', '2019-06-02 13:32:46'),
+(30, 14, 'Nhà -> Itabashi', 385000, '1830 * 210 (19kg)', 0, '2019-06-03 10:42:00', '2019-06-03 10:42:00');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `outgoing`
+--
+
+CREATE TABLE `outgoing` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `member_id` int(10) UNSIGNED NOT NULL,
+  `type_id` tinyint(3) UNSIGNED NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` float UNSIGNED NOT NULL,
+  `remarks` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `exec_date` datetime NOT NULL,
+  `disabled` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `outgoing`
+--
+
+INSERT INTO `outgoing` (`id`, `user_id`, `member_id`, `type_id`, `name`, `amount`, `remarks`, `exec_date`, `disabled`, `created`, `updated`) VALUES
+(1, 1, 1, 2, 'Bọc bong bóng', 402000, 'D2KeYoDeTsu\r\n1922 * 209', '2019-05-12 18:37:00', 0, '2019-05-25 10:47:01', '2019-05-25 10:47:01'),
+(2, 1, 1, 1, 'Nhà -> Fukuoka', 473000, 'KuronekoYamato\r\n1 kiện size 160, 25kg\r\n2262 * 209', '2019-05-21 15:00:00', 0, '2019-05-25 10:50:44', '2019-05-25 10:50:44'),
+(3, 1, 1, 1, 'Nhà -> Itabashi', 340000, '3308-6607-4453 (Hương)\r\n1614 * 210 (24.5kg) \r\n', '2019-05-26 20:30:00', 0, '2019-05-29 18:15:39', '2019-06-03 11:10:41'),
+(4, 1, 1, 2, 'Thung hang 160 140', 1405000, '6723 * 209\r\n5 size 160\r\n10 size 140', '2019-05-07 00:00:00', 0, '2019-06-01 02:28:50', '2019-06-01 02:28:50'),
+(5, 1, 3, 1, 'Hương JP -> HN 24.6 kg', 4800000, '3308-6607-4453\r\nCK Hương\r\n24.6kg', '2019-06-02 12:20:00', 0, '2019-06-03 10:58:31', '2019-06-03 11:10:24'),
+(6, 1, 1, 1, 'Dũng JP -> HN', 5281500, 'CK Dũng bằng tk tại jp\r\n25.150 y * 210', '2019-05-14 00:00:00', 0, '2019-06-03 11:16:43', '2019-06-03 11:17:38'),
+(7, 1, 1, 1, 'Hương Nhà -> Itabashi 19.0 kg', 385000, '3308-6667-4681 (19.0 kg)\r\n1830 * 210', '2019-06-02 15:20:00', 0, '2019-06-03 11:26:33', '2019-06-03 11:26:33');
 
 -- --------------------------------------------------------
 
@@ -948,7 +1094,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `wholesale_price`, `purchase_price`, `quantity`, `image`, `category_id`, `brand_id`, `description`, `remarks`, `disabled`, `created`, `updated`) VALUES
 (1, 1, 'The Shiseido Collagen Powder V', '126g', '', 500000, 430000, 1618, 9, 'shiseido-collagen-powder.jpg', 7, 7, '', 'collagen shiseido', 0, '2019-03-20 12:18:22', '2019-05-02 23:47:20'),
-(2, 1, 'Slim Up Slim Berry Yogurt (Strawberry)', '300g', '', 550000, 450000, 1358, 4, 'ASAHI_Slim_Up_Slim_Meal_Replacement_Mixberry.jpg', 9, 8, 'dâu', 'bột giảm cân slim up slim', 0, '2019-03-20 13:03:13', '2019-05-02 23:44:14'),
+(2, 1, 'Slim Up Slim Berry Yogurt (Strawberry)', '300g', '', 550000, 450000, 1468, 4, 'ASAHI_Slim_Up_Slim_Meal_Replacement_Mixberry.jpg', 9, 8, 'dâu', 'bột giảm cân slim up slim', 0, '2019-03-20 13:03:13', '2019-06-03 11:37:29'),
 (3, 1, 'Slim Up Slim Mango', '300g', '', 550000, 450000, 1358, 1, 'ASAHI_Slim_Up_Slim_Meal_Replacement_Mango.jpg', 9, 8, 'xoài', 'bột giảm cân slim up slim', 0, '2019-03-20 13:06:09', '2019-05-02 23:44:55'),
 (4, 1, 'Aneron 9 cap', '9 viên', '', 250000, 200000, 612, 13, 'aneron_9.jpg', 10, 5, '', 'thuốc say tàu xe', 0, '2019-03-20 13:09:54', '2019-05-02 07:51:32'),
 (5, 1, 'Slim Up Slim Mix Berry Latte', '315g', '', 550000, 450000, 1358, 7, 'ASAHI_Slim_Up_Slim_Meal_Replacement_Mix_Berry_Latte.jpg', 9, 8, 'mix nhiều loại trái berry', 'bột giảm cân slim up slim', 0, '2019-03-20 14:02:57', '2019-05-02 23:45:12'),
@@ -959,11 +1105,11 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (10, 1, 'Transino Whitening Clear Lotion 175ml', '175ml', 'hộp', 950000, 850000, 3480, 2, 'transino_whitening_clear_lotion.jpg', 7, 6, 'nước hoa hồng\r\nトランシーノ薬用ホワイトニングクリアローション　（美白化粧水）　175ml', 'nước hoa hồng', 0, '2019-03-20 15:07:03', '2019-05-02 23:48:01'),
 (11, 1, 'Transino Whitening Esscence EX 50g', '50g', 'tuýp', 1450000, 1350000, 5378, 2, 'transino_whitening_essence_ex.jpg', 7, 6, 'Serum\r\nトランシーノ薬用 ホワイトニングエッセンス ＥＸ 50g', 'serum chuyên trị nám', 0, '2019-03-20 15:12:15', '2019-05-02 23:51:59'),
 (12, 1, 'Transino Whitening Clear Milk 120ml', '120ml', 'tuýp', 900000, 800000, 0, 0, 'transino_whitening_clear_milk.jpg', 7, 6, 'Sữa dưỡng\r\nトランシーノ薬用ホワイトニングクリアミルク　120ml', 'sữa dưỡng', 0, '2019-03-20 15:19:49', '2019-05-02 23:48:29'),
-(13, 1, 'Transino ii 240', '240viên', 'hộp', 1450000, 1350000, 5891, 2, 'transino_ii_240.jpg', 10, 6, 'thuốc trị nám, tàn nhang\r\nトランシーノII　240錠\r\nトランシーノ 錠剤 しみ そばかす', 'thuốc trị nám 240 viên', 0, '2019-03-20 15:53:27', '2019-05-02 23:47:33'),
+(13, 1, 'Transino ii 240', '240viên', 'hộp', 1450000, 1350000, 5891, 7, 'transino_ii_240.jpg', 10, 6, 'thuốc trị nám, tàn nhang\r\nトランシーノII　240錠\r\nトランシーノ 錠剤 しみ そばかす', 'thuốc trị nám 240 viên', 0, '2019-03-20 15:53:27', '2019-06-02 01:32:14'),
 (14, 1, 'Transino WhiteC Clear 120 tablets', '120 viên', 'hộp', 680000, 600000, 2260, 11, 'transino_whiteC_clear.jpg', 10, 6, 'thuốc trắng da, trị nám\r\ntrang da\r\nトランシーノ　ホワイトCクリア　120錠 ', 'thuốc trắng da 120 viên', 0, '2019-03-20 16:00:17', '2019-05-02 23:47:45'),
 (15, 1, 'DHC Vitamin C 60 Days (120 Tablets)', '120 viên', 'bịch', 230000, 170000, 420, 10, 'dhc_vitamin_C_60days.jpg', 10, 9, 'DHC ビタミンC ハードカプセル 60日(120粒)', 'Viên Vitamin C DHC 60 ngày', 0, '2019-03-20 16:36:23', '2019-05-18 23:09:34'),
 (16, 1, 'DHC Hatomugi 20 Days (20 Tablets)', '20 viên', 'bịch', 150000, 120000, 363, 0, 'dhc_hatomugi_20days.jpg', 10, 9, 'trắng da\r\nＤＨＣ はとむぎエキス ２０日分 ２０粒入', 'viên trắng da DHC 20 ngày', 0, '2019-03-20 16:50:58', '2019-05-02 08:08:56'),
-(17, 1, 'Inclear 1.7g×10', '10', 'cây', 900000, 800000, 2651, 3, 'inclear_vaginal_cleaner_10.jpg', 10, 0, 'Inclear - Vaginal Cleaner\r\n', 'gel đặt trị huyết trắng', 0, '2019-03-20 16:58:46', '2019-05-02 08:26:16'),
+(17, 1, 'Inclear 1.7g×10', '10', 'cây', 900000, 800000, 2651, 3, 'inclear_vaginal_cleaner_10.jpg', 10, 0, 'Inclear - Vaginal Cleaner\r\n', 'gel đặt trị huyết trắng', 0, '2019-03-20 16:58:46', '2019-06-03 11:33:54'),
 (18, 1, 'Attonon EX Gel 15g', '15 g', 'tuýp', 330000, 290000, 658, 10, 'attonon_ex_gel_15g.jpg', 25, 37, 'アットノンEX ジェル 15g \r\nGel liền xẹo\r\nGel lien xeo\r\nGel lien theo', 'gel trị thẹo', 0, '2019-03-20 17:12:07', '2019-05-12 01:48:18'),
 (19, 1, 'Slim Up Slim Kiwi 300g', '300 g', 'bịch', 550000, 450000, 1358, 2, 'ASAHI_Slim_Up_Slim_Meal_Replacement_Kiwi.jpg', 9, 8, 'スリムアップスリム　ベジフルチャージスムージー　300g ', 'bột giảm cân slim up slim', 0, '2019-03-20 17:22:41', '2019-05-02 23:44:48'),
 (20, 1, 'iSDG Diet Beauty 121 (pink) 30 days (60 tablets)', '60 viên', 'bịch', 350000, 280000, 540, 2, 'iSDG_diet_beauty_121_pink.jpg', 9, 11, '', 'viên giảm cân 121 loại', 0, '2019-03-20 17:37:06', '2019-05-02 08:27:03'),
@@ -979,8 +1125,8 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (30, 1, 'SANTEN FX Neo Eye Drop 12ml', '12 ml', 'chai', 140000, 110000, 298, 0, 'santen_fx_neo_black_12ml.jpg', 13, 13, '', 'thuốc nhỏ mắt người lớn', 0, '2019-03-22 12:19:04', '2019-05-02 12:12:25'),
 (31, 1, 'DHC Hyaluronic Acid 60 Days (120 Tablets)', '120 viên', 'bịch', 630000, 550000, 2580, 0, 'dhc_axit_hiaruron_60days.jpg', 10, 9, 'DHC ヒアルロン酸 60日分 120粒', 'viên cấp nước 60 ngày', 0, '2019-03-22 12:40:30', '2019-05-02 08:14:04'),
 (32, 1, 'Mentholatum Medical Lip 8.5g', '8.5 g', 'tuýp', 300000, 240000, 906, 5, 'mentholatum_medicare_lip.jpg', 11, 14, 'ロート製薬 メンソレータム メディカルリップnc (8.5g) 口唇炎・口角炎治療薬\r\nTrị lở miệng Rohto\r\ntri lo mieng rohto', 'tuýp lở mép miệng', 0, '2019-03-22 13:18:54', '2019-05-02 08:32:33'),
-(33, 1, 'Anessa Whitening UV Gel SPF 50+ PA++++ 90g', '90 g', 'tuýp', 590000, 540000, 2138, 0, 'anessa_white.png', 14, 7, 'シミを防ぐ薬用美白*UVジェル\r\nホワイトニングUV ジェルn （医薬部外品）\r\n〈日焼け止め用ジェル〉90g\r\nGel chống nắng, ngăn ngừa nám, trắng da\r\nGel chong nang, nang ngua nam, trang da', 'gel chống nắng trắng', 0, '2019-03-22 15:36:17', '2019-05-02 07:52:15'),
-(34, 1, 'Anessa Perfect Skin Gel SPF 50+ PA++++ 90g', '90 g', 'tuýp', 590000, 540000, 2138, 2, 'anessa_gold.png', 14, 7, 'スキンケアする強力UVジェル\r\nパーフェクトUV スキンケアジェル\r\n〈日焼け止め用ジェル〉90g\r\nGel chống nắng, Gel UV mạnh mẽ\r\nGel chong nang, Gel UV manh me\r\nChống nắng toàn diện với Anessa Whitening UV Sunscreen Gel\r\n🍀🍀🍀🍀🍀Gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen Gel 90g:\r\nlà giải pháp chống nắng toàn diện, hiệu quả. Với công nghệ Aqua Booster chống nước kết hợp cùng hoạt chất làm mờ vết thâm nám, giúp bảo vệ làn da khỏi tác hại của ánh nắng mặt trời, đồng thời cung cấp thành phần dưỡng da cho bạn làn da trắng sáng rạng rỡ.\r\n\r\n🍀🍀🍀Công dụng của gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- ❄️Chỉ số chống nắng cao, bảo vệ làn da bạn dưới tác hại của ánh nắng mặt trời. \r\n- ❄️Chứa thành phần dưỡng trắng và dưỡng ẩm da, ức chế sự phát triển của hắc tố melanin, trả lại làn da trắng sáng, đều màu.\r\n- ❄️Chống lão hóa da và dưỡng ẩm chuyên sâu cho làn da mềm mịn, mượt mà.\r\n- ❄️Dạng gel sữa thấm nhanh vào da, không gây bết dính, bí bách tạo cảm giác thoải mái, thông thoáng cho da, hạn chế gây mụn.\r\n\r\n🍀🍀🍀Hướng dẫn sử dụng gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- 🥑Thoa kem trước khi ra nắng 15-20 phút để kem có thời gian phát huy hiệu quả và giúp những dưỡng chất thấm sâu vào da.\r\n- 🍓Bước 1: Thực hiện các bước chăm sóc da cơ bản, sử dụng kem chống nắng sau khi dưỡng ẩm. \r\n- 🍓Bước 2: Làm sạch tay, lắc đều và sử dụng:\r\n+ 🥝Đối với vùng mặt: Cho một lượng vừa đủ (khoảng bằng hạt ngọc trai) thoa đều lên mặt và cổ theo hướng từ trong ra ngoài, vỗ nhẹ để kem thấm vào da tốt hơn.\r\n+ 🥝Đối với cơ thể: Cho sản phẩm lên da theo đường dọc cơ thể, nên sử dụng một lượng nhiều sản phẩm và thoa bằng lòng bàn tay với động tác xoay tròn.\r\n- 🍓Bước 3: Thoa lại sau 2-3 giờ tiếp xúc với nắng để được bảo vệ tối ưu nhất.\r\n\r\n* Kem chống nắng Anessa màu vàng: Khả năng chống thấm nước vượt trội, thích hợp cho người chơi thể thao, đi biển.', 'gel chống nắng vàng', 0, '2019-03-22 15:36:27', '2019-05-02 07:51:57'),
+(33, 1, 'Anessa Whitening UV Gel SPF 50+ PA++++ 90g', '90 g', 'tuýp', 590000, 540000, 2138, 1, 'anessa_white.png', 14, 7, 'シミを防ぐ薬用美白*UVジェル\r\nホワイトニングUV ジェルn （医薬部外品）\r\n〈日焼け止め用ジェル〉90g\r\nGel chống nắng, ngăn ngừa nám, trắng da\r\nGel chong nang, nang ngua nam, trang da', 'gel chống nắng trắng', 0, '2019-03-22 15:36:17', '2019-05-26 19:25:43'),
+(34, 1, 'Anessa Perfect Skin Gel SPF 50+ PA++++ 90g', '90 g', 'tuýp', 590000, 540000, 2138, 4, 'anessa_gold.png', 14, 7, 'スキンケアする強力UVジェル\r\nパーフェクトUV スキンケアジェル\r\n〈日焼け止め用ジェル〉90g\r\nGel chống nắng, Gel UV mạnh mẽ\r\nGel chong nang, Gel UV manh me\r\nChống nắng toàn diện với Anessa Whitening UV Sunscreen Gel\r\n🍀🍀🍀🍀🍀Gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen Gel 90g:\r\nlà giải pháp chống nắng toàn diện, hiệu quả. Với công nghệ Aqua Booster chống nước kết hợp cùng hoạt chất làm mờ vết thâm nám, giúp bảo vệ làn da khỏi tác hại của ánh nắng mặt trời, đồng thời cung cấp thành phần dưỡng da cho bạn làn da trắng sáng rạng rỡ.\r\n\r\n🍀🍀🍀Công dụng của gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- ❄️Chỉ số chống nắng cao, bảo vệ làn da bạn dưới tác hại của ánh nắng mặt trời. \r\n- ❄️Chứa thành phần dưỡng trắng và dưỡng ẩm da, ức chế sự phát triển của hắc tố melanin, trả lại làn da trắng sáng, đều màu.\r\n- ❄️Chống lão hóa da và dưỡng ẩm chuyên sâu cho làn da mềm mịn, mượt mà.\r\n- ❄️Dạng gel sữa thấm nhanh vào da, không gây bết dính, bí bách tạo cảm giác thoải mái, thông thoáng cho da, hạn chế gây mụn.\r\n\r\n🍀🍀🍀Hướng dẫn sử dụng gel chống nắng dưỡng trắng Anessa Whitening UV Sunscreen:\r\n- 🥑Thoa kem trước khi ra nắng 15-20 phút để kem có thời gian phát huy hiệu quả và giúp những dưỡng chất thấm sâu vào da.\r\n- 🍓Bước 1: Thực hiện các bước chăm sóc da cơ bản, sử dụng kem chống nắng sau khi dưỡng ẩm. \r\n- 🍓Bước 2: Làm sạch tay, lắc đều và sử dụng:\r\n+ 🥝Đối với vùng mặt: Cho một lượng vừa đủ (khoảng bằng hạt ngọc trai) thoa đều lên mặt và cổ theo hướng từ trong ra ngoài, vỗ nhẹ để kem thấm vào da tốt hơn.\r\n+ 🥝Đối với cơ thể: Cho sản phẩm lên da theo đường dọc cơ thể, nên sử dụng một lượng nhiều sản phẩm và thoa bằng lòng bàn tay với động tác xoay tròn.\r\n- 🍓Bước 3: Thoa lại sau 2-3 giờ tiếp xúc với nắng để được bảo vệ tối ưu nhất.\r\n\r\n* Kem chống nắng Anessa màu vàng: Khả năng chống thấm nước vượt trội, thích hợp cho người chơi thể thao, đi biển.', 'gel chống nắng vàng', 0, '2019-03-22 15:36:27', '2019-05-26 19:07:35'),
 (35, 1, 'Labo BB Essence Cream SPF50 PA++++ 03 33g', '33 g', 'tuýt', 320000, 260000, 768, 3, 'labo_essence_cream_03.jpg', 12, 15, 'モイストラボBB エッセンスクリーム ナチュラルオークル(SPF50 PA++++) 33g', 'kem nền', 0, '2019-03-22 16:55:31', '2019-05-02 08:28:29'),
 (36, 1, 'Labo BB Essence Cream SPF50 PA++++ 01 33g', '33 g', 'tuýt', 320000, 260000, 800, 1, 'labo_essence_cream_01.jpg', 12, 15, 'モイストラボBBエッセンスクリームナチュラルベージュ', 'kem nền', 0, '2019-03-22 17:04:08', '2019-05-02 08:28:19'),
 (37, 1, 'Melano CC 20ml', '20 ml', 'tuýp', 340000, 280000, 1052, 5, 'merano_cc.jpg', 12, 14, 'メラノCC 薬用しみ集中美容液20ml', 'serum melano', 0, '2019-03-22 17:25:59', '2019-05-19 02:37:27'),
@@ -989,10 +1135,10 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (40, 1, 'AQUALABEL White Up Cream 50g (Blue)', '50 g', '', 490000, 420000, 1640, 0, 'shiseido_aqua_blue.jpg', 12, 7, 'アクアレーベル ホワイトアップ クリーム 保湿・美白クリーム (3) とてもしっとり 50g ', 'ken dưỡng trắng da đêm shiseido', 0, '2019-03-25 14:09:25', '2019-05-02 07:53:00'),
 (41, 1, 'Skin Aqua Tone Up UV Essence SPF 50+ PA++++ 80g', '80 g', 'tuýp', 310000, 250000, 861, 5, 'skin_aqua_uv.jpg', 14, 14, 'SKIN AQUA（スキンアクア） トーンアップUVエッセンス （80g）', 'chống nắng', 0, '2019-03-25 14:31:22', '2019-05-02 23:44:00'),
 (42, 1, 'Chondroitin ZS Tablets 270 (tablets)', '270 viên', 'hủ', 1600000, 1500000, 7500, 1, 'chonroitin_zs_270.jpg', 10, 17, 'コンドロチンZS錠（270錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-03-25 15:23:13', '2019-05-02 08:02:46'),
-(43, 1, 'Sekkisei White UV Milk Kit', '', 'bộ', 700000, 650000, 2106, 4, 'kose_white_uv_milk.jpg', 14, 18, '雪肌精 (せっきせい) ホワイトUVミルクキット（日焼止め乳液・化粧水付） ［日焼け止め］', 'sữa chống nắng kose', 0, '2019-03-26 18:30:12', '2019-05-02 12:13:29'),
+(43, 1, 'Sekkisei White UV Milk Kit', '', 'bộ', 700000, 650000, 2106, 4, 'kose_white_uv_milk.jpg', 14, 18, '雪肌精 (せっきせい) ホワイトUVミルクキット（日焼止め乳液・化粧水付） ［日焼け止め］', 'sữa chống nắng kose', 0, '2019-03-26 18:30:12', '2019-06-03 11:36:54'),
 (44, 1, 'Dental Medicare Cream 5g', '5 g', 'tuýp', 310000, 260000, 922, 8, 'medicare_dental.jpg', 16, 19, '【第2類医薬品】 メディケアデンタルクリーム（5g）\r\nthuoc tri nhiet mieng', 'thuốc trị nhiệt miệng', 0, '2019-03-26 18:38:56', '2019-05-02 08:03:21'),
-(45, 1, 'WHITE CONC Body Gommage C', '', 'chai', 450000, 400000, 1404, 0, 'white_conc_body_gommage.jpg', 16, 52, '薬用ホワイトコンク ボディゴマージュCII\r\ntẩy tế bào chết', 'tẩy tế bào chết trắng da', 0, '2019-03-26 18:49:06', '2019-05-02 23:54:43'),
-(46, 1, 'Sekkisei White UV Gel Kit', '', 'bộ', 650000, 600000, 1966, 4, 'kose_white_uv_gel.jpg', 14, 18, '雪肌精 (せっきせい) ホワイトUVジェルキット（日焼止め乳液・化粧水付） ［日焼け止め］', 'gel chống nắng kose', 0, '2019-03-30 01:34:32', '2019-05-02 12:12:57'),
+(45, 1, 'WHITE CONC Body Gommage C', '', 'chai', 450000, 400000, 1404, 5, 'white_conc_body_gommage.jpg', 16, 52, '薬用ホワイトコンク ボディゴマージュCII\r\ntẩy tế bào chết', 'tẩy tế bào chết trắng da', 0, '2019-03-26 18:49:06', '2019-05-26 12:45:18'),
+(46, 1, 'Sekkisei White UV Gel Kit', '', 'bộ', 650000, 600000, 1965, 4, 'kose_white_uv_gel.jpg', 14, 18, '雪肌精 (せっきせい) ホワイトUVジェルキット（日焼止め乳液・化粧水付） ［日焼け止め］', 'gel chống nắng kose', 0, '2019-03-30 01:34:32', '2019-06-03 11:36:39'),
 (47, 1, 'Spirulina 100% 2200 cap', '2200 viên', 'hủ', 800000, 730000, 2570, 1, 'supirurina_2200.jpg', 8, 0, '🌸🌸🌸🌸🌸Tảo biển spirulina 2200 viên:\r\nTảo biển spirulina Nhật Bản được chế biến từ 100 % tảo xoắn Nhật nguyên chất và đã được các tổ chứcTokyo Chamber of Commerce and Industry và Japan Food Research Laboratories (JFRL) công nhận là một loại thực phẩm chức năng có chất lượng và có nhiều tác dụng cho con người. \r\n🌸Tảo biển spirulina Nhật Bản 2200 viên là sản phẩm phù hợp với mọi lứa tuổi khi giúp bổ sung nguồn dinh dưỡng dồi dào cho cơ thể, giúp tăng cường sức đề kháng, nâng cao hệ thống miễn dịch.\r\n🌸Tác dụng của tảo biển Nhật Bản còn giúp điều hòa huyết áp, giảm cholesterol. Theo đó, nghiên cứu tại Mexico cho thấy, cả nam và nữ dùng 4,5g tảo spirulina hàng ngày đã làm giảm tỉ lệ huyết áp cao trong vòng 6 tuần.\r\n🌸Công dụng tảo Nhật Bản 2200 viên giúp giải độc cho gan, giải độc cho cơ thể rất hiệu quả nhờ thành phần chất diệp lục và chất chống oxy hóa cao trong sản phẩm tảo biển này.\r\n🌸Ngoài ra, một nghiên cứu khác về tảo biển của Nhật trên bệnh nhân cao tuổi cho thấy mức cholesterol thấp có liên quan đến việc tiêu thụ 8g spirulina mỗi ngày trong 16 tuần.\r\n🌸Tác dụng của tảo spirulina chống lão hóa và ngừa ung thư nhờ có chứa hàm lượng chất chống oxy hóa cao như là Beta-caroten, vitamin E, các sắc tố Carotenoid, Chlorophyll và Phycocyanin, hay selenium, mangan, kẽm, đồng, sắt và crôm…\r\n🌸Tảo Spirulina còn được chứng minh hiệu quả trong hỗ trợ chữa trị các chứng dị ứng ở mũi bằng cách ngăn chặn sự giải phóng histamine. Việc sử dụng tảo xoắn giúp cải thiện triệu chứng như hắt hơi, nghẹt mũi, ngứa mũi và xổ mũi.\r\n🌸Bên cạnh đó, tảo Spirulina còn hỗ trợ phòng và điều trị bệnh tiểu đường bằng cách kích thích insulin, kiểm soát lượng đường huyết, giúp chuyển hóa đường thành năng lượng.\r\n🌸Ngoài ra, tảo Spirulina là thực phẩm dinh dưỡng tự nhiên có tính kiềm giúp trung hòa axit trong dạ dày, đồng thời bổ sung dinh dưỡng đầy đủ mà không sợ người bệnh thiếu chất.\r\n🌸Công dụng của tảo Spirulina Nhật không những thế còn giúp tăng cường sinh lý, sinh lực cho phái mạnh, giúp bổ thận tráng dương, cho nam giới có được những giây phút thăng hoa.\r\n🌸Tác dụng của tảo biển spirulina còn đặc biệt giúp làm đẹp da, kháng khuẩn, giảm dị ứng, sưng tấy cho làn da, hỗ trợ đẩy lùi quá trình lão hóa, bên cạnh đó còn tốt cho răng và tóc.\r\n🌸Hơn thế, tảo biển Spirulina Nhật Bản còn hỗ trợ chống béo phì giúp cho quá trình tiêu hóa được tốt hơn, đem lại cho chị em một vóc dáng và thân hình cân đối, khỏe mạnh nhất.\r\n🌸🌸🌸Hướng dẫn sử dụng tảo biển Spirulina Nhật Bản:\r\n🌸Đối với người lớn ngày uống 20 - 30 viên trước bữa ăn hoặc sau bữa ăn (có thể chia làm 2 - 3 lần).\r\n🌸Đối với trẻ em dưới 5 tuổi: uống dưới 5 viên/lần, có thể nghiền thành bột chung với thức ăn (nên hỏi ý kiến bác sĩ trước khi sử dụng).\r\n🌸Đối với trẻ em trên 5 tuổi: uống 10 - 20 viên/ngày, mỗi ngày uống 2 - 3 lần.\r\n🌸Người đang giảm cân: uống tảo trước bữa ăn 30 phút.\r\n🌸Nếu muốn tăng cân: uống tảo biển sau bữa ăn 30 phút. \r\n🌸Tảo biển Spirulina còn dùng để đắp mặt nạ mỗi ngày.\r\n-Mặt nạ tảo biển khô: bột tảo biển khô cũng có giá trị dinh dưỡng tương tự như tảo tươi,khi đắp mặt nạ tảo biển nhật bản sẽ giúp thanh lọc da, tăng cường dưỡng chất, bổ sung độ ẩm giúp da mềm mại, cung cấp chất chống oxy hoá xóa đi các nếp nhăn, đốm nám, mụn đầu đen trên mũi,mặt. Do có đặc tính lành nên khi sử dụng mặt nạ này bạn có thể kết hợp với các nguyên liệu khác như: mật ong, nha đam, cam,tinh dầu dừa, bưởi.v..v. mà không lo có tác dụng phụ xảy ra.\r\n-Để chế mặt nạ từ tảo biển này không khó, chị em cần dùng 2 - 5 thìa tảo biển đã nghiền nát tương đương 13 - 15 gam tảo biển. Pha cùng 20ml nước nóng để tạo thành hỗn hợp bột nhão. Tiếp đó thêm 1 thìa gel lô hội, 1 thìa mật ong vào hỗn hợp vừa tạo được.\r\nRửa mặt thật sạch bằng sữa rửa mặt có hoạt tính dịu nhẹ, sau đó thoa hỗn hợp này lên da mặt và cả vùng cổ. Nằm thư giãn 20 - 30 phút cho đến khi lớp mặt nạ se và khô lại. Cuối cùng rửa sạch da mặt và da vùng cổ bằng nước ấm.\r\n\r\n=====\r\nスピルリナ100% 海洋深層水スピルリナブレンド 2200粒\r\nSpirulina 100% Kaiyoushinsosui Spirulina Blend 2200 tablets\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2200 viên dạng hủ', 0, '2019-03-30 03:44:15', '2019-05-03 02:22:42'),
 (48, 1, 'Night Diet Tea (2g x 20 follicles)', '20 gói', 'bịch', 290000, 230000, 753, 13, 'night_diet_tea.jpg', 9, 20, 'Trà giảm cân', 'trà giảm cân ban đêm', 0, '2019-03-30 10:28:20', '2019-05-12 00:31:21'),
 (49, 1, 'DHC Vitamin B Mix 60 days (120 tablets)', '120 viên', 'bịch', 230000, 170000, 321, 5, 'dhc_vitamin_B_60days.jpg', 10, 9, 'DHC（ディーエイチシー） ビタミンBミックス 60日分（120粒）〔栄養補助食品〕', 'Viên vitamin B Mix 60 ngày', 0, '2019-03-30 10:32:09', '2019-05-02 08:17:07'),
@@ -1001,7 +1147,7 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (52, 1, 'DHC Vitamin E 60 days (60 tablets)', '60 viên', 'bịch', 290000, 230000, 606, 5, 'dhc_vitamin_E_60days.jpg', 10, 9, 'DHC（ディーエイチシー） ビタミンE 60日分（60粒）〔栄養補助食品〕', 'Viên Vitamin E DHC 60 ngày', 0, '2019-03-30 13:09:25', '2019-05-02 08:17:35'),
 (53, 1, 'Inochi no haha 420 pills', '420 viên', 'hủ', 630000, 560000, 2138, 3, 'inochinohana_420.jpg', 10, 21, '【第2類医薬品】 女性保健薬命の母A（420錠）\r\n\r\ntien man kinh', 'thuốc tiền mãn kinh', 0, '2019-03-30 22:22:30', '2019-05-02 08:26:34'),
 (54, 1, 'Nakatta Kotoni Red 120 pills', '120 viên', 'bịch', 370000, 300000, 1382, 4, 'nakatta_kotoni_red.jpg', 9, 22, 'なかったコトに　９９粒\r\n🍏🍏🍏Enzyme giảm cân ban ngày từ đậu trắng tây: màu đỏ\r\n👉Enzym giảm cân ban ngày của Nhật có tác dụng ngăn chặn lại quá trình hấp thu các chất béo, đốt cháy thành mỡ thừa, carlories ở những người thừa cân và béo bụng sẽ được đào thải theo đường bài tiết một cách tự nhiên và từ từ, enzym có trong viên béo giúp hệ tiêu hóa được hoạt động tốt hơn.\r\n\r\n👉Khi sử dụng enzym giảm cân ban ngày bạn yên tâm là cơ thể khỏe mạnh, hoạt bát, nhanh nhẹn hơn, không phải lo với những bài tập thể dục mạnh, không phải ăn kiêng, không lo viên uống khó uống. Mà ngược lại viên uống giúp bạn giữ lại đc vóng dáng thon gọn mà không phải thực hiện chế độ ăn khắc nghiệt.\r\n\r\n🐥🐥🐥Enzym giảm cân ban ngày có những công dụng gì?\r\n😱Enzym giảm cân bằng thảo dược được lên men hơn 1000 ngày đang là trào lưu được người tiêu dùng nhật tin tưởng truy tìm ở tất cả các kệ siêu thị, store…với công dụng tuyệt vời nhất mà y học Nhật đã chỉ ra mọi vấn đề sức khỏe, sắc đẹp giảm cân đều bắt nguồn từ hệ tiêu hóa.\r\n😱Chính vì thế muốn giảm cân hiệu quả và an toàn bạn phải dùng enzym lên men để giúp hệ tiêu hóa đặc biệt là hệ vi khuẩn đường ruột được khỏe mạnh, giúp kích thích sản xuất năng lượng, tăng cường trao đổi chất, không tích tụ mỡ thừa để có thể giảm cân nhanh.\r\n😱Hỗ trợ đốt cháy calo và carbohydrate\r\n😱Thanh lọc cơ thể, giúp tăng sức đề kháng cho cơ thể phòng ngừa bệnh.\r\n😱Giảm phù nề hiệu quả.\r\n👌👌Với thành phần đậu thận trắng, bột lá sen, bột trà xanh được lên men giúp ngăn ngừa các chất béo có trong thức ăn, đốt cháy mỡ một cách tự nhiên, hiệu quả an toàn, đem đến cho bạn thân hình vóc dáng cân bằng.\r\nCách sử dụng enzyme giảm cân ban ngày như sau:120 viên 40 ngày\r\n• Ngày uống 3 viên vào buổi sáng\r\n• Nên dùng viên uống trước bữa ăn 30 phút\r\n• Nên sử dụng viên uống với nhiều nước ấm', 'thuốc giản cân ban ngày', 0, '2019-03-30 22:30:57', '2019-05-02 12:08:52'),
-(55, 1, 'Nakatta Kotoni Night Diet Supplement 30 pills', '30 viên', 'bịch', 390000, 320000, 0, 4, 'nakatta_kotoni_night.jpg', 9, 22, 'なかったコトに!夜用ダイエットサプリ 30粒\r\n🍏🍏🍏Enzyme giảm cân ban đêm:màu xanh\r\n👉Dù biết rằng nạp quá nhiều calories sau những bữa nướng, lẩu vào buổi tối, nó làm thân hình bạn càng thêm phì nhiêu, nhưng cũng không thể bỏ qua những bữa tiệc, những buổi liên hoan tụ tập công ty, bạn bè được.\r\n\r\n👉Vậy sau những bữa ăn quá thừa calor đó bạn làm thế nào để vẫn duy trì vóng dáng cân đối đó, những đồ ăn luôn hấp dẫn nhưng nó lại quá nhiều đạm và chất béo, những chất béo đó khi vào cơ thể nó sẽ tích tụ, lâu ngày thì càng khó giảm, bạn có thể chọn giải pháp đi tập thể dục, tập gym, hay giảm ăn nhưng không đảm bảo sức khỏe cho công việc hàng ngày.\r\n👉Nên những người cơ thể hấp thụ tốt, mà lại lười vận động…. các nhà nghiên cứu của Graphico của Nhật đã nghiên cứu và đưa ra thị trường Enzym dâu tây trắng giúp thanh lọc cơ thể, giảm cân, phá hủy các khối mỡ thừa, Enzym dâu tây trắng giúp thúc đẩy quá trình tiêu hóa mạnh, đào thải các chất mỡ thừa ra khỏi cơ thể, nhờ enzym dâu tây trắng mà bạn hãy quên đi những chế độ ăn khắc nghiệt và những bài tập thể dục nặng, mang lại cho bạn vóc dáng cân bằng và sức khỏe.\r\n👌👌Thành phần trong Enzyme giảm cân ban đêm của Nhật\r\n+ Dâu tây trắng, tinh bột, nghệ tươi, bột lô hội Nam Phi, râu ngô, ngũ cốc, gừng đen, xả chanh, macca hữu cơ, súp lơ, cây trúc quỳ, cỏ râu mèo, gelatin, silicon dioxide, bột hến, arginine….\r\nCách sử dụng enzyme giảm cân ban đêm như sau:30 viên 15 ngày\r\n* Ngày sử dụng 2 viên trước khi đi ngủ\r\n* Nên uống với nước ấm để đạt hiệu quả tốt nhất', 'thuốc giảm cân ban đêm', 0, '2019-03-30 23:20:19', '2019-05-02 12:08:33'),
+(55, 1, 'Nakatta Kotoni Night Diet Supplement 30 pills', '30 viên', 'bịch', 390000, 320000, 0, 6, 'nakatta_kotoni_night.jpg', 9, 22, 'なかったコトに!夜用ダイエットサプリ 30粒\r\n🍏🍏🍏Enzyme giảm cân ban đêm:màu xanh\r\n👉Dù biết rằng nạp quá nhiều calories sau những bữa nướng, lẩu vào buổi tối, nó làm thân hình bạn càng thêm phì nhiêu, nhưng cũng không thể bỏ qua những bữa tiệc, những buổi liên hoan tụ tập công ty, bạn bè được.\r\n\r\n👉Vậy sau những bữa ăn quá thừa calor đó bạn làm thế nào để vẫn duy trì vóng dáng cân đối đó, những đồ ăn luôn hấp dẫn nhưng nó lại quá nhiều đạm và chất béo, những chất béo đó khi vào cơ thể nó sẽ tích tụ, lâu ngày thì càng khó giảm, bạn có thể chọn giải pháp đi tập thể dục, tập gym, hay giảm ăn nhưng không đảm bảo sức khỏe cho công việc hàng ngày.\r\n👉Nên những người cơ thể hấp thụ tốt, mà lại lười vận động…. các nhà nghiên cứu của Graphico của Nhật đã nghiên cứu và đưa ra thị trường Enzym dâu tây trắng giúp thanh lọc cơ thể, giảm cân, phá hủy các khối mỡ thừa, Enzym dâu tây trắng giúp thúc đẩy quá trình tiêu hóa mạnh, đào thải các chất mỡ thừa ra khỏi cơ thể, nhờ enzym dâu tây trắng mà bạn hãy quên đi những chế độ ăn khắc nghiệt và những bài tập thể dục nặng, mang lại cho bạn vóc dáng cân bằng và sức khỏe.\r\n👌👌Thành phần trong Enzyme giảm cân ban đêm của Nhật\r\n+ Dâu tây trắng, tinh bột, nghệ tươi, bột lô hội Nam Phi, râu ngô, ngũ cốc, gừng đen, xả chanh, macca hữu cơ, súp lơ, cây trúc quỳ, cỏ râu mèo, gelatin, silicon dioxide, bột hến, arginine….\r\nCách sử dụng enzyme giảm cân ban đêm như sau:30 viên 15 ngày\r\n* Ngày sử dụng 2 viên trước khi đi ngủ\r\n* Nên uống với nước ấm để đạt hiệu quả tốt nhất', 'thuốc giảm cân ban đêm', 0, '2019-03-30 23:20:19', '2019-05-26 11:43:07'),
 (56, 1, 'Honey Butter Almond 250 g', '250 g', 'bịch', 350000, 320000, 1058, 0, 'honey_butter_almond.jpg', 17, 0, 'ハニーバターアーモンド 250g', 'hạt hạnh nhân', 0, '2019-03-31 00:14:15', '2019-05-02 08:25:46'),
 (57, 1, 'Caramel Almond & Pretzel 210 g', '210 g', 'bịch', 350000, 320000, 1058, 1, 'caramel_almond_pretzel.jpg', 17, 0, 'アーモンド　キャラメルアーモンド ＆ プレッツェル　ハニーバターアーモンド系列　\r\nCARAMEL ALMOND&PRETZEL/ Besmiが販売/ゆうパケット便', 'hạt hạnh nhân', 0, '2019-03-31 00:38:17', '2019-05-02 07:57:59'),
 (58, 1, 'Honey Butter MixNut 220 g', '220 g', 'bịch', 350000, 320000, 1058, 2, 'honey_butter_mixnut.jpg', 17, 0, 'ハニーバターミックスナッツ/220g\r\nHONEY BUTTER MIXNUT', 'hạt hạnh nhân', 0, '2019-03-31 00:41:41', '2019-05-02 08:26:01'),
@@ -1028,7 +1174,7 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (79, 1, 'SK-II Genoptics Spot Esence Serum 50ml', '50 ml', '', 3650000, 3500000, 0, 0, 'SK-II_Genoptics_Spot_Esence_Serum_50ml.jpg', 7, 27, 'https://www.sk-ii.com/beauty-essence/radiant-skin-/sk-ii-genoptics-spot-essence/00730870307915.html\r\nserum trị nám', 'tinh chất giảm thâm nám', 0, '2019-04-05 12:34:15', '2019-05-05 03:10:48'),
 (80, 1, 'SK-II Facial Treatment Essence 75ml', '75 ml', '', 1650000, 1500000, 6426, 0, 'SK-II_Facial_Treatment_Essence_75ml.jpg', 7, 27, 'https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html?navid=search#q=Facial%2BTreatment%2BEssence%2B&start=1\r\nNước thần', 'tinh chất dưỡng da', 0, '2019-04-05 12:36:51', '2019-05-02 12:14:53'),
 (81, 1, 'SK-II Facial Treatment Essence 160ml', '160 ml', '', 3000000, 2850000, 0, 0, 'SK-II_Facial_Treatment_Essence_160ml.jpg', 7, 27, 'https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html?navid=search#q=Facial%2BTreatment%2BEssence%2B&start=1\r\nNước thần', 'tinh chất dưỡng da', 0, '2019-04-05 12:39:07', '2019-05-02 12:14:19'),
-(82, 1, 'SK-II Facial Treatment Essence 230ml', '230 ml', '', 3750000, 3600000, 16632, 0, 'SK-II_Facial_Treatment_Essence_230ml.jpg', 7, 27, 'https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html?navid=search#q=Facial%2BTreatment%2BEssence%2B&start=1\r\nNước thần', 'tinh chất dưỡng da', 0, '2019-04-05 12:39:53', '2019-05-02 12:14:29'),
+(82, 1, 'SK-II Facial Treatment Essence 230ml', '230 ml', '', 3750000, 3600000, 16632, 0, 'SK-II_Facial_Treatment_Essence_230ml.jpg', 7, 27, 'https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html?navid=search#q=Facial%2BTreatment%2BEssence%2B&start=1\r\nNước thần', 'tinh chất dưỡng da', 0, '2019-04-05 12:39:53', '2019-05-26 19:18:10'),
 (83, 1, 'SK-II Facial Treatment Essence 330ml', '330 ml', '', 0, 0, 0, 0, 'SK-II_Facial_Treatment_Essence_330ml.jpg', 7, 27, 'https://www.sk-ii.com/women/super-premium-skin-care/facial-treatment-essence/sk-ii-facial-treatment-essence/SK2-HR-FT-ESS.html#start=1\r\nNước thần', 'tinh chất dưỡng da', 0, '2019-04-05 15:14:19', '2019-05-02 12:14:41'),
 (84, 1, 'Fino Premium Touch Penetration Beauty Liquid Hair Mask 230g', '230g', '', 320000, 270000, 645, 5, 'shiseido-fino-230.jpg', 20, 7, '', 'kem ủ tóc shiseido', 0, '2019-04-06 20:00:57', '2019-05-02 08:22:27'),
 (85, 1, 'Super Lustrus Lipstick 120', '', '', 450000, 0, 0, 0, '120-SL-lip-w420-1-2-420x625.jpg', 18, 33, 'レブロン スーパー ラストラス リップスティック', NULL, 1, '2019-04-06 20:41:08', '2019-05-01 18:19:15'),
@@ -1050,13 +1196,13 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (101, 1, 'Revlon Super Lustrous Lipstick', '', '', 450000, 390000, 0, 0, 'revsuperlustrouslipstick_10.jpg', 18, 33, '', 'son revlon', 0, '2019-04-10 03:17:40', '2019-05-02 12:11:36'),
 (102, 1, 'Chifure Sun Veil Cream Waterproof SPF25 PA++ 50g', '50g', '', 350000, 300000, 0, 0, 'chifure_sun_veil_cream_waterproof_SPF25_PA++.jpg', 14, 0, 'ちふれ化粧品 UV サン ベール クリーム（WP） ５０Ｇ\r\nKem chong nang ', 'kem chống nắng', 0, '2019-04-10 04:06:02', '2019-05-02 07:59:17'),
 (103, 1, 'Giày Nike', '', '', 0, 0, 0, 0, 'nike.png', 1, 41, '', NULL, 0, '2019-04-10 19:35:19', '2019-04-12 17:38:24'),
-(104, 1, 'Giày Adidas', '', '', 0, 0, 0, 0, 'adidas.png', 1, 1, '', NULL, 0, '2019-04-10 19:38:17', '2019-05-12 01:08:23'),
+(104, 1, 'Adidas Shoes', '', '', 0, 0, 5940, 0, 'adidas.png', 1, 1, '', 'Giày Adidas', 0, '2019-04-10 19:38:17', '2019-06-03 11:31:43'),
 (105, 1, 'Botanical Refresh Shampoo - Moist (Limited Edition)', '', '', 0, 0, 0, 0, 'botanist_refresh.png', 7, 29, '', 'dầu gội botanist', 1, '2019-04-10 20:33:23', '2019-05-02 07:55:45'),
 (106, 1, 'Gel Pepee', '', '', 0, 0, 1393, 0, 'gel-pepee.jpg', 11, 42, '', NULL, 1, '2019-04-10 22:07:54', '2019-05-01 18:45:46'),
 (107, 1, 'Sesame Oil', '', '', 0, 0, 0, 0, 'sesame_oil.jpg', 17, 0, 'dau me', NULL, 1, '2019-04-11 00:04:21', '2019-05-01 17:56:45'),
-(108, 1, 'Wakado Yamaimo Cookie 9 month', '', '', 80000, 0, 0, 0, 'wakado_yamaimo_cookie.jpg', 17, 35, '', NULL, 1, '2019-04-11 00:19:38', '2019-05-01 18:25:21'),
-(109, 1, 'Muhi Seki Dome 120ml', '120 ml', '', 320000, 260000, 850, 3, 'apanman_sekidome.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこどもせきどめシロップSa（イチゴ味） 120mL\r\nthuoc ho tre em', 'thuốc ho cho trẻ em', 0, '2019-04-11 00:47:49', '2019-05-02 12:07:26'),
-(110, 1, 'Muhi Rhinitis Syrup for nose 120ml', '120 ml', '', 300000, 240000, 645, 2, 'muhi_nose.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこども鼻炎シロップS（120mL）〔鼻炎薬〕\r\nsiro sổ mũi \r\nsiro so mui', 'thuốc sổ mũi cho trẻ em', 0, '2019-04-11 00:48:24', '2019-05-02 12:07:10'),
+(108, 1, 'Wakado Cookie 9', '', '', 80000, 0, 0, 0, 'wakado_yamaimo_cookie.jpg', 32, 35, '', '', 1, '2019-04-11 00:19:38', '2019-05-26 13:07:44'),
+(109, 1, 'Muhi Seki Dome 120ml', '120 ml', '', 320000, 260000, 980, 3, 'apanman_sekidome.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこどもせきどめシロップSa（イチゴ味） 120mL\r\nthuoc ho tre em', 'thuốc ho cho trẻ em', 0, '2019-04-11 00:47:49', '2019-06-03 11:35:22'),
+(110, 1, 'Muhi Rhinitis Syrup for nose 120ml', '120 ml', '', 300000, 240000, 1080, 2, 'muhi_nose.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこども鼻炎シロップS（120mL）〔鼻炎薬〕\r\nsiro sổ mũi \r\nsiro so mui', 'thuốc sổ mũi cho trẻ em', 0, '2019-04-11 00:48:24', '2019-06-03 11:35:04'),
 (111, 1, 'Muhi  Kaze Ichigo Syrup', '', '', 340000, 290000, 0, 0, 'muhi_kaze.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこどもかぜシロップイチゴ味（Sa）（120mL）〔風邪薬〕\r\nsiro trị cam vi dau', 'thuốc cảm vị dâu cho trẻ', 0, '2019-04-11 00:57:06', '2019-05-02 12:06:07'),
 (112, 1, 'Muhi  Kaze Peach Syrup', '', '', 340000, 290000, 0, 0, 'muhi_kaze_peach.jpg', 10, 26, '【第（2）類医薬品】 ムヒのこどもかぜシロップイチゴ味（Sa）（120mL）〔風邪薬〕\r\nsiro trị cam vi dao', 'thuốc cảm vị đào cho trẻ', 0, '2019-04-11 01:03:34', '2019-05-02 12:06:35'),
 (113, 1, 'Fine Omega EPA + DHA Krill Oil 150 tablets', '150 viên', '', 680000, 600000, 0, 0, 'omega.jpg', 10, 48, 'ファイン オメガEPA+DHAクリルオイル 150粒', 'omega có DHA', 0, '2019-04-11 02:14:32', '2019-05-02 08:20:24'),
@@ -1071,36 +1217,36 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (122, 1, 'Everish Charcoal Scrub Face Wash 135g', '135 g', '', 195000, 145000, 0, 0, 'everish-charcoal.jpg', 21, 39, 'everish（エブリッシュ）炭スクラブ洗顔（135g）〔洗顔フォーム〕', 'rửa mặt tẩy tế bào chết than hoạt tính', 0, '2019-04-11 13:26:36', '2019-05-02 08:18:37'),
 (123, 1, 'Everish Aloe Scrub Face Wash 135g', '135 g', '', 195000, 145000, 0, 0, 'everish-aloe.jpg', 21, 39, 'everish（エブリッシュ） アロエスクラブ洗顔（135g）〔洗顔フォーム〕', 'rửa mặt tẩy tế bào chết nha đam', 0, '2019-04-11 13:30:15', '2019-05-02 08:18:26'),
 (124, 1, 'Everish White Clay Scrub Face Wash 120g', '120 g', '', 195000, 145000, 0, 0, 'everish-white-clay.jpg', 21, 39, 'everish（エブリッシュ） ホワイトクレイスクラブ洗顔 （120g）〔洗顔料〕', 'rửa mặt tẩy tế bào chết đất sét trắng', 0, '2019-04-11 13:35:05', '2019-05-02 08:19:20'),
-(125, 1, 'Fruit juice gummy - GrapeFruit 68g', '68 g', '', 45000, 35000, 0, 0, 'meiji_gumi_iron.jpg', 23, 36, '果汁グミ鉄分グレープフルーツ\r\nThành phần sắt 4mg\r\n- Có thể cảm nhận vị chua ngay ngất và hương vị chín ngọt của bưởi\r\n- Có thể hấp thụ hàm lượng 4mg sắt bằng 17g (tiếu cuẩn 5 viên)\r\n(Lượng thiếu hụt sắt trong ngày của phụ nữ tuổi 20: 3.9mg)\r\n- Bạn của phụ nữ tuyệt vời đem đến chu kỳ sinh hoạt tốt đầy cảm hứng\r\n- Mỗi ngày rạng ngời, bằng cách bổ sung đúng cách hàm lượng sắt có xu hướng bị thiếu.\r\n- Hãy tạo thói quen ngon đẹp, khéo léo tốt đẹp bằng cách sử dụng kẹo dẽo trái cây', 'kẹo dẻo vuông', 0, '2019-04-12 15:07:29', '2019-05-02 08:25:04'),
+(125, 1, 'Fruit juice gummy - GrapeFruit 68g', '68 g', '', 45000, 35000, 0, 0, 'meiji_gumi_iron.jpg', 23, 36, '果汁グミ鉄分グレープフルーツ\r\nThành phần sắt 4mg\r\n- Có thể cảm nhận vị chua ngay ngất và hương vị chín ngọt của bưởi\r\n- Có thể hấp thụ hàm lượng 4mg sắt bằng 17g (tiếu cuẩn 5 viên)\r\n(Lượng thiếu hụt sắt trong ngày của phụ nữ tuổi 20: 3.9mg)\r\n- Bạn của phụ nữ tuyệt vời đem đến chu kỳ sinh hoạt tốt đầy cảm hứng\r\n- Mỗi ngày rạng ngời, bằng cách bổ sung đúng cách hàm lượng sắt có xu hướng bị thiếu.\r\n- Hãy tạo thói quen ngon đẹp, khéo léo tốt đẹp bằng cách sử dụng kẹo dẽo trái cây', 'kẹo dẻo vuông', 1, '2019-04-12 15:07:29', '2019-05-31 11:19:52'),
 (126, 1, 'Fruit juice gummy - Ginger Aleup 100g', '100 g', '', 45000, 35000, 0, 0, 'meiji_gumi_gung.jpg', 23, 36, '', NULL, 1, '2019-04-12 15:09:11', '2019-05-01 02:52:04'),
-(127, 1, 'Fruit juice gummy - Peach', '', '', 45000, 35000, 0, 0, 'meiji_gumi_dao.jpg', 23, 36, '', 'kẹo dẻo vuông', 0, '2019-04-12 15:55:26', '2019-05-02 08:25:20'),
-(128, 1, 'Fruit juice gummy - Strawberry', '', '', 45000, 35000, 100, 1, 'meiji_gumi_dau.jpg', 23, 36, '', 'kẹo dẻo vuông', 0, '2019-04-12 15:55:55', '2019-05-02 08:25:28'),
-(129, 1, 'Fruit juice gummy - Collagen', '', '', 45000, 35000, 0, 0, 'meiji_gumi_kolagen.jpg', 23, 36, '1 gói bổ sung 5000mg Collagen', 'kẹo dẻo vuông', 0, '2019-04-12 15:57:37', '2019-05-02 08:24:39'),
-(130, 1, 'Fruit juice gummy - Grape', '', '', 45000, 35000, 100, 4, 'meiji_gumi_nho-den.jpg', 23, 36, '', 'kẹo dẻo vuông', 0, '2019-04-12 16:05:23', '2019-05-02 08:24:50'),
-(131, 1, 'Fruit juice gummy - Apple', '', '', 45000, 35000, 95, 4, 'meiji_gumi_tao.jpg', 23, 36, 'táo', 'kẹo dẻo vuông', 0, '2019-04-12 16:25:13', '2019-05-02 08:24:25'),
-(132, 1, 'Fruit juice gummy - Mikan', '', '', 45000, 35000, 100, 4, 'meiji_gumi_cam.jpg', 23, 36, '', 'kẹo dẻo vuông', 0, '2019-04-12 16:25:51', '2019-05-02 08:25:13'),
+(127, 1, 'Fruit juice gummy - Peach', '', '', 45000, 35000, 0, 0, 'meiji_gumi_dao.jpg', 23, 36, '', 'kẹo dẻo vuông', 1, '2019-04-12 15:55:26', '2019-05-31 11:20:00'),
+(128, 1, 'Fruit juice gummy - Strawberry', '', '', 45000, 35000, 100, 1, 'meiji_gumi_dau.jpg', 23, 36, '', 'kẹo dẻo vuông', 1, '2019-04-12 15:55:55', '2019-05-31 11:20:08'),
+(129, 1, 'Fruit juice gummy - Collagen', '', '', 45000, 35000, 0, 0, 'meiji_gumi_kolagen.jpg', 23, 36, '1 gói bổ sung 5000mg Collagen', 'kẹo dẻo vuông', 1, '2019-04-12 15:57:37', '2019-05-31 11:20:18'),
+(130, 1, 'Fruit juice gummy - Grape', '', '', 45000, 35000, 100, 4, 'meiji_gumi_nho-den.jpg', 23, 36, '', 'kẹo dẻo vuông', 1, '2019-04-12 16:05:23', '2019-05-31 11:20:25'),
+(131, 1, 'Fruit juice gummy - Apple', '', '', 45000, 35000, 95, 4, 'meiji_gumi_tao.jpg', 23, 36, 'táo', 'kẹo dẻo vuông', 1, '2019-04-12 16:25:13', '2019-05-31 11:20:33'),
+(132, 1, 'Fruit juice gummy - Mikan', '', '', 45000, 35000, 100, 4, 'meiji_gumi_cam.jpg', 23, 36, '', 'kẹo dẻo vuông', 1, '2019-04-12 16:25:51', '2019-05-31 11:20:42'),
 (133, 1, 'Fruit juice gummy - Colaup', '', '', 45000, 35000, 0, 0, 'meiji_gumi_colaup.jpg', 23, 36, '', NULL, 1, '2019-04-12 16:27:31', '2019-05-01 02:50:19'),
-(134, 1, 'UHA Kororo - Peach', '', '', 40000, 35000, 95, 2, 'uha-kororo-gumi-dao.jpg', 23, 38, '', 'kẹo dẻo tròn', 0, '2019-04-12 16:35:06', '2019-05-02 23:53:00'),
-(135, 1, 'UHA Kororo - Strawberry', '', '', 40000, 35000, 0, 2, 'uha-kororo-gumi-dau.jpg', 23, 38, 'dâu', 'kẹo dẻo tròn', 0, '2019-04-12 16:36:06', '2019-05-02 23:53:08');
+(134, 1, 'UHA Kororo - Peach', '', '', 40000, 35000, 95, 2, 'uha-kororo-gumi-dao.jpg', 23, 38, '', 'kẹo dẻo tròn', 1, '2019-04-12 16:35:06', '2019-05-31 11:20:59'),
+(135, 1, 'UHA Kororo - Strawberry', '', '', 40000, 35000, 0, 2, 'uha-kororo-gumi-dau.jpg', 23, 38, 'dâu', 'kẹo dẻo tròn', 1, '2019-04-12 16:36:06', '2019-05-31 11:21:07');
 INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `wholesale_price`, `purchase_price`, `quantity`, `image`, `category_id`, `brand_id`, `description`, `remarks`, `disabled`, `created`, `updated`) VALUES
-(136, 1, 'UHA Kororo - Melon', '', '', 40000, 35000, 95, 3, 'uha-kororo-gumi-meron.jpg', 23, 38, 'dưa lưới', 'kẹo dẻo tròn', 0, '2019-04-12 16:36:39', '2019-05-02 23:52:45'),
+(136, 1, 'UHA Kororo - Melon', '', '', 40000, 35000, 95, 3, 'uha-kororo-gumi-meron.jpg', 23, 38, 'dưa lưới', 'kẹo dẻo tròn', 1, '2019-04-12 16:36:39', '2019-05-31 11:21:15'),
 (137, 1, 'Sekkisei Premium Set', '', 'bộ', 1690000, 1600000, 10000, 2, '55933670_2279366722127682_4437331979960057856_n.jpg', 7, 18, '🌹🌹🌹🌹🌹Nước hoa hồng Kose Medicated Sekkisei Lotion 200ml:\r\n🌹Dòng mỹ phẩm chăm sóc da KOSE SEKKISEI của hãng mỹ phẩm Kosé danh tiếng hàng đầu tại Nhật Bản giới thiệu sản phẩm nước hoa hồng cung cấp ẩm, làm mềm và sáng da, ngăn chặn sự hình thành hắc tố. Da sẽ được giữ ẩm và mát dịu trong suốt thời gian sử dụng, hấp thu tối đa dưỡng chất từ kem dưỡng.\r\n🌹Nước hoa hồng Kose Sekkisei Medicated Lotion kết hợp thành phần chiết xuất hơn 30 loại thảo dược tinh túy, an toàn và không gây kích ứng da, các sản phẩm trong dòng Sekkisei cung cấp đầy đủ độ ẩm, giúp ngăn chặn việc hình thành hắc tố da đồng thời xóa mờ tối đa các vết thâm nám, đốm đen, giúp làn da trắng sáng rạng rỡ.\r\n🌹Kose Sekkisei Medicated Lotion cung cấp ẩm, làm mềm và sáng da, ngăn chặn sự hình thành hắc tố. Da sẽ được giữ ẩm và mát dịu trong suốt thời gian sử dụng, hấp thu tối đa dưỡng chất từ kem dưỡng.Bạn sẽ cảm nhận ngay làn da mát dịu ngay sau khi sử dụng. Nên sử dụng Lotion với kem dưỡng để tăng cường hiệu quả tối đa.\r\n\r\n🌹🌹🌹Cách dùng nước hoa hồng Kose Medicated Sekkisei Lotion Nhật Bản:\r\nSáng & tối. Sau khi rửa sạch mặt, thấm 1 lượng nhỏ vào miếng bông, lau đều khắp mặt và cổ. Kết thúc bằng vỗ nhẹ các ngón ta vào mặt để tinh chất được thấm sâu.\r\n\r\n🌹🌹🌹🌹🌹Sữa dưỡng trắng da Kose Sekkisei Medicated 140ml:\r\nSữa dưỡng trắng da Kose Sekkisei Medicated 140ml là dòng mỹ phẩm cao cấp của thương hiệu Kose nổi tiếng hàng đầu Nhật Bản với chiết xuất từ hơn 30 loại thảo dược thiên nhiên sẽ cung cấp độ ẩm và dưỡng trắng da hiệu quả cho bạn làn da chắc khỏe, sáng mịn đầy sức sống.\r\n\r\n🌹🌹🌹Công dụng của sữa dưỡng trắng da Kose:\r\n🌹Sữa dưỡng da Kose Sekkisei Medicated làm sáng da, bảo vệ da, giảm sự sản sinh hắc tố melanin để ngăn ngừa tàn nhang, giúp da dần trắng sáng tự nhiên.\r\n🌹Cung cấp đầy đủ độ ẩm, giúp ngăn chặn việc hình thành hắc tố melanin làm sạm da đồng thời xóa mờ tối đa các vết thâm nám, đốm đen giúp làn da trắng sáng rạng rỡ và mang lại hiệu quả chăm sóc da tối ưu. \r\n🌹Có thể sử dụng như kem lót trang điểm cho nền da mượt mà và rạng rỡ hơn.\r\n🌹Sữa dưỡng da Kose dễ dàng thẩm thấu vào các tế bào sâu trong da, không làm dính khó chịu và thoải mái khi sử dụng.\r\n\r\n🌹🌹🌹Hướng dẫn sử dụng:\r\nDùng sữa dưỡng Kose vào buổi sáng, sau khi dùng nước hoa hồng, lấy 1 lượng kem vừa đủ, chấm kem vào 5 điểm trên mặt, thoa đều khắp mặt và cổ.', 'bộ hoa hồng và sữa dưỡng', 0, '2019-04-12 16:40:23', '2019-05-02 12:12:42'),
 (138, 1, 'RyuKaKuSan Direct Mint 6ps', '', '', 200000, 150000, 547, 0, 'direct-mint.png', 10, 43, '', 'thuốc ho ng lớn vị bạc hà dạng bột', 0, '2019-04-13 22:37:09', '2019-05-02 12:12:02'),
 (139, 1, 'RyuKaKuSan Direct Peach 6ps', '', '', 200000, 150000, 547, 0, 'direct-peach.png', 10, 43, 'đào', 'thuốc ho ng lớn vị đào dạng bột', 0, '2019-04-13 22:38:33', '2019-05-02 12:12:14'),
 (140, 1, 'RyuKaKuSan Direct Mango 6cap', '6 viên', '', 210000, 160000, 547, 0, 'direct-mango.png', 10, 43, 'xoài', 'thuốc ho ng lớn vị xoài dạng bột', 0, '2019-04-13 22:39:40', '2019-05-02 12:11:51'),
 (141, 1, 'Pavlon Gold A 210 cap', '210 viên', '', 390000, 340000, 1382, 0, 'pavlon-gold-A.jpg', 10, 44, '', 'thuốc cảm cho người lớn', 0, '2019-04-13 23:04:50', '2019-05-02 12:10:38'),
-(142, 1, 'UHA Kororo - Grape', '', '', 40000, 35000, 95, 0, 'uha-kororo-gumi-grape.jpg', 23, 38, 'nho đỏ', 'kẹo dẻo tròn', 0, '2019-04-13 23:29:06', '2019-05-02 23:52:35'),
-(143, 1, 'UHA Kororo - Muscat', '', '', 40000, 35000, 95, 0, 'uha-kororo-gumi-muscat.jpg', 23, 38, 'nho xanh', 'kẹo dẻo tròn', 0, '2019-04-13 23:29:42', '2019-05-02 23:52:52'),
+(142, 1, 'UHA Kororo - Grape', '', '', 40000, 35000, 95, 0, 'uha-kororo-gumi-grape.jpg', 23, 38, 'nho đỏ', 'kẹo dẻo tròn', 1, '2019-04-13 23:29:06', '2019-05-31 11:21:21'),
+(143, 1, 'UHA Kororo - Muscat', '', '', 40000, 35000, 95, 0, 'uha-kororo-gumi-muscat.jpg', 23, 38, 'nho xanh', 'kẹo dẻo tròn', 1, '2019-04-13 23:29:42', '2019-05-31 11:21:28'),
 (144, 1, 'Natural Honey Lip', '', '', 220000, 170000, 0, 0, 'natural-honey-lip.jpg', 18, 45, '', 'son dưỡng môi ko màu vị mật ong', 0, '2019-04-13 23:58:58', '2019-05-02 12:09:25'),
 (145, 1, 'Son Kate', '', '', 370000, 310000, 0, 0, NULL, 18, 50, '', 'son KATE', 0, '2019-04-13 23:58:58', '2019-05-02 23:45:32'),
 (146, 1, 'Son Revlon', '', '', 400000, 340000, 0, 0, NULL, 18, 33, '', 'son revlon', 0, '2019-04-14 00:14:48', '2019-05-02 23:46:01'),
 (147, 1, 'Son Shiseido', '', '', 630000, 0, 0, 0, NULL, 18, 7, '', 'son shiseido', 0, '2019-04-14 00:16:44', '2019-05-02 23:46:14'),
 (148, 1, 'Soap For Back Soap', '', '', 150000, 0, 0, 0, 'for-back-soap.jpg', 16, 49, '薬用石鹸ForBack 135g', NULL, 1, '2019-04-14 00:20:30', '2019-05-01 18:12:53'),
-(149, 1, 'Son ShuUeMuRa', '', '', 550000, 0, 0, 0, 'Shu-Uemura-Rouge-Unlimited-Supreme-Matte.jpg', 18, 16, '', 'son shu', 0, '2019-04-14 00:51:29', '2019-05-15 11:26:07'),
+(149, 1, 'Son ShuUeMuRa', '', '', 550000, 0, 0, 0, 'Shu-Uemura-Rouge-Unlimited-Supreme-Matte.jpg', 18, 16, '', 'Son Shu Uemura', 0, '2019-04-14 00:51:29', '2019-05-28 18:11:22'),
 (150, 1, 'Muji Loose Powder Natural 18g', '18 g', 'hộp', 410000, 350000, 1161, 0, 'muji-loose-powder-natural.jpg', 7, 46, 'ルースパウダー　大・ナチュラル　１８ｇ', 'phấn phủ muji', 0, '2019-04-14 01:38:29', '2019-05-02 12:07:38'),
 (151, 1, 'Muji Peel Cotton 162 sheets', '', '', 190000, 140000, 449, 0, 'muji-coton.jpg', 7, 46, 'bong tay trang', 'bông tẩy trang muji', 0, '2019-04-14 01:38:42', '2019-05-02 12:08:20'),
-(152, 1, 'Melano CC Vitamin White Mist', '', '', 280000, 220000, 972, 2, 'xit-khoang-cc-melano-cua-nhat.jpg', 7, 14, 'メラノCCミスト', 'xịt khoáng', 0, '2019-04-14 01:42:03', '2019-05-05 19:15:47'),
-(153, 1, 'Qoo Jelly Drink Grape', '', '', 55000, 45000, 0, 0, 'Qoo-drin-grape.jpg', 17, 47, '', 'nước uống trái cây jelly cho trẻ', 0, '2019-04-14 01:50:55', '2019-05-02 12:11:23'),
+(152, 1, 'Melano CC Vitamin White Mist', '', '', 280000, 220000, 767, 2, 'xit-khoang-cc-melano-cua-nhat.jpg', 7, 14, 'メラノCCミスト', 'xịt khoáng', 0, '2019-04-14 01:42:03', '2019-06-03 11:34:31'),
+(153, 1, 'Qoo Jelly Drink Grape', '', '', 55000, 45000, 0, 0, 'Qoo-drin-grape.jpg', 17, 47, '', 'nước uống trái cây jelly cho trẻ', 0, '2019-04-14 01:50:55', '2019-05-26 19:39:20'),
 (154, 1, 'Fine Bifizusu KIN Juhre', '', '', 350000, 290000, 987, 1, 'bifizusuko-jure.jpg', 8, 48, ' ファイン ビフィズス菌\r\nmen tieu hoa', 'men tiêu hoá cho trẻ', 0, '2019-04-14 02:01:42', '2019-05-02 08:20:11'),
 (155, 1, 'Orihiro Okusai Organic Green Juice 30ps', '30 packages', '', 380000, 330000, 1335, 0, 'orihiro-kokusai-oganic-aoju.jpg', 17, 20, '', 'bột rau xanh', 0, '2019-04-14 02:08:15', '2019-05-12 01:32:54'),
 (156, 1, 'Mix Fruit juice gummy', '', '', 50000, 45000, 0, 0, 'meiji-mix-gummy.jpg', 23, 36, '', NULL, 1, '2019-04-14 02:08:26', '2019-05-01 16:10:39'),
@@ -1113,9 +1259,9 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (163, 1, 'Son MaybeLine', '', '', 470000, 420000, 1620, 0, NULL, 18, 54, '', 'son maybeline dạng nước', 0, '2019-04-21 00:36:15', '2019-05-02 23:45:49'),
 (164, 1, 'Chondroitin ZS Tablets 180 (tablets)', '180 viên', 'hủ', 1330000, 1250000, 5466, 0, 'chondroitin-zs-180.jpg', 10, 17, 'コンドロチンZS錠（180錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-04-21 12:39:03', '2019-05-02 08:02:34'),
 (165, 1, 'Chondroitin ZS Tablets 108 (tablets)', '108 viên', 'hủ', 1000000, 930000, 0, 0, 'chondroitin-zs-108.jpg', 10, 17, 'コンドロチンZS錠（108錠）', 'thuốc trị đau nhức xương khớp và trị gout', 0, '2019-04-21 12:40:28', '2019-05-02 08:02:22'),
-(166, 1, 'Spirulina 100% 2200 + 400 cap', '2400 viên', 'bịch', 750000, 670000, 2116, 4, 'supirurina_2200_400.jpg', 8, 0, 'スピルリナ100%　【2000粒+400粒増量】1粒200mg（約2ヵ月分）\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2400 viên dạng túi', 0, '2019-04-26 14:11:37', '2019-05-18 23:07:07'),
+(166, 1, 'Spirulina 100% 2200 + 400 cap', '2400 viên', 'bịch', 750000, 670000, 2116, 7, 'supirurina_2200_400.jpg', 8, 0, 'スピルリナ100%　【2000粒+400粒増量】1粒200mg（約2ヵ月分）\r\nTao xoan\r\nTảo xoắn', 'tảo biển 2400 viên dạng túi', 0, '2019-04-26 14:11:37', '2019-06-02 01:11:33'),
 (167, 1, 'Natto Kinaze 2000FU 60 caps', '', '60 viên', 620000, 540000, 2108, 4, 'natto-kinaze-60.jpg', 10, 36, '明治薬品 納豆キナーゼ　６０粒\r\n\r\n\r\n💊💊💊💊💊Viên Uống Nattokinase 2000FU Noguchi phòng ngừa và hỗ trợ điều trị đột quỵ: 60 viên\r\nMột sản phẩm chăm sóc sức khỏe đến từ xứ sở hoa anh đào nằm trong top những loại thuốc chống đột quỵ tốt nhất hiện nay chính là Viên uống Nattokinase 2000FU Noguchi. Sản phẩm được sản xuất từ sự kết hợp tuyệt vời giữa Công ty Dược phẩm Meiji và Viện Nghiên Cứu Y học Noguchi hàng đầu Nhật Bản.\r\n💊💊💊Thành phần của viên Nattokinase 2000FU Noguchi:\r\n💊Men bia, gelatin, dextrin, natto chiết xuất (nattokinase men), da củ hành (chứa quercetin), axit stearic Ca, chiết xuất bột tiêu đen, hạt silic oxit, (bao gồm cả một số trong những đậu nành thô).\r\n💊Thành phần dinh dưỡng trong mỗi 2 viên uống nattokinase (420 mg) : Năng lượng -1.6 kcal, Lipid 0,013 g, Protein 0,19 g, Carbohydrate 0,18 g, Natto chiết xuất (Nattokinase) 100mg (2000FU), Natri 1,25 mg, màng vỏ hành tây 40 mg, tinh chất bột tiêu đen 3mg.\r\n💊💊💊Công dụng tuyệt vời của viên uống Nattokinase 2000FU Noguchi:\r\n💊Nattokinase 2000FU Noguchi có khả năng làm tan huyết khối, điều hòa ổn định huyết áp, phòng ngừa đột quỵ một cách hiệu quả.\r\n💊Bên cạnh đó, nó còn hỗ trợ tích cực cho việc điều trị những di chứng của tai biến mạch máu não.\r\n💊Một ưu điểm nữa của Nattokinase 2000FU Noguchi đó là nó có khả năng làm tăng tuần hoàn não, cải thiện tình trạng suy giảm trí nhớ.\r\n💊Ngoài ra, viên uống Nattokinase 2000FU Noguchi còn giúp tăng cường sinh lực, ngăn ngừa sự hình thành các cục máu đông và phòng ngừa tình trạng xơ vữa động mạch hiệu quả cho người sử dụng.\r\n💊💊💊Những ai nên dùng viên uống Nattokinase 2000FU Noguchi: người bị tắc mạch máu do có cục máu đông, người béo phì, tiểu đường, mắc bệnh xơ vữa động mạch,người bị cao huyết áp, người cao tuổi,…\r\n💊💊💊Liều dùng và cách dùng viên uống Nattokinase 2000FU Noguchi:\r\n💊Dùng để dự phòng thì bạn chỉ cần uống 1 viên/ngày trước khi đi ngủ.\r\n💊Dùng để hỗ trợ điều trị: dùng 2 viên/ngày, chia làm 2 lần uống, mỗi lần 1 viên.\r\n💊Nên dùng thuốc trước bữa ăn 30 phút và sua bữa ăn 1 tiếng, không uống thuốc với nước nóng trên 40 độ vì có thể làm mất tác dụng của thuốc.\r\n💊Những trường hợp không nên dùng viên uống Nattokinase 2000FU Noguchi: người bị viêm loét nặng, người mới phẫu thuật trong vòng nửa năm, người bị chảy máu nội so, người huyết áp quá cao, người đáng dùng thuốc chống đông máu. Phụ nữ mang thai và cho con bú thì cần tham khảo ý kiến của bác sĩ trước khi dùng thuốc.\r\n💊Viên uống Nattokinase 2000FU Noguchi không phải là thuốc điều trị mà chỉ là thuốc hỗ trợ điều trị vì thế nó không có tác dụng thay thế thuốc chữa bệnh.', 'thuốc chống đột quỵ', 0, '2019-04-26 14:26:07', '2019-05-02 12:09:05'),
-(168, 1, 'WHITE CONC Whitening CC Cream CII 200g', '200 g', 'bịch', 400000, 350000, 1080, 5, 'white_conc_whitening_cream_200.jpg', 16, 52, '薬用ホワイトコンク ホワイトニングCCクリーム CII 200g\r\n\r\n🍓🍓🍓🍓🍓Dưỡng thể White Con CC cream 200g:\r\nSữa dưỡng thể White Conc White CC Cream có thành phần chính là vitamin C chiết xuất từ những quả cam tự nhiên giúp dưỡng da trắng sáng an toàn và mềm mịn hiệu quả. Thành phần vitamin C còn kích thích tái tạo lại tế bào da, điều trị các tổn thương từ sâu bên trong đảm bảo da căng mịn và luôn trong trạng thái tươi trẻ.\r\n🍓🍓🍓Thành phần dưỡng thể White CC White ConC gồm:\r\nSữa dưỡng trắng White conc white cc Cream có thành phần chính là Vitamin C chiết xuất từ những quả cam giúp dưỡng trắng da toàn thân. Vitamin C còn giúp kích thích tái tạo tế bào da, điều trị các tổn thương từ sâu bên trong.\r\n🍓🍓🍓Công dụng dưỡng thể White Conc như sau:\r\n🍓Dưỡng thể CC Cream dạng chất kem lỏng nhẹ giúp nhanh chóng dưỡng da trắng sáng, mịn màng, thành phần vitamin C chính trong sữa dưỡng thể còn có tác dụng tái tạo tế bào, da căng mịn và luôn tươi trẻ.\r\n🍓Hylaluronic Acid như tấm màng bảo vệ giúp da luôn được dưỡng ẩm đầy đủ, chấm dứt tình trạng da khô nứt hay bong tróc vào những ngày khô hanh, ngăn chặn các tia UV hiệu quả.\r\n🍓Collagen trong sữa dưỡng thể là nhân tố vô cùng quan trọng để da ngày càng sáng khỏe, đẩy lùi các dấu hiệu lão hóa.\r\n🍓🍓🍓Hướng dẫn dụng dưỡng thể White Conc:\r\n🍓Cho một lượng kem vừa đủ lên lòng bàn tay, thoa đều lên những nơi vùng da bạn cần dưỡng trắng và massage nhẽ nhàng, kết hợp vỗ nhẹ để kem thấm nhanh và đều.\r\n🍓Sử dụng kết hợp với sữa tắm white conc để cho kết quả tốt nhất', 'kem dưỡng trắng da ban đêm', 0, '2019-04-26 14:50:54', '2019-05-18 23:05:30'),
+(168, 1, 'WHITE CONC Whitening CC Cream CII 200g', '200 g', 'bịch', 400000, 350000, 1080, 10, 'white_conc_whitening_cream_200.jpg', 16, 52, '薬用ホワイトコンク ホワイトニングCCクリーム CII 200g\r\n\r\n🍓🍓🍓🍓🍓Dưỡng thể White Con CC cream 200g:\r\nSữa dưỡng thể White Conc White CC Cream có thành phần chính là vitamin C chiết xuất từ những quả cam tự nhiên giúp dưỡng da trắng sáng an toàn và mềm mịn hiệu quả. Thành phần vitamin C còn kích thích tái tạo lại tế bào da, điều trị các tổn thương từ sâu bên trong đảm bảo da căng mịn và luôn trong trạng thái tươi trẻ.\r\n🍓🍓🍓Thành phần dưỡng thể White CC White ConC gồm:\r\nSữa dưỡng trắng White conc white cc Cream có thành phần chính là Vitamin C chiết xuất từ những quả cam giúp dưỡng trắng da toàn thân. Vitamin C còn giúp kích thích tái tạo tế bào da, điều trị các tổn thương từ sâu bên trong.\r\n🍓🍓🍓Công dụng dưỡng thể White Conc như sau:\r\n🍓Dưỡng thể CC Cream dạng chất kem lỏng nhẹ giúp nhanh chóng dưỡng da trắng sáng, mịn màng, thành phần vitamin C chính trong sữa dưỡng thể còn có tác dụng tái tạo tế bào, da căng mịn và luôn tươi trẻ.\r\n🍓Hylaluronic Acid như tấm màng bảo vệ giúp da luôn được dưỡng ẩm đầy đủ, chấm dứt tình trạng da khô nứt hay bong tróc vào những ngày khô hanh, ngăn chặn các tia UV hiệu quả.\r\n🍓Collagen trong sữa dưỡng thể là nhân tố vô cùng quan trọng để da ngày càng sáng khỏe, đẩy lùi các dấu hiệu lão hóa.\r\n🍓🍓🍓Hướng dẫn dụng dưỡng thể White Conc:\r\n🍓Cho một lượng kem vừa đủ lên lòng bàn tay, thoa đều lên những nơi vùng da bạn cần dưỡng trắng và massage nhẽ nhàng, kết hợp vỗ nhẹ để kem thấm nhanh và đều.\r\n🍓Sử dụng kết hợp với sữa tắm white conc để cho kết quả tốt nhất', 'kem dưỡng trắng da ban đêm', 0, '2019-04-26 14:50:54', '2019-05-26 12:44:38'),
 (169, 1, 'Son YSL', '', '', 1200000, 1100000, 4447, 1, NULL, 18, 55, '', 'son YSL', 0, '2019-04-26 16:23:10', '2019-05-05 19:05:05'),
 (170, 1, 'Ecovacs Deebot N79', '3.5 kg', '', 6300000, 5800000, 19900, 0, 'deebot-n79-1.jpg', 26, 56, 'https://youtu.be/vrPEQAA9i-Q\r\nnormal price: 6500000 / 6000000\r\n\r\nSản phẩm đang được giảm giá hốt lẹ hốt lẹ!!!!\r\n\r\n🥴🥴🥴🥴🥴Bạn là người hiện đại với nhiều công việc bận rộn, hãy tiết kiệm thời gian và công sức của mình cho việc dọn dẹp nhà cửa bằng Robot hút bụi tự động Ecovacs Deebot N79 thông minh đầy tiện dụng.\r\n\r\n👍👍👍Tiết kiệm thời gian và công sức với Robot hút bụi Ecovacs Deebot N79:\r\nTheo bước phát triển hiện đại của công nghệ thì đã có không ít những phát minh Robot tiên tiến ra đời. Một trong số đó phải kể đến Robot hút bụi Ecovacs Deebot N79, dòng thiết bị thông minh được trang bị nhiều tính năng hữu ích để hỗ trợ người dùng dọn dẹp nhà cửa một cách nhanh chóng và tiết kiệm thời gian nhất có thể.\r\n🤪🤪🤪Bạn đã biết gì về Robot hút bụi tự động?\r\n\r\n👉Khái niệm về Robot hút bụi:\r\n\r\n🥴Đúng như những gì bạn đang nghĩ, chức năng chính của nó là hút bụi. Nhưng không giống như những máy hút bụi thông thường, Robot hút bụi rất “thông minh”. Thông minh ở đây không có nghĩa là nó có khả năng như một con người mà chỉ đơn giản là nó có thể giúp bạn làm được những gì bạn cần mà không cần bất kỳ tác động hay kiểm soát từ con người với khả năng thích ứng với môi trường xung quanh.\r\n🥴Robot sẽ giúp bạn hút sạch bụi từ sàn nhà, thảm rồi sau đó tự làm sạch thùng chứa bụi. Khi kết thúc nhiệm vụ hầu hết chúng sẽ tự động tìm và đứng trên trạm sạc của mình hoặc một số trang bị hỗ trợ khác.\r\n\r\n👉Cấu tạo của Robot hút bụi:\r\n\r\n🥴Trên thị trường hiện nay đã có không ít thương hiệu Robot húi bụi ra đời với thiết kế khác nhau về kích thước, hình dáng nhưng cơ bản thì chúng thường có cấu tạo gồm hai bộ phận chính là thân máy và phụ kiện đi kèm.\r\n\r\n🥴Thân máy được làm nên từ các chi tiết như bánh xe, vỏ, hệ thống phần cữngs, hộp xử lý rác, wifi thông minh và các kết nối laser.\r\n🥴Phụ kiện kèm theo cho Robot hút bụi thường là sạc, dây và chổi quét…\r\n\r\n👉Cơ chế hoạt động của một Robot hút bụi:\r\n\r\n🥴Theo thống kế cơ bản thì hầu hết Robot hút bụi hoạt động tương tự như máy hút bụi thông thường, chính là dựa trên cơ chế hoạt động phản lực để tạo ra sức hút lớn rồi từ đó hút sạch toàn bộ bụi bẩn trên suốt quãng đường mà nó di chuyển qua.\r\n🥴Hệ thống bánh xe bên dưới giúp Robot hút bụi di chuyển, bên trong máy là bộ phận cảm biến giúp nó cảm nhận và phản hồi địa hình xung quanh, như việc nó có khả năng phát hiện những vật gây cản trở như tường, tủ, cầu thang… để tránh qua một bên.\r\n\r\n👉👉👉Những ưu và nhược điểm của Robot hút bụi:\r\n👌Ưu điểm:\r\n👍Tiết kiệm thời gian và sức lực: Robot hút bụi tự động thông minh ở chỗ chúng có khả năng tự vận hành, người dùng chỉ cần thiết lập sẵn các chức năng thì Robot sẽ dựa theo đó làm theo một cách trơn tru nhất có thể, từ đó giúp bạn tiết kiệm được khá nhiều thời gian và công sức của mình.\r\n👍Tiết kiệm chi phí: So với việc bỏ ra một khoảng để mua máy hút bụi thì Robot hút bụi vừa nhỏ gọn lại vừa mang đến hiệu quả tốt hơn. Về lâu về dài sẽ giúp bạn tiết kiệm được khá nhiều chi phí cho gia đình.\r\n👍Hiệu quả hút bụi khá cao: Kiểu dáng gọn nhẹ cùng thiết kế mỏng như một chiếc đĩa giúp robot hút bụi thuận lợi di chuyển và luồn lách vào những vị trí mà máy hút bụi thông thường khó mà hút được như gầm tủ, gầm giường, gầm ghế sofa…\r\n👍Điều khiển thông minh: Với Robot hút bụi bạn có thể dễ dàng kết nối chúng với các thiết bị thông minh như máy tính bảng hay Smartphone góp phần giúp bạn kiểm soát tốt hơn các hoạt động của Robot.\r\n\r\n👉👉👉Nhược điểm:\r\n\r\n🥴Giá thành hơi cao, một con Robot hút bụi tự động thấp nhất cũng khoảng 5 triệu đồng.\r\n🥴Chỉ hoạt động hiệu quả tốt đối với sàn nhà bằng phẳng, nếu sàn có độ dốc từ 30-35 độ thì khả năng hoạt động của Robot sẽ bị hạn chế, và dĩ nhiên là không leo được cầu thang.\r\n🥴Đối với những bề mặt có màu quá tối cũng ảnh hưởng đến cơ chế hoạt động của Robot do cảm biến ánh sáng không làm việc.\r\n\r\n👉👉👉Thông số kĩ thuật:\r\n• Màu: Đen\r\n• Chế độ làm việc: Auto Spot Edge\r\n• Kết nối điện thoại: Có\r\n• Thời gian sạch sẽ tại chỗ: 2-5 phút\r\n• Lọc: Bộ lọc hiệu quả cao\r\n• Chổi bên: 2 chổi\r\n• Chổi cuốn: 3D đảm bảo hút được rác lớn hơn\r\n• Điện áp đầu vào & Tần số: 100V AC 50 / 60Hz\r\n• Tự động sạc: Có\r\n• Cảm biết tránh tường, chống rơi: Siêu nhạy\r\n• Lập kế hoạch Thời gian: Vệ sinh chu kỳ hàng ngày\r\n• Mức ồn (db.): Khoảng 64\r\n• Thời gian sạc (h): Khoảng 3-4 giờ\r\n• Dung lượng pin (mAH): NI-MH (2600)\r\n• Dung tích thùng rác (mL): 500ml\r\n• Thời gian làm việc tối đa mỗi lần (phí): 100 phút\r\n\r\n👉👉👉Tính năng của Ecovacs Deebot N79:\r\n\r\n👍Là một thiết bị tự động có kết nối WiFi với ứng dụng điện thoại thông minh cho phép bạn truy cập và điều khiển Robot từ xa.\r\n👍Không có tangle, hút mạnh mẽ giúp làm sạch bụi bẩn, tóc, lông thú, mảnh vụn một cách dễ dàng và hiệu quả, vô cùng phù hợp cho các hộ gia đình có vật nuôi.\r\n👍Có hệ thống bàn chải 2 mặt giúp dễ dàng làm sạch bụi bẩn.\r\n👍Chổi quét Double V cung cấp tốt kích động cho việc thu thập bụi, rác trên sàn nhà.\r\n👍Hệ thống lọc hiệu quả cao làm giảm các tác nhân không khí có liên quan đến dị ứng và hen.\r\n👍Bộ cảm biến thông minh, cảm biến hồng ngoại được trang bị để tránh cầu thang và đồ nội thất.\r\n👍Pin Lithium ion 2.600 mAh giúp Robot hoạt động trong khoảng 100 phút.\r\n👍Được hãng ECOVACS bảo hành một năm.\r\n\r\n👉👉👉Điểm mạnh:\r\n\r\n👍Ecovacs Deebot N79 là một trong những chân không Robot giá rẻ với kết nối WiFi.\r\n👍Thời gian chạy lâu với công suất tối thiểu mờ dần nhờ vào Pin Lithium ion.\r\n👍Hoạt động vượt trội trên sàn trần, có cửa hút lớn kèm lô cuốn 3D giúp đảm bảo hút được những rác lớn.\r\n👍Hai bên bàn chải làm việc tuyệt vời và dễ dàng trong việc hút bụi bẩn trong các góc khuất.\r\n👍Ứng dụng thông minh cho phép bạn lên lịch và điều khiển robot mà không cần phải ở nhà vô cùng tiện lợi.\r\n\r\n🥴🥴🥴Điểm yếu:\r\n\r\n🥴Điều hướng ngẫu nhiên không hiệu quả.\r\n🥴Không hoạt động được trên những tấm thảm dày hoặc địa hình gồ ghề.', 'robot quét nhà N79', 0, '2019-04-27 21:14:11', '2019-05-12 00:52:12'),
 (171, 1, 'Mentholatum Water Lip Raspberry Red', '', '', 120000, 80000, 0, 5, 'mentholatum-lip-spf20-pa++-uv-cut.png', 18, 31, 'メンソレータム ウォーターリップ\r\nラズベリーレッド', 'son dưỡng có màu', 0, '2019-04-29 00:43:18', '2019-05-02 08:36:23'),
@@ -1128,26 +1274,26 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (178, 1, 'DHC Hatomugi 60 Days (60 Tablets)', '60 viên', 'bịch', 390000, 320000, 1110, 0, 'dhc-hatomugi-60.png', 10, 9, 'trắng da\r\nＤＨＣ はとむぎエキス ６０日分 ６０粒入', 'viên trắng da DHC 60 ngày', 0, '2019-05-01 02:01:13', '2019-05-02 08:11:44'),
 (179, 1, 'DHC Hyaluronic Acid 30 Days (60 Tablets)', '60 viên', 'bịch', 380000, 320000, 1136, 0, 'dhc-hiaruron-30.png', 10, 9, 'DHC ヒアルロン酸 30日分 60粒', 'viên cấp nước 30 ngày', 0, '2019-05-01 02:05:31', '2019-05-02 08:13:30'),
 (180, 1, 'The Collagen 126 cap', '126 viên', '', 750000, 700000, 4549, 0, 'shiseido-the-collagen-cap.jpg', 7, 7, 'The Collagen（ザ・コラーゲン） 126粒\r\n\r\n🌺🌺🌺Viên uống Shiseido the Collagen giúp phục hồi cấu trúc Collagen từ bên trong:\r\n🌺Bổ sung lượng Collagen, HA & Gaba hòan chỉnh giúp da trẻ hóa, gia tăng sự đàn hồi cấu trúc da từ bên trong, ngăn chặn tiến trình làm lão hóa da bởi tác động từ bên ngòai, liên tục thúc đẩy sự tuần hoàn sản sinh mô mới, làm da luôn chắc khỏe & căng mịn.\r\n🌺Tinh chất sữa ong chúa cô đặc là sự tổng hợp hoàn hảo các Vitamin nhóm B, ngoài ra còn có Vitamin A, C, D, E, protein, lipid, glucid, hormon, enzym cùng 18 acid amin & các khóang chất thiết yếu đặc biệt nuôi dưỡng và tái tạo từng tế bào trong cơ thể giúp da được mịn màng, hồng hào; làm cho móng & tóc vừa chắc khỏe vừa bóng mượt.\r\n🌺Ngòai tác dụng làm đẹp da rõ rệt, sử dụng thường xuyên giúp nâng cao sức đề kháng, đặc biệt tốt cho người làm việc căng thẳng, thiếu ngủ.\r\nCách sử dụng collagen shiseido 126 viên như sau\r\n👉Liều dùng: uống 2 – 3 lần/ ngày, mỗi lần 02 viên (ngày uống tối đa là 06 viên)\r\n👉Cách dùng: có thể uống trước hoặc sau bữa ăn, không cần phải nhai.', '', 1, '2019-05-03 02:27:45', '2019-05-03 02:30:14'),
-(181, 1, 'Son Cezane', '', '', 0, 0, 0, 1, NULL, 18, 0, '', '', 0, '2019-05-05 18:57:19', '2019-05-13 12:16:28'),
+(181, 1, 'Cezane Lipstick', '', '', 250000, 170000, 518, 0, 'item_016_3.jpg', 18, 66, 'https://www.cezanne.co.jp/lineup/lip/item_016.html', 'Son Cezane', 0, '2019-05-05 18:57:19', '2019-06-03 11:32:28'),
 (182, 1, 'Pigeon Breastfeeding bottle (plastic Mickey) 240ml', '240 ml', '', 0, 0, 0, 0, 'pigeon-mickey-limited.jpg', 0, 3, 'ベビーザらス限定　母乳実感哺乳びんプラスチック240ml（ベビーザらス限定柄/ミッキー）', 'Bình sữa Pigeon (plastic Mickey) 240ml', 0, '2019-05-05 18:58:58', '2019-05-10 10:49:42'),
-(183, 1, 'The Placenta', '', '', 0, 0, 0, 0, 'the-placenta.jpg', 0, 0, '', '', 0, '2019-05-05 19:02:05', '2019-05-09 01:07:22'),
+(183, 1, 'The Placenta', '', '', 1050000, 0, 2999, 0, 'the-placenta.jpg', 0, 0, '', '', 0, '2019-05-05 19:02:05', '2019-06-03 11:38:22'),
 (184, 1, 'Keiyou Premium 90 pills', '90 pills', '', 1950000, 0, 0, 0, 'keiyou-premium.jpg', 0, 0, '恵葉プレミアム90粒', 'Thuốc trị Gout 90 viên', 0, '2019-05-05 19:03:31', '2019-05-12 00:42:31'),
-(185, 1, 'Dầu gội trẻ em', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:06:11', '2019-05-05 19:11:20'),
-(186, 1, 'Sữa rửa mặt Muji', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:07:10', '2019-05-05 19:11:21'),
-(187, 1, 'Mochida Awasekken Pink Refill 210ml', '210 ml', '', 450000, 390000, 390000, 0, 'mochida-awasekken-refill.jpg', 0, 0, 'コラージュフルフル 泡石鹸 ピンク つめかえ用 210mL (医薬部外品)', 'Mochida nước rửa phụ khoa', 0, '2019-05-05 19:08:01', '2019-05-11 23:26:30'),
-(188, 1, 'Viết bi Muji', '', '', 50000, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:09:01', '2019-05-05 19:11:21'),
-(189, 1, 'Ruột viết bi Muji', '', '', 20000, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:09:37', '2019-05-05 19:11:21'),
+(185, 1, 'Dầu gội trẻ em', '', '', 0, 0, 593, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:06:11', '2019-06-03 11:32:58'),
+(186, 1, 'Sữa rửa mặt Muji', '', '', 0, 0, 900, 0, NULL, 0, 46, '', '', 0, '2019-05-05 19:07:10', '2019-06-03 11:37:47'),
+(187, 1, 'Mochida Awasekken Pink Refill 210ml', '210 ml', '', 450000, 390000, 390000, 4, 'mochida-awasekken-refill.jpg', 25, 67, 'コラージュフルフル 泡石鹸 ピンク つめかえ用 210mL (医薬部外品)', 'Mochida nước rửa phụ khoa', 0, '2019-05-05 19:08:01', '2019-05-27 12:05:57'),
+(188, 1, 'Viết bi Muji', '', '', 50000, 0, 240, 0, NULL, 0, 46, '', '', 0, '2019-05-05 19:09:01', '2019-06-03 11:39:11'),
+(189, 1, 'Ruột viết bi Muji', '', '', 20000, 0, 70, 0, NULL, 0, 46, '', '', 0, '2019-05-05 19:09:37', '2019-06-03 11:35:43'),
 (190, 1, 'Yunopap sID 30 sheets', '', '', 390000, 350000, 0, 1, 'yunopappu-sid-30.jpg', 0, 0, '腰痛，筋肉痛，肩こりに伴う肩の痛み，関節痛，腱鞘炎（手・手首の痛み），肘の痛み（テニス肘など），打撲，捻挫', 'Yunopap sID hộp 30 miếng', 0, '2019-05-05 19:11:56', '2019-05-12 01:15:26'),
 (191, 1, 'Orihiro Jelly drink', '', '', 45000, 40000, 108, 0, NULL, 0, 20, '', 'Jelly Orihiro', 0, '2019-05-05 19:15:05', '2019-05-19 03:10:26'),
 (192, 1, 'Yakult Lúa mạch', '', '', 0, 0, 0, 2, NULL, 0, 0, '', 'ヤクルト 私の青汁 4g×60袋', 0, '2019-05-05 19:22:31', '2019-05-05 19:23:16'),
-(193, 1, 'Daiso Đèn Pin Xe Đạp', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:24:14', '2019-05-05 19:27:18'),
-(194, 1, 'Daiso Cạo lông mày', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:25:24', '2019-05-05 19:27:18'),
-(195, 1, 'Gôm', '', '', 0, 0, 0, 0, NULL, 0, 0, '', '', 0, '2019-05-05 19:26:27', '2019-05-12 01:17:46'),
-(196, 1, 'Mochida Awasekken Pink 300ml', '300 ml', '', 670000, 610000, 610000, 0, 'mochida-awasekken-bottle.jpg', 0, 0, 'コラージュフルフル 泡石鹸 ピンク 300m L (医薬部外品)', 'Mochida nước rửa phụ khoa 300ml', 0, '2019-05-11 23:09:40', '2019-05-11 23:11:55'),
-(197, 1, 'Hepally Plus II 180 pills', '180 viên', '', 1100000, 1020000, 0, 0, 'hepally-Zeria-ii.jpg', 10, 17, '【第3類医薬品】ヘパリーゼプラスII 180錠', 'Thuốc  bổ gan Zeria II 180 viên', 0, '2019-05-11 23:21:13', '2019-05-12 00:56:32'),
+(193, 1, 'Daiso Đèn Pin Xe Đạp', '', '', 0, 0, 0, 0, NULL, 0, 68, '', 'Daiso Đèn Pin Xe Đạp', 0, '2019-05-05 19:24:14', '2019-05-27 12:07:51'),
+(194, 1, 'Daiso Cạo lông mày', '', '', 0, 0, 0, 0, NULL, 0, 68, '', 'Daiso Cạo lông mày', 0, '2019-05-05 19:25:24', '2019-05-27 12:07:40'),
+(195, 1, 'Cool Eraser', '', '', 0, 0, 0, 3, 'keshigomu.jpg', 34, 70, '', 'Gôm', 0, '2019-05-05 19:26:27', '2019-05-28 18:32:49'),
+(196, 1, 'Mochida Awasekken Pink 300ml', '300 ml', '', 670000, 610000, 610000, 1, 'mochida-awasekken-bottle.jpg', 25, 67, 'コラージュフルフル 泡石鹸 ピンク 300m L (医薬部外品)', 'Mochida nước rửa phụ khoa 300ml', 0, '2019-05-11 23:09:40', '2019-05-27 12:05:43'),
+(197, 1, 'Hepally Plus II 180 pills', '180 viên', '', 1100000, 1020000, 4018, 0, 'hepally-Zeria-ii.jpg', 10, 17, '【第3類医薬品】ヘパリーゼプラスII 180錠', 'Thuốc bổ gan Zeria II 180 viên', 0, '2019-05-11 23:21:13', '2019-06-03 11:33:26'),
 (198, 1, 'White Label Luxury Placenta', '', '', 370000, 300000, 0, 0, 'whitelabel-pracenta.jpg', 0, 0, 'ホワイトラベル 贅沢プラセンタのもっちり白肌クマトール\r\nWhite Label Luxury placentitis of a Crepe 白肌 Bear Tall\r\nKem tan mở mắt', 'Kem tan mở mắt nhau thai 100%', 0, '2019-05-11 23:36:45', '2019-05-19 03:11:24'),
 (199, 1, 'Spring・Autumn・Purple 3 Turmeric 240 pills', '240 pills', '', 550000, 450000, 0, 1, '3-turmeric.jpg', 10, 36, '野口医学研究所 春・秋・紫3種ウコン 240粒\r\nUkon', '3 Loại củ nghệ 240 viên', 0, '2019-05-11 23:44:19', '2019-05-19 03:17:11'),
-(200, 1, 'Fine Bone Kids Calcium', '', '', 250000, 190000, 0, 7, 'fine-bone-kids-calcium.jpg', 8, 48, 'ファイン 骨キッズカルシウム カルシウム500mg ビタミンD5.0μg ビタミンK2 7.0μg配合 チョコレート風味 14杯分 (1回20g/140g入)', 'Fine Canxi bổ xương trẻ em', 0, '2019-05-11 23:51:34', '2019-05-18 23:12:19'),
+(200, 1, 'Fine Bone Kids Calcium', '', '', 250000, 190000, 0, 7, 'fine-bone-kids-calcium.jpg', 8, 48, 'ファイン 骨キッズカルシウム カルシウム500mg ビタミンD5.0μg ビタミンK2 7.0μg配合 チョコレート風味 14杯分 (1回20g/140g入)', 'Fine Canxi bổ xương trẻ em bột cá tuyết', 0, '2019-05-11 23:51:34', '2019-05-26 19:48:15'),
 (201, 1, 'Unicharm Softoku Super Solid Mask 100 p', '100 miếng', '', 350000, 300000, 0, 0, 'softoku-mask-100.jpg', 24, 0, 'ユニチャーム ソフトーク 超立体マスク 100枚入', 'Khẩu trang Softoku 100 cái', 0, '2019-05-12 00:05:27', '2019-05-13 13:25:42'),
 (202, 1, 'PITTA MASK GRAY 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-gray-3.jpg', 24, 60, 'ピッタマスク(PITTA MASK) GRAY 3枚入', 'Khẩu trang Pitta xám set 3', 0, '2019-05-12 00:08:43', '2019-05-18 00:47:14'),
 (203, 1, 'PITTA MASK for Kids 3 Sheets', '', '', 150000, 110000, 0, 1, 'pitta-mask-kids-3.jpg', 24, 60, 'ピッタマスクキッズクール(PITTA MASK KIDS COOL) 3枚入 青・グレー・黄緑各色1枚入', 'Khẩu trang Pitta trẻ em set 3', 0, '2019-05-12 00:09:31', '2019-05-13 13:18:47'),
@@ -1157,24 +1303,50 @@ INSERT INTO `products` (`id`, `user_id`, `name`, `size`, `unit`, `price`, `whole
 (207, 1, 'Hada Labo Hakujun Lotion 170ml', '170 ml', '', 300000, 240000, 0, 0, 'hada-labo-hakujun-blue.jpg', 7, 59, '肌ラボ 白潤 薬用美白化粧水 高純度アルブチン×ビタミンC×和漢ハトムギエキス配合 170mL 【医薬部外品】', 'Hada Labo Nước hoa hồng Hakujun 170ml', 0, '2019-05-12 00:24:47', '2019-05-12 00:55:36'),
 (208, 1, 'Hada Labo Gokujun Lotion 170ml', '170 ml', '', 300000, 240000, 0, 1, 'hada-labo-gokujun-green.jpg', 7, 59, '【医薬部外品】肌研 薬用 極潤 スキンコンディショナー 抗炎症成分2種×ヒアルロン酸×スクワラン×ハトムギエキス配合 170mL', 'Hada Labo Nước hoa hồng Gokujun 170ml', 0, '2019-05-12 00:26:36', '2019-05-12 00:55:36'),
 (209, 1, 'Funwari Honey 90 pills', '90 pills', '', 590000, 510000, 0, 1, 'funwari-honey.jpg', 30, 0, 'ふんわりハニー 90粒', 'Nở ngực Funwari Honey 90', 0, '2019-05-12 00:34:06', '2019-05-18 10:46:00'),
-(210, 1, 'Nón Adidas', '', '', 0, 0, 0, 0, NULL, 0, 1, '', '', 0, '2019-05-12 01:06:14', '2019-05-12 01:17:46'),
+(210, 1, 'Adidas Hat', '', '', 0, 0, 2689, 0, 'adidas-hat.jpg', 0, 1, '', 'Nón Adidas', 0, '2019-05-12 01:06:14', '2019-06-03 11:31:22'),
 (211, 1, 'Shiseido Benefiance WrinkleResist 24', '', '', 1490000, 1400000, 0, 0, 'Shiseido-Benefiance-WrinkleResist-24.jpg', 28, 7, 'ベネフィアンス Wレジスト24 インテンシブ アイコントアクリーム 15ml', 'Kem Dưỡng chống nhăng Shiseido', 0, '2019-05-12 01:12:50', '2019-05-18 01:04:29'),
 (212, 1, 'Soft Stone Double Color Control  Ex Strong', '', '', 0, 0, 0, 0, 'softstone-w-deonachure.jpg', 29, 61, '医薬部外品】デオナチュレ ソフトストーンW \"カラーコントロール\"  ワキ用 直ヌリ 制汗剤 スティック', 'Lăn nách Soft Stone Ex (xanh)', 0, '2019-05-12 01:20:10', '2019-05-18 01:49:23'),
 (213, 1, 'PITTA MASK PINK 3 Sheets', '', '', 140000, 100000, 0, 1, 'pitta-mask-pink-3.jpg', 24, 60, 'ピッタマスク(PITTA MASK) PINK 3枚入', 'Khẩu trang Pitta hồng set 3', 0, '2019-05-12 01:53:59', '2019-05-18 00:54:16'),
-(214, 1, 'Melano CC Mask 30 sheet', '30 sheets', 'bịch', 390000, 340000, 980, 6, 'melano-cc-mask-30.jpg', 24, 14, 'ロート製薬 メラノCC 集中対策マスク 大容量 ３０枚', 'Mặt nạ Melano 30 miếng', 0, '2019-05-18 23:16:37', '2019-05-19 03:15:43'),
-(215, 1, 'Melano CC Mask premium 20 sheet', '20 sheets', 'bịch', 390000, 340000, 980, 11, 'melano-cc-mask-premium-30.jpg', 24, 14, 'ロート製薬 メラノＣＣ 集中対策マスクＭＫ しっとり ２０枚', 'Mặt nạ Melano premium 20 miếng', 0, '2019-05-18 23:55:00', '2019-05-19 00:09:07'),
+(214, 1, 'Melano CC Mask 30 sheet', '30 sheets', 'bịch', 390000, 340000, 980, 16, 'melano-cc-mask-30.jpg', 24, 14, 'ロート製薬 メラノCC 集中対策マスク 大容量 ３０枚', 'Mặt nạ Melano 30 miếng', 0, '2019-05-18 23:16:37', '2019-06-02 01:15:54'),
+(215, 1, 'Melano CC Mask premium 20 sheet', '20 sheets', 'bịch', 390000, 340000, 980, 1, 'melano-cc-mask-premium-30.jpg', 24, 14, 'ロート製薬 メラノＣＣ 集中対策マスクＭＫ しっとり ２０枚', 'Mặt nạ Melano premium 20 miếng', 0, '2019-05-18 23:55:00', '2019-06-02 01:16:09'),
 (216, 1, 'Soft Stone for Feet 7g', '7g', '', 250000, 200000, 638, 3, 'soft-stone-for-feet.jpg', 29, 61, '', 'Lăn chân Soft Stone 7g', 0, '2019-05-19 02:18:31', '2019-05-19 03:24:49'),
 (217, 1, '8x4 Rose + Verbena 150g', '', '', 0, 0, 0, 0, '8x4-rose-verbena.jpg', 29, 0, '8×4パウダースプレー ガーリーアロマ 150g 【ローズ&ヴァーベナの香り】 [医薬部外品]', 'Xịt nách 8x4 Hoa Hồng + Cỏ Roi Ngựa', 0, '2019-05-19 02:43:42', '2019-05-19 03:17:11'),
-(218, 1, 'Meiji Gumi', '', '', 45000, 35000, 100, 30, NULL, 23, 36, '', 'Kẹo dẽo Meiji', 0, '2019-05-19 02:52:24', '2019-05-19 03:10:26'),
+(218, 1, 'Meiji Gumi', '', '', 45000, 35000, 100, 60, NULL, 23, 36, '', 'Kẹo dẽo Meiji', 0, '2019-05-19 02:52:24', '2019-05-26 12:51:03'),
 (219, 1, 'Kororo Gumi', '', '', 40000, 35000, 100, 9, NULL, 23, 38, '', 'Kẹo dẽo Kororo', 0, '2019-05-19 02:53:14', '2019-05-19 03:10:26'),
 (220, 1, 'Shuuemura aitobarubu UV Compact FD (Refill) 574 ', '', '', 1000000, 900000, 4980, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, 'シュウウエムラ ザ・ライトバルブUVコンパクトFD(レフィル)574', 'Phấn phủ Shu', 0, '2019-05-19 03:02:26', '2019-05-19 03:24:49'),
 (221, 1, 'Maka SIXTEEN 200 pills', '', '', 0, 0, 0, 0, NULL, 0, 0, 'マカ皇帝倫SIXTEEN 200粒', 'Maka Sixteen 200', 0, '2019-05-19 03:06:27', '2019-05-19 03:10:26'),
 (222, 1, 'Shu Sponsor', '', '', 112000, 0, 0, 0, 'shu_uemura_spf_18_pa++.jpg', 15, 16, '', 'Bông Shu', 0, '2019-05-19 03:20:43', '2019-05-19 03:24:49'),
 (223, 1, 'Kẻ mắt', '', '', 230000, 0, 0, 0, NULL, 0, 0, '', 'Kẻ mắt', 0, '2019-05-19 03:24:16', '2019-05-19 03:24:49'),
-(224, 1, 'PAIR ACNE Face Soap', '', '', 320000, 250000, 0, 0, NULL, 25, 0, '', 'Sữa rửa mặt trị mụn PAIR ACNE', 0, '2019-05-19 03:26:48', '2019-05-19 03:27:40'),
+(224, 1, 'PAIR ACNE Face Soap', '', '', 320000, 250000, 0, 0, 'PAIR-ACNE-Face-Soap.jpg', 25, 0, '', 'Sữa rửa mặt trị mụn PAIR ACNE', 0, '2019-05-19 03:26:48', '2019-05-27 12:28:36'),
 (225, 1, 'E Okasan Cafe au Lait 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-cafe-au-lait.jpg', 31, 64, '森永 Eお母さん カフェオレ風味', 'Sữa bầu E Okasan Cafe au Lait 18gx12 ', 0, '2019-05-19 13:33:21', '2019-05-19 13:45:14'),
 (226, 1, 'E Okasan Matcha 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-matcha.jpg', 31, 64, '森永 Eお母さん 抹茶風味', 'Sữa bầu E Okasan Matcha 18gx12 ', 0, '2019-05-19 13:37:13', '2019-05-19 13:45:14'),
-(227, 1, 'E Okasan Milk tea 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-milk-tea.jpg', 31, 64, '森永 Eお母さん ミルクティ風味', 'Sữa bầu E Okasan Milk tea 18gx12 ', 0, '2019-05-19 13:38:43', '2019-05-19 13:45:14');
+(227, 1, 'E Okasan Milk tea 18g x 12', '12 ', '', 0, 0, 0, 0, 'e-mother-milk-tea.jpg', 31, 64, '森永 Eお母さん ミルクティ風味', 'Sữa bầu E Okasan Milk tea 18gx12 ', 0, '2019-05-19 13:38:43', '2019-05-19 13:45:14'),
+(228, 1, 'Hatomugi W Cleansing Face Wash 130g', '130 g', '', 170000, 120000, 275, 0, 'hatomugi-face-soap.jpg', 21, 0, '熊野油脂 麗白\r\n薬用 麗白 ハトムギWクレンジングフォーム 130g', 'Rửa mặt tẩy trang Hatomugi 130g', 0, '2019-05-26 11:17:36', '2019-05-26 11:17:36'),
+(229, 1, 'SK-II R.N.A.Power Radical New Age 2.5g', '2.5 g', '', 300000, 250000, 1000, 0, 'SK-ii-R.N.A-power-radical-new-age-2.5g.jpg', 7, 27, 'https://www.sk-ii.com.sg/product/moisturiser/rna-power-radical-new-age\r\nkem chống lão hoá', 'SK-II Mẫu thử kem chống lão hoá 2.5g', 0, '2019-05-26 11:25:39', '2019-05-26 19:18:10'),
+(230, 1, 'Chikunain 224 caps', '224 viên', '', 1270000, 1200000, 4809, 0, 'chichinan-224.jpg', 10, 37, '【第2類医薬品】チクナインb 224錠\r\nthuoc tri viem xoang', 'thuốc trị viêm xoang 224 viên', 0, '2019-05-26 11:32:27', '2019-05-26 19:22:57'),
+(231, 1, 'Mochida Awasekken Pink 150ml', '150 ml', '', 570000, 500000, 1891, 0, 'mochida-150ml.jpg', 25, 67, 'コラージュフルフル 泡石鹸 ピンク 150mL (医薬部外品)', 'Mochida nước rửa phụ khoa 150ml', 0, '2019-05-26 11:45:01', '2019-05-27 12:05:26'),
+(232, 1, 'Wadodo GuGu Kitchen 7', '', '', 65000, 56000, 127, 0, 'wakodo-gugukitchen.jpg', 32, 35, '和光堂 グーグーキッチン チキンと野菜のリゾット ８０ｇ（７ヶ月頃から）\r\n和光堂 グーグーキッチン とり雑炊 ８０ｇ（７ヶ月頃から）\r\n和光堂 グーグーキッチン 鮭の海鮮中華がゆ ８０ｇ\r\n和光堂 グーグーキッチン かぼちゃのグラタン ８０ｇ\r\n和光堂 グーグーキッチン まぐろの炊き込みごはん ８０ｇ\r\n和光堂 グーグーキッチン ひらめと卵のおじや ８０ｇ（７ヶ月頃から）', 'Cháo dinh dưỡng Wakodo 7 tháng', 0, '2019-05-26 13:00:17', '2019-05-26 19:20:10'),
+(233, 1, 'Shiseido Mineral Water Lotion 80ml', '80 ml', '', 280000, 220000, 610, 0, 'hadasui-blue.jpg', 33, 7, '肌に適度なうるおいを与えるミネラルウオーターローション\r\n\r\n●肌に必要なミネラル分を含む富士山麓の天然水が、適度なうるおいを与えるミネラルウオーターローションです。\r\n●100%天然水使用　\r\n●弱酸性・無香料・無着色・ノンアルコール　\r\n●ハーブエッセンス配合', 'Nước  hoa hồng Shiseido 80ml', 0, '2019-05-26 13:19:16', '2019-05-26 19:22:03'),
+(234, 1, 'YoKoYoKo 80ml', '80 ml', '', 260000, 210000, 573, 0, 'yokoyoko-80ml.jpg', 10, 37, 'ニューアンメルツヨコヨコA 80ml', 'Thuốc bóp YokoYoko 80ml', 0, '2019-05-26 19:02:29', '2019-05-26 19:29:01'),
+(235, 1, 'SK-II Facial Treatment Repair C 30ml', '30 ml', '', 3300000, 3150000, 0, 0, 'SK-II_Facial_Treatment_Repair_C_30ml.webp', 7, 27, 'フェイシャル\r\nトリートメント\r\nリペア\r\nC\r\n\r\n肌になじみのよいリッチな使い心地の美容液。肌のキメを整え、なめらかで、うるおいに満ちた肌へ導きます。', 'SK-II Serum phục hồi da mặt C', 0, '2019-05-26 19:14:50', '2019-05-27 11:06:20'),
+(236, 1, 'Canmake Marshmallow Finish Powder', '', '', 350000, 290000, 0, 0, 'Marshmallow-Finish-PowderMain.jpg', 7, 65, 'A matte light ochre that will make your skin look brighter in an instant\r\nCreate the perfect sweet-looking face that\'s as soft and light ♡ as a marshmallow!\r\nAchieve a matte finish that conceals pores and hides any unevenness in your complexion ☆\r\nA face powder for finishing your foundation and touching up your make-up through the day. Handy pressed formulation that\'s easy to carry in your bag.\r\n\r\nCreate a sweet-looking face that\'s as soft and light ♡ as a marshmallow\r\nA delicate powder that combines the smoothness of silk and the softness of a marshmallow ♡\r\nAdditive-free mineral formulation that\'s kind to your skin and can be removed with ordinary facial wash\r\n● Kind to your skin - contains 71% mineral ingredients.\r\n● No need to use special cleansers when removing your make-up - ordinary facial wash is fine!\r\nFree from surfactants, tar-based pigments, alcohol and fragrance.\r\nFormulation that prevents make-up wearing off due to shininess, dullness or dryness\r\n● Contains shine-preventing powder. This absorbs sebum, preventing shininess, stickiness and make-up fade.\r\nContains 10 beautifying agents to prevent skin becoming dry and rough\r\nMoisturizing agents \r\n● Aloe vera leaf extract, rosemary extract, chamomile extract, lemon extract\r\nToning agents \r\n● Horse chestnut extract, perilla (shiso) leaf extract\r\nEmollient agents \r\n● Squalane, olive oil, jojoba oil, grape seed oil\r\nContains concealing powder that makes pores and unevenness in skin texture much less noticeable\r\n● The two different-sized types of spherical powder particles create a light-scattering effect, making it hard to notice areas of concern, such as pores and unevenness of skin texture.\r\nComes with a puff\r\n[MO]Matte Ochre\r\n[MB]Matte Beige Ochre\r\n[ML]Matte Light Ochre\r\n[MP]Matte Pink Ochre', 'Phấn Canmake', 0, '2019-05-26 19:27:33', '2019-05-27 11:22:18'),
+(237, 1, 'Lush Fresh Bath & Shower', '', '', 0, 0, 0, 0, 'web_lucky_cat_bath_bomb_harajuku_2018.jpg', 0, 69, 'Lush Fresh Handmade Cosmetics\r\nhttps://jn.lush.com/products/bath-bombs', 'Viên tắm bồn Lush', 0, '2019-05-26 19:31:46', '2019-05-27 12:20:24'),
+(238, 1, 'Cezanne Cheek & Highlights', '', '', 0, 0, 0, 0, 'item_002_2.jpg', 7, 66, 'https://www.cezanne.co.jp/lineup/cheek/index.html', 'Cezane Phấn má hồng', 0, '2019-05-26 19:34:23', '2019-05-27 12:25:50'),
+(239, 1, 'Hada Labo Whitening Gel Cream Arbutin & Vitamin C 50g', '50 g', '', 450000, 380000, 1170, 0, 'hadalabo-gel-cream-arbuchin-vitamin-c-50g.jpg', 7, 59, 'Hada Labo PERFECT WHITE Arbutin Cream – Kem Hada Labo TRẮNG HOÀN HẢO (Hũ màu xanh) -450k-50g\r\n\r\nKem dưỡng trắng Hada Labo PERFECT WHITE dưỡng da trắng mịn, mượt mà với:\r\n\r\nArbutin tinh khiết ức chế sự hình thành và phân tán hắc tố melanin – nguyên nhân gây nám, tàn nhang & đốm nâu.\r\nVitamin C và B3 tăng cường khả năng chống ôxy hóa, dưỡng trắng các vùng da sậm màu, cho sắc da đều màu rạng rỡ.\r\nHA và nano HA cung cấp độ ẩm toàn diện cho làn da ẩm mượt, sáng mịn.\r\nMàng chống nắng bảo vệ da khỏi tác hại của tia UVA, UVB – nguyên nhân gây sạm da, đốm nâu, giúp dưỡng trắng da toàn diện.\r\n\r\n【医薬部外品】肌ラボ 白潤 薬用美白ジェル状クリーム 高純度アルブチン×ビタミンC配合 50g\r\n「肌研(ハダラボ)白潤シリーズ」はアルブチン(美白有効成分)と、ヒアルロン酸Na-2(うるおい成分)・ビタミンC誘導体(うるおい成分)を配合。\r\n美白効果により、メラニンの生成を抑え、しみ・そばかすを防ぎます。\r\nまた、うるおいを与えてキメを整えることで、透明感に満ちたお肌へと導きます。\r\n「白潤 薬用美白クリーム」はみずみずしくて伸びの良い、ジェル状クリーム。\r\nサラッとしているのにしっかりうるおいます。', 'Hada Labo Gel Cream Arbutin + Vitamin C 50g', 0, '2019-05-29 16:54:11', '2019-06-02 02:06:11'),
+(240, 1, 'Hada Labo Hiaruron Cream 50g', '50 g', '', 450000, 430000, 0, 0, 'hadalabo-hiaruron-cream-50g.jpg', 7, 59, 'Hada Labo ADVANCED NOURISH Hyaluron Cream – Kem Hada Labo DƯỠNG TỐI ƯU (Hũ màu trắng) -450k-50g\r\n\r\nKhi da thường xuyên được cung cấp đầy đủ độ ẩm và dưỡng chất, làn da sẽ luôn giữ vẻ tươi sáng, săn chắc, mịn màng, ngăn ngừa quá trình lão hóa và nám da.\r\nVới dạng cô đặc Kem dưỡng ẩm tối ưu Hada Labo ADVANCED NOURISH giúp dưỡng ẩm chuyên sâu, cung cấp độ ẩm cao phù hợp ngay cả với phụ nữ trung niên, da khô hay thời tiết khô lạnh.\r\n\r\n「極潤 ヒアルロンクリーム」は、2つのヒアルロン酸*を配合した、うるおいにこだわった保湿クリーム。*うるおい成分:アセチルヒアルロン酸Na(スーパーヒアルロン酸)、ヒアルロン酸Na\r\nしっとりぷるぷるのジェルクリームが、濃密なうるおいで肌を包み込みます。\r\n健康な素肌と同じ弱酸性。\r\n肌へのやさしさに配慮した、低刺激性・無香料・無着色・鉱物油フリー・アルコールフリーです', 'Kem Hada Labo DƯỠNG TỐI ƯU', 0, '2019-05-29 17:11:13', '2019-05-29 17:11:13'),
+(241, 1, 'Hada Labo Alpha Rifutoku Cream 50g', '50 g', '', 470000, 440000, 0, 0, 'hada-labo-alpha.jpg', 7, 59, 'Hada Labo PRO ANTI AGING COLLAGEN PLUS Cream – Kem dưỡng chuyên biệt Hada Labo PRO ANTI AGING (Hũ màu đỏ)-470k-50g\r\n\r\nKem dưỡng chuyên biệt Hada Labo PRO ANTI AGING có dạng cô đặc, thấm nhanh, không nhờn rít, dưỡng chuyên sâu giúp tái tạo da, làm mờ nếp nhăn, phục hồi vùng da kém săn chắc; Cải thiện thâm, nám; Dưỡng ẩm sâu, khắc phục tình trạng khô sạm da.\r\n\r\n肌ラボ 極潤α リフトクリーム\r\n\r\nエイジングケア*1に拘る極潤αシリーズ。*1年齢に応じた潤いケア\r\n肌にハリを与える低分子化エラスチン*2(潤い成分)と、肌の上で潤いネットを形成する3Dヒアルロン酸*3(潤い成分)を配合。*2加水分解エラスチン*3ヒアルロン酸クロスポリマーNａ\r\n肌の基礎を支える細胞レベル(角質細胞)に働きかけるメカニズムに着目。\r\n潤いを閉じ込め、肌*4深くからピンと弾むようなハリ肌へ。。*4角質層\r\n濃厚な感触のクリーム', 'Kem dưỡng chuyên biệt Hada Labo PRO ANTI AGING', 0, '2019-05-29 17:37:36', '2019-05-29 17:37:36'),
+(242, 1, 'Hada Labo Premium Cream', '50 g', '', 470000, 440000, 0, 0, 'hada-labo-premium.jpg', 7, 59, '', 'Hada Labo Kem dưỡng Premium', 0, '2019-05-29 17:37:36', '2019-05-29 17:40:40'),
+(243, 1, 'ILIFE V8s', '', '', 8600000, 8400000, 0, 0, 'ilife-v8s.jpg', 26, 57, '【ご注意：ILIFE製品はチイロボットのみが正規販売店ですのでご注意ください】計画式清掃システムを搭載したV8sロボット掃除機は吸い込み掃除機能、水拭き掃除機能を備えています。弓形走行ルートシステムにより、逃す所がなく届ける場所を全て掃除します。掃除開始する前に、V8sが清掃予定のエリアを計算していくつの小さなエリアに分け、走行する時の誤差を大幅減少します。\r\n更新された浮遊吸引口と車輪、地面に合わせてより効率的な掃除できます。ロールブラシのない吸引口は髪など物が絡まらなくスムーズに吸い取ります。構造上、吸引口のサイズを小さくなり、吸引力を引き上げました、ロールブラシのない所を補足しました。\r\n１週間の間、お好きな日のお好きな時間に本体の鍵によってロボット掃除機の清掃予約ができます。１週間、毎日違う時間の設定をすることも可能です。予約が簡単になります。\r\n７５０ｍｌの最大サイズの引き出し式ダストボックスは通常のロボット掃除機の２倍以上。掃除可能範囲も最大になりました。\r\nウォータータンクには良好な I-Droppingシステムを備え、水拭きの際は適量を給水し、給水過多などの問題発生を防止します。', 'ILIFE V8s ', 0, '2019-05-29 17:53:12', '2019-06-02 02:01:46'),
+(244, 1, 'KOSE Suncut Perfect UV Essence 110g', '110 g', '', 420000, 350000, 1058, 0, 'kose-suncut-110g.jpg', 14, 18, 'KOSE サンカット パーフェクト UVエッセンス 無香料 110g', 'KOSE Kem chống nắng 110g', 0, '2019-06-02 00:49:58', '2019-06-02 02:15:00'),
+(245, 1, 'Pelican Hip Care Soap 80g', '80 g', '', 220000, 150000, 530, 0, 'oshiri-sekken.jpg', 7, 49, 'ペリカン石鹸 恋するおしり ヒップケアソープ 80g\r\nOshiri', 'Pelican Xà phòng ngừa thăm mông 80g', 0, '2019-06-02 00:58:57', '2019-06-02 02:16:17'),
+(246, 1, 'Kose Medicated Whitening Cream 40g', '', '', 1150000, 1050000, 4147, 0, 'medicated_sekkisei.jpg', 16, 18, 'コーセー 薬用 雪肌精 クリーム 40g', 'Kose Kem trắng da 40g', 0, '2019-06-02 01:09:50', '2019-06-02 02:21:38'),
+(247, 1, 'Pigeon Birth Preparation Set (Mickey & Minnie)', '', '', 1100000, 1000000, 3769, 0, 'set_pigeon.jpg', 0, 3, 'ピジョン 出産準備セット（ミッキー＆ミニー）', 'Set Pigeon (Mickey & Minnie)', 0, '2019-06-02 01:14:41', '2019-06-02 02:25:42'),
+(248, 1, 'Liquid Bandage Sakamu Care 10g', '', '', 250000, 200000, 0, 3, 'sakamukea.jpg', 10, 37, '【第3類医薬品】サカムケア 10g', 'Dung dịch bảo vệ vết thương 10g', 0, '2019-06-02 01:27:06', '2019-06-02 01:28:59'),
+(249, 1, 'Canmake Powder Cheeks', '', '', 230000, 180000, 0, 0, 'PW.jpg', 7, 65, 'パウダーチークス\r\nUVカット効果\r\n\r\nしっとりさらさら♡オイルインベース処方チーク\r\n\r\n肌なじみが良く、保湿効果・密着力が高いオイルインベース処方。\r\nさっぱり保湿パウダー・ロングラスティング効果のあるパウダーを配合。しっとりさらさら質感を長時間キープ。\r\nマット・パールの２タイプ！自分好みに使い分けて♥\r\n\r\n◆マットタイプ◆\r\nふんわり可愛らしい仕上がりに。\r\n血色感メイクやナチュラルメイクにオススメ。\r\n◆パールタイプ◆\r\nパッと明るく華やかな仕上がり。\r\n自然なツヤ感とハリを演出。\r\nパーティメイクなど明るい印象にしたいときにオススメ。\r\n\r\n使い方を閉じる\r\n・ブラシに適量を取り、頬の高い位置にふんわりと入れます。\r\n・ハイライト・シェーディングと組み合わせて使うと、より立体的な顔立ちに見せることができます\r\n\r\n商品の色はブラウザやディスプレイ設定などにより多少現品と異なる場合がありますので、予めご了承ください。', 'Canmake Phấn má hồng', 0, '2019-06-02 01:37:57', '2019-06-02 01:37:57'),
+(250, 1, 'Muji Sun Glasses UV 400 cut', '', '', 550000, 450000, 0, 3, '4550002909680_1260.jpg', 14, 46, 'ＵＶ４００カット　ミディアムスクエア型サングラス　黒', 'Muji Kính chống nắng 400 UV Cut', 0, '2019-06-02 01:51:30', '2019-06-02 02:02:44'),
+(251, 1, 'GU Áo khoát chống nắng UV cut', '', '', 550000, 450000, 0, 1, NULL, 0, 71, '', 'GU Áo khoát chống nắng UV cut', 0, '2019-06-02 01:57:42', '2019-06-02 02:21:38'),
+(252, 1, '口内炎パッチ大正Ａ', '10 sheet', '', 245000, 200000, 799, 0, '01951_Product.jpg', 0, 0, '口内炎パッチ大正Ａ', 'Miếng dán nhiệt miệng', 0, '2019-06-02 02:13:37', '2019-06-02 02:15:00'),
+(253, 1, 'Aqua Áo khoát chống nắng UV Cut', '', '', 850000, 750000, 0, 0, NULL, 0, 0, '', 'Aqua Áo khoát chống nắng UV Cut', 0, '2019-06-02 02:19:13', '2019-06-02 02:21:38');
 
 -- --------------------------------------------------------
 
@@ -1339,7 +1511,16 @@ INSERT INTO `products_prices` (`id`, `product_id`, `price`, `wholesale_price`, `
 (141, 191, 0, 0, NULL, '2019-05-05 19:15:47'),
 (142, 216, 210000, 200000, NULL, '2019-05-19 02:38:28'),
 (143, 222, 1000000, 900000, NULL, '2019-05-19 03:20:43'),
-(144, 222, 1000000, 900000, NULL, '2019-05-19 03:20:43');
+(144, 222, 1000000, 900000, NULL, '2019-05-19 03:20:43'),
+(145, 229, 2900000, 2750000, NULL, '2019-05-26 11:25:39'),
+(146, 230, 520000, 450000, NULL, '2019-05-26 11:32:27'),
+(147, 231, 670000, 610000, NULL, '2019-05-26 11:45:01'),
+(148, 235, 300000, 250000, NULL, '2019-05-26 19:14:50'),
+(149, 235, 300000, 250000, NULL, '2019-05-26 19:16:08'),
+(150, 236, 350000, 300000, NULL, '2019-05-26 19:27:33'),
+(151, 239, 400000, 350000, NULL, '2019-06-02 00:41:07'),
+(152, 181, 0, 0, NULL, '2019-05-27 12:26:28'),
+(153, 183, 0, 0, NULL, '2019-06-03 11:38:05');
 
 -- --------------------------------------------------------
 
@@ -1368,14 +1549,14 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (6, 1, 11, 1, 1),
 (7, 1, 30, 1, 0),
 (8, 1, 4, 1, 9),
-(9, 1, 13, 1, 2),
+(9, 1, 13, 1, 7),
 (10, 1, 16, 1, 0),
 (11, 1, 31, 1, 0),
 (12, 1, 14, 1, 5),
 (13, 1, 32, 1, 5),
 (14, 1, 26, 1, 1),
-(15, 1, 33, 1, 0),
-(16, 1, 34, 1, 1),
+(15, 1, 33, 1, 1),
+(16, 1, 34, 1, 3),
 (17, 1, 1, 2, 5),
 (18, 1, 27, 1, 4),
 (19, 1, 27, 2, 4),
@@ -1442,7 +1623,7 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (80, 1, 77, 1, 0),
 (81, 1, 84, 1, 3),
 (82, 1, 84, 2, 2),
-(83, 1, 45, 1, 0),
+(83, 1, 45, 1, 5),
 (84, 1, 3, 1, 0),
 (85, 1, 19, 1, 0),
 (86, 1, 86, 1, 0),
@@ -1536,9 +1717,9 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (174, 1, 162, 1, 0),
 (175, 1, 163, 1, 0),
 (176, 1, 160, 1, 30),
-(177, 1, 166, 1, 4),
+(177, 1, 166, 1, 7),
 (178, 1, 169, 1, 1),
-(179, 1, 168, 1, 5),
+(179, 1, 168, 1, 10),
 (180, 1, 167, 1, 4),
 (181, 1, 170, 1, 0),
 (182, 1, 171, 1, 5),
@@ -1547,13 +1728,13 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (185, 1, 174, 1, 7),
 (186, 1, 175, 1, 5),
 (187, 1, 68, 2, 1),
-(188, 1, 181, 1, 1),
+(188, 1, 181, 1, 0),
 (189, 1, 182, 1, 0),
 (190, 1, 183, 1, 0),
 (191, 1, 184, 1, 0),
 (192, 1, 185, 1, 0),
 (193, 1, 186, 1, 0),
-(194, 1, 187, 1, 0),
+(194, 1, 187, 1, 4),
 (195, 1, 188, 1, 0),
 (196, 1, 189, 1, 0),
 (197, 1, 190, 1, 1),
@@ -1561,7 +1742,7 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (199, 1, 192, 1, 2),
 (200, 1, 193, 1, 0),
 (201, 1, 194, 1, 0),
-(202, 1, 195, 1, 0),
+(202, 1, 195, 1, 3),
 (203, 1, 197, 1, 0),
 (204, 1, 198, 1, 0),
 (205, 1, 199, 1, 1),
@@ -1580,10 +1761,10 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (218, 1, 212, 1, 0),
 (219, 1, 176, 1, 2),
 (220, 1, 213, 1, 1),
-(221, 1, 214, 1, 6),
+(221, 1, 214, 1, 16),
 (222, 1, 216, 1, 3),
 (223, 1, 217, 1, 0),
-(224, 1, 218, 1, 30),
+(224, 1, 218, 1, 60),
 (225, 1, 219, 1, 9),
 (226, 1, 220, 1, 0),
 (227, 1, 221, 1, 0),
@@ -1592,7 +1773,31 @@ INSERT INTO `products_quantities` (`id`, `user_id`, `product_id`, `warehouse_id`
 (230, 1, 224, 1, 0),
 (231, 1, 225, 1, 0),
 (232, 1, 226, 1, 0),
-(233, 1, 227, 1, 0);
+(233, 1, 227, 1, 0),
+(234, 1, 229, 1, 0),
+(235, 1, 230, 1, 0),
+(236, 1, 55, 1, 6),
+(237, 1, 231, 1, 0),
+(238, 1, 196, 1, 1),
+(239, 1, 232, 1, 0),
+(240, 1, 233, 1, 0),
+(241, 1, 234, 1, 0),
+(242, 1, 235, 1, 0),
+(243, 1, 236, 1, 0),
+(244, 1, 237, 1, 0),
+(245, 1, 238, 1, 0),
+(246, 1, 243, 1, 0),
+(247, 1, 239, 1, 0),
+(248, 1, 244, 1, 0),
+(249, 1, 245, 1, 0),
+(250, 1, 246, 1, 0),
+(251, 1, 247, 1, 0),
+(252, 1, 215, 1, 1),
+(253, 1, 248, 1, 3),
+(254, 1, 250, 1, 3),
+(255, 1, 251, 1, 1),
+(256, 1, 252, 1, 0),
+(257, 1, 253, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2016,7 +2221,52 @@ INSERT INTO `product_ins` (`id`, `product_id`, `warehouse_id`, `market_price`, `
 (396, 224, 1, 0, 0, 320000, 1, '', '2019-05-19 03:27:22', '2019-05-19 03:27:22'),
 (397, 225, 1, 925, 925, 0, 3, 'omni7', '2019-05-19 13:42:59', '2019-05-19 13:42:59'),
 (398, 226, 1, 925, 925, 0, 3, 'omni7', '2019-05-19 13:43:15', '2019-05-19 13:43:15'),
-(399, 227, 1, 925, 925, 0, 4, 'omni7', '2019-05-19 13:43:34', '2019-05-19 13:43:34');
+(399, 227, 1, 925, 925, 0, 4, 'omni7', '2019-05-19 13:43:34', '2019-05-19 13:43:34'),
+(400, 166, 1, 2116, 2116, 750000, 2, 'amazon', '2019-05-26 11:20:57', '2019-05-26 11:20:57'),
+(401, 229, 1, 1000, 1000, 300000, 1, 'amazon', '2019-05-26 11:31:38', '2019-05-26 11:31:38'),
+(402, 230, 1, 4809, 4809, 1270000, 2, 'amazon', '2019-05-26 11:39:54', '2019-05-26 11:39:54'),
+(403, 55, 1, 870, 870, 390000, 6, 'amazon', '2019-05-26 11:43:07', '2019-05-26 11:43:07'),
+(404, 231, 1, 1944, 1891, 570000, 1, 'amazon', '2019-05-26 12:31:33', '2019-05-26 12:31:33'),
+(405, 187, 1, 1148, 1192, 450000, 5, 'amazon', '2019-05-26 12:38:17', '2019-05-26 12:38:17'),
+(406, 196, 1, 2186, 2186, 670000, 1, 'amazon', '2019-05-26 12:42:01', '2019-05-26 12:42:01'),
+(407, 149, 1, 2650, 2650, 550000, 1, 'amazon #PK355', '2019-05-26 12:43:00', '2019-05-26 12:43:00'),
+(408, 149, 1, 2552, 2552, 550000, 1, 'amazon #rd144', '2019-05-26 12:43:40', '2019-05-26 12:43:40'),
+(409, 168, 1, 1080, 1080, 400000, 5, 'amazon', '2019-05-26 12:44:38', '2019-05-26 12:44:38'),
+(410, 45, 1, 1404, 1404, 450000, 5, 'amazon', '2019-05-26 12:45:18', '2019-05-26 12:45:18'),
+(411, 197, 1, 4017, 4017, 1100000, 5, 'amazon', '2019-05-26 12:46:58', '2019-05-26 12:46:58'),
+(412, 197, 1, 4017, 4860, 1100000, 1, 'biccamera ikebukuro', '2019-05-26 12:48:39', '2019-05-26 12:48:39'),
+(413, 218, 1, 95, 95, 45000, 30, 'biccamera ikebukuro', '2019-05-26 12:51:02', '2019-05-26 12:51:02'),
+(414, 232, 1, 127, 127, 65000, 6, 'bic odakyu', '2019-05-26 13:08:44', '2019-05-26 13:08:44'),
+(415, 233, 1, 702, 518, 280000, 1, 'bic odakyu', '2019-05-26 13:19:51', '2019-05-26 13:19:51'),
+(416, 234, 1, 654, 537, 260000, 3, 'bic odakyu', '2019-05-26 19:03:51', '2019-05-26 19:03:51'),
+(417, 34, 1, 1980, 1980, 590000, 2, 'donki shinjuku', '2019-05-26 19:07:35', '2019-05-26 19:07:35'),
+(418, 33, 1, 1980, 1980, 590000, 2, 'donki shinjuku', '2019-05-26 19:07:48', '2019-05-26 19:07:48'),
+(419, 13, 1, 6104, 6104, 1450000, 2, 'bic shinjuku', '2019-05-26 19:10:19', '2019-05-26 19:10:19'),
+(420, 82, 1, 0, 0, 3750000, 1, '', '2019-05-26 19:13:38', '2019-05-26 19:13:38'),
+(421, 235, 1, 0, 0, 300000, 1, '', '2019-05-26 19:17:47', '2019-05-26 19:17:47'),
+(422, 236, 1, 0, 0, 350000, 1, '', '2019-05-26 19:27:55', '2019-05-26 19:27:55'),
+(423, 237, 1, 0, 0, 0, 4, 'Lush', '2019-05-26 19:32:29', '2019-05-26 19:32:29'),
+(424, 238, 1, 0, 0, 0, 1, '', '2019-05-26 19:34:43', '2019-05-26 19:34:43'),
+(425, 149, 1, 0, 0, 550000, 2, '', '2019-05-26 19:38:16', '2019-05-26 19:38:16'),
+(426, 153, 1, 0, 0, 55000, 3, '', '2019-05-26 19:39:06', '2019-05-26 19:39:06'),
+(427, 195, 1, 0, 0, 0, 6, '', '2019-05-26 19:39:59', '2019-05-26 19:39:59'),
+(428, 243, 1, 29900, 23900, 8600000, 1, 'amazon', '2019-06-02 00:35:01', '2019-06-02 00:35:01'),
+(429, 239, 1, 1170, 1170, 400000, 1, 'amazon', '2019-06-02 00:41:07', '2019-06-02 00:41:07'),
+(430, 244, 1, 1058, 790, 420000, 1, 'amazon', '2019-06-02 00:51:24', '2019-06-02 00:51:24'),
+(431, 245, 1, 529, 529, 220000, 1, 'amazon', '2019-06-02 00:59:59', '2019-06-02 00:59:59'),
+(432, 246, 1, 4146, 4146, 1150000, 1, 'amazon', '2019-06-02 01:10:36', '2019-06-02 01:10:36'),
+(433, 166, 1, 2116, 2116, 750000, 3, 'amazon', '2019-06-02 01:11:33', '2019-06-02 01:11:33'),
+(434, 247, 1, 3769, 3769, 1100000, 1, 'amazon', '2019-06-02 01:15:13', '2019-06-02 01:15:13'),
+(435, 214, 1, 980, 980, 390000, 10, 'matsumoto kiyoshi', '2019-06-02 01:15:54', '2019-06-02 01:15:54'),
+(436, 215, 1, 980, 980, 390000, 1, 'matsumoto kiyoshi', '2019-06-02 01:16:09', '2019-06-02 01:16:09'),
+(437, 248, 1, 743, 591, 250000, 3, 'yamada shinjuku', '2019-06-02 01:28:07', '2019-06-02 01:28:07'),
+(438, 13, 1, 5573, 5599, 1450000, 3, 'rakuten', '2019-06-02 01:32:14', '2019-06-02 01:32:14'),
+(439, 210, 1, 2698, 2698, 0, 2, 'adidas', '2019-06-02 01:47:46', '2019-06-02 01:47:46'),
+(440, 250, 1, 1490, 1490, 550000, 4, 'Muji', '2019-06-02 01:52:56', '2019-06-02 01:52:56'),
+(441, 251, 1, 1609, 1609, 550000, 2, 'GU shintokorozawa', '2019-06-02 01:59:14', '2019-06-02 01:59:14'),
+(442, 252, 1, 799, 799, 245000, 1, 'yamada shinjuku', '2019-06-02 02:14:31', '2019-06-02 02:14:31'),
+(443, 253, 1, 3218, 3218, 850000, 1, '', '2019-06-02 02:20:01', '2019-06-02 02:20:01'),
+(444, 247, 1, 3769, 3769, 1100000, 1, 'amazon', '2019-06-02 02:24:28', '2019-06-02 02:24:28');
 
 -- --------------------------------------------------------
 
@@ -2062,9 +2312,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `data`, `created`, `updated`) VALUES
-('u11d030dmnm2m8djgd1pve1l02', 'General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}navigated|i:1558242262;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\BrandsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\CategoriesController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:55:\"[General\\Core\\Manager\\Models\\Invoice].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:45:\"[General\\Core\\Manager\\Models\\Invoice].id DESC\";}}$PHALCON/CSRF$|s:16:\"wPVdqMxn7NlKtmj0\";', 1558236217, 1558242263),
-('mjdppagjhdr3c2jmtml04ci065', 'General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";N;}navigated|i:1558248467;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";N;}', 1558248433, 1558248468),
-('gbt8i1t2ei3o6sgnor49tqpsv7', 'General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:57:\"[General\\Core\\Manager\\Models\\Transport].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:47:\"[General\\Core\\Manager\\Models\\Transport].id DESC\";}}navigated|i:1558278065;General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}$PHALCON/CSRF$|s:16:\"apETSyosy4rYwZMR\";', 1558277690, 1558278066);
+('l7uf3mg2qetphebou3ptjr8vs3', 'navigated|i:1559524998;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}', 1559524998, 1559525000),
+('s777ksllspkjpr3cuk7feptu36', 'navigated|i:1559529591;General\\Core\\Manager\\Controllers\\IndexController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\MainController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\SessionsController|a:1:{s:10:\"parameters\";N;}auth|a:7:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:5:\"Khang\";s:5:\"login\";s:5:\"admin\";s:7:\"role_id\";s:1:\"4\";s:4:\"role\";s:7:\"manager\";s:12:\"role_display\";s:7:\"Manager\";s:11:\"role_demote\";i:1;}General\\Core\\Manager\\Controllers\\TransportsController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:57:\"[General\\Core\\Manager\\Models\\Transport].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:47:\"[General\\Core\\Manager\\Models\\Transport].id DESC\";}}General\\Core\\Manager\\Controllers\\InvoicesController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\ClientsController|a:1:{s:10:\"parameters\";N;}General\\Core\\Manager\\Controllers\\OutGoingController|a:1:{s:10:\"parameters\";a:3:{s:10:\"conditions\";s:56:\"[General\\Core\\Manager\\Models\\OutGoing].user_id=:user_id:\";s:4:\"bind\";a:1:{s:7:\"user_id\";s:1:\"1\";}s:5:\"order\";s:53:\"[General\\Core\\Manager\\Models\\OutGoing].exec_date DESC\";}}General\\Core\\Manager\\Controllers\\ProductsController|a:1:{s:10:\"parameters\";a:1:{s:5:\"order\";s:44:\"[General\\Core\\Manager\\Models\\Product].id ASC\";}}$PHALCON/CSRF$|s:16:\"ZdvykTPD4InHHqAu\";General\\Core\\Manager\\Controllers\\InventoryController|a:1:{s:10:\"parameters\";a:1:{s:5:\"order\";s:44:\"[General\\Core\\Manager\\Models\\Product].id ASC\";}}', 1559524999, 1559529594);
 
 -- --------------------------------------------------------
 
@@ -2080,6 +2329,7 @@ CREATE TABLE `transports` (
   `total` float UNSIGNED DEFAULT '0',
   `total_others` float UNSIGNED DEFAULT '0',
   `flight_date` datetime DEFAULT '0000-00-00 00:00:00',
+  `flight_end` datetime DEFAULT NULL,
   `remarks` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `send_id` int(10) UNSIGNED DEFAULT '0',
   `receive_id` int(10) UNSIGNED DEFAULT '0',
@@ -2093,19 +2343,21 @@ CREATE TABLE `transports` (
 -- テーブルのデータのダンプ `transports`
 --
 
-INSERT INTO `transports` (`id`, `name`, `user_id`, `client_id`, `total`, `total_others`, `flight_date`, `remarks`, `send_id`, `receive_id`, `status`, `disabled`, `created`, `updated`) VALUES
-(1, '330857144133', 1, 6, 45090000, 0, '0000-00-00 00:00:00', 'Dot1-20190226', 0, 0, 6, 0, '2019-04-09 18:47:28', '2019-04-16 16:51:32'),
-(2, '330857657395', 1, 6, 13250000, 0, '0000-00-00 00:00:00', 'Dot2-20190302', 0, 0, 6, 0, '2019-04-10 03:34:39', '2019-04-20 00:49:03'),
-(3, '330858751532-330858536610', 1, 36, 8190000, 408000, '0000-00-00 00:00:00', 'Dot3&4-20190319', 0, 0, 6, 0, '2019-04-10 17:25:22', '2019-04-16 16:49:27'),
-(4, '330859467676', 1, 36, 10660000, 408000, '0000-00-00 00:00:00', 'Dot5-20190322', 0, 0, 6, 0, '2019-04-11 01:26:03', '2019-04-20 01:02:42'),
-(5, '330860214204', 1, 36, 8350000, 732000, '0000-00-00 00:00:00', 'Dot6-20190329', 0, 0, 6, 0, '2019-04-11 10:58:00', '2019-05-01 23:26:33'),
-(6, '330860913596', 1, 36, 25395000, 2906000, '2019-04-14 00:00:00', 'Dot7-20190406', 0, 0, 6, 0, '2019-04-14 00:55:36', '2019-05-01 23:30:41'),
-(7, '330861520986', 1, 36, 16124000, 3092000, '2019-04-18 00:00:00', 'Dot8-20190406', 53, 10, 6, 0, '2019-04-14 02:24:09', '2019-05-01 23:32:09'),
-(8, '3308-6217-4683', 1, 63, 13330000, 3107000, '2019-04-25 00:00:00', 'Dot 9 - 2019-04-21', 53, 10, 6, 0, '2019-04-20 01:27:22', '2019-05-08 15:14:17'),
-(9, '745-8776-8474', 1, 36, 19190000, 715000, '2019-05-02 00:00:00', 'Dot 10', 53, 10, 6, 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
-(10, '3308-6395-4046', 1, 36, 13637000, 333000, '2019-05-07 00:00:00', 'Dot 11', 53, 10, 6, 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
-(11, '3308-6480-2590', 1, 63, 32310000, 0, '2019-05-17 00:00:00', 'Đợt 12', 53, 10, 5, 0, '2019-05-13 11:34:58', '2019-05-19 23:55:51'),
-(12, '3308-6541-7761', 1, 36, 13052000, 473000, '2019-05-21 00:00:00', 'Dot 13', 53, 10, 1, 0, '2019-05-20 00:00:41', '2019-05-20 00:00:56');
+INSERT INTO `transports` (`id`, `name`, `user_id`, `client_id`, `total`, `total_others`, `flight_date`, `flight_end`, `remarks`, `send_id`, `receive_id`, `status`, `disabled`, `created`, `updated`) VALUES
+(1, '330857144133', 1, 6, 45090000, 0, '0000-00-00 00:00:00', NULL, 'Dot1-20190226', 0, 0, 6, 0, '2019-04-09 18:47:28', '2019-04-16 16:51:32'),
+(2, '330857657395', 1, 6, 13250000, 0, '0000-00-00 00:00:00', NULL, 'Dot2-20190302', 0, 0, 6, 0, '2019-04-10 03:34:39', '2019-04-20 00:49:03'),
+(3, '330858751532-330858536610', 1, 36, 8190000, 408000, '0000-00-00 00:00:00', NULL, 'Dot3&4-20190319', 0, 0, 6, 0, '2019-04-10 17:25:22', '2019-04-16 16:49:27'),
+(4, '330859467676', 1, 36, 10660000, 408000, '0000-00-00 00:00:00', NULL, 'Dot5-20190322', 0, 0, 6, 0, '2019-04-11 01:26:03', '2019-04-20 01:02:42'),
+(5, '330860214204', 1, 36, 8350000, 732000, '0000-00-00 00:00:00', NULL, 'Dot6-20190329', 0, 0, 6, 0, '2019-04-11 10:58:00', '2019-05-01 23:26:33'),
+(6, '330860913596', 1, 36, 25395000, 2906000, '2019-04-14 00:00:00', NULL, 'Dot7-20190406', 0, 0, 6, 0, '2019-04-14 00:55:36', '2019-05-01 23:30:41'),
+(7, '330861520986', 1, 36, 16124000, 3092000, '2019-04-18 00:00:00', NULL, 'Dot8-20190406', 53, 10, 6, 0, '2019-04-14 02:24:09', '2019-05-01 23:32:09'),
+(8, '3308-6217-4683', 1, 63, 13330000, 3107000, '2019-04-25 00:00:00', NULL, 'Dot 9 - 2019-04-21', 53, 10, 6, 0, '2019-04-20 01:27:22', '2019-05-08 15:14:17'),
+(9, '745-8776-8474', 1, 36, 19190000, 715000, '2019-05-02 00:00:00', NULL, 'Dot 10', 53, 10, 6, 0, '2019-05-02 00:19:23', '2019-05-19 15:47:47'),
+(10, '3308-6395-4046', 1, 36, 13637000, 333000, '2019-05-07 00:00:00', NULL, 'Dot 11', 53, 10, 6, 0, '2019-05-06 23:17:48', '2019-05-19 23:55:38'),
+(11, '3308-6480-2590', 1, 63, 32310000, 0, '2019-05-17 00:00:00', '2019-05-21 00:00:00', 'Đợt 12', 53, 10, 6, 0, '2019-05-13 11:34:58', '2019-05-29 18:02:56'),
+(12, '3308-6541-7761', 1, 36, 13052000, 473000, '2019-05-21 00:00:00', '2019-05-27 00:00:00', 'Dot 13', 53, 10, 6, 0, '2019-05-20 00:00:41', '2019-05-29 18:04:46'),
+(13, '3308-6607-4453', 1, 63, 18010000, 5136000, '2019-05-31 00:00:00', '2019-06-01 00:00:00', 'Dot 14', 53, 10, 2, 0, '2019-05-28 17:40:01', '2019-06-02 13:32:46'),
+(14, '3308-6667-4681', 1, 63, 19605000, 385000, '2019-06-07 00:00:00', '2019-06-08 00:00:00', 'Dot 15', 53, 10, 2, 0, '2019-06-02 02:30:07', '2019-06-03 10:42:00');
 
 -- --------------------------------------------------------
 
@@ -2246,33 +2498,140 @@ INSERT INTO `transport_invoices` (`id`, `transport_id`, `invoice_id`, `created`,
 (440, 10, 123, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
 (441, 10, 124, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
 (442, 10, 125, '2019-05-19 23:55:39', '2019-05-19 23:55:39'),
-(443, 11, 126, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(444, 11, 127, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(445, 11, 128, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(446, 11, 129, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(447, 11, 130, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(448, 11, 131, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(449, 11, 132, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(450, 11, 133, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(451, 11, 134, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(452, 11, 135, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(453, 11, 136, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(454, 11, 137, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(455, 11, 138, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(456, 11, 139, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(457, 11, 140, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(458, 11, 141, '2019-05-19 23:55:51', '2019-05-19 23:55:51'),
-(470, 12, 142, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(471, 12, 143, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(472, 12, 144, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(473, 12, 145, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(474, 12, 146, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(475, 12, 147, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(476, 12, 148, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(477, 12, 149, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(478, 12, 150, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(479, 12, 151, '2019-05-20 00:00:56', '2019-05-20 00:00:56'),
-(480, 12, 152, '2019-05-20 00:00:56', '2019-05-20 00:00:56');
+(498, 11, 126, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(499, 11, 127, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(500, 11, 128, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(501, 11, 129, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(502, 11, 130, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(503, 11, 131, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(504, 11, 132, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(505, 11, 133, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(506, 11, 134, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(507, 11, 135, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(508, 11, 136, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(509, 11, 137, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(510, 11, 138, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(511, 11, 139, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(512, 11, 140, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(513, 11, 141, '2019-05-29 18:02:56', '2019-05-29 18:02:56'),
+(525, 12, 142, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(526, 12, 143, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(527, 12, 144, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(528, 12, 145, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(529, 12, 146, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(530, 12, 147, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(531, 12, 148, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(532, 12, 149, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(533, 12, 150, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(534, 12, 151, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(535, 12, 152, '2019-05-29 18:04:46', '2019-05-29 18:04:46'),
+(545, 13, 153, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(546, 13, 154, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(547, 13, 155, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(548, 13, 156, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(549, 13, 157, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(550, 13, 158, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(551, 13, 159, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(552, 13, 160, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(553, 13, 161, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(554, 13, 162, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(555, 13, 163, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(556, 13, 164, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(557, 13, 165, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(558, 13, 166, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(559, 13, 167, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(560, 13, 168, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(561, 13, 169, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(562, 14, 170, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(563, 14, 171, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(564, 14, 172, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(565, 14, 173, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(566, 14, 174, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(567, 14, 175, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(568, 14, 176, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(569, 14, 177, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(570, 14, 178, '2019-06-03 10:42:00', '2019-06-03 10:42:00');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `transport_products`
+--
+
+CREATE TABLE `transport_products` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `transport_id` int(10) UNSIGNED NOT NULL,
+  `warehouse_id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(10) UNSIGNED NOT NULL,
+  `amount` float UNSIGNED NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `transport_products`
+--
+
+INSERT INTO `transport_products` (`id`, `transport_id`, `warehouse_id`, `product_id`, `amount`, `created`, `updated`) VALUES
+(37, 13, 1, 218, 27, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(38, 13, 1, 219, 15, '2019-06-02 13:32:46', '2019-06-02 13:32:46'),
+(39, 13, 1, 195, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(40, 13, 1, 196, 1, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(41, 13, 1, 228, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(42, 13, 1, 168, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(43, 13, 1, 187, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(44, 13, 1, 45, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(45, 13, 1, 25, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(46, 13, 1, 50, 6, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(47, 13, 1, 55, 4, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(48, 13, 1, 200, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(49, 13, 1, 161, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(50, 13, 1, 1, 6, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(51, 13, 2, 25, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(52, 13, 2, 200, 3, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(53, 13, 2, 161, 4, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(54, 13, 2, 13, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(55, 13, 2, 45, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(56, 13, 2, 228, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(57, 13, 2, 187, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(58, 13, 2, 33, 1, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(59, 13, 2, 34, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(60, 13, 2, 168, 2, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(61, 13, 2, 218, 20, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(62, 13, 2, 219, 15, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(63, 13, 2, 1, 4, '2019-06-02 13:32:47', '2019-06-02 13:32:47'),
+(64, 14, 1, 214, 7, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(65, 14, 1, 215, 1, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(66, 14, 1, 166, 1, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(67, 14, 1, 248, 3, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(68, 14, 2, 250, 2, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(69, 14, 2, 13, 3, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(70, 14, 2, 214, 3, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(71, 14, 2, 166, 2, '2019-06-03 10:42:00', '2019-06-03 10:42:00'),
+(72, 14, 1, 249, 2, '2019-06-03 10:42:00', '2019-06-03 10:42:00');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `types`
+--
+
+CREATE TABLE `types` (
+  `id` tinyint(3) UNSIGNED NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remarks` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `types`
+--
+
+INSERT INTO `types` (`id`, `name`, `remarks`, `created`, `updated`) VALUES
+(1, 'Phí Vận Chuyển', 'chi phí vận chuyển hàng hóa', '2019-05-25 10:33:35', '2019-05-25 10:33:35'),
+(2, 'Phí Vật Tư', 'chi phí mua vật tư, văn phòng phẩm', '2019-05-25 10:36:35', '2019-05-25 10:36:35'),
+(3, 'Thu Tiền Khách', '', '2019-05-25 10:36:59', '2019-05-25 10:36:59');
 
 -- --------------------------------------------------------
 
@@ -2358,6 +2717,12 @@ ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `incomes`
+--
+ALTER TABLE `incomes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
@@ -2379,6 +2744,12 @@ ALTER TABLE `members`
 -- Indexes for table `other_costs`
 --
 ALTER TABLE `other_costs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `outgoing`
+--
+ALTER TABLE `outgoing`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2431,6 +2802,18 @@ ALTER TABLE `transport_invoices`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `transport_products`
+--
+ALTER TABLE `transport_products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `types`
+--
+ALTER TABLE `types`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -2450,19 +2833,19 @@ ALTER TABLE `warehouses`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `commons`
@@ -2477,28 +2860,40 @@ ALTER TABLE `countries`
   MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `incomes`
+--
+ALTER TABLE `incomes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT for table `invoices_details`
 --
 ALTER TABLE `invoices_details`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `other_costs`
 --
 ALTER TABLE `other_costs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `outgoing`
+--
+ALTER TABLE `outgoing`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -2510,25 +2905,25 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
 -- AUTO_INCREMENT for table `products_prices`
 --
 ALTER TABLE `products_prices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `products_quantities`
 --
 ALTER TABLE `products_quantities`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
 -- AUTO_INCREMENT for table `product_ins`
 --
 ALTER TABLE `product_ins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -2540,13 +2935,25 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `transports`
 --
 ALTER TABLE `transports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `transport_invoices`
 --
 ALTER TABLE `transport_invoices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=481;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=571;
+
+--
+-- AUTO_INCREMENT for table `transport_products`
+--
+ALTER TABLE `transport_products`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+
+--
+-- AUTO_INCREMENT for table `types`
+--
+ALTER TABLE `types`
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
