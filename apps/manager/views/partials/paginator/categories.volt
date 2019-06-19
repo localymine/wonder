@@ -23,7 +23,7 @@
           <tr>
           <td id="{{ category.id|e }}">{{ idx }}</td>
           <td>{{ category.name|e }}</td>
-          <td>{{ category.remarks|e }}</td>
+          <td>{{ utility.make_links_from_http(category.remarks|nl2br) }}</td>
           <td>{{ link_to('manager/categories/show/'~category.id,'<i class="fa fa-eye"></i>','class':'btn btn-xs btn-info','data-toggle':'tooltip','data-placement':'top','title':l10n._('Show')) }}
 
               {{ link_to('manager/categories/edit/'~category.id,'<i class="fa fa-pencil"></i>','class':'btn btn-xs btn-success','data-toggle':'tooltip','data-placement':'top','title':l10n._('Edit')) }}

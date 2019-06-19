@@ -101,15 +101,15 @@ class InventoryController  extends ControllerBase
     $i = 2;
     foreach ($products as $product) {
       $purchase_price = $product->purchase_price;
-      $productIns = ProductIn::find([
-        'conditions' => 'product_id=:pid:',
-        'bind' => ['pid' => $product->id],
-        'order' => 'created DESC',
-        'limit' => 1
-      ]);;
-      if ($productIns->count() > 0) {
-        $purchase_price = $productIns[0]->purchase_price;
-      }
+//      $productIns = ProductIn::find([
+//        'conditions' => 'product_id=:pid:',
+//        'bind' => ['pid' => $product->id],
+//        'order' => 'created DESC',
+//        'limit' => 1
+//      ]);;
+//      if ($productIns->count() > 0) {
+//        $purchase_price = ($purchase_price > $productIns[0]->purchase_price) ? $purchase_price : $productIns[0]->purchase_price;
+//      }
       $objPHPExcel->getActiveSheet()
         ->setCellValue('A' . $i, $i-1)
         ->setCellValue('B' . $i, $product->name)

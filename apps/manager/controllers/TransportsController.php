@@ -517,7 +517,8 @@ class TransportsController extends ControllerBase
         ->setName('Arial')
         ->setSize(12);
       // set Title
-      $objPHPExcel->getActiveSheet()->setTitle($transport->remarks);
+      $title = ($transport->remarks != '') ? $transport->remarks : 'Sheet1';
+      $objPHPExcel->getActiveSheet()->setTitle($title);
       // set data
       $objPHPExcel->setActiveSheetIndex(0)
         ->setCellValue('A1', 'No.')
@@ -797,7 +798,9 @@ class TransportsController extends ControllerBase
         ->setCellValue('A13', 'No.')
         ->setCellValue('B13', 'SPham')
         ->setCellValue('C13', 'PLoai')
-        ->setCellValue('D13', 'SLg');
+        ->setCellValue('D13', 'SLg')
+        ->setCellValue('E13', 'DGia')
+      ;
 
       $fname = 'Products-List-' . $transport->name . '-' . time() . '.xlsx';
 
@@ -823,7 +826,9 @@ class TransportsController extends ControllerBase
             ->setCellValue('A' . $i, $i-12-1)
             ->setCellValue('B' . $i, $product->name)
             ->setCellValue('C' . $i, $product->category->name)
-            ->setCellValue('D' . $i, $ind->quantity);
+            ->setCellValue('D' . $i, $ind->quantity)
+            ->setCellValue('E' . $i, $product->purchase_price)
+          ;
           $i++;
         }
       }
@@ -835,7 +840,9 @@ class TransportsController extends ControllerBase
           ->setCellValue('A' . $k, $k-1)
           ->setCellValue('B' . $k, $tpd->product->name)
           ->setCellValue('C' . $k, $tpd->product->category->name)
-          ->setCellValue('D' . $k, $tpd->amount);
+          ->setCellValue('D' . $k, $tpd->amount)
+          ->setCellValue('E' . $k, $tpd->product->purchase_price)
+        ;
         $k++;
       }
 
@@ -843,7 +850,7 @@ class TransportsController extends ControllerBase
       $objPHPExcel->getActiveSheet()->getStyle('A4')->getFont()->setBold(true)->setUnderline(true);
       $objPHPExcel->getActiveSheet()->getStyle('A8')->getFont()->setBold(true)->setUnderline(true);
 
-      $objPHPExcel->getActiveSheet()->getStyle('A13:D13')
+      $objPHPExcel->getActiveSheet()->getStyle('A13:E13')
         ->applyFromArray([
           'font' => [
             'bold' => true

@@ -57,8 +57,9 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Transporter') }}</label>
           <div class="col-xs-12 col-sm-3">
-            {{ text_field('client_name','class':'form-control','disabled':'true','value':transport.client.name) }}
-            {{ hidden_field('client','value':transport.client.id) }}
+            {{ select('client',clients,'using':['id','name'],'name':'client_id','data-mode':'new','class':'form-control selectpicker show-tick','data-style':'btn-white','useEmpty':true,'emptyText':l10n._('Choose...'), 'emptyValue':'','value':transport.client.id) }}
+            {#{{ text_field('client_name','class':'form-control','disabled':'true','value':transport.client.name) }}#}
+            {#{{ hidden_field('client','value':transport.client.id) }}#}
 
           </div>
         </div>

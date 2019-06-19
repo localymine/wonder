@@ -68,11 +68,15 @@ $(function () {
             } else {
               price = rs[i]['price'];
             }
+            var src = '/uploads/user/' + p1 + '/product/' + p2 + '/' + rs[i]['image'];
+            if (rs[i]['image'] === ''|| rs[i]['image'] === null) {
+              src = '/uploads/no-image.png';
+            }
             var template = '<tr>' +
               '<td class="no">' + (i + 1) + '</td>' +
               '<td class="" style="width:32px;">' +
               '<a href="javascript:void(0)" class="pop">' +
-              '<img class="img-responsive" src="/uploads/user/' + p1 + '/product/' + p2 + '/' + rs[i]['image'] + '" />' +
+              '<img class="img-responsive" src="' + src + '" />' +
               '</a>' +
               '</td>' +
               '<td>'+rs[i]['name']+'</td>' +

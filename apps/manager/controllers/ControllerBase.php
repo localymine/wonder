@@ -259,8 +259,17 @@ class ControllerBase extends Controller
     FilterInjector::updatePurchasePrice($this->di);
   }
 
-  protected function getClientWasBoughtProduct($product_id) {
-    $result = FilterInjector::getClientWasBoughtProduct($this->di, $product_id);
+  protected function getProductWasBought($product_id) {
+    $result = FilterInjector::getProductWasBought($this->di, $product_id);
+    if ($result) {
+      return $result;
+    } else {
+      return false;
+    }
+  }
+
+  protected function getProductWasSent($product_id) {
+    $result = FilterInjector::getProductWasSent($this->di, $product_id);
     if ($result) {
       return $result;
     } else {

@@ -12,7 +12,9 @@ use General\Core\Manager\Models\InvoiceDetail;
 use General\Core\Manager\Models\Product;
 use General\Core\Manager\Models\ProductIn;
 use General\Core\Manager\Models\ProductQuantity;
+use General\Core\Manager\Models\Transport;
 use General\Core\Manager\Models\TransportInvoice;
+use General\Core\Manager\Models\TransportProduct;
 use General\Core\Manager\Models\Warehouse;
 use Phalcon\Db\Column;
 use Phalcon\Di as DependencyInjector;
@@ -146,6 +148,7 @@ class FilterInjector extends Component
         case 'transport':
         case 'income':
         case 'outgoing':
+        case 'product':
           $criteria->andWhere('['.$Model.'].user_id=:user_id:',
             ['user_id' => $identity['id']]
           );
@@ -153,7 +156,6 @@ class FilterInjector extends Component
         case 'brand':
         case 'category':
         case 'type':
-        case 'product':
           break;
         default:
           return false;
@@ -645,7 +647,7 @@ class FilterInjector extends Component
   }
 
 
-  public static function getClientWasBoughtProduct(DependencyInjector $di, $product_id) {
+  public static function getProductWasBought(DependencyInjector $di, $product_id) {
     /* if $_SESSION['auth'] not found, returns false.
              * session情報がない場合は偽 */
     $identity = $di->get('auth')->getIdentity();
@@ -670,7 +672,12 @@ class FilterInjector extends Component
 
     $criteria->leftJoin(InvoiceDetail::class, '['.$Model.'].id=[IVDT].product_id', 'IVDT');
     $criteria->leftJoin(Invoice::class, '[IV].id=[IVDT].invoice_id', 'IV');
-    $criteria->leftJoin(Client::class, '[CL].id=[IV].client_id ', 'CL');
+    $criteria->leftJoin(Client::class, '[CL1].id=[IV].client_id', 'CL1');
+    $criteria->leftJoin(TransportInvoice::class, '[IV].id=[TRIV].invoice_id', 'TRIV');
+    $criteria->leftJoin(Transport::class, '[TRIV].transport_id=[TR].id', 'TR');
+    $criteria->leftJoin(Client::class, '[CL2].id=[TR].client_id', 'CL2');
+    $criteria->leftJoin(Client::class, '[CL3].id=[TR].send_id', 'CL3');
+    $criteria->leftJoin(Client::class, '[CL4].id=[TR].receive_id', 'CL4');
 
     $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
     $criteria->andWhere('['.$Model.'].id=:id:', ['id' => $product_id]);
@@ -678,15 +685,70 @@ class FilterInjector extends Component
     $criteria->columns(
       [
         '[IV].id',
-        '[CL].name AS client_name',
+        '[CL1].name AS client_name',
         '['.$Model.'].name AS product_name',
+        '['.$Model.'].remarks AS product_remarks',
         '[IVDT].quantity AS quantity',
         '[IVDT].price AS price',
         '[IVDT].created AS created',
+        '[TR].name AS transport_name',
+        '[CL2].name AS transporter',
+        '[CL3].name AS sender',
+        '[CL4].name AS receiver',
       ]
     );
 
     $criteria->orderBy('[IVDT].created DESC');
+
+    return $criteria->execute();
+  }
+
+  public static function getProductWasSent(DependencyInjector $di, $product_id) {
+    /* if $_SESSION['auth'] not found, returns false.
+             * session情報がない場合は偽 */
+    $identity = $di->get('auth')->getIdentity();
+    if (!$identity) {
+      return false;
+    }
+
+    $user_id = $identity['id'];
+
+    /* create fully qualified class name. */
+    $Model = 'General\Core\Manager\Models\Product';
+    /* create Model instance. */
+    /** @var \General\Core\Manager\Models\ModelInterface $instance */
+    $instance = new $Model;
+    /** @var \Phalcon\Mvc\Model\Metadata\Memory $metadata */
+    $metadata = $di->getShared('modelsMetadata');
+    $dataType = $metadata->getDataTypes($instance);
+
+    /* initialize query condition. */
+    $criteria = new Criteria();
+    $criteria->setModelName($Model);
+
+    $criteria->leftJoin(TransportProduct::class, '['.$Model.'].id=[TP].product_id', 'TP');
+    $criteria->leftJoin(Transport::class, '[TR].id=[TP].transport_id', 'TR');
+    $criteria->leftJoin(Warehouse::class, '[WH].id=[TP].warehouse_id', 'WH');
+    $criteria->leftJoin(Client::class, '[CL1].id=[TR].client_id', 'CL1');
+    $criteria->leftJoin(Client::class, '[CL2].id=[TR].send_id', 'CL2');
+    $criteria->leftJoin(Client::class, '[CL3].id=[TR].receive_id', 'CL3');
+
+    $criteria->andWhere('['.$Model.'].user_id=:user_id:', ['user_id' => $user_id]);
+    $criteria->andWhere('['.$Model.'].id=:id:', ['id' => $product_id]);
+
+    $criteria->columns(
+      [
+        '[WH].name AS warehouse_name',
+        '['.$Model.'].name AS product_name',
+        '['.$Model.'].remarks AS product_remarks',
+        '[TP].amount AS quantity',
+        '[TR].created AS created',
+        '[TR].name AS transport_name',
+        '[CL1].name AS transporter',
+        '[CL2].name AS sender',
+        '[CL3].name AS receiver',
+      ]
+    );
 
     return $criteria->execute();
   }

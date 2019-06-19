@@ -649,74 +649,98 @@ class ProductsController  extends ControllerBase
     }
 
     ob_start();
-    $data = $this->getClientWasBoughtProduct($id);
+
+    $objPHPExcel = new \PHPExcel();
+    // Set document properties
+    $objPHPExcel->getProperties()
+      ->setCreator("Sakura Shop")
+      ->setDescription("DS Order Khach Hang");
+    // Set default font
+    $objPHPExcel->getDefaultStyle()->getFont()
+      ->setName('Arial')
+      ->setSize(12);
+    // set Title
+    $objPHPExcel->getActiveSheet()->setTitle('Order List');
+    // set data
+    $objPHPExcel->setActiveSheetIndex(0)
+      ->setCellValue('A1', 'No.')
+      ->setCellValue('B1', 'HDon')
+      ->setCellValue('C1', 'KH')
+      ->setCellValue('D1', 'SPham')
+      ->setCellValue('E1', 'DGia')
+      ->setCellValue('F1', 'SLg')
+      ->setCellValue('G1', 'Ttien')
+      ->setCellValue('H1', 'Date')
+      ->setCellValue('I1', 'Transport')
+      ->setCellValue('J1', 'Transporter')
+      ->setCellValue('K1', 'Sender')
+      ->setCellValue('L1', 'Receiver')
+    ;
+
+    $fname = 'Product-Invoice-List-' . time() . '.xlsx';
+
+    // temp file name to save before output
+    $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');
+
+    //
+    $i = 2;
+    $data = $this->getProductWasBought($id);
     if ($data) {
-      $objPHPExcel = new \PHPExcel();
-      // Set document properties
-      $objPHPExcel->getProperties()
-        ->setCreator("Sakura Shop")
-        ->setDescription("DS Order Khach Hang");
-      // Set default font
-      $objPHPExcel->getDefaultStyle()->getFont()
-        ->setName('Arial')
-        ->setSize(12);
-      // set Title
-      $objPHPExcel->getActiveSheet()->setTitle('Order List');
-      // set data
-      $objPHPExcel->setActiveSheetIndex(0)
-        ->setCellValue('A1', 'No.')
-        ->setCellValue('B1', 'HDon')
-        ->setCellValue('C1', 'KH')
-        ->setCellValue('D1', 'SPham')
-        ->setCellValue('E1', 'DGia')
-        ->setCellValue('F1', 'SLg')
-        ->setCellValue('G1', 'Ttien')
-        ->setCellValue('H1', 'Date')
-      ;
-
-      $fname = 'Product-Invoice-List-' . time() . '.xlsx';
-
-      // temp file name to save before output
-      $temp_file = tempnam(sys_get_temp_dir(), 'phpexcel');
-
-      //
-      $i = 2;
       foreach ($data as $item) {
         $objPHPExcel->getActiveSheet()
           ->setCellValue('A' . $i, $i-1)
           ->setCellValue('B' . $i, $item->id)
           ->setCellValue('C' . $i, $item->client_name)
-          ->setCellValue('D' . $i, $item->product_name)
+          ->setCellValue('D' . $i, $item->product_remarks)
           ->setCellValue('E' . $i, $item->price)
           ->setCellValue('F' . $i, $item->quantity)
           ->setCellValue('G' . $i, ($item->price*$item->quantity))
           ->setCellValue('H' . $i, $item->created)
+          ->setCellValue('I' . $i, $item->transport_name)
+          ->setCellValue('J' . $i, $item->transporter)
+          ->setCellValue('K' . $i, $item->sender)
+          ->setCellValue('L' . $i, $item->receiver)
         ;
         $i++;
       }
-
-      $objPHPExcel->getActiveSheet()->getStyle('A1:H1')
-        ->applyFromArray([
-          'font' => [
-            'bold' => true
-          ],
-          'alignment' => [
-            'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
-          ]
-        ]);
-      $objPHPExcel->getActiveSheet()->getStyle('E2:G200')->getNumberFormat()
-        ->setFormatCode('#,###');
-
-      foreach (range('A', 'H') as $columnId) {
-        $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
-      }
-
-      $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-      $objWriter->save($temp_file);
-
-    } else {
-      return false;
     }
+
+    $data = $this->getProductWasSent($id);
+    if ($data) {
+      foreach ($data as $item) {
+        $objPHPExcel->getActiveSheet()
+          ->setCellValue('A' . $i, $i-1)
+          ->setCellValue('C' . $i, $item->warehouse_name)
+          ->setCellValue('D' . $i, $item->product_remarks)
+          ->setCellValue('F' . $i, $item->quantity)
+          ->setCellValue('H' . $i, $item->created)
+          ->setCellValue('I' . $i, $item->transport_name)
+          ->setCellValue('J' . $i, $item->transporter)
+          ->setCellValue('K' . $i, $item->sender)
+          ->setCellValue('L' . $i, $item->receiver)
+          ;
+        $i++;
+      }
+    }
+
+    $objPHPExcel->getActiveSheet()->getStyle('A1:L1')
+      ->applyFromArray([
+        'font' => [
+          'bold' => true
+        ],
+        'alignment' => [
+          'horizontal' => \PHPExcel_Style_Alignment::HORIZONTAL_CENTER
+        ]
+      ]);
+    $objPHPExcel->getActiveSheet()->getStyle('E2:G200')->getNumberFormat()
+      ->setFormatCode('#,###');
+
+    foreach (range('A', 'L') as $columnId) {
+      $objPHPExcel->getActiveSheet()->getColumnDimension($columnId)->setAutoSize(true);
+    }
+
+    $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+    $objWriter->save($temp_file);
 
     $this->response->setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     $this->response->setHeader('Content-Disposition', 'attachment; filename="'.$fname.'"');
