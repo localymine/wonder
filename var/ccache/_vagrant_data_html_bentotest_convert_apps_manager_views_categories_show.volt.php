@@ -67,7 +67,7 @@
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Remarks'); ?></th>
-              <td><?php echo nl2br($category->remarks); ?></td>
+              <td><?php echo $this->utility->make_links_from_http(nl2br($category->remarks)); ?></td>
             </tr>
             </tbody>
             </table>

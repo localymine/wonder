@@ -84,8 +84,9 @@
         <div class="form-group required">
           <label for="status" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Transporter'); ?></label>
           <div class="col-xs-12 col-sm-3">
-            <?php echo $this->tag->textField(array('client_name', 'class' => 'form-control', 'disabled' => 'true', 'value' => $transport->client->name)); ?>
-            <?php echo $this->tag->hiddenField(array('client', 'value' => $transport->client->id)); ?>
+            <?php echo $this->tag->select(array('client', $clients, 'using' => array('id', 'name'), 'name' => 'client_id', 'data-mode' => 'new', 'class' => 'form-control selectpicker show-tick', 'data-style' => 'btn-white', 'useEmpty' => true, 'emptyText' => $this->l10n->_('Choose...'), 'emptyValue' => '', 'value' => $transport->client->id)); ?>
+            
+            
 
           </div>
         </div>
