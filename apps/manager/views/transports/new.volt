@@ -38,6 +38,14 @@
         </div>
 
         <div class="form-group">
+          <label for="sent_date" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Sent Date') }}</label>
+          <div class="col-xs-12 col-sm-8">
+            {{ text_field('sent_date','class':'form-control col-3') }}
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="flight_date" class="col-xs-12 col-sm-3 control-label">{{ l10n._('Flight Date') }}</label>
           <div class="col-xs-12 col-sm-8">
             {{ text_field('flight_date','class':'form-control col-3') }}
@@ -220,7 +228,7 @@
         $('input[type=checkbox]', this).iCheck('toggle');
       });
       //
-      $('[name=flight_date],[name=flight_end]').datetimepicker({
+      $('[name=sent_date],[name=flight_date],[name=flight_end]').datetimepicker({
         format: 'Y-MM-DD',
         useCurrent: true,
         dayViewHeaderFormat: "{{ l10n._('MMM YYYY') }}",

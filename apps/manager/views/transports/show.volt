@@ -60,8 +60,16 @@
               </td>
             </tr>
             <tr>
+              <th>{{ l10n._('Sent Date') }}</th>
+              <td>{{ utility.substr(transport.sent_date,0,10)|e }}</td>
+            </tr>
+            <tr>
               <th>{{ l10n._('Flight Date') }}</th>
               <td>{{ utility.substr(transport.flight_date,0,10)|e }}</td>
+            </tr>
+            <tr>
+              <th>{{ l10n._('Flight End') }}</th>
+              <td>{{ utility.substr(transport.flight_end,0,10)|e }}</td>
             </tr>
             <tr>
               <th>{{ l10n._('Status') }}</th>

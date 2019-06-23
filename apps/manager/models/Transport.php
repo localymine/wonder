@@ -63,6 +63,12 @@ class Transport extends ModelBase implements ModelInterface
    */
   public $total_others;
   /**
+   * sent_date.
+   * @var string
+   * @Column(type="string", nullable=false)
+   */
+  public $sent_date;
+  /**
    * flight_date.
    * @var string
    * @Column(type="string", nullable=false)
@@ -131,6 +137,7 @@ class Transport extends ModelBase implements ModelInterface
       'client_id'   => 'client_id',
       'total'       => 'total',
       'total_others'=> 'total_others',
+      'sent_date'   => 'sent_date',
       'flight_date' => 'flight_date',
       'flight_end'  => 'flight_end',
       'remarks'     => 'remarks',

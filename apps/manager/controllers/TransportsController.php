@@ -824,7 +824,8 @@ class TransportsController extends ControllerBase
           $product = $ind->getRelated('product');
           $objPHPExcel->getActiveSheet()
             ->setCellValue('A' . $i, $i-12-1)
-            ->setCellValue('B' . $i, $product->name)
+//            ->setCellValue('B' . $i, $product->name)
+            ->setCellValue('B' . $i, $product->remarks)
             ->setCellValue('C' . $i, $product->category->name)
             ->setCellValue('D' . $i, $ind->quantity)
             ->setCellValue('E' . $i, $product->purchase_price)

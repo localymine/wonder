@@ -119,7 +119,7 @@
                   <td class="no">{{ i + 1 }}</td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
-                      <img class="img-responsive" src="/uploads/user/{{ utility.str_pad(invoice.user_id) }}/product/{{ utility.str_pad(detail.product_id) }}/{{ detail.product.image }}" />
+                      {{ utility.image(invoice.user_id, detail.product_id, detail.product.image) }}
                     </a>
                   </td>
                   <td>{{ detail.product.name }}</td>
