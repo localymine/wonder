@@ -17,6 +17,7 @@
           <tr>
           <th><?php echo $this->l10n->__('ID', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Name', 'transport'); ?></th>
+          <th><?php echo $this->l10n->__('Sent Date', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Flight Date', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Flight End', 'transport'); ?></th>
           <th><?php echo $this->l10n->__('Receiver', 'transport'); ?></th>
@@ -33,7 +34,8 @@
 
           <tr>
           <td title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->id); ?></td>
-          <td><div title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->name); ?></div></td>
+          <td><div title="<?php echo $transport->remarks; ?>"><?php echo $this->escaper->escapeHtml($transport->name); ?> <?php echo $transport->remarks; ?></div></td>
+          <td class="text-center"><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->sent_date, 0, 10)); ?></td>
           <td class="text-center"><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_date, 0, 10)); ?></td>
           <td class="text-center"><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_end, 0, 10)); ?></td>
           <td><?php echo $this->escaper->escapeHtml($transport->client->name); ?></td>

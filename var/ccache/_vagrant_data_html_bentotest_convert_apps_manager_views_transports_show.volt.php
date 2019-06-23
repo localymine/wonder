@@ -87,8 +87,16 @@
               </td>
             </tr>
             <tr>
+              <th><?php echo $this->l10n->_('Sent Date'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->sent_date, 0, 10)); ?></td>
+            </tr>
+            <tr>
               <th><?php echo $this->l10n->_('Flight Date'); ?></th>
               <td><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_date, 0, 10)); ?></td>
+            </tr>
+            <tr>
+              <th><?php echo $this->l10n->_('Flight End'); ?></th>
+              <td><?php echo $this->escaper->escapeHtml($this->utility->substr($transport->flight_end, 0, 10)); ?></td>
             </tr>
             <tr>
               <th><?php echo $this->l10n->_('Status'); ?></th>

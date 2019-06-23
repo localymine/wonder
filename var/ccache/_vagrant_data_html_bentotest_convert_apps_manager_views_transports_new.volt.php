@@ -65,6 +65,14 @@
         </div>
 
         <div class="form-group">
+          <label for="sent_date" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Sent Date'); ?></label>
+          <div class="col-xs-12 col-sm-8">
+            <?php echo $this->tag->textField(array('sent_date', 'class' => 'form-control col-3')); ?>
+
+          </div>
+        </div>
+
+        <div class="form-group">
           <label for="flight_date" class="col-xs-12 col-sm-3 control-label"><?php echo $this->l10n->_('Flight Date'); ?></label>
           <div class="col-xs-12 col-sm-8">
             <?php echo $this->tag->textField(array('flight_date', 'class' => 'form-control col-3')); ?>
@@ -256,7 +264,7 @@
         $('input[type=checkbox]', this).iCheck('toggle');
       });
       //
-      $('[name=flight_date],[name=flight_end]').datetimepicker({
+      $('[name=sent_date],[name=flight_date],[name=flight_end]').datetimepicker({
         format: 'Y-MM-DD',
         useCurrent: true,
         dayViewHeaderFormat: "<?php echo $this->l10n->_('MMM YYYY'); ?>",

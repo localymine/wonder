@@ -146,7 +146,8 @@
                   <td class="no"><?php echo $i + 1; ?></td>
                   <td class="" style="width:32px;">
                     <a href="javascript:voide(0)" class="pop">
-                      <img class="img-responsive" src="/uploads/user/<?php echo $this->utility->str_pad($invoice->user_id); ?>/product/<?php echo $this->utility->str_pad($detail->product_id); ?>/<?php echo $detail->product->image; ?>" />
+                      
+                      <?php echo $this->utility->image($invoice->user_id, $detail->product_id, $detail->product->image); ?>
                     </a>
                   </td>
                   <td><?php echo $detail->product->name; ?></td>
